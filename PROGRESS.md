@@ -4,6 +4,7 @@
 
 | 时间 | 条目 | 日志位置 |
 | --- | --- | --- |
+| 2026-11-15 15:21 | Prepared: comparative rationale for the proposed V2 pilot settings | [原始条目](exp/EXPERIMENT_LOG.md#L371) |
 | 2026-11-15 15:13 | Prepared: candidate settings for the V2 pilot signal check, awaiting confirmation | [原始条目](exp/EXPERIMENT_LOG.md#L362) |
 | 2026-11-15 15:07 | Prepared: received Step 5 pilot signal check exports | [原始条目](exp/EXPERIMENT_LOG.md#L356) |
 | 2026-11-15 15:03 | Prepared: V2 §7.3 pilot signal check input audit | [原始条目](exp/EXPERIMENT_LOG.md#L350) |

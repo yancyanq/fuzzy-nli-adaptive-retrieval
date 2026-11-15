@@ -4,27 +4,31 @@
 
 分支 A 用 BM25 检索到的前两个段落作答。分支 B 用规则改写查询，从未使用的段落里再补一个段落后作答。作答模型给出答案和引用，NLI 检查引用证据是否支持答案。正式比较将在相同输入与相同目标再检索率下，评估模糊门控和硬规则的答案质量、再检索率和成本。
 
+## 实验进度
+
+**[查看最新进度](PROGRESS.md)** · **[阅读完整实验日志](exp/EXPERIMENT_LOG.md)**
+
+截至 **2026-11-15 15:21（北京时间）**，已完成 100 题 pilot 和 Step 6a 非退化检查。当前在准备按 V2 §7.3 比较 NLI 与桥接实体信号的选题能力。
+
+| 阶段 | 当前状态 | 记录 |
+| --- | --- | --- |
+| Step 1–4 数据、检索与预注册 | 切分完成，选定 BM25 `k=2`、`m=1`，已登记 pilot 的 GO 判定规则 | [实验索引](INDEX.md) |
+| Step 5 Pilot | **GO**。分支 A / B / Oracle 的 F1 为 0.628 / 0.752 / 0.765 | [真实 pilot](exp/EXPERIMENT_LOG.md#L146) |
+| Step 5b DeepSeek logprob | 温度 0 下选中 token 的 logprob 与 top‑k margin 退化 | [排查结果](exp/EXPERIMENT_LOG.md#L218) |
+| Step 6a 本地 vLLM | 前 30 道 tune 题的非退化检查 **PASS**。是否将不确定性纳入正式门控待定 | [实测记录](exp/EXPERIMENT_LOG.md#L326) |
+| V2 §7.3 Pilot 信号对照 | 两份真实逐题导出已归档。桥接信号、对照方式和预算已有候选设置及理由，等待确认，信号对照尚未运行 | [候选设置](exp/EXPERIMENT_LOG.md#L362) · [比较理由](exp/EXPERIMENT_LOG.md#L371) |
+
+进度页按时间倒序索引日志。完整日志保留实验设置、真实结果、决定及其记录时间。阶段报告为 Step 6a 实测前的快照，实测数据见本次产物。 [Step 6a 实测摘要](exp/step6a/step6a_check/logprob_check.json)
+
 ## 从哪里开始
 
 | 想了解什么 | 入口 |
 | --- | --- |
-| 最近完成了什么 | [实验进度](PROGRESS.md)按时间倒序列出日志条目 |
 | 实验设计与规则 | [实验方案 v2 PDF](docs/Experiment_Protocol_v2.pdf) · [可编辑 DOCX](docs/Experiment_Protocol_v2.docx) |
 | 复现某一步 | [实验索引](INDEX.md)含脚本、命令和输出 · [运行环境](docs/ENVIRONMENT.md) |
-| 追溯论文数字 | [结果总表](docs/RESULTS.md) · [权威实验日志](exp/EXPERIMENT_LOG.md) |
+| 追溯论文数字 | [结果总表](docs/RESULTS.md) |
 | 找数据、脚本或报告 | [逐文件清单](docs/INVENTORY.md) · [阶段报告 PDF](reports/Interim_Experiment_Report_2026-11-15.pdf) · [DOCX](reports/Interim_Experiment_Report_2026-11-15.docx) |
 | 接下一步或归档结果 | [缺口清单](docs/GAPS.md) · [提交与同步方式](docs/WORKFLOW.md) |
-
-## 首次入库时的进度
-
-| 阶段 | 确认状态 |
-| --- | --- |
-| BM25 与 100 题 pilot | 选定 k=2、m=1，pilot **GO**。分支 A / B / Oracle 的 F1 为 0.628 / 0.752 / 0.765。 |
-| DeepSeek logprob 排查 | 温度 0 下选中 token 的 logprob 与 top‑k margin 退化。本地模型另行检查。 |
-| Step 6a 本地 vLLM | 前 30 道 tune 题的非退化检查 **PASS**。不确定性指标是候选输入，是否加入正式门控仍待决定。 |
-| V2 §7.3 | Pilot 的两份真实逐题导出已归档。桥接实体信号、对照方式和再检索预算已有候选设置，等待确认。信号对照尚未运行。 |
-
-以上为 2026-11-15 15:13（UTC+8）交接状态。后续条目见实验进度。 [实验进度](PROGRESS.md)阶段报告两版保留实测前快照，Step 6a 结果见[实测摘要](exp/step6a/step6a_check/logprob_check.json)。
 
 ## 目录
 
