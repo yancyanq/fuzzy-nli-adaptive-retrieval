@@ -9,7 +9,7 @@ python -m pip install openai==1.76.2 rank-bm25==0.2.2
 python -m pip check
 ```
 
-这是本次客户端测试采用的两个直接依赖版本，与 2026-11-15 14:24 日志中 Step 6a 客户端安装决策相同。Step 2–5b 在 YangQS 的完整环境锁记录中未给出。Step 2 只需 `rank-bm25`，其 pip 依赖包含 NumPy。没有项目级 requirements 或 lock 随包提供。
+这是本次客户端测试采用的两个直接依赖版本，与 [Step 6a 客户端安装决策](../exp/EXPERIMENT_LOG.md?plain=1#L296)一致。Step 2–5b 在 YangQS 的完整环境锁记录中未给出。Step 2 只需 `rank-bm25`，其 pip 依赖包含 NumPy。没有项目级 requirements 或 lock 随包提供。
 
 ## 各脚本与测试依赖
 
@@ -32,13 +32,13 @@ python -m pip check
 
 `--key-env` 接收变量名。真实凭据通过本地受控环境变量提供。包中凭据常见格式的扫描只发现测试代码原有的假值；测试进程未继承真实凭据。测试本身无需付费 API、GPU、PyTorch、Transformers 或 vLLM。
 
-运行 Step 5 的实际 NLI 时，安装与 YangQS 驱动匹配的 CUDA 版 `torch` 和 `transformers`，准备 `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` 模型与 tokenizer 快照。用 `python -c "import torch; print(torch.cuda.is_available())"` 检查设备，`--nli-device auto` 可在 CUDA 不可用时选 CPU。发生 tokenizer 依赖问题时应记录并冻结所需包及版本，实际版本以设备 lock 为准。日志记录正式 pilot 对引用段落按顺序拼接，无可用引用时回退并计数，假设采用固定模板 `The answer to the question "{question}" is: {answer}.`，NLI 标签映射取模型配置中的 `id2label`。标题级引用可算段落覆盖，官方 SP F1 需要句索引。 [权威实验日志，2026-11-15 09:50 与 10:33](../exp/EXPERIMENT_LOG.md)
+运行 Step 5 的实际 NLI 时，安装与 YangQS 驱动匹配的 CUDA 版 `torch` 和 `transformers`，准备 `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` 模型与 tokenizer 快照。用 `python -c "import torch; print(torch.cuda.is_available())"` 检查设备，`--nli-device auto` 可在 CUDA 不可用时选 CPU。发生 tokenizer 依赖问题时应记录并冻结所需包及版本，实际版本以设备 lock 为准。日志记录正式 pilot 对引用段落按顺序拼接，无可用引用时回退并计数，假设采用固定模板 `The answer to the question "{question}" is: {answer}.`，NLI 标签映射取模型配置中的 `id2label`。标题级引用可算段落覆盖，官方 SP F1 需要句索引。 [Pilot 实现](../exp/EXPERIMENT_LOG.md?plain=1#L134) · [Pilot 实测](../exp/EXPERIMENT_LOG.md?plain=1#L146)
 
 ## Step 6a 服务端的历史记录
 
-日志记载远端准备环境为 Python 3.10.12、Tesla T4（计算能力 7.5），vLLM 0.8.5、PyTorch 2.6.0+cu124、CUDA 12.4、xFormers 0.0.29.post2、Transformers 4.51.3。启动时为 Triton 补装 setuptools 80.9.0 后重新生成 lock 并重启。采用 vLLM V0 和 xFormers、原始未量化 Qwen/Qwen2.5-7B-Instruct 权重，记录的 HF revision 为 `a09a35458c702b33eeacc393d103063234e8bc28`。日志确认配套文件与权重校验符合该 revision。日志 14:52 条目记录了实际客户端命令、服务器启动封装和 lock 的路径；远端启动封装、lock 与服务原始日志待归档。 [权威实验日志，2026-11-15 14:24、14:32、14:46、14:52](../exp/EXPERIMENT_LOG.md)
+日志记载远端准备环境为 Python 3.10.12、Tesla T4（计算能力 7.5），vLLM 0.8.5、PyTorch 2.6.0+cu124、CUDA 12.4、xFormers 0.0.29.post2、Transformers 4.51.3。启动时为 Triton 补装 setuptools 80.9.0 后重新生成 lock 并重启。采用 vLLM V0 和 xFormers、原始未量化 Qwen/Qwen2.5-7B-Instruct 权重，记录的 HF revision 为 `a09a35458c702b33eeacc393d103063234e8bc28`。日志确认配套文件与权重校验符合该 revision。实测条目记录了客户端命令、服务器启动封装和 lock 的路径；远端启动封装、lock 与服务原始日志待归档。 [服务端准备](../exp/EXPERIMENT_LOG.md?plain=1#L296) · [启动记录](../exp/EXPERIMENT_LOG.md?plain=1#L321) · [实测](../exp/EXPERIMENT_LOG.md?plain=1#L326)
 
-按 [Step 6a README](../exp/step6a/README_step6a.md) 配置单独的服务进程。若复现日志中的 T4 设置，按 14:32 条目使用 `--dtype half --cpu-offload-gb 4 --enforce-eager --max-model-len 4096 --max-num-seqs 1`、`--max-logprobs 5`，保持原模型名与生成配置。绑定 `127.0.0.1:8000`，从客户端跨机访问时使用 README 里的 SSH 本地转发。确认服务健康并指向正确模型后，再运行索引中的检查命令。包内不含模型权重和远端 Python 环境。
+按 [Step 6a README](../exp/step6a/README_step6a.md) 配置单独的服务进程。若复现日志中的 T4 设置，按[服务端配置](../exp/EXPERIMENT_LOG.md?plain=1#L308)使用 `--dtype half --cpu-offload-gb 4 --enforce-eager --max-model-len 4096 --max-num-seqs 1`、`--max-logprobs 5`，保持原模型名与生成配置。绑定 `127.0.0.1:8000`，从客户端跨机访问时使用 README 里的 SSH 本地转发。确认服务健康并指向正确模型后，再运行索引中的检查命令。包内不含模型权重和远端 Python 环境。
 
 ## 运行边界
 
@@ -68,7 +68,7 @@ python exp/step6a/test_step6a.py
 | `test_step6a.py` | 16/16 通过 | Mock PASS/FAIL、判定边界、缓存和命令行选项 |
 | `test_mock_server.py` | 支持 logprobs 和拒绝后回退，两次联调通过 | 两次各以同一条 pilot 输入测试 A/B；验证无调用错误、正确标记支持状态和生成预期文件。回答及分数为测试值 |
 | Step 2 两组离线复跑 | 两组逐题 CSV 都与随包字节一致；汇总除整理后的输入路径字段外完全一致 | 真实 pilot 输入和本地 BM25，直接复核随包召回产物 |
-| Step 1 可见切分与原始文件 | pilot 与 tune 的 bridge 类型、ID 唯一性和互不相交通过；tune 的 SHA-256 与 14:18 日志一致 | 复核两个可见的切分，test 文件待补 |
+| Step 1 可见切分与原始文件 | pilot 与 tune 的 bridge 类型、ID 唯一性和互不相交通过；tune 的 SHA-256 与[输入核验记录](../exp/EXPERIMENT_LOG.md?plain=1#L289)一致 | 复核两个可见的切分，test 文件待补 |
 | Step 6a 真实缓存离线回算 | 四项判定、样本顺序和 PASS 一致，逐 token CSV 字节一致 | 使用随包原始缓存和相同 tune 切片运行 `--analyze-only`，无新推理 |
 | 付费 API、真实 DeBERTa NLI、租用 GPU 与 vLLM | 本次整理未重新发起模型调用 | 真实执行以日志和随附产物为准 |
 

@@ -1,6 +1,6 @@
 # 第 5b 步：带 top_logprobs 重跑 100 题预实验，评估「候选差值」不确定度信号
 
-**为什么要做这一步。** 第 5 步的 logprob 全是 0。探测（`probe_logprobs.py`）证实：`deepseek-chat` 在 temperature 0 时，把**被选中 token** 的 logprob 一律报成 0.0，但 `top_logprobs` 里的候选 token 有非零值。按你选的做法 1（实验记录 2026-11-15 11:51 条），这一步用相同的提示词和检索（k=2、m=1、temperature 0、max_tokens 128）把 100 题 × 2 个分支重跑一遍，加上 `logprobs=True` 和 `top_logprobs=5`，再用候选 token 计算不确定度。
+**为什么要做这一步。** 第 5 步的 logprob 全是 0。探测（`probe_logprobs.py`）证实：`deepseek-chat` 在 temperature 0 时，把**被选中 token** 的 logprob 一律报成 0.0，但 `top_logprobs` 里的候选 token 有非零值。按[做法 1 的决定](../EXPERIMENT_LOG.md?plain=1#L199)，这一步用相同的提示词和检索（k=2、m=1、temperature 0、max_tokens 128）把 100 题 × 2 个分支重跑一遍，加上 `logprobs=True` 和 `top_logprobs=5`，再用候选 token 计算不确定度。
 
 **预先登记的定义（看到结果之前就已写定，不改）：**
 

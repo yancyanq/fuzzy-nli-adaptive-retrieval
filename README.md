@@ -8,17 +8,17 @@
 
 **[查看最新进度](PROGRESS.md)** · **[阅读完整实验日志](exp/EXPERIMENT_LOG.md)**
 
-截至 **2026-11-15 15:21（北京时间）**，已完成 100 题 pilot 和 Step 6a 非退化检查。当前在准备按 V2 §7.3 比较 NLI 与桥接实体信号的选题能力。
+已完成 100 题 pilot 和 Step 6a 非退化检查。当前在准备按 V2 §7.3 比较 NLI 与桥接实体信号的选题能力。
 
 | 阶段 | 当前状态 | 记录 |
 | --- | --- | --- |
 | Step 1–4 数据、检索与预注册 | 切分完成，选定 BM25 `k=2`、`m=1`，已登记 pilot 的 GO 判定规则 | [实验索引](INDEX.md) |
-| Step 5 Pilot | **GO**。分支 A / B / Oracle 的 F1 为 0.628 / 0.752 / 0.765 | [真实 pilot](exp/EXPERIMENT_LOG.md#L146) |
-| Step 5b DeepSeek logprob | 温度 0 下选中 token 的 logprob 与 top‑k margin 退化 | [排查结果](exp/EXPERIMENT_LOG.md#L218) |
-| Step 6a 本地 vLLM | 前 30 道 tune 题的非退化检查 **PASS**。是否将不确定性纳入正式门控待定 | [实测记录](exp/EXPERIMENT_LOG.md#L326) |
-| V2 §7.3 Pilot 信号对照 | 两份真实逐题导出已归档。桥接信号、对照方式和预算已有候选设置及理由，等待确认，信号对照尚未运行 | [候选设置](exp/EXPERIMENT_LOG.md#L362) · [比较理由](exp/EXPERIMENT_LOG.md#L371) |
+| Step 5 Pilot | **GO**。分支 A / B / Oracle 的 F1 为 0.628 / 0.752 / 0.765 | [真实 pilot](exp/EXPERIMENT_LOG.md?plain=1#L146) |
+| Step 5b DeepSeek logprob | 温度 0 下选中 token 的 logprob 与 top‑k margin 退化 | [排查结果](exp/EXPERIMENT_LOG.md?plain=1#L218) |
+| Step 6a 本地 vLLM | 前 30 道 tune 题的非退化检查 **PASS**。是否将不确定性纳入正式门控待定 | [实测记录](exp/EXPERIMENT_LOG.md?plain=1#L326) |
+| V2 §7.3 Pilot 信号对照 | 两份真实逐题导出已归档。桥接信号、对照方式和预算已有候选设置及理由，等待确认，信号对照尚未运行 | [候选设置](exp/EXPERIMENT_LOG.md?plain=1#L362) · [比较理由](exp/EXPERIMENT_LOG.md?plain=1#L371) |
 
-进度页按时间倒序索引日志。完整日志保留实验设置、真实结果、决定及其记录时间。阶段报告为 Step 6a 实测前的快照，实测数据见本次产物。 [Step 6a 实测摘要](exp/step6a/step6a_check/logprob_check.json)
+进度页按时间倒序索引日志。实验日志记录实验设置、实测结果和决定。阶段报告为 Step 6a 实测前的快照，实测数据见本次产物。 [Step 6a 实测摘要](exp/step6a/step6a_check/logprob_check.json)
 
 ## 从哪里开始
 

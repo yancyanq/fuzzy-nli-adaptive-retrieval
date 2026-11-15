@@ -10,7 +10,7 @@ fuzzy-nli-adaptive-retrieval/
 ├── PROGRESS.md                      权威日志的时间索引
 ├── INDEX.md                         中文入口与复现命令
 ├── exp/
-│   ├── EXPERIMENT_LOG.md            工作区新版权威日志
+│   ├── EXPERIMENT_LOG.md            工作区记录的展示版本权威日志
 │   ├── step1/                       pilot、tune 数据
 │   ├── step2/                       BM25 脚本与两组实际输出
 │   ├── step3/                       作答试跑脚本、README 与两个 mock 输出目录
@@ -23,7 +23,7 @@ fuzzy-nli-adaptive-retrieval/
 └── tools/                           生成进度页的脚本
 ```
 
-`exp/step3`、`exp/step5`、`exp/step5b`、`exp/step6a` 的相对关系由脚本和测试使用，保留目录名以免改写导入。pilot 和 tune 统一归入 Step 1，体现二者的切分来源，运行时用 `--data` 指向。Step 4 的可审计原件就是日志 09:40 条目，因此索引直接指向日志。探测脚本按用途列到 Step 5b，物理文件沿用 ZIP 的 Step 5 路径，便于对照旧交接。Step 2 的产物与生成脚本相邻；Step 6a 归档的真实结果位于 `step6a_check/`，与判定脚本相邻，便于离线回算；两类历史 mock 输出保留在名称含 `mock` 的目录中，测试输入留在 `testdata/`。命令把新产物写在另建的 `runs/`，便于保留历史证据。任何历史 README 或程序都按字节保留。
+`exp/step3`、`exp/step5`、`exp/step5b`、`exp/step6a` 的相对关系由脚本和测试使用，保留目录名以免改写导入。pilot 和 tune 统一归入 Step 1，体现二者的切分来源，运行时用 `--data` 指向。Step 4 的预注册决定在[日志中](../exp/EXPERIMENT_LOG.md?plain=1#L75)可查。探测脚本按用途列到 Step 5b，物理文件沿用 ZIP 的 Step 5 路径，便于对照旧交接。Step 2 的产物与生成脚本相邻；Step 6a 归档的真实结果位于 `step6a_check/`，与判定脚本相邻，便于离线回算；两类历史 mock 输出保留在名称含 `mock` 的目录中，测试输入留在 `testdata/`。命令把新产物写在另建的 `runs/`，便于保留历史证据。原始交接材料可从 `sources/` 的 ZIP 下载。
 
 ## Step 1–2 数据和召回
 
@@ -57,13 +57,13 @@ fuzzy-nli-adaptive-retrieval/
 
 | 步骤 | 包内文件 | 类型 | 来源与用途 |
 | --- | --- | --- | --- |
-| 4 | `exp/EXPERIMENT_LOG.md` 的 09:40 条目 | 文档 | 九条批准参数，包含 GO 阈值、NLI 和人工审核；整份日志见下节 |
+| 4 | [Step 4 预注册条目](../exp/EXPERIMENT_LOG.md?plain=1#L75) | 文档 | 九条批准参数，包含 GO 阈值、NLI 和人工审核；整份日志见下节 |
 | 5 | `exp/step5/run_pilot.py` | 脚本 | ZIP 同路径，工作区同名副本；A/B、NLI、GO 判定与抽样 |
 | 5 | `exp/step5/test_step5.py` | 测试 | ZIP 同路径；评分、标签、bootstrap、缓存、GO 判定和 mock 端到端 |
 | 5 | `exp/step5/README_step5.md` | README | ZIP 同路径，工作区同名副本；分两阶段复用作答缓存并跑 NLI |
 | 5 | `exp/step5/audit_helper.py` | 脚本 | ZIP 同路径，工作区同名副本；合并抽样与 NLI 前提，生成人工填表 |
-| 5 | `exp/step5/step5_pilot/per_question.csv` | 输出 | 工作区同名文件，真实逐题得分、增益类别、NLI 与证据字段，15:07 日志确认 |
-| 5 | `exp/step5/step5_pilot/branches.jsonl` | 输出 | 工作区同名文件，真实 A/B 分支记录，15:07 日志确认 |
+| 5 | `exp/step5/step5_pilot/per_question.csv` | 输出 | 工作区同名文件，真实逐题得分、增益类别、NLI 与证据字段，见[导出确认](../exp/EXPERIMENT_LOG.md?plain=1#L356) |
+| 5 | `exp/step5/step5_pilot/branches.jsonl` | 输出 | 工作区同名文件，真实 A/B 分支记录，见[导出确认](../exp/EXPERIMENT_LOG.md?plain=1#L356) |
 | 5 | `exp/step5/audit_review_yangqs.csv` | 输出 | ZIP 同路径；YangQS 的真实人工审核副本，保留标签和备注 |
 | 5 | `exp/step5/analyze_signals.py` | 脚本 | ZIP 同路径，工作区同名副本；离线比较首轮信号、计算 AUC 和 bootstrap CI |
 | 5 | `exp/step5/test_analyze_signals.py` | 测试 | ZIP 同路径；合成数据检查 AUC 方向和读写 |
@@ -83,8 +83,8 @@ fuzzy-nli-adaptive-retrieval/
 
 | 包内文件 | 类型 | 来源与用途 |
 | --- | --- | --- |
-| `exp/EXPERIMENT_LOG.md` | 文档 | 工作区同路径；保留全部内容，作为实验和参数的权威记录 |
-| `sources/EXPERIMENT_LOG.handoff.md` | 文档 | ZIP 的 `exp/EXPERIMENT_LOG.md`，保留至 12:13 条目的交接快照 |
+| `exp/EXPERIMENT_LOG.md` | 文档 | 工作区原始日志的展示版本，保留实验内容和条目顺序 |
+| `sources/EXPERIMENT_LOG.handoff.md` | 文档 | 原 ZIP 交接日志的展示版本，保留至 Step 6a 检查准备条目 |
 | `sources/nlp_exp_handoff.zip` | 源归档 | 工作区原 ZIP 原样保留，供核对原路径与来源 |
 | `docs/Experiment_Protocol_v2.pdf` | 文档 | ZIP 根目录的方案 v2；研究问题、计划、正式结果留白 |
 | `docs/Experiment_Protocol_v2.docx` | 文档 | 整理期间出现在工作区的同名可编辑方案文件，保留原件 |
@@ -92,8 +92,8 @@ fuzzy-nli-adaptive-retrieval/
 | `reports/Interim_Experiment_Report_2026-11-15.pdf` | 文档 | 工作区同名文件；便于阅读和分享的阶段报告；两版均记录到 Step 6a 实测前，最新结论见权威日志 |
 | `sources/NLP_Experiment_Materials_2026-11-15.zip` | 源归档 | 前次交付快照，保留当时状态以便重现交付包 |
 | `README.md` | 文档 | 仓库入口，介绍实验设计、阶段状态、导航和本地验证 |
-| `PROGRESS.md` | 文档 | 从权威日志生成，按记录倒序定位实际条目 |
-| `tools/sync_progress.py` | 脚本 | 追加同步权威日志并生成进度页，保留既有历史 |
+| `PROGRESS.md` | 文档 | 从实验日志生成，按记录倒序定位实际条目 |
+| `tools/sync_progress.py` | 脚本 | 生成除去时间戳的日志和进度页，保留条目顺序 |
 | `.gitignore` | 版本配置 | 排除工作缓存、临时结果和常见本地凭据文件 |
 | `docs/WORKFLOW.md` | 文档 | 实验记录、产物归档与进度同步方式 |
 | `INDEX.md` | 文档 | 本次生成；按步骤导航、提供命令与关键结果 |
@@ -105,6 +105,6 @@ fuzzy-nli-adaptive-retrieval/
 ## 疑似重复与保留决定
 
 - 工作区根目录有 12 个与 ZIP 字节一致的同名项，分别是 `bm25_topk.py`、`compare_models.py`、`README_step3.md`、`run_pilot.py`、`README_step5.md`、`audit_helper.py`、`analyze_signals.py`、`probe_logprobs.py`、`rerun_toplogprobs.py`、`README_step5b.md`、`check_logprobs.py`、`README_step6a.md`。每项在整理包有一个活动路径和一个原 ZIP 成员，工作区原文件仍在原位。如果组内要留平铺的 Windows 分发版本，这组文件可单独保留。
-- 两个 `EXPERIMENT_LOG.md` 版本共享前缀，工作区版另外追加 14:18 起的 Step 6a 记录及后续 V2 决定，两版都保留。旧快照在 `sources/` 便于比较，原 ZIP 也包含它。组内可决定日后是否仍需要这一份展开的旧快照。
+- 交接快照便于核对最初的报告范围，工作区原始日志还包含 Step 6a 实测和后续 V2 决定。
 - Step 2 两份 `per_question.csv` 文件大小相同，但 SHA-256 不同，对应 m=1 与 m=2，两份都保留。两个 Step 3 mock 目录的文件名相同，但覆盖不同的功能路径，同样保留。
 - `mini_pilot.json` 的题目可与完整 pilot 匹配，但测试代码直接读取该路径，随包保留。PDF/DOCX 阶段报告在阅读与编辑上用途不同，两版均保留。方案 v2 同时保留归档 PDF 和后到 DOCX，便于阅读和编辑。方案 PDF 和阶段报告 PDF 属于不同文档。
