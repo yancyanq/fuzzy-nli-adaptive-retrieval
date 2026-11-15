@@ -1,0 +1,42 @@
+# NLP 课程项目实验索引
+
+项目为 *A Fuzzy-NLI-based QA Chatbot System with Adaptive Retrieval*。在 HotpotQA distractor 的 bridge 题上，分支 A 使用 BM25 第一轮证据，分支 B 在相同基础上加入规则改写后检出的证据。作答模型输出答案和引用，NLI 检查引用证据对答案的支撑，后续工作将在 tune 集上调门控并在 test 集上评估。阶段状态为 **Step 5 pilot GO，Step 6a 实测 PASS，V2 的 pilot 信号对照与正式门控评估待做**。
+
+[权威实验日志](exp/EXPERIMENT_LOG.md)记录的时间均为北京时间（UTC+8）。本索引的实验数字只取自该日志。以下命令按整理后的目录给出，从包根目录运行，`runs/` 用于新运行。日志与 README 保留历史路径。云 API、真实 NLI 和 vLLM 命令用于复现相应环节，执行条件见[运行环境](docs/ENVIRONMENT.md)。
+
+## Step 1 数据切分
+
+从 `hotpotqa/hotpot_qa` 的 distractor validation 筛选 bridge，seed 42 打乱并顺序切分，输出官方 HotpotQA JSON。**脚本和历史命令**记录中未给出，随包未收到切分脚本。**输出** `exp/step1/pilot.json`、`exp/step1/tune.json` 已收录，`test.json` 待从 YangQS 补齐。**关键结果** validation 7,405 题、bridge 5,918 题，pilot / tune / test 为 100 / 500 / 1,000 题，日志记录 1,600 个唯一 ID。原样保留不足 10 个上下文段落的题目。**日志** 2026-11-14 选源条目（未记时分）、21:30 切分，2026-11-15 14:18 本地 tune 核验。
+
+## Step 2 BM25 召回
+
+在每题自带段落池做 BM25 第一轮 top-k，再用问题拼接首位段落的标题及首句，从未使用段落中补 top-m。**脚本** `exp/step2/bm25_topk.py`。**命令** `python exp/step2/bm25_topk.py --data exp/step1/pilot.json --ks 2 3 4 --m 1 --out runs/step2_m1`，将 `--m 1 --out runs/step2_m1` 换为 `--m 2 --out runs/step2_m2` 可复跑另一组。**输出** 各有 `summary.json`、`per_question.csv`；已收录于 `exp/step2/step2_results/`（m=1）与 `exp/step2/step2_m2/`（m=2）。**关键结果** 选 k=2、m=1；此设置下支持段落平均召回从 .635 到 .785，两个支持段落均召回的比例从 .310 到 .590，30% 的题在第二轮补到支持段落。**日志** 2026-11-14 21:40 验证、21:41 YangQS 正式复核、21:43 参数决定。
+
+## Step 3 作答模型试跑
+
+对 pilot 前 30 题比较同一模型的 A/B 答案，记录 EM、F1、首轮及补检索后的变化、调用信息。**脚本** `exp/step3/compare_models.py`，说明见 `exp/step3/README_step3.md`。**命令** `python exp/step3/compare_models.py --data exp/step1/pilot.json --preset deepseek --n 30 --out runs/step3_deepseek`。**输出** `summary.json`、`per_question.csv`、`branches.jsonl`、`cache.jsonl`，真实文件待补。**关键结果** deepseek-chat 的 EM A/B 分别为 0.433/0.600，F1 A/B/Oracle 为 0.565/0.733/0.767，平均 ΔF1 +0.169；改善/持平/退化为 7/22/1。日志中的真实执行条目只有 deepseek-chat，GPT-4o-mini 实测记录中未给出。**日志** 2026-11-14 21:50 算力方案、21:57 准备、22:07 执行。
+
+## Step 4 预注册
+
+在 100 题 pilot 前锁定九项规则。**脚本、命令与独立输出**记录中未给出，批准记录见日志，后续由 `exp/step5/run_pilot.py` 实施。**规则** ε=0，正例为 F1_B>F1_A，Oracle 在平局选 A；GO 要求 Oracle−A 点估计 ≥0.05 且配对 bootstrap 95% CI 下界 >0，改善占比 ≥10%，退化数 ≤改善数的一半；若失败，改写规则最多修订一次。还锁定本地 DeBERTa NLI 与引用拼接和假设构造，最大输入 512 tokens，以及约 20 条的定性审核计划。**日志** 2026-11-15 09:40 批准，09:50 记录实现口径。
+
+## Step 5 Pilot、人工审核与信号诊断
+
+先生成或复用 A/B 答案，再用本地 DeBERTa 做 NLI，用引用段落组成前提、固定模板组成假设；随后整理人工审核并离线分析首轮信号。**脚本** `exp/step5/run_pilot.py`、`audit_helper.py`、`analyze_signals.py`。**命令** `python exp/step5/run_pilot.py --data exp/step1/pilot.json --preset deepseek --n 100 --answer-cache runs/step3_deepseek/cache.jsonl --out runs/step5_pilot --skip-nli`；再执行 `python exp/step5/run_pilot.py --data exp/step1/pilot.json --preset deepseek --n 100 --out runs/step5_pilot --nli-only --nli-backend hf --nli-device auto`；审核和诊断分别用 `python exp/step5/audit_helper.py --dir runs/step5_pilot`、`python exp/step5/analyze_signals.py --dir runs/step5_pilot`。**输出** `summary.json`、`per_question.csv`、`branches.jsonl`、`nli_scores.jsonl`、`audit_sample.csv`、`cache.jsonl`、`audit_review.csv`、`signal_summary.json`、`signal_by_class.csv`。已收录真实 `exp/step5/step5_pilot/per_question.csv`、`exp/step5/step5_pilot/branches.jsonl` 和人工审核表 `exp/step5/audit_review_yangqs.csv`，其余需补。**关键结果** 100 题 pilot **GO**；F1 A/B/Oracle 为 0.628/0.752/0.765，改善/持平/退化为 16/82/2；Oracle−A 为 0.137，95% CI [0.077, 0.203]。审核覆盖 20 个题目–分支对、15 道题，属定性抽样；NLI 对改善与持平的诊断 AUC 为 0.699，95% CI [0.579, 0.812]，首轮 token logprob 为全零。**日志** 2026-11-15 09:50、10:33 pilot，10:40、10:48 审核，10:51、11:04 诊断，15:07 收录两份逐题导出，15:13 V2 §7.3 候选设置待确认。
+
+## Step 5b DeepSeek logprob 排查
+
+先用短提示词探测，再保持 temperature 0 重跑 pilot A/B 并请求 top-5 候选；沿用 Step 5 标签，在 A/B 答案均未改变的题上比较 margin 与 NLI。**脚本** `exp/step5/probe_logprobs.py`（随 Step 5 原目录发行）与 `exp/step5b/rerun_toplogprobs.py`。**命令** `python exp/step5/probe_logprobs.py --preset deepseek --out runs/probe_logprobs.json`（先建立 `runs/`）；`python exp/step5b/rerun_toplogprobs.py --data exp/step1/pilot.json --step5-dir runs/step5_pilot --out runs/step5b_toplp`。**输出** `probe_logprobs.json`、`toplp_summary.json`、`per_question_toplp.csv`、`consistency.csv`、`cache_toplp.jsonl`，真实文件待补。**关键结果** 200 次重跑调用成功；3,482 个输出 token 的 top-1 候选均为 0.0，3,477 个 token 的 top-2 候选为占位值 −9999.0。主子集 88 题的 margin AUC 为 0.500 [0.500, 0.500]，同题 NLI AUC 为 0.724 [0.593, 0.844]。12:08 条目纠正了探测时对非零候选的解读。**日志** 2026-11-15 11:20、11:48 探测，11:51 决定，11:57 准备，12:08 执行与纠正。
+
+## Step 6a 本地 vLLM 非退化检查
+
+用 Tesla T4 上的 vLLM 运行原始 Qwen2.5-7B-Instruct，取 tune 前 30 题，仅分支 A，temperature 0、max_tokens 128、top_logprobs 5。**脚本** `exp/step6a/check_logprobs.py` 和 `README_step6a.md`。**命令** `python exp/step6a/check_logprobs.py --data exp/step1/tune.json --base-url http://127.0.0.1:8000/v1 --out runs/step6a_check`。如只复核，追加 `--analyze-only --cache exp/step6a/step6a_check/cache_logprob_check.jsonl` 即可离线回算。**输出** `exp/step6a/step6a_check/` 下的 `logprob_check.json`、`logprob_check_tokens.csv`、`cache_logprob_check.jsonl` 均随包。**关键结果** 实测 **PASS**，30/30 题有可用 logprobs；答案片段选中 token 的零值 28/127（22.05%，门槛 ≤50%，按保留六位小数），占位候选（≤−9000）0/2595（0.00%，门槛 <5%）；逐题 mean logprob 与 mean margin 各 30 个不同值（门槛 ≥10），总体方差分别为 0.023727663329 和 15.391864434601（门槛 >0）。两种信号可作候选；V2 将不确定性输入列为条件项，正式纳入时须供 Fuzzy 与同输入硬规则共用。**日志** 2026-11-15 12:13 预注册与实现，14:18–14:46 执行准备，14:52 实测，14:53、15:01 后续决定。
+
+## 材料导航
+
+- [最新实验进度](PROGRESS.md)与[协作工作流](docs/WORKFLOW.md)
+- [文件清单、归档映射与待确认副本](docs/INVENTORY.md)
+- [结果汇总表](docs/RESULTS.md)
+- [论文写作与复现缺口](docs/GAPS.md)
+- [依赖、环境、测试与实际验证](docs/ENVIRONMENT.md)
+- 实验方案 v2 [PDF](docs/Experiment_Protocol_v2.pdf) / [DOCX](docs/Experiment_Protocol_v2.docx)，阶段报告 [PDF](reports/Interim_Experiment_Report_2026-11-15.pdf) / [DOCX](reports/Interim_Experiment_Report_2026-11-15.docx)（Step 6a 实测前快照）

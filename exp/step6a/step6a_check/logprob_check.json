@@ -1,0 +1,464 @@
+{
+  "step": "6a",
+  "purpose": "This check tests degeneracy only, not predictive power. No AUC is computed. A PASS means logprob-based signals may be considered for the fuzzy gate on this endpoint and these settings; a FAIL means they must not enter the gate until the endpoint reports non-degenerate logprobs. Criteria were pre-registered before any real local-model run.",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "key_env": "VLLM_API_KEY",
+  "data": "/home/ubuntu/nlp/tune.json",
+  "n_requested": 30,
+  "n_offset": 0,
+  "n_scheduled": 30,
+  "k": 2,
+  "branch": "A",
+  "temperature": 0.0,
+  "max_tokens": 128,
+  "top_logprobs": 5,
+  "analyze_only": false,
+  "criteria_defaults_pre_registered": {
+    "max_zero_chosen_frac": 0.5,
+    "max_placeholder_alt_frac": 0.05,
+    "placeholder_threshold": -9000.0,
+    "min_distinct_values": 10,
+    "note": "Thresholds 50%, 5%, -9000, and 10 distinct values are subjective judgment calls, pre-registered before any real local-model run."
+  },
+  "criteria_used": {
+    "max_zero_chosen_frac": 0.5,
+    "max_placeholder_alt_frac": 0.05,
+    "placeholder_threshold": -9000.0,
+    "min_distinct_values": 10
+  },
+  "calls": {
+    "new_api_calls_this_run": 30,
+    "cache_hits": 0,
+    "errors_or_unusable": 0,
+    "missing_not_called": 0
+  },
+  "tokens": {
+    "n_output_tokens": 519,
+    "n_answer_span_tokens": 127,
+    "n_span_fallback_questions": 1,
+    "n_chosen_lp_exactly_zero_all": 209,
+    "frac_chosen_lp_exactly_zero_all": 0.402697,
+    "n_chosen_lp_exactly_zero_span": 28,
+    "frac_chosen_lp_exactly_zero_span": 0.220472,
+    "n_alternatives_reported": 2595,
+    "n_placeholder_alternatives": 0,
+    "frac_placeholder_alternatives": 0.0,
+    "n_tokens_with_top1_and_chosen_lp": 519,
+    "n_chosen_lp_equals_top1_alt_lp": 519,
+    "frac_chosen_lp_equals_top1_alt_lp": 1.0,
+    "n_chosen_token_equals_top1_alt_token": 519
+  },
+  "per_question_distributions": {
+    "mean_chosen_logprob_span": {
+      "n": 30,
+      "min": -0.7308,
+      "median": -0.015217,
+      "max": -2e-06,
+      "n_distinct": 30,
+      "variance": 0.023727663328605132
+    },
+    "mean_margin_span": {
+      "n": 30,
+      "min": 0.5625,
+      "median": 9.485026,
+      "max": 17.484375,
+      "n_distinct": 30,
+      "variance": 15.39186443460064
+    }
+  },
+  "answer_quality_info_only": {
+    "n_scored": 30,
+    "mean_EM": 0.4,
+    "mean_F1": 0.53746,
+    "n_parse_ok": 30,
+    "note": "Informational only; not used in the PASS/FAIL verdict."
+  },
+  "n_usable_questions": 30,
+  "verdict": "PASS",
+  "failed_criteria": [],
+  "criteria_results": {
+    "0_complete": {
+      "id": "complete",
+      "passed": true,
+      "n_scheduled": 30,
+      "n_usable": 30,
+      "detail": "All scheduled questions have usable answer-span (or fallback) chosen-token logprobs."
+    },
+    "1_zero_chosen_frac": {
+      "id": "zero_chosen_frac",
+      "passed": true,
+      "observed": 0.2204724409448819,
+      "threshold": 0.5,
+      "rule": "at most this fraction of answer-span chosen tokens have logprob exactly 0.0",
+      "subjective_pre_registered": true
+    },
+    "2_placeholder_alt_frac": {
+      "id": "placeholder_alt_frac",
+      "passed": true,
+      "observed": 0.0,
+      "threshold": 0.05,
+      "placeholder_cutoff": -9000.0,
+      "rule": "fraction of reported alternatives with logprob <= cutoff is under the threshold",
+      "subjective_pre_registered": true
+    },
+    "3_mean_chosen_logprob_spread": {
+      "id": "mean_chosen_logprob_spread",
+      "passed": true,
+      "n": 30,
+      "n_distinct": 30,
+      "min_distinct_required": 10,
+      "variance": 0.023727663328605132,
+      "min": -0.7308,
+      "median": -0.01521704166666667,
+      "max": -1.6666666666666669e-06,
+      "rule": "per-question mean chosen-token logprob has >= min_distinct values and nonzero variance",
+      "subjective_pre_registered": true
+    },
+    "4_mean_margin_spread": {
+      "id": "mean_margin_spread",
+      "passed": true,
+      "n": 30,
+      "n_distinct": 30,
+      "min_distinct_required": 10,
+      "variance": 15.39186443460064,
+      "min": 0.5625,
+      "median": 9.485025875,
+      "max": 17.484375,
+      "rule": "per-question mean margin has >= min_distinct values and nonzero variance",
+      "subjective_pre_registered": true
+    }
+  },
+  "questions": [
+    {
+      "_id": "5a78b386554299148911f949",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 24,
+      "mean_chosen_logprob": -0.000132,
+      "mean_margin": 12.495739
+    },
+    {
+      "_id": "5a75176a5542993748c897b6",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 19,
+      "mean_chosen_logprob": -0.010234,
+      "mean_margin": 11.471354
+    },
+    {
+      "_id": "5a7a562355429941d65f25ba",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 15,
+      "mean_chosen_logprob": -0.004629,
+      "mean_margin": 9.75
+    },
+    {
+      "_id": "5ac245015542992f1f2b3829",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.8,
+      "span_fallback": false,
+      "n_tokens": 20,
+      "mean_chosen_logprob": -0.00384,
+      "mean_margin": 9.402344
+    },
+    {
+      "_id": "5a8a32d65542992d82986ef4",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 15,
+      "mean_chosen_logprob": -0.001466,
+      "mean_margin": 6.539062
+    },
+    {
+      "_id": "5a8ee7c95542990e94052bb1",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 16,
+      "mean_chosen_logprob": -0.185989,
+      "mean_margin": 7.1875
+    },
+    {
+      "_id": "5a89cc99554299669944a5ae",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 18,
+      "mean_chosen_logprob": -0.000981,
+      "mean_margin": 12.078125
+    },
+    {
+      "_id": "5a7f924c55429969796c1aba",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.5,
+      "span_fallback": false,
+      "n_tokens": 16,
+      "mean_chosen_logprob": -0.114444,
+      "mean_margin": 10.773437
+    },
+    {
+      "_id": "5ac00584554299012d1db575",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 17,
+      "mean_chosen_logprob": -0.000826,
+      "mean_margin": 7.90625
+    },
+    {
+      "_id": "5ae721c15542996d980e7cbc",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.857143,
+      "span_fallback": false,
+      "n_tokens": 20,
+      "mean_chosen_logprob": -0.001256,
+      "mean_margin": 16.482143
+    },
+    {
+      "_id": "5a862974554299211dda2a95",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.666667,
+      "span_fallback": false,
+      "n_tokens": 15,
+      "mean_chosen_logprob": -0.193528,
+      "mean_margin": 5.75
+    },
+    {
+      "_id": "5abe49765542991f6610611f",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": true,
+      "n_tokens": 16,
+      "mean_chosen_logprob": -0.0202,
+      "mean_margin": 10.914551
+    },
+    {
+      "_id": "5a8ed10b5542995085b374a0",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 15,
+      "mean_chosen_logprob": -1.6e-05,
+      "mean_margin": 13.164062
+    },
+    {
+      "_id": "5abd8c295542992ac4f382ab",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 17,
+      "mean_chosen_logprob": -0.230847,
+      "mean_margin": 5.980469
+    },
+    {
+      "_id": "5a83697e5542996488c2e441",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 17,
+      "mean_chosen_logprob": -3e-06,
+      "mean_margin": 17.484375
+    },
+    {
+      "_id": "5ae61dce5542992663a4f262",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 18,
+      "mean_chosen_logprob": -0.7308,
+      "mean_margin": 4.011719
+    },
+    {
+      "_id": "5a75f0ea5542994ccc91866c",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 21,
+      "mean_chosen_logprob": -0.060005,
+      "mean_margin": 15.412109
+    },
+    {
+      "_id": "5ab54e145542992aa134a2a1",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 20,
+      "mean_chosen_logprob": -0.000126,
+      "mean_margin": 12.294643
+    },
+    {
+      "_id": "5a81e4e8554299676cceb140",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 17,
+      "mean_chosen_logprob": -2.5e-05,
+      "mean_margin": 12.052734
+    },
+    {
+      "_id": "5a7f95685542995d8a8ddeaa",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 14,
+      "mean_chosen_logprob": -0.004039,
+      "mean_margin": 5.9375
+    },
+    {
+      "_id": "5a8ce584554299585d9e375c",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 16,
+      "mean_chosen_logprob": -2e-06,
+      "mean_margin": 15.635417
+    },
+    {
+      "_id": "5a7b695f5542997c3ec97156",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 18,
+      "mean_chosen_logprob": -0.026483,
+      "mean_margin": 8.820312
+    },
+    {
+      "_id": "5abdf8c45542993f32c2a072",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 19,
+      "mean_chosen_logprob": -0.113513,
+      "mean_margin": 9.567708
+    },
+    {
+      "_id": "5aba6d4b5542994dbf019906",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 14,
+      "mean_chosen_logprob": -0.451236,
+      "mean_margin": 0.5625
+    },
+    {
+      "_id": "5a887f5c554299206df2b2c0",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 17,
+      "mean_chosen_logprob": -0.093292,
+      "mean_margin": 6.746094
+    },
+    {
+      "_id": "5abcedb355429959677d6b4f",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.8,
+      "span_fallback": false,
+      "n_tokens": 15,
+      "mean_chosen_logprob": -4.8e-05,
+      "mean_margin": 12.671875
+    },
+    {
+      "_id": "5a7f46115542994857a766d9",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.5,
+      "span_fallback": false,
+      "n_tokens": 17,
+      "mean_chosen_logprob": -0.078671,
+      "mean_margin": 9.273438
+    },
+    {
+      "_id": "5ae4b8fc55429913cc2044e5",
+      "usable": true,
+      "error": "",
+      "EM": 1.0,
+      "F1": 1.0,
+      "span_fallback": false,
+      "n_tokens": 17,
+      "mean_chosen_logprob": -0.08618,
+      "mean_margin": 8.105469
+    },
+    {
+      "_id": "5ab3eb1955429969a97a81f6",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 17,
+      "mean_chosen_logprob": -0.035902,
+      "mean_margin": 6.625
+    },
+    {
+      "_id": "5ae2c509554299492dc91c68",
+      "usable": true,
+      "error": "",
+      "EM": 0.0,
+      "F1": 0.0,
+      "span_fallback": false,
+      "n_tokens": 19,
+      "mean_chosen_logprob": -0.050495,
+      "mean_margin": 3.838542
+    }
+  ]
+}

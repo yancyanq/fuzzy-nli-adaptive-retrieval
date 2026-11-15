@@ -1,0 +1,40 @@
+{
+  "data": "pilot.json",
+  "n_questions": 100,
+  "m": 1,
+  "results": [
+    {
+      "k": 2,
+      "n": 100,
+      "r1_recall": 0.635,
+      "r1_all_gold": 0.31,
+      "r1_any_gold": 0.96,
+      "r2_recall": 0.785,
+      "r2_all_gold": 0.59,
+      "r2_gain_questions": 0.3,
+      "no_unused": 0.0
+    },
+    {
+      "k": 3,
+      "n": 100,
+      "r1_recall": 0.71,
+      "r1_all_gold": 0.45,
+      "r1_any_gold": 0.97,
+      "r2_recall": 0.83,
+      "r2_all_gold": 0.67,
+      "r2_gain_questions": 0.24,
+      "no_unused": 0.0
+    },
+    {
+      "k": 4,
+      "n": 100,
+      "r1_recall": 0.755,
+      "r1_all_gold": 0.54,
+      "r1_any_gold": 0.97,
+      "r2_recall": 0.885,
+      "r2_all_gold": 0.77,
+      "r2_gain_questions": 0.26,
+      "no_unused": 0.0
+    }
+  ]
+}

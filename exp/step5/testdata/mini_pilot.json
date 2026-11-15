@@ -1,0 +1,459 @@
+[
+  {
+    "_id": "5ac47d7355429919431739b3",
+    "question": "What Dutch painter specialized in domestic interior scenes of middle class life and has a painting of a young woman dressed in a yellow shawl in the Louvre, Paris?",
+    "answer": "Johannes Vermeer",
+    "type": "bridge",
+    "level": "hard",
+    "supporting_facts": [
+      [
+        "The Lacemaker (Vermeer)",
+        0
+      ],
+      [
+        "The Lacemaker (Vermeer)",
+        1
+      ],
+      [
+        "Johannes Vermeer",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "Co Breman",
+        [
+          "Ahazueros Jacobus Breman, known as Co (7 December 1865, Zwolle - 18 November 1938, Laren) was a Dutch painter.",
+          " He specialized in landscapes, farms and interior scenes, with figures, and was one of the first Pointillist painters in the Netherlands."
+        ]
+      ],
+      [
+        "The Lacemaker (Vermeer)",
+        [
+          "The Lacemaker is a painting by the Dutch artist Johannes Vermeer (1632–1675), completed around 1669–1670 and held in the Louvre, Paris.",
+          " The work shows a young woman dressed in a yellow shawl, holding up a pair of bobbins in her left hand as she carefully places a pin in the pillow on which she is making her bobbin lace.",
+          " At 24.5 cm x 21 cm (9.6 in x 8.3 in), the work is the smallest of Vermeer's paintings, but in many ways one of his most abstract and unusual.",
+          " The canvas used was cut from the same bolt as that used for \"A Young Woman Seated at the Virginals\", and both paintings seem to have had identical dimensions originally."
+        ]
+      ],
+      [
+        "Pieter Janssens Elinga",
+        [
+          "Pieter Janssens Elinga (1623–1682) was a Dutch Golden Age painter, mainly of domestic interior scenes with a strong emphasis on the rectangular geometrical elements of windows, floor tiling paintings, and other elements, and a few genre figures.",
+          " He also painted still lifes."
+        ]
+      ],
+      [
+        "Alexis Leon Louis Valbrun",
+        [
+          "Alexis Leon Louis Valbrun (Paris, January 3, 1803 – Paris, 1852) was a prominent French painter specialized in portraits of the European aristocracy.",
+          " He studied under Nicolas Gosse and was a pupil of Antoine-Jean Gros.",
+          " He entered the École nationale supérieure des Beaux-Arts in Paris in 1817 and exhibited his work at the Salon (Paris) between 1831 and 1843.",
+          " Some of his paintings are displayed at the Fondation Calvet in Avignon, the Palace of Versailles (Philip V of Spain) and the Chateau de Chantilly (Sophie Dawes, Baronne de Feucheres).",
+          " His historic painting \"La mort de Saphire\" (Fine Art Museum in Saint Lo) was exhibited at the Salon in 1843.",
+          " In 1846 he decorated the church Saint-Paul-Saint-Louis in Paris."
+        ]
+      ],
+      [
+        "Upper middle class",
+        [
+          "In sociology, the upper middle class is the social group constituted by higher status members of the middle class.",
+          " This is in contrast to the term \"lower middle class\", which is used for the group at the opposite end of the middle class stratum, and to the broader term \"middle class\".",
+          " There is considerable debate as to how the upper middle class might be defined.",
+          " According to sociologist Max Weber the upper middle class consists of well-educated professionals with graduate degrees and comfortable incomes."
+        ]
+      ],
+      [
+        "Young Woman in a Pearl Necklace (New York City)",
+        [
+          "Young Woman in a Pearl Necklace (after 1655) is an oil on canvas painting by an unknown painter, after a painting by the Dutch painter Willem Drost.",
+          " It is an example of Dutch Golden Age painting and is part of the collection of the Metropolitan Museum of Art."
+        ]
+      ],
+      [
+        "Johannes Vermeer",
+        [
+          "Johannes, Jan or Johan Vermeer ( ; ] ; October 1632 – December 1675) was a Dutch painter who specialized in domestic interior scenes of middle-class life.",
+          " Vermeer was a moderately successful provincial genre painter in his lifetime.",
+          " He evidently was not wealthy, leaving his wife and children in debt at his death, perhaps because he produced relatively few paintings."
+        ]
+      ],
+      [
+        "Annunciation (Memling)",
+        [
+          "The Annunciation is an oil-on-oak panel painting attributed to the Early Netherlandish master Hans Memling.",
+          " Completed c. 1482, it was partially transferred to canvas in the 1920s and is today held in the Robert Lehman collection of the Metropolitan Museum of Art, New York.",
+          " It shows the Virgin in a domestic interior, two attendant angels, the archangel Gabriel dressed in rich ecclesiastical robes, and a hovering dove.",
+          " The painting is based and expands upon the Annunciation wing of Rogier van der Weyden's c. 1455 \"Saint Columba altarpiece\".",
+          " According to art historian Maryan Ainsworth, the work presents a \"startlingly original image, rich in connotations for the viewer or worshiper.\"",
+          " The simple iconography centers on the Virgin's purity; the Incarnation, the Virgin as mother and her role as bride and Queen of Heaven.",
+          " Her swoon foreshadows the Crucifixion of Jesus."
+        ]
+      ],
+      [
+        "Upper middle class in the United States",
+        [
+          "In sociology, the upper middle class of the United States is the social group constituted by higher-status members of the middle class.",
+          " This is in contrast to the term lower middle class, which refers to the group at the opposite end of the middle class scale.",
+          " There is considerable debate as to how the upper middle class might be defined.",
+          " According to Max Weber, the upper middle class consists of well-educated professionals with graduate degrees and comfortable incomes."
+        ]
+      ],
+      [
+        "A Young Woman Reading (Vermeer imitator)",
+        [
+          "A Young Woman Reading (after 1670s) is an oil on canvas painting by an unknown painter in the manner of the Dutch painter Johannes Vermeer.",
+          " It is an example of Dutch Golden Age painting and is part of the collection of the Metropolitan Museum of Art."
+        ]
+      ]
+    ]
+  },
+  {
+    "_id": "5ab7f27e5542991d322237d6",
+    "question": "Aughton Park railway station is on a branch of the Northern Line how far from Liverpool?",
+    "answer": "12+3/4 mi northeast of Liverpool",
+    "type": "bridge",
+    "level": "hard",
+    "supporting_facts": [
+      [
+        "Aughton Park railway station",
+        0
+      ],
+      [
+        "Ormskirk railway station",
+        0
+      ]
+    ],
+    "context": [
+      [
+        "Orrell Park railway station",
+        [
+          "Orrell Park railway station is a railway station in Orrell Park, Liverpool, England.",
+          " The station was opened in 1906 by the Lancashire and Yorkshire Railway, and was originally named \"Orrell Park Halt\"; this was simplified to \"Orrell Park\" by British Rail.",
+          " It is located to the north of the city centre.",
+          " It also serves the nearby district of Orrell.",
+          " It is on the Ormskirk branch of the Merseyrail network's Northern Line."
+        ]
+      ],
+      [
+        "Aughton Park railway station",
+        [
+          "Aughton Park railway station is a railway station in Aughton, Lancashire, England, on the Ormskirk branch of the Northern Line of the Merseyrail network 11½ miles (19 km) north east of Liverpool Central."
+        ]
+      ],
+      [
+        "Ormskirk railway station",
+        [
+          "Ormskirk railway station in Ormskirk, Lancashire, England, is an interchange between Merseyrail services from Liverpool Central and Northern services from Preston on the Ormskirk branch line, 12+3/4 mi northeast of Liverpool.",
+          " The station building and three arch road bridge are both Grade II listed structures."
+        ]
+      ],
+      [
+        "Bueng Phra Railway Station",
+        [
+          "Bueng Phra Railway Station is a railway station located in Bueng Phra Subdistrict, Phitsanulok City, Phitsanulok.",
+          " It is located 381.875 km from Bangkok Railway Station and is a class 1 railway station.",
+          " It is on the Northern Line of the State Railway of Thailand.",
+          " The station opened on 24 January 1908 as part of the Northern Line extension from Pak Nam Pho to Phitsanulok.",
+          " PTT Public Company Limited operates a crude oil depot adjacent to the site and the railway operates several oil freight services from this station (to Mae Nam Station)."
+        ]
+      ],
+      [
+        "Phichai Railway Station",
+        [
+          "Phichai Railway Station is a railway station located in Nai Mueang Subdistrict, Phichai District, Uttaradit.",
+          " It is located 447.553 km from Bangkok Railway Station and is a class 2 railway station.",
+          " It is on the Northern Line of the State Railway of Thailand.",
+          " Phichai Railway Station opened as part of the Northern Line extension from Phitsanulok to Ban Dara Junction in November 1908."
+        ]
+      ],
+      [
+        "Phrom Phiram Railway Station",
+        [
+          "Phrom Phiram Railway Station is a railway station located in Phrom Phiram Subdistrict, Phrom Phiram District, Phitsanulok.",
+          " It is located 414.507 km from Bangkok Railway Station and is a class 2 railway station.",
+          " It is on the Northern Line of the State Railway of Thailand.",
+          " Phrom Phiram Railway Station opened in November 1908 as part of the Northern Line extension from Phitsanulok to Ban Dara Junction."
+        ]
+      ],
+      [
+        "Nong Tom Railway Station",
+        [
+          "Nong Tom Railway Station is a railway station located in Wong Khong Subdistrict, Phrom Phiram District, Phitsanulok.",
+          " It is located 423.203 km from Bangkok Railway Station and is a class 2 railway station.",
+          " It is on the Northern Line of the State Railway of Thailand.",
+          " Nong Tom Railway Station opened in November 1908 as part of the Northern Line extension from Phitsanulok to Ban Dara Junction."
+        ]
+      ],
+      [
+        "Pak Nam Pho Railway Station",
+        [
+          "Pak Nam Pho Railway Station is a railway station located in Pak Nam Pho Subdistrict, Nakhon Sawan City, Nakhon Sawan.",
+          " It is located 250.559 km from Bangkok Railway Station and is a class 1 railway station.",
+          " It is on the Northern Line of the State Railway of Thailand.",
+          " The station opened on 31 October 1905 as part of the Northern Line extension from Lop Buri to Pak Nam Pho.",
+          " The line continued to Phitsanulok in 1908.",
+          " Originally, this was the railway station for Nakhon Sawan City as passengers would alight here and cross the Chao Phraya River to reach the city, however its main purpose was removed as the new railway station built at Nong Pling replaced its role.",
+          " Today, the station acts as a railyard, a railway maintenance centre and a junction for an occasionally-used freight line to Kamnansong Rice Mill."
+        ]
+      ],
+      [
+        "Ban Pin Railway Station",
+        [
+          "Ban Pin Railway Station is a railway station located in Ban Pin Subdistrict, Long District, Phrae.",
+          " It is located 563.865 km from Bangkok Railway Station and is a class 2 railway station.",
+          " It is on the Northern Line of the State Railway of Thailand.",
+          " The station opened in June 1914, following the Northern Line extension from Huai Mae Ta to Ban Pin.",
+          " The line continued to Pha Khan in 1915."
+        ]
+      ],
+      [
+        "Royal National Park railway station",
+        [
+          "Royal National Park railway station is located in Audley, New South Wales, that serviced travellers to the Royal National Park.",
+          " It is the terminus of the Royal National Park railway line, now operated by the Sydney Tramway Museum, although the station platform itself is not usable by the heritage trams operating the service.",
+          " It opened in 1886 as a commuter rail station, forming part of the Sydney railway network.",
+          " Along with the Royal National Park railway line, it closed in 1991 due to low patronage.",
+          " The line and station were acquired by the Sydney Tramway Museum and reopened in May 1993."
+        ]
+      ]
+    ]
+  },
+  {
+    "_id": "5a72160e55429971e9dc9253",
+    "question": "Who is the son of the author of the short story \"The Enormous Radio.\"",
+    "answer": "Benjamin Hale Cheever",
+    "type": "bridge",
+    "level": "hard",
+    "supporting_facts": [
+      [
+        "Benjamin Cheever",
+        0
+      ],
+      [
+        "Benjamin Cheever",
+        1
+      ],
+      [
+        "John Cheever",
+        4
+      ]
+    ],
+    "context": [
+      [
+        "The Stories of John Cheever",
+        [
+          "The Stories of John Cheever is a 1978 short story collection by American author John Cheever.",
+          " It contains some of his most famous stories, including \"The Enormous Radio,\" \"Goodbye, My Brother,\" \"The Country Husband,\" \"The Five-Forty-Eight\" and \"The Swimmer.\"",
+          " It won the Pulitzer Prize for Fiction and the National Book Critics Circle Award in 1979 and its first paperback edition won a 1981 National Book Award."
+        ]
+      ],
+      [
+        "What We Talk About When We Talk About Anne Frank",
+        [
+          "What We Talk About When We Talk About Anne Frank is a 2012 short story collection by the American writer Nathan Englander.",
+          " It was first published on February 7, 2012 through Knopf and collects eight of Englander's short stories, including the title story \"What We Talk About When We Talk About Anne Frank.\"",
+          " The title of the collection takes influence from Raymond Carver's 1981 short story collection \"What We Talk About When We Talk About Love.\"",
+          " It was a finalist for the Pulitzer Prize for Fiction, losing to Adam Johnson's \"The Orphan Master's Son\".",
+          " Englander's collection was awarded the 2012 Frank O'Connor International Short Story Award."
+        ]
+      ],
+      [
+        "Battles in the Desert",
+        [
+          "Battles in the Desert, or \"Las batallas en el desierto\", is a short story written by Mexican author José Emilio Pacheco.",
+          " The short story was first published in the Saturday edition of the Uno Más Uno, a Mexican newspaper, on June 7, 1980, but was published as a short story by Era the following year.",
+          " The short story is narrated by Carlos, as an adult, recounting his memories as a boy growing up in Mexico City in the late 1940s and 1950s.",
+          " In particular, his experiences and the events that unfolded after falling in love with one of his classmate’s mother comprise the central narrative of the short novel."
+        ]
+      ],
+      [
+        "Second Son (Child novel)",
+        [
+          "\"Second Son\" is a short story featuring Jack Reacher, a fictional character created by British author Jim Grant (who writes under the pen name of Lee Child).",
+          " It is notable in several ways: in being a short story, as Reacher mainly appears in full-length novels, of which sixteen appeared as of 2012 ; in giving a glimpse of the teen-age Reacher, making the story a prequel set far earlier chronologically than all other appearances of Reacher .",
+          " \"Second Son\" and \"Deep Down\" were both released originally for the Kindle.",
+          " \"Second Son\" was later included in the paperback and Kindle editions of \"The Affair\".",
+          " \"Second Son\" was bundled with the movie \"Jack Reacher\" as a Target Exclusive, when the movie was released on Blu-ray on 7 May 2013."
+        ]
+      ],
+      [
+        "Dilman Dila",
+        [
+          "Dilman Dila is a Ugandan writer, film maker and a social activist.",
+          " He is the author of a collection of short stories, \"A Killing in the Sun\", and of two novellas, \"Cranes Crest at Sunset\", and \"The Terminal Move\".",
+          " He was shortlisted for the 2013 Commonwealth Short Story Prize for \"A Killing in the Sun\", longlisted for the Short Story Day Africa prize, 2013, and nominated for the 2008 Million Writers Awards for the short story \"Homecoming\".",
+          " He was longlisted for the BBC International Radio Playwriting Competition with his first radio play, \"Toilets are for Something Fishy\".",
+          " His film \"The Felistas Fable\" (2013) won four awards at the Uganda Film Festival 2014, for Best Screenplay, Best Actor, Best Feature Film, and Film of the Year (Best Director).",
+          " It won two nominations at the Africa Movie Academy Awards for Best First Feature by a Director, and Best Make-up Artist.",
+          " It was also nominated for the African Magic Viewers Choice Awards for Best Make-up artist, 2013.",
+          " His first short film, \"What Happened in Room 13\", is one of the most watched African films on YouTube.",
+          " In 2015, he was longlisted for the Inaugural Jalada Prize for Literature for his story \"Onen and his Daughter\"."
+        ]
+      ],
+      [
+        "Benjamin Cheever",
+        [
+          "Benjamin Hale Cheever (born October 8, 1948) is an American writer and editor.",
+          " He is the son of Mary Winternitz and writer John Cheever and brother of Susan Cheever.",
+          " To date, he has written four adult fiction novels, one children's book, and two nonfiction books."
+        ]
+      ],
+      [
+        "The Enormous Radio",
+        [
+          "\"The Enormous Radio\" is a short story written by American author John Cheever in 1947.",
+          " It first appeared in the May 17, 1947 issue of \"The New Yorker\" and was later collected in \"The Enormous Radio and Other Stories\".",
+          " The story describes a strange new radio that allows its owners to listen in on conversations of other tenants in their apartment building."
+        ]
+      ],
+      [
+        "John Cheever",
+        [
+          "John William Cheever (May 27, 1912 – June 18, 1982) was an American novelist and short story writer.",
+          " He is sometimes called \"the Chekhov of the suburbs\".",
+          " His fiction is mostly set in the Upper East Side of Manhattan, the Westchester suburbs, old New England villages based on various South Shore towns around Quincy, Massachusetts, where he was born, and Italy, especially Rome.",
+          " He is \"now recognized as one of the most important short fiction writers of the 20th century.\"",
+          " While Cheever is perhaps best remembered for his short stories (including \"The Enormous Radio\", \"Goodbye, My Brother\", \"The Five-Forty-Eight\", \"The Country Husband\", and \"The Swimmer\"), he also wrote four novels, comprising \"The Wapshot Chronicle\" (National Book Award, 1958),"
+        ]
+      ],
+      [
+        "The Man Who Evolved",
+        [
+          "\"The Man Who Evolved\" is a science fiction short story by American writer Edmond Hamilton, first published in the April 1931 issue of \"Wonder Stories\".",
+          " In his comments on the story in \"Before the Golden Age\", Isaac Asimov called it the first science fiction short story (as opposed to novel) that impressed him so much it stayed in his mind permanently.",
+          " In her introduction to \"The Best of Edmond Hamilton\", Leigh Brackett called the story \"a fine example of Hamilton's skill in encapsulating an enormous theme into the neat and perfect compass of a short story.\""
+        ]
+      ],
+      [
+        "Inconstant Moon",
+        [
+          "Inconstant Moon is a science fiction short story collection by American author Larry Niven that was published in 1973.",
+          " \"Inconstant Moon\" is also a 1971 short story that is included in the collection.",
+          " The title is a quote from the balcony scene in William Shakespeare's \"Romeo and Juliet\".",
+          " The collection was assembled from the US collections \"The Shape of Space\" and \"All the Myriad Ways\".",
+          " The short story won the 1972 Hugo Award for best short story."
+        ]
+      ]
+    ]
+  },
+  {
+    "_id": "5aba89d555429901930fa816",
+    "question": "One of the members of Dru Hill is nicknamed after which cartoon character?",
+    "answer": "Woody Woodpecker",
+    "type": "bridge",
+    "level": "hard",
+    "supporting_facts": [
+      [
+        "Dru Hill",
+        1
+      ],
+      [
+        "Woody Rock",
+        2
+      ]
+    ],
+    "context": [
+      [
+        "Dru World Order",
+        [
+          "Dru World Order is the third studio album by American R&B group Dru Hill, released in late 2002 (see 2002 in music) on Def Jam Recordings' Def Soul imprint.",
+          " Four years had passed between this release and the group's previous album, \"Enter the Dru\", during which time the quartet imploded, yet later reformed.",
+          " Beginning with this release, Dru Hill became a quintet, with fifth member Scola (Rufus Waller) added to the original lineup of Sisqó, Jazz, Nokio, and Woody.",
+          " This was the first and only time that Dru Hill was featured as five members.",
+          " The album released three singles \"I Should Be...\", \"I Love You\" and \"No Doubt\".",
+          " Two of the singles had music videos released.",
+          " This is the group's last album for the entire Def Jam roster and they were released from their contract within a year due to poor album sales for this album and Sisqó's second album, which caused the group to go on a second hiatus."
+        ]
+      ],
+      [
+        "LovHer",
+        [
+          "LovHer was an American R&B girl group.",
+          " The group was the first female group on the Def Soul label.",
+          " The group was formed in 1999 by Sisqó, lead singer of R&B group Dru Hill, who wanted to put together a girl group that would present a raw, \"street\" appeal.",
+          " Like Dru Hill, LovHer's members are known by hip hoppish nicknames:Talia \"Chinky\" Burgess, Marthea \"Buttah\" Jackson, Samerrah \"Serenade\" Terrell, and Kienji Hakeem.",
+          " LovHer comprised the Baltimore, Maryland, native Chinky who was discovered in a talent show, Kienji from South Central Los Angeles, Serenade and Buttah from Milwaukee, Wisconsin, who were hosting a Public-access television cable TV show before auditioning for the co-founder of Dru Hill."
+        ]
+      ],
+      [
+        "I Should Be...",
+        [
+          "\"I Should Be...\" is the first single from Dru Hill's third album, \"Dru World Order\".",
+          " The Music Video was directed by Chris Robinson (director) The single peaked at #25 on the Hot 100 and #6 on the R&B chart.",
+          " The song stayed on the Hot 100 charts for a total of seventeen weeks."
+        ]
+      ],
+      [
+        "Dru Hill (album)",
+        [
+          "Dru Hill is the self-titled debut studio album from American R&B group Dru Hill, released November 19, 1996 on Island Records.",
+          " The album featured four singles \"Tell Me\", \"In My Bed\", \"Never Make a Promise\" and \"5 Steps\".",
+          " All of the singles had music videos released.",
+          " The album also features the So So Def remix of \"In My Bed\", which features Jermaine Dupri and Da Brat, as a bonus track, which also had a music video released."
+        ]
+      ],
+      [
+        "Unleash the Dragon",
+        [
+          "Unleash the Dragon is the debut studio album by American R&B singer Sisqó of Dru Hill, released on November 30, 1999 on Def Soul.",
+          " Sisqó recorded the album during Dru Hill's hiatus.",
+          " It includes the hit songs \"Got to Get It\", \"Incomplete\", and \"Thong Song\".",
+          " In 2003, the album was certified sextuple platinum by the Recording Industry Association of America (RIAA) for shipping six million copies in North America."
+        ]
+      ],
+      [
+        "Woody Rock",
+        [
+          "Woody Rock (born James Green on September 10, 1976 in Baltimore, Maryland) is an African-American singer, dancer, and musician best known as a former member of the multi-platinum R&B act Dru Hill, a group for which he has written and sung lead on songs such as \"5 Steps\", \"April Showers\", and \"Angel\".",
+          " He has also recorded his own solo gospel album, \"Soul Music\", for Kirk Franklin's Gospocentric Records.",
+          " His nickname was derived from his father saying he resembled the Woody Woodpecker cartoon character."
+        ]
+      ],
+      [
+        "Enter the Dru",
+        [
+          "Enter the Dru is the second studio album from American R&B group Dru Hill, released October 27, 1998 on Island Records.",
+          " The album's name comes from Bruce Lee's film, \"Enter the Dragon\".",
+          " This is the first album that the group were credited as executive producers as all four members wrote and produced several of the songs.",
+          " It released three singles \"How Deep Is Your Love\", \"These Are the Times\" and \"You Are Everything\".",
+          " The singles all had music videos released, but the music video for \"You Are Everything\" was a remix video, which featured rapper Ja Rule, and Woody did not appear in it due to his exit from the group in early 1999.",
+          " The remix version was featured on lead singer Sisqó's debut album, \"Unleash the Dragon\".",
+          " Recording sessions for the album took place at Larabee Studios in Los Angeles, California.",
+          " The album peaked at number two on the \"Billboard\" 200 chart.",
+          " On May 1999, It was certified double-platinum in sales by the Recording Industry Association of America (RIAA), after sales exceeding 2,000,000 copies in the United States."
+        ]
+      ],
+      [
+        "Dru Hill",
+        [
+          "Dru Hill is an American singing group, most popular during the late 1990s, whose repertoire included soul, hip hop soul and gospel music.",
+          " Founded in Baltimore, Maryland, and active since 1992, Dru Hill recorded seven Top 40 hits, and is best known for the R&B #1 hits \"In My Bed\", \"Never Make a Promise\", and \"How Deep Is Your Love\".",
+          " The group consist of lead singer Mark \"Sisqó\" Andrews (who went on to have a very successful solo career), Tamir \"Nokio\" Ruffin and, Larry \"Jazz\" Anthony, and James \"Woody Rock\" Green."
+        ]
+      ],
+      [
+        "How Deep Is Your Love (Dru Hill song)",
+        [
+          "\"How Deep Is Your Love\" is an R&B single by group Dru Hill and features rapper Redman.",
+          " It is the first single from the group's second album, \"Enter the Dru\".",
+          " The song was released on September 22, 1998, the hit song spent three weeks at number-one on the US R&B chart, and peaked at number-three on the US Pop chart.",
+          " The song was also used in the end credits and is featured on the soundtrack to the 1998 film \"Rush Hour\".",
+          " The music video directed by Brett Ratner was shot on top of Hopewell Centre in Wan Chai, Hong Kong and features clips from \"Rush Hour\".",
+          " Redman's verse is cut from both the group's album and the video version as he does not appear in the video.This song was also one of the hottest songs for club mix music that originated out of their hometown on Baltimore."
+        ]
+      ],
+      [
+        "Return of Dragon",
+        [
+          "Return of Dragon is the second studio album by American R&B recording artist Sisqó of Dru Hill, released on June 19, 2001 on Def Soul Records.",
+          " The album did very well on the charts but its singles, \"Can I Live\" and \"Dance for Me\", were commercial disappointments compared to his debut album, \"Unleash the Dragon\" (1999).",
+          " Despite the fact that Sisqó announced a third single, \"Dream\", this never materialized due to the commercial failure of the album.",
+          " The song \"Without You\" was originally planned to be featured on Dru Hill's third album, \"Dru World Order\" but tensions grew between the group while working on the album and it was put on hold.",
+          " \"Return of Dragon\" was later certified Platinum by the Recording Industry Association of America (RIAA) for excess of one million copies.",
+          " \"Return of Dragon\" would be Sisqó's last album until \"Last Dragon\" (2015)."
+        ]
+      ]
+    ]
+  }
+]
