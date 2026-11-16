@@ -1,0 +1,77 @@
+{
+  "schema": "v2_dev_gate_1",
+  "inputs": [
+    "nli_entailment_A",
+    "first_round_full_title_bridge"
+  ],
+  "tie_seed": 42,
+  "dev_n": 500,
+  "dev_target_count": 100,
+  "retrieval": {
+    "k": 2,
+    "m": 1
+  },
+  "decoding": {
+    "temperature": 0,
+    "max_tokens": 128
+  },
+  "answer_model": "Qwen/Qwen2.5-7B-Instruct",
+  "answer_model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "nli_model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+  "nli_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+  "nli_model_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+  "nli_max_tokens": 512,
+  "source_sha256": {
+    "calibrate_gates_v2.py": "b2b3a80eaa7b2f3e135dd239dc36d378e5b6ffa06ae18e74c9cf853a74be50ad",
+    "analyze_pilot_signals_v2.py": "43abd5461bed88de9791d801fa52dc3065cc8283c31e189bf886a49868a8afdb",
+    "compare_models.py": "0a8e8dfafc59f22accf87890585b9b80c806b29e3b3ef48317a6ef62388a96d6",
+    "bm25_topk.py": "3ada3ea47beb75e68a14b967a31655d379f417879ef8b2315e70ba816fe83099",
+    "run_pilot.py": "47b288beb379f48b3dbd36c8570a696f64c52c3348279692b9334025c1e1834f"
+  },
+  "tune_sha256": "478f6b2f4d7506a0b8d804de5aa077eacdd3ef20d90f127ac8d22999453ea53b",
+  "scored_branches_sha256": "dac04d277b02230709207fce727adcd9e2aadb71c05f84cf41a8497abe62b439",
+  "gates": {
+    "fuzzy": {
+      "kind": "fuzzy",
+      "parameters": {
+        "lo": 0.0005892496127476443,
+        "hi": 0.381526725198905,
+        "bridge_weight": 0.375
+      },
+      "boundary_sort_key": [
+        -0.55488645921343,
+        -0.11023003947658172,
+        "49092efc9ed133b8eb4d735a729d16f1c73ae32e8ea14855b0a1a9fe6d23964c",
+        "5ac3e80b554299076e296ccd"
+      ]
+    },
+    "crisp": {
+      "kind": "crisp",
+      "parameters": {
+        "lo": 0.0005892496127476443,
+        "hi": 0.0075008252711235195,
+        "bridge_weight": 0.125
+      },
+      "boundary_sort_key": [
+        -1.0,
+        -0.06450408013531839,
+        "bc54a59a34144470ca49e6dbfef722eae902cc287eab91a4d7c2b661ad57084c",
+        "5adc3d7455429944faac248a"
+      ]
+    },
+    "nli_only": {
+      "kind": "nli_only",
+      "parameters": {},
+      "boundary_sort_key": [
+        -0.17312430400832846,
+        -0.17312430400832846,
+        "117866171a7c2aa1a09377f5659f0be372565f166e66c48911d9873171c8f97e",
+        "5a7336d05542992359bc3293"
+      ]
+    }
+  },
+  "serve_script": {
+    "name": ".serve-step4.sh",
+    "sha256": "fc82bca4e12c5e3f067ae50fd1b3433dc6ceb44067dd397e0ddd78f95113af7a"
+  }
+}

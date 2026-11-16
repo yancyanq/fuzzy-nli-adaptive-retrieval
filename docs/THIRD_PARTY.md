@@ -1,0 +1,4 @@
+# 第三方实验材料
+
+- **HotpotQA 数据。** Zhilin Yang、Peng Qi、Saizheng Zhang、Yoshua Bengio、William W. Cohen、Ruslan Salakhutdinov、Christopher D. Manning，*HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering*，EMNLP 2018。本仓库从发布的 distractor validation 中筛选 bridge 题，并按固定种子切分、重排，保存为 pilot、dev 和项目正式测试 JSON。含原题或原文证据的归档也沿用此出处。 [HotpotQA 发布页](https://hotpotqa.github.io/) · [数据卡](https://huggingface.co/datasets/hotpotqa/hotpot_qa) · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **官方评分器。** 归档的 `hotpot_evaluate_v1.py` 与 HotpotQA 上游固定版本逐字节一致。上游将代码按 Apache License 2.0 发布，并说明评分脚本改编自 SQuAD 评分器。 [上游许可说明](https://github.com/hotpotqa/hotpot#license) · [固定版本源码](https://github.com/hotpotqa/hotpot/blob/fa3a36370899e1d85822de61e58c85ea19993154/hotpot_evaluate_v1.py) · [归档许可全文](../exp/v2/step5_v2/HOTPOTQA_CODE_LICENSE.txt)

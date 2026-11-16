@@ -4,6 +4,45 @@
 
 | 条目 | 日志位置 |
 | --- | --- |
+| Received and checked returned V2 case review | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L653) |
+| Executed: standalone V2 §11 results booklet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L648) |
+| Prepared: standalone V2 §11 results booklet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L644) |
+| Executed: V2 §11 results register filled | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L638) |
+| Verified the V2 §10.2 reproducibility checklist | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L632) |
+| Added criteria and worked example to reviewer worksheet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L628) |
+| Put evidence and review fields on one worksheet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L624) |
+| Prepared independent review worksheet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L619) |
+| Executed: V2 step 6 inference, case review, and paper sections complete | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L611) |
+| Prepared: V2 step 6 inference, tables and diagnostic sampling | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L605) |
+| Executed: V2 step 5 formal experiment completed and archived | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L573) |
+| Executed: official quality replay complete, live cost measurement underway | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L568) |
+| Executed: validated cache metadata migration and resumed replay | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L563) |
+| Observed: fix conflicting model identities in NLI cache rows | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L558) |
+| Running: resume V2 step 5 from the complete generation cache | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L553) |
+| Executed: verify completed V2 generation and repair the launch wrapper | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L547) |
+| Observed: formal result collection awaiting SSH reconnection | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L542) |
+| Observed: SSH watcher disconnected during formal generation | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L537) |
+| Running: two thirds of the formal branch cache persisted | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L533) |
+| Running: formal branch generation exceeded halfway | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L529) |
+| Running: one third of the formal branch cache persisted | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L525) |
+| Running: formal generation checkpoint | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L521) |
+| Running: first 250 formal answer/evidence pairs persisted | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L516) |
+| Executed: legacy mock regression and first formal cache checkpoint | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L511) |
+| Executed: dev-only validation passed and held-out generation started | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L505) |
+| Running: V2 step 5 remote dev smoke and formal worker | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L500) |
+| Prepared: V2 §10.1 step 5 formal evaluation specification | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L490) |
+| Executed: V2 step 4 dev calibration and gate lock complete | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L482) |
+| Running: clean eight-sequence Qwen tune generation | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L477) |
+| Decision: validate batched tune generation on the same checkpoint | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L472) |
+| Running: V2 step 4 paired answers and calibration pipeline | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L465) |
+| Decision: V2 step 4 calibration specification | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L456) |
+| Prepared: V2 step 4 paired tune generation | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L451) |
+| Decision: lock the 1,000-question formal test split under V2 §7.4 | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L445) |
+| Executed: V2 §10.1 step 3 closeout assessment | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L436) |
+| Prepared: V2 §7.4 sample-size and compute planning | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L430) |
+| Executed: V2 §7.3 supplemental pilot signal comparison | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L415) |
+| Prepared: V2 §7.3 offline comparator and synthetic tests | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L409) |
+| Decision: user approved settings for the V2 §7.3 supplemental pilot comparison | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L401) |
 | Prepared: comparative rationale for the proposed V2 pilot settings | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L371) |
 | Prepared: candidate settings for the V2 pilot signal check, awaiting confirmation | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L362) |
 | Prepared: received Step 5 pilot signal check exports | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L356) |

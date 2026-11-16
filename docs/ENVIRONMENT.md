@@ -15,7 +15,7 @@ python -m pip check
 
 | 脚本 / 测试 | 导入的本地代码 | pip、数据与运行模式 | 环境变量 |
 | --- | --- | --- | --- |
-| Step 1 数据切分 | 切分脚本未收到 | 11-14 选源条目提到用 `datasets`；实际下载、切分及转 JSON 脚本和精确依赖版本记录中未给出。日志提及 `hotpot_evaluate_v1.py`，包里无此文件 | 记录中未给出 |
+| Step 1 数据切分 | 切分脚本未收到 | 11-14 选源条目提到用 `datasets`；实际下载、切分及转 JSON 脚本和精确依赖版本记录中未给出。V2 已归档固定版本 `hotpot_evaluate_v1.py` | 记录中未给出 |
 | `step2/bm25_topk.py` | 无 | `rank-bm25`；官方式 `pilot.json` 输入，标准库读写 | 无 |
 | `step3/compare_models.py` | 优先动态加载 `step2/bm25_topk.py` 的分词与段落拼接，也内置回退 | 导入 `rank-bm25`；需要调用时加载 `openai`；先做输入与缓存核对 | DeepSeek 默认 `DEEPSEEK_API_KEY`，OpenAI 默认 `OPENAI_API_KEY`，custom 默认 `LOCAL_API_KEY`，可用 `--key-env` 指定变量名；无鉴权的 custom 端点允许未设置 |
 | `step3/test_mock_server.py` | 无 | 标准库 HTTP 服务；可传 `--answers-from` 读取题目，输出为测试值；支持拒绝 logprobs 和不同假 top-logprobs 模式 | 无 |
@@ -68,7 +68,7 @@ python exp/step6a/test_step6a.py
 | `test_step6a.py` | 16/16 通过 | Mock PASS/FAIL、判定边界、缓存和命令行选项 |
 | `test_mock_server.py` | 支持 logprobs 和拒绝后回退，两次联调通过 | 两次各以同一条 pilot 输入测试 A/B；验证无调用错误、正确标记支持状态和生成预期文件。回答及分数为测试值 |
 | Step 2 两组离线复跑 | 两组逐题 CSV 都与随包字节一致；汇总除整理后的输入路径字段外完全一致 | 真实 pilot 输入和本地 BM25，直接复核随包召回产物 |
-| Step 1 可见切分与原始文件 | pilot 与 tune 的 bridge 类型、ID 唯一性和互不相交通过；tune 的 SHA-256 与[输入核验记录](../exp/EXPERIMENT_LOG.md?plain=1#L289)一致 | 复核两个可见的切分，test 文件待补 |
+| Step 1 可见切分与原始文件 | pilot 与 tune 的 bridge 类型、ID 唯一性和互不相交通过；tune 的 SHA-256 与[输入核验记录](../exp/EXPERIMENT_LOG.md?plain=1#L289)一致 | 此次早期复核覆盖 pilot 和 tune；V2 的正式 test 已归档 |
 | Step 6a 真实缓存离线回算 | 四项判定、样本顺序和 PASS 一致，逐 token CSV 字节一致 | 使用随包原始缓存和相同 tune 切片运行 `--analyze-only`，无新推理 |
 | 付费 API、真实 DeBERTa NLI、租用 GPU 与 vLLM | 本次整理未重新发起模型调用 | 真实执行以日志和随附产物为准 |
 
@@ -80,3 +80,9 @@ Step 6a 回算时，单题 `mean_chosen_logprob` 的 JSON 展示值出现一次�
 python exp/step3/test_mock_server.py --host 127.0.0.1 --port 8765 --answers-from exp/step1/pilot.json
 python exp/step3/compare_models.py --data exp/step1/pilot.json --preset custom --base-url http://127.0.0.1:8765/v1 --model mock-qa --n 1 --out runs/step3_mock_smoke
 ```
+
+## V2 环境和验证入口
+
+正式阶段的代码在 [exp/v2](../exp/v2/README.md)。`analyze_pilot_signals_v2.py` 复用 `compare_models.py` 和 `analyze_signals.py`。门控校准额外复用该信号实现。正式生成与评估共用校准、信号与 `run_pilot.py`，回放使用固定版 `hotpot_evaluate_v1.py`。`analyze_step6_v2.py` 复用生成模块与原配对 bootstrap，图表使用 ReportLab。离线命令和版本核验见 [V2 可复现性清单](../exp/v2/step6_v2/Reproducibility_Checklist.md)。
+
+仓库中的 V2 测试使用 Python 3.12.14、OpenAI 客户端 1.76.2、rank-bm25 0.2.2、NumPy 2.5.4、ReportLab 4.4.9。测试数字来自合成用例。真实运行使用 V2 清单所列的 GPU 环境。

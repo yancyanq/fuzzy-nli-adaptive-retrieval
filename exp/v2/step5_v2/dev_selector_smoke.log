@@ -1,0 +1,2 @@
+[warn] VLLM_API_KEY is unset; using a placeholder key 'EMPTY' (fine for a local vLLM server that does not check keys).
+{"branches": 56, "selector_calls": 56, "parsed_calls": 56, "invalid_ids": 0, "nonempty_sp": 53, "max_prompt_tokens": 832}

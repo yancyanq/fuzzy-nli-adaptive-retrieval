@@ -1,57 +1,29 @@
 # Fuzzy-NLI 自适应检索问答
 
-*A Fuzzy-NLI-based QA Chatbot System with Adaptive Retrieval* 是 BNBU/UIC NLP 课程项目。我们在 HotpotQA distractor 的 bridge 题上研究一个问题：什么时候值得再检索一次？
+*A Fuzzy-NLI-based QA Chatbot System with Adaptive Retrieval* 是 BNBU/UIC NLP 课程项目。我们用 HotpotQA distractor 的 bridge 题研究何时值得再检索一次。分支 A 用 BM25 检索到的前两个段落作答，分支 B 在 A 的基础上补一个段落后作答。正式实验用 NLI 和桥接实体信号决定是否再检索，并比较同输入的 Fuzzy 与 Crisp 门控。
 
-分支 A 用 BM25 检索到的前两个段落作答。分支 B 用规则改写查询，从未使用的段落里再补一个段落后作答。作答模型给出答案和引用，NLI 检查引用证据是否支持答案。正式比较将在相同输入与相同目标再检索率下，评估模糊门控和硬规则的答案质量、再检索率和成本。
+**[最新进度](PROGRESS.md) · [完整实验日志](exp/EXPERIMENT_LOG.md) · [结果总表](docs/RESULTS.md) · [V2 正式实验材料](exp/v2/README.md)**
 
 ## 实验进度
 
-**[查看最新进度](PROGRESS.md)** · **[阅读完整实验日志](exp/EXPERIMENT_LOG.md)**
-
-已完成 100 题 pilot 和 Step 6a 非退化检查。当前在准备按 V2 §7.3 比较 NLI 与桥接实体信号的选题能力。
-
-| 阶段 | 当前状态 | 记录 |
+| 阶段 | 状态与结论 | 入口 |
 | --- | --- | --- |
-| Step 1–4 数据、检索与预注册 | 切分完成，选定 BM25 `k=2`、`m=1`，已登记 pilot 的 GO 判定规则 | [实验索引](INDEX.md) |
-| Step 5 Pilot | **GO**。分支 A / B / Oracle 的 F1 为 0.628 / 0.752 / 0.765 | [真实 pilot](exp/EXPERIMENT_LOG.md?plain=1#L146) |
-| Step 5b DeepSeek logprob | 温度 0 下选中 token 的 logprob 与 top‑k margin 退化 | [排查结果](exp/EXPERIMENT_LOG.md?plain=1#L218) |
-| Step 6a 本地 vLLM | 前 30 道 tune 题的非退化检查 **PASS**。是否将不确定性纳入正式门控待定 | [实测记录](exp/EXPERIMENT_LOG.md?plain=1#L326) |
-| V2 §7.3 Pilot 信号对照 | 两份真实逐题导出已归档。桥接信号、对照方式和预算已有候选设置及理由，等待确认，信号对照尚未运行 | [候选设置](exp/EXPERIMENT_LOG.md?plain=1#L362) · [比较理由](exp/EXPERIMENT_LOG.md?plain=1#L371) |
+| 数据与原始 pilot | 100 / 500 / 1,000 题分别用于 pilot、dev、正式测试。100 题 pilot 判定 **GO** | [早期实验索引](INDEX.md) |
+| Logprob 排查 | DeepSeek 温度 0 的信号退化，Qwen vLLM 非退化检查 **PASS**。V2 正式门控锁定 NLI 和桥接信号 | [Step 6a 实测](exp/EXPERIMENT_LOG.md?plain=1#L326) · [门控锁定](exp/EXPERIMENT_LOG.md?plain=1#L482) |
+| V2 §7.3 补充 pilot | NLI 和 NLI＋桥接各选 20 题，各选中 6 道改善题 | [补充分析](exp/EXPERIMENT_LOG.md?plain=1#L415) |
+| V2 步骤 4 门控校准 | 在 500 题 dev 上按共同 20% 目标校准并冻结门控 | [门控锁文件](exp/v2/step4_dev/gates/locked_gates.json) |
+| V2 步骤 5 正式评估 | 1,000 题质量评估及独立计时已完成。Fuzzy 答案 F1 为 0.54424354，再检索率为 23.0% | [正式日志](exp/EXPERIMENT_LOG.md?plain=1#L573) · [质量汇总](exp/v2/step5_v2/quality_summary.json) |
+| V2 步骤 6 统计与论文材料 | Fuzzy − Crisp 为 +0.064 个 F1 百分点，95% 配对区间 [−0.365, +0.517]，跨零。结果册、错误分析和复现清单已归档 | [统计日志](exp/EXPERIMENT_LOG.md?plain=1#L611) · [正式报告](exp/v2/step6_v2/Experiment_Report.md) |
 
-进度页按时间倒序索引日志。实验日志记录实验设置、实测结果和决定。阶段报告为 Step 6a 实测前的快照，实测数据见本次产物。 [Step 6a 实测摘要](exp/step6a/step6a_check/logprob_check.json)
+## 阅读与复现
 
-## 从哪里开始
-
-| 想了解什么 | 入口 |
+| 材料 | 入口 |
 | --- | --- |
-| 实验设计与规则 | [实验方案 v2 PDF](docs/Experiment_Protocol_v2.pdf) · [可编辑 DOCX](docs/Experiment_Protocol_v2.docx) |
-| 复现某一步 | [实验索引](INDEX.md)含脚本、命令和输出 · [运行环境](docs/ENVIRONMENT.md) |
-| 追溯论文数字 | [结果总表](docs/RESULTS.md) |
-| 找数据、脚本或报告 | [逐文件清单](docs/INVENTORY.md) · [阶段报告 PDF](reports/Interim_Experiment_Report_2026-11-15.pdf) · [DOCX](reports/Interim_Experiment_Report_2026-11-15.docx) |
-| 接下一步或归档结果 | [缺口清单](docs/GAPS.md) · [提交与同步方式](docs/WORKFLOW.md) |
+| 实验方案 | [原始 V2 PDF](docs/Experiment_Protocol_v2.pdf) · [原始 V2 DOCX](docs/Experiment_Protocol_v2.docx) · [填入 §11 结果的副本](exp/v2/step6_v2/Experiment_Protocol_v2_Section11_Filled.docx) |
+| 正式结果与论文 | [中文 §11 结果册](exp/v2/step6_v2/NLP_V2_Section11_Results_Booklet.docx) · [英文论文段落预览](exp/v2/step6_v2/Methodology_and_Experimental_Results.pdf) · [质量–成本图](exp/v2/step6_v2/quality_cost.pdf) |
+| 逐题输出与复现 | [正式逐题结果](exp/v2/step5_v2/per_question.csv) · [配对区间 CSV](exp/v2/step6_v2/paired_bootstrap.csv) · [可复现性清单](exp/v2/step6_v2/Reproducibility_Checklist.md) |
+| 文件与协作 | [实验索引](INDEX.md) · [文件清单](docs/INVENTORY.md) · [运行环境](docs/ENVIRONMENT.md) · [缺口清单](docs/GAPS.md) · [同步方式](docs/WORKFLOW.md) |
 
-## 目录
+`exp/step*/` 归档早期实验，`exp/v2/` 归档正式阶段脚本和结果。`docs/` 提供方案及实验导航，`reports/` 保留 Step 6a 实测前的阶段报告，`sources/` 保留交接快照。名称含 `mock` 的输出及 `testdata/` 中的输入是测试数据。进度页和实验日志展示版保留条目顺序，隐藏执行日期、时刻及时区。
 
-```text
-exp/       权威日志、切分数据、各步脚本、测试、已归档实验输出
-docs/      实验方案、逐文件清单、结果、缺口、运行与协作说明
-reports/   阶段报告 PDF 和 DOCX
-sources/   原始交接 ZIP、旧日志和交付时的材料快照
-tools/     更新进度索引的工具
-```
-
-真实的 Step 5 逐题文件在 [step5_pilot](exp/step5/step5_pilot)，真实的 Step 6a 输出在 [step6a_check](exp/step6a/step6a_check)。含 `mock` 的目录是测试输出，`testdata/` 是测试输入。
-
-## 本地快速验证
-
-在仓库根目录，用独立 Python 环境运行。以下检查只用标准库、指定 pip 依赖和本地 mock 服务。
-
-```bash
-python -m pip install openai==1.76.2 rank-bm25==0.2.2
-python exp/step5/test_step5.py
-python exp/step5/test_analyze_signals.py
-python exp/step5b/test_step5b.py
-python exp/step6a/test_step6a.py
-```
-
-运行真实实验前按[运行环境](docs/ENVIRONMENT.md)准备数据、模型、凭据和缓存。把临时结果写入 `runs/`，复核后再放到对应步骤的归档目录。项目访问由仓库所有者管理。
+数据来源及授权见 [第三方材料](docs/THIRD_PARTY.md)。

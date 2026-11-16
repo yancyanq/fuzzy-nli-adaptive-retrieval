@@ -1,0 +1,3 @@
+# Keep archived files byte-identical across platforms for the SHA-256 manifests.
+* -text
+*.pdf -diff

@@ -1,0 +1,2136 @@
+[
+  {
+    "_id": "5a8a59c955429930ff3c0da6",
+    "branch": "B",
+    "answer": "USA",
+    "sp": [],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": []}",
+        "prompt_tokens": 242,
+        "completion_tokens": 7,
+        "latency": 5.178280533000361,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": []
+      }
+    ],
+    "candidate_count": 3,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a8a59c955429930ff3c0da6",
+    "branch": "A",
+    "answer": "USA",
+    "sp": [],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": []}",
+        "prompt_tokens": 242,
+        "completion_tokens": 7,
+        "latency": 5.183605663001799,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": []
+      }
+    ],
+    "candidate_count": 3,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a887f5c554299206df2b2c0",
+    "branch": "B",
+    "answer": "John Renbourn",
+    "sp": [
+      [
+        "Les Cousins (music club)",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 305,
+        "completion_tokens": 8,
+        "latency": 5.617794272002357,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a80ad19554299485f5986a8",
+    "branch": "A",
+    "answer": "Tommy Cannon",
+    "sp": [
+      [
+        "Bobby Ball",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [2]}",
+        "prompt_tokens": 272,
+        "completion_tokens": 8,
+        "latency": 5.619799543997942,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.4,
+      "sp_prec": 1.0,
+      "sp_recall": 0.25
+    }
+  },
+  {
+    "_id": "5a887f5c554299206df2b2c0",
+    "branch": "A",
+    "answer": "John Renbourn",
+    "sp": [
+      [
+        "Les Cousins (music club)",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 305,
+        "completion_tokens": 8,
+        "latency": 5.620124695000413,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a80ad19554299485f5986a8",
+    "branch": "B",
+    "answer": "Tommy Cannon",
+    "sp": [
+      [
+        "Bobby Ball",
+        1
+      ],
+      [
+        "Tommy Cannon",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [2, 6]}",
+        "prompt_tokens": 362,
+        "completion_tokens": 11,
+        "latency": 9.079245448996517,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          2,
+          6
+        ]
+      }
+    ],
+    "candidate_count": 7,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.3333333333333333,
+      "sp_prec": 0.5,
+      "sp_recall": 0.25
+    }
+  },
+  {
+    "_id": "5a8a5c0d554299515336137b",
+    "branch": "A",
+    "answer": "Audrey Mossom",
+    "sp": [
+      [
+        "Audrey Mossom",
+        0
+      ],
+      [
+        "Audrey Mossom",
+        2
+      ],
+      [
+        "Audrey Mossom",
+        3
+      ],
+      [
+        "Blackpool Illuminations",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 3, 4, 5]}",
+        "prompt_tokens": 333,
+        "completion_tokens": 17,
+        "latency": 12.312473721998686,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "candidate_count": 5,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 1.0,
+      "sp_f1": 1.0,
+      "sp_prec": 1.0,
+      "sp_recall": 1.0
+    }
+  },
+  {
+    "_id": "5a8a5c0d554299515336137b",
+    "branch": "B",
+    "answer": "Audrey Mossom",
+    "sp": [
+      [
+        "Audrey Mossom",
+        0
+      ],
+      [
+        "Audrey Mossom",
+        2
+      ],
+      [
+        "Audrey Mossom",
+        3
+      ],
+      [
+        "Blackpool Illuminations",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 3, 4, 5]}",
+        "prompt_tokens": 333,
+        "completion_tokens": 17,
+        "latency": 12.31101193500217,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "candidate_count": 5,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 1.0,
+      "sp_f1": 1.0,
+      "sp_prec": 1.0,
+      "sp_recall": 1.0
+    }
+  },
+  {
+    "_id": "5a886364554299206df2b24b",
+    "branch": "A",
+    "answer": "The Books",
+    "sp": [
+      [
+        "Lost and Safe",
+        0
+      ],
+      [
+        "Lost and Safe",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2]}",
+        "prompt_tokens": 345,
+        "completion_tokens": 11,
+        "latency": 7.117062843000895,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2
+        ]
+      }
+    ],
+    "candidate_count": 7,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.4,
+      "prec": 1.0,
+      "recall": 0.25,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7499eb55429929fddd8470",
+    "branch": "A",
+    "answer": "Sugar Bowl",
+    "sp": [
+      [
+        "2003 LSU Tigers football team",
+        0
+      ],
+      [
+        "2003 LSU Tigers football team",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 3]}",
+        "prompt_tokens": 306,
+        "completion_tokens": 11,
+        "latency": 7.121289992999664,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.6666666666666666,
+      "prec": 1.0,
+      "recall": 0.5,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7499eb55429929fddd8470",
+    "branch": "B",
+    "answer": "Sugar Bowl",
+    "sp": [
+      [
+        "2003 LSU Tigers football team",
+        0
+      ],
+      [
+        "2003 LSU Tigers football team",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 3]}",
+        "prompt_tokens": 306,
+        "completion_tokens": 11,
+        "latency": 7.121497684998758,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.6666666666666666,
+      "prec": 1.0,
+      "recall": 0.5,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ae7d03b55429952e35ea9c2",
+    "branch": "B",
+    "answer": "Aaliyah",
+    "sp": [
+      [
+        "Aaliyah",
+        0
+      ],
+      [
+        "Aaliyah",
+        4
+      ],
+      [
+        "Aaliyah",
+        6
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1,5,7]}",
+        "prompt_tokens": 680,
+        "completion_tokens": 12,
+        "latency": 9.546221567998145,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          5,
+          7
+        ]
+      }
+    ],
+    "candidate_count": 15,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.4,
+      "sp_prec": 0.3333333333333333,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ae7d03b55429952e35ea9c2",
+    "branch": "A",
+    "answer": "Aaliyah",
+    "sp": [
+      [
+        "Aaliyah",
+        0
+      ],
+      [
+        "Aaliyah",
+        4
+      ],
+      [
+        "Aaliyah",
+        6
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1,5,7]}",
+        "prompt_tokens": 680,
+        "completion_tokens": 12,
+        "latency": 9.549194975999853,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          5,
+          7
+        ]
+      }
+    ],
+    "candidate_count": 15,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.4,
+      "sp_prec": 0.3333333333333333,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a886364554299206df2b24b",
+    "branch": "B",
+    "answer": "The Books",
+    "sp": [
+      [
+        "Lost and Safe",
+        0
+      ],
+      [
+        "Lost and Safe",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2]}",
+        "prompt_tokens": 345,
+        "completion_tokens": 11,
+        "latency": 7.600180728000851,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2
+        ]
+      }
+    ],
+    "candidate_count": 7,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.4,
+      "prec": 1.0,
+      "recall": 0.25,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ae6545f5542991bbc9760c2",
+    "branch": "A",
+    "answer": "Maurice Costello",
+    "sp": [
+      [
+        "As You Like It (1912 film)",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 281,
+        "completion_tokens": 8,
+        "latency": 5.7878147269984765,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5ae6545f5542991bbc9760c2",
+    "branch": "B",
+    "answer": "Maurice Costello",
+    "sp": [
+      [
+        "As You Like It (1912 film)",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 281,
+        "completion_tokens": 8,
+        "latency": 5.7866802499993355,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5ac0c1cf5542992a796ded7c",
+    "branch": "A",
+    "answer": "Yelena Yemchuk",
+    "sp": [
+      [
+        "Crestfallen",
+        3
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [4]}",
+        "prompt_tokens": 228,
+        "completion_tokens": 8,
+        "latency": 5.4049355419992935,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          4
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 1.0,
+      "sp_recall": 0.3333333333333333
+    }
+  },
+  {
+    "_id": "5ac471305542991943173998",
+    "branch": "B",
+    "answer": "to prevent the opposing team from scoring goals",
+    "sp": [
+      [
+        "Defender (association football)",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1]}",
+        "prompt_tokens": 156,
+        "completion_tokens": 8,
+        "latency": 5.408007791000273,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1
+        ]
+      }
+    ],
+    "candidate_count": 1,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.923076923076923,
+      "prec": 0.8571428571428571,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7c67c15542990527d55498",
+    "branch": "A",
+    "answer": "Fredrikshald",
+    "sp": [
+      [
+        "Market towns of Østfold and Akershus counties",
+        0
+      ],
+      [
+        "Market towns of Østfold and Akershus counties",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2]}",
+        "prompt_tokens": 251,
+        "completion_tokens": 11,
+        "latency": 8.271712534999097,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2
+        ]
+      }
+    ],
+    "candidate_count": 2,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5ac471305542991943173998",
+    "branch": "A",
+    "answer": "prevent the opposing team from scoring goals",
+    "sp": [
+      [
+        "Viktor Raychev",
+        0
+      ],
+      [
+        "Defender (association football)",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2]}",
+        "prompt_tokens": 211,
+        "completion_tokens": 11,
+        "latency": 7.834951627999544,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2
+        ]
+      }
+    ],
+    "candidate_count": 2,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 1.0,
+      "sp_f1": 1.0,
+      "sp_prec": 1.0,
+      "sp_recall": 1.0
+    }
+  },
+  {
+    "_id": "5a7c67c15542990527d55498",
+    "branch": "B",
+    "answer": "Fredrikshald",
+    "sp": [
+      [
+        "Market towns of Østfold and Akershus counties",
+        0
+      ],
+      [
+        "Market towns of Østfold and Akershus counties",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2]}",
+        "prompt_tokens": 251,
+        "completion_tokens": 11,
+        "latency": 8.271100013997057,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2
+        ]
+      }
+    ],
+    "candidate_count": 2,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5ac0c1cf5542992a796ded7c",
+    "branch": "B",
+    "answer": "Ukrainian",
+    "sp": [
+      [
+        "Yelena Yemchuk",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1]}",
+        "prompt_tokens": 176,
+        "completion_tokens": 8,
+        "latency": 6.322878643000877,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1
+        ]
+      }
+    ],
+    "candidate_count": 1,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 1.0,
+      "sp_recall": 0.3333333333333333
+    }
+  },
+  {
+    "_id": "5a821b4b5542995ce29dccab",
+    "branch": "B",
+    "answer": "North Atlantic Ocean and Arctic Ocean",
+    "sp": [
+      [
+        "Greenland shark",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [2]}",
+        "prompt_tokens": 213,
+        "completion_tokens": 8,
+        "latency": 5.925623402999918,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "candidate_count": 2,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a821b4b5542995ce29dccab",
+    "branch": "A",
+    "answer": "Greenland shark",
+    "sp": [
+      [
+        "Hákarl",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1]}",
+        "prompt_tokens": 206,
+        "completion_tokens": 8,
+        "latency": 5.928955090999807,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1
+        ]
+      }
+    ],
+    "candidate_count": 2,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7f6fd75542992e7d278cfa",
+    "branch": "A",
+    "answer": "Rush",
+    "sp": [
+      [
+        "Nobody's Hero",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1]}",
+        "prompt_tokens": 262,
+        "completion_tokens": 8,
+        "latency": 5.48947702499936,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ae1e9fd5542997f29b3c1a1",
+    "branch": "A",
+    "answer": "John Francis Kelly",
+    "sp": [
+      [
+        "John F. Kelly",
+        0
+      ],
+      [
+        "Elaine Duke",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [4, 3]}",
+        "prompt_tokens": 313,
+        "completion_tokens": 11,
+        "latency": 8.196603848999075,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          4,
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ae1e9fd5542997f29b3c1a1",
+    "branch": "B",
+    "answer": "John F. Kelly",
+    "sp": [
+      [
+        "John F. Kelly",
+        0
+      ],
+      [
+        "Elaine Duke",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [4, 3]}",
+        "prompt_tokens": 314,
+        "completion_tokens": 11,
+        "latency": 8.195058989997051,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          4,
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.6666666666666666,
+      "prec": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7fcd9c5542992e7d278da9",
+    "branch": "B",
+    "answer": "Columbia Falls",
+    "sp": [
+      [
+        "Columbia Falls, Montana",
+        0
+      ],
+      [
+        "Columbia Falls, Montana",
+        1
+      ],
+      [
+        "KHNK",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2, 3]}",
+        "prompt_tokens": 259,
+        "completion_tokens": 14,
+        "latency": 10.678597779999109,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.8,
+      "prec": 1.0,
+      "recall": 0.6666666666666666,
+      "sp_em": 0.0,
+      "sp_f1": 0.8,
+      "sp_prec": 0.6666666666666666,
+      "sp_recall": 1.0
+    }
+  },
+  {
+    "_id": "5a7fcd9c5542992e7d278da9",
+    "branch": "A",
+    "answer": "Columbia Falls",
+    "sp": [
+      [
+        "Columbia Falls, Montana",
+        0
+      ],
+      [
+        "Columbia Falls, Montana",
+        1
+      ],
+      [
+        "KHNK",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2, 3]}",
+        "prompt_tokens": 259,
+        "completion_tokens": 14,
+        "latency": 10.68235537199871,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.8,
+      "prec": 1.0,
+      "recall": 0.6666666666666666,
+      "sp_em": 0.0,
+      "sp_f1": 0.8,
+      "sp_prec": 0.6666666666666666,
+      "sp_recall": 1.0
+    }
+  },
+  {
+    "_id": "5a7f6fd75542992e7d278cfa",
+    "branch": "B",
+    "answer": "Rush",
+    "sp": [
+      [
+        "Neil Peart",
+        0
+      ],
+      [
+        "Neil Peart",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [17, 18]}",
+        "prompt_tokens": 832,
+        "completion_tokens": 13,
+        "latency": 9.699641562001489,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          17,
+          18
+        ]
+      }
+    ],
+    "candidate_count": 19,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a772c395542993735360207",
+    "branch": "A",
+    "answer": "Baghdad",
+    "sp": [
+      [
+        "Bajkam",
+        5
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [6]}",
+        "prompt_tokens": 636,
+        "completion_tokens": 8,
+        "latency": 6.620319018002192,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          6
+        ]
+      }
+    ],
+    "candidate_count": 9,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a7cc9db55429907fabef036",
+    "branch": "A",
+    "answer": "Barack Obama",
+    "sp": [
+      [
+        "Devorah Adler",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [2]}",
+        "prompt_tokens": 221,
+        "completion_tokens": 8,
+        "latency": 5.5335406419981155,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "candidate_count": 2,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a772c395542993735360207",
+    "branch": "B",
+    "answer": "Baghdad",
+    "sp": [
+      [
+        "Bajkam",
+        5
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [6]}",
+        "prompt_tokens": 636,
+        "completion_tokens": 8,
+        "latency": 5.969193222998001,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          6
+        ]
+      }
+    ],
+    "candidate_count": 9,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a89cc99554299669944a5ae",
+    "branch": "B",
+    "answer": "Progressive",
+    "sp": [
+      [
+        "Woman's club movement",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [2]}",
+        "prompt_tokens": 223,
+        "completion_tokens": 8,
+        "latency": 5.537438250001287,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "candidate_count": 3,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a7755c65542993569682d54",
+    "branch": "B",
+    "answer": "Sri Lanka Freedom Party",
+    "sp": [
+      [
+        "Sri Lanka Freedom Party",
+        0
+      ],
+      [
+        "Sri Lanka Freedom Party",
+        3
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [7, 10]}",
+        "prompt_tokens": 610,
+        "completion_tokens": 12,
+        "latency": 9.102970829997503,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          7,
+          10
+        ]
+      }
+    ],
+    "candidate_count": 11,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7755c65542993569682d54",
+    "branch": "A",
+    "answer": "Sri Lanka Freedom Party",
+    "sp": [
+      [
+        "Sri Lanka Freedom Party",
+        0
+      ],
+      [
+        "Sri Lanka Freedom Party",
+        3
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [7, 10]}",
+        "prompt_tokens": 610,
+        "completion_tokens": 12,
+        "latency": 9.105946153998957,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          7,
+          10
+        ]
+      }
+    ],
+    "candidate_count": 11,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a89cc99554299669944a5ae",
+    "branch": "A",
+    "answer": "Progressive",
+    "sp": [
+      [
+        "Wiener Werkstätte Style",
+        1
+      ],
+      [
+        "Woman's club movement",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [2, 7]}",
+        "prompt_tokens": 461,
+        "completion_tokens": 11,
+        "latency": 9.038413501002651,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          2,
+          7
+        ]
+      }
+    ],
+    "candidate_count": 8,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ac34994554299741d48a242",
+    "branch": "A",
+    "answer": "Legends of Chima",
+    "sp": [],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": []}",
+        "prompt_tokens": 302,
+        "completion_tokens": 7,
+        "latency": 5.554522557999007,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": []
+      }
+    ],
+    "candidate_count": 5,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a7cc9db55429907fabef036",
+    "branch": "B",
+    "answer": "Barack Obama",
+    "sp": [
+      [
+        "Devorah Adler",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [2]}",
+        "prompt_tokens": 221,
+        "completion_tokens": 8,
+        "latency": 7.2427229459972295,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          2
+        ]
+      }
+    ],
+    "candidate_count": 2,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a73b1855542992d56e7e388",
+    "branch": "B",
+    "answer": "Nigel Patrick",
+    "sp": [
+      [
+        "The Informers (1963 film)",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 287,
+        "completion_tokens": 8,
+        "latency": 7.119666580001649,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a73b1855542992d56e7e388",
+    "branch": "A",
+    "answer": "Nigel Patrick",
+    "sp": [
+      [
+        "The Informers (1963 film)",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 287,
+        "completion_tokens": 8,
+        "latency": 7.12246913099807,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5adc7f4a5542994650320d28",
+    "branch": "B",
+    "answer": "5",
+    "sp": [
+      [
+        "The United States Poker Championship",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 246,
+        "completion_tokens": 8,
+        "latency": 6.694979754000087,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ac34994554299741d48a242",
+    "branch": "B",
+    "answer": "2014",
+    "sp": [
+      [
+        "Mixels",
+        0
+      ],
+      [
+        "Mixels",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2]}",
+        "prompt_tokens": 303,
+        "completion_tokens": 11,
+        "latency": 10.584052721998887,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2
+        ]
+      }
+    ],
+    "candidate_count": 5,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.3333333333333333,
+      "sp_prec": 0.5,
+      "sp_recall": 0.25
+    }
+  },
+  {
+    "_id": "5adc7f4a5542994650320d28",
+    "branch": "A",
+    "answer": "5",
+    "sp": [
+      [
+        "Anything's Wild",
+        1
+      ],
+      [
+        "Anything's Wild",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [6, 7]}",
+        "prompt_tokens": 458,
+        "completion_tokens": 11,
+        "latency": 10.152449613997305,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          6,
+          7
+        ]
+      }
+    ],
+    "candidate_count": 11,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.0,
+      "sp_prec": 0.0,
+      "sp_recall": 0.0
+    }
+  },
+  {
+    "_id": "5a7f89c75542994857a76775",
+    "branch": "A",
+    "answer": "German",
+    "sp": [
+      [
+        "Glossary of classical algebraic geometry",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1]}",
+        "prompt_tokens": 268,
+        "completion_tokens": 8,
+        "latency": 7.520631633000448,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1
+        ]
+      }
+    ],
+    "candidate_count": 3,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7f89c75542994857a76775",
+    "branch": "B",
+    "answer": "German",
+    "sp": [
+      [
+        "Glossary of classical algebraic geometry",
+        0
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1]}",
+        "prompt_tokens": 268,
+        "completion_tokens": 8,
+        "latency": 7.090716831000464,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1
+        ]
+      }
+    ],
+    "candidate_count": 3,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ab2c5e255429916697740ba",
+    "branch": "A",
+    "answer": "center",
+    "sp": [
+      [
+        "60th National Hockey League All-Star Game",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 301,
+        "completion_tokens": 8,
+        "latency": 10.930593940996914,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5ab2c5e255429916697740ba",
+    "branch": "B",
+    "answer": "center",
+    "sp": [
+      [
+        "60th National Hockey League All-Star Game",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 301,
+        "completion_tokens": 8,
+        "latency": 11.503143439000269,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a887f5c554299206df2b2c0",
+    "branch": "full",
+    "answer": "Jimmy Page",
+    "sp": [
+      [
+        "Folk, Blues and Beyond",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [3]}",
+        "prompt_tokens": 235,
+        "completion_tokens": 8,
+        "latency": 7.883290300000226,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          3
+        ]
+      }
+    ],
+    "candidate_count": 3,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0,
+      "prec": 0,
+      "recall": 0,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7499eb55429929fddd8470",
+    "branch": "full",
+    "answer": "Sugar Bowl",
+    "sp": [
+      [
+        "2003 LSU Tigers football team",
+        0
+      ],
+      [
+        "2003 LSU Tigers football team",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 3]}",
+        "prompt_tokens": 306,
+        "completion_tokens": 11,
+        "latency": 9.184792771000502,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          3
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.6666666666666666,
+      "prec": 1.0,
+      "recall": 0.5,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a7c67c15542990527d55498",
+    "branch": "full",
+    "answer": "Barton",
+    "sp": [
+      [
+        "James Tully (Australian politician)",
+        4
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [5]}",
+        "prompt_tokens": 380,
+        "completion_tokens": 8,
+        "latency": 4.7866312459991605,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          5
+        ]
+      }
+    ],
+    "candidate_count": 7,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.5,
+      "prec": 1.0,
+      "recall": 0.3333333333333333,
+      "sp_em": 0.0,
+      "sp_f1": 0.6666666666666666,
+      "sp_prec": 1.0,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a886364554299206df2b24b",
+    "branch": "full",
+    "answer": "The Books",
+    "sp": [
+      [
+        "Lost and Safe",
+        0
+      ],
+      [
+        "Lost and Safe",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 2]}",
+        "prompt_tokens": 345,
+        "completion_tokens": 11,
+        "latency": 7.793697062999854,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          2
+        ]
+      }
+    ],
+    "candidate_count": 7,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.4,
+      "prec": 1.0,
+      "recall": 0.25,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a8a59c955429930ff3c0da6",
+    "branch": "full",
+    "answer": "Swiss",
+    "sp": [
+      [
+        "Harry Winston, Inc.",
+        0
+      ],
+      [
+        "Invicta Watch Group",
+        2
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 5]}",
+        "prompt_tokens": 303,
+        "completion_tokens": 11,
+        "latency": 7.358945934000076,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          5
+        ]
+      }
+    ],
+    "candidate_count": 6,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.5,
+      "sp_prec": 0.5,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a8a5c0d554299515336137b",
+    "branch": "full",
+    "answer": "Elsie Audrey Mossom",
+    "sp": [
+      [
+        "Audrey Mossom",
+        0
+      ],
+      [
+        "Audrey Mossom",
+        2
+      ],
+      [
+        "Audrey Mossom",
+        3
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 3, 4]}",
+        "prompt_tokens": 277,
+        "completion_tokens": 14,
+        "latency": 10.050904224997794,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          3,
+          4
+        ]
+      }
+    ],
+    "candidate_count": 4,
+    "metrics": {
+      "em": 0.0,
+      "f1": 0.8,
+      "prec": 0.6666666666666666,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.8571428571428571,
+      "sp_prec": 1.0,
+      "sp_recall": 0.75
+    }
+  },
+  {
+    "_id": "5ae7d03b55429952e35ea9c2",
+    "branch": "full",
+    "answer": "Aaliyah",
+    "sp": [
+      [
+        "Aaliyah",
+        0
+      ],
+      [
+        "Aaliyah",
+        4
+      ],
+      [
+        "Aaliyah",
+        6
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1,5,7]}",
+        "prompt_tokens": 680,
+        "completion_tokens": 12,
+        "latency": 6.949423622998438,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          5,
+          7
+        ]
+      }
+    ],
+    "candidate_count": 15,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.4,
+      "sp_prec": 0.3333333333333333,
+      "sp_recall": 0.5
+    }
+  },
+  {
+    "_id": "5a80ad19554299485f5986a8",
+    "branch": "full",
+    "answer": "Tommy Cannon",
+    "sp": [
+      [
+        "Cannon and Ball",
+        0
+      ],
+      [
+        "Bobby Ball",
+        1
+      ],
+      [
+        "Tommy Cannon",
+        1
+      ]
+    ],
+    "evidence_calls": [
+      {
+        "content": "{\"sentence_ids\": [1, 5, 9]}",
+        "prompt_tokens": 516,
+        "completion_tokens": 14,
+        "latency": 7.803298874001484,
+        "parse_ok": true,
+        "invalid_ids": 0,
+        "ids": [
+          1,
+          5,
+          9
+        ]
+      }
+    ],
+    "candidate_count": 10,
+    "metrics": {
+      "em": 1.0,
+      "f1": 1.0,
+      "prec": 1.0,
+      "recall": 1.0,
+      "sp_em": 0.0,
+      "sp_f1": 0.28571428571428575,
+      "sp_prec": 0.3333333333333333,
+      "sp_recall": 0.25
+    }
+  }
+]

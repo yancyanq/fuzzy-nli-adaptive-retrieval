@@ -1,0 +1,146 @@
+{
+  "data": "/home/ubuntu/nlp/tune.json",
+  "n": 500,
+  "k": 2,
+  "m": 1,
+  "preset": "custom",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "base_url": "http://127.0.0.1:8000/v1",
+  "key_env": "LOCAL_API_KEY",
+  "temperature": 0.0,
+  "max_tokens": 128,
+  "tie_eps": 0.0,
+  "mean_EM_A": 0.368,
+  "mean_EM_B": 0.43,
+  "mean_F1_A": 0.500163780663781,
+  "mean_F1_B": 0.5726035353535357,
+  "oracle_F1": 0.6076225108225113,
+  "oracle_minus_A_point": 0.1074587301587301,
+  "oracle_minus_A_ci_lo": 0.08283642857142859,
+  "oracle_minus_A_ci_hi": 0.133251626984127,
+  "oracle_minus_A_ci": [
+    0.08283642857142859,
+    0.133251626984127
+  ],
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 42,
+  "n_improved": 68,
+  "n_tie": 404,
+  "n_degraded": 28,
+  "improved_rate": 0.136,
+  "tie_rate": 0.808,
+  "degraded_rate": 0.056,
+  "degraded_improved_ratio": 0.4117647058823529,
+  "n_oracle_B": 68,
+  "oracle_reretrieve_rate": 0.136,
+  "retrieval": {
+    "r1_recall": 0.656,
+    "r1_both_gold": 0.364,
+    "r2_recall": 0.787,
+    "r2_both_gold": 0.598
+  },
+  "citation": {
+    "cite_recall_A": 0.518,
+    "cite_all_gold_A": 0.146,
+    "cite_recall_B": 0.55,
+    "cite_all_gold_B": 0.2
+  },
+  "official_sp_f1_note": "null (answer format cites paragraph numbers only; official supporting-fact F1 is sentence-level and was not computed)",
+  "mean_prompt_tokens_per_call": 468.548,
+  "mean_completion_tokens_per_call": 17.629,
+  "total_prompt_tokens": 468548,
+  "total_completion_tokens": 17629,
+  "total_tokens": 486177,
+  "mean_latency": 12.410604944622971,
+  "logprobs_supported": true,
+  "cache_hits": 1000,
+  "api_calls": 0,
+  "n_errors": 0,
+  "n_parse_fallback": 1,
+  "bm25_source": "/home/ubuntu/nlp/bm25_topk.py",
+  "compare_models_src": "/home/ubuntu/nlp/compare_models.py",
+  "hypothesis_template": "The answer to the question \"{question}\" is: {answer}.",
+  "nli_ran": true,
+  "go_nogo": {
+    "overall": "GO",
+    "overall_pass": true,
+    "headroom_pass": true,
+    "criteria": [
+      {
+        "id": "headroom_point",
+        "name": "headroom point (mean Oracle F1 - A F1)",
+        "observed": 0.1074587301587301,
+        "threshold": ">= 0.05",
+        "pass": true
+      },
+      {
+        "id": "headroom_ci_lo",
+        "name": "headroom 95% CI lower bound",
+        "observed": 0.08283642857142859,
+        "threshold": "> 0",
+        "pass": true
+      },
+      {
+        "id": "improved_share",
+        "name": "improved share",
+        "observed": 0.136,
+        "observed_count": 68,
+        "n": 500,
+        "threshold": ">= 10%",
+        "pass": true
+      },
+      {
+        "id": "degraded_ratio",
+        "name": "degraded / improved",
+        "observed": 0.4117647058823529,
+        "n_degraded": 28,
+        "n_improved": 68,
+        "threshold": "<= 0.5",
+        "pass": true
+      }
+    ],
+    "improved_share": 0.136,
+    "degraded_ratio": 0.4117647058823529
+  },
+  "out": "/home/ubuntu/nlp/step4_dev/nli",
+  "estimated_cost_this_run": null,
+  "estimated_cost_1600x2": null,
+  "nli": {
+    "ran": true,
+    "backend": "hf",
+    "model": "models/dev-deberta-b3546ea",
+    "device_requested": "cuda",
+    "max_length": 512,
+    "batch_size": 4,
+    "hypothesis_template": "The answer to the question \"{question}\" is: {answer}.",
+    "scores_are_fake": false,
+    "mean_entailment_A": 0.8530004713808433,
+    "mean_entailment_B": 0.8899980155746002,
+    "mean_neutral_A": 0.07507707373077153,
+    "mean_neutral_B": 0.05444672360409416,
+    "mean_contradiction_A": 0.07192245488838518,
+    "mean_contradiction_B": 0.055555260821305186,
+    "n_truncated_A": 1,
+    "n_truncated_B": 5,
+    "n_truncated": 6,
+    "n_fallback_A": 7,
+    "n_fallback_B": 2,
+    "n_pairs": 1000
+  },
+  "audit": {
+    "targets": {
+      "false_entailment": 7,
+      "false_non_entailment": 7,
+      "truncated_or_disagreement": 6
+    },
+    "pool_sizes": {
+      "false_entailment": 324,
+      "false_non_entailment": 26,
+      "truncated_or_disagreement": 58
+    },
+    "shortfalls": {},
+    "n_selected": 0,
+    "notes": [],
+    "seed": 42
+  }
+}

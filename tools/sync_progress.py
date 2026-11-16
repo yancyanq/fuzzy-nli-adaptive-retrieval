@@ -11,11 +11,21 @@ PROGRESS = ROOT / "PROGRESS.md"
 DATE = r"\d{4}-\d{2}-\d{2}"
 CLOCK = r"(?:[01]\d|2[0-3]):[0-5]\d(?::[0-5]\d(?:\.\d+)?)?"
 STAMP = rf"{DATE}(?:[ T]{CLOCK}(?:Z|[+-]\d{{2}}:\d{{2}})?)?"
-DATED_ENTRY = re.compile(rf"^## (?P<stamp>{STAMP}) — (?P<title>.+)$")
+ZONE = r"(?:[A-Za-z]+(?:[ _-][A-Za-z]+)*/[A-Za-z_+-]+|Beijing time|(?:UTC|GMT)(?:[+-]\d{1,2}(?::\d{2})?)?)"
+DATED_ENTRY = re.compile(rf"^## (?P<stamp>{STAMP})(?: \({ZONE}\)| {ZONE})? — (?P<title>.+)$")
 ENTRY = re.compile(r"^## (.+)$")
-TIMESTAMP = re.compile(rf"(?<![\w.:])(?:{STAMP}|{CLOCK})(?![\w.:])")
+MONTH_AND_DAY = (
+    r"(?i:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|"
+    r"Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
+    r" \d{1,2}(?:, \d{4})?"
+)
+TIMESTAMP = re.compile(
+    rf"(?<![\w.:])(?:{STAMP}|(?:{MONTH_AND_DAY} )?{CLOCK}|{MONTH_AND_DAY})"
+    rf"(?: \({ZONE}\)| {ZONE})?(?: on {MONTH_AND_DAY})?(?![\w:]|\.\d)"
+)
 ENTRY_REFERENCE = re.compile(
-    rf"\bthe (?P<clock>{CLOCK}) (?P<label>pre-registration|probe entry|entry|candidate settings)\b"
+    rf"\bthe (?:{MONTH_AND_DAY} )?(?P<clock>{CLOCK})"
+    r" (?P<label>pre-registration|probe entry|entry|candidate settings)\b"
 )
 RUN_TIMES = re.compile(rf"The run started {CLOCK} and completed {CLOCK} \(Asia/Shanghai\)\. ")
 SECRET_MARKER = re.compile(
@@ -44,9 +54,10 @@ def render_log(log_text):
     rendered = []
 
     def link_to_entry(match):
-        line_number = entries_by_clock.get(match["clock"])
-        if line_number is None:
+        line_numbers = entries_by_clock.get(match["clock"], [])
+        if len(line_numbers) != 1:
             return f"the {match['label']}"
+        (line_number,) = line_numbers
         return f"the [{match['label']}](?plain=1#L{line_number})"
 
     for line_number, original in enumerate(log_text.splitlines(keepends=True), start=1):
@@ -54,7 +65,7 @@ def render_log(log_text):
         ending = original[len(line):]
         if match := DATED_ENTRY.fullmatch(line):
             if clock := re.search(CLOCK, match["stamp"]):
-                entries_by_clock[clock[0]] = line_number
+                entries_by_clock.setdefault(clock[0], []).append(line_number)
             line = f"## {match['title']}"
         if line == "Times in Asia/Shanghai (UTC+8).":
             line = "Entries are listed in recording order."

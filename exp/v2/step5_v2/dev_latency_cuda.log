@@ -1,0 +1,26 @@
+[warn] VLLM_API_KEY is unset; using a placeholder key 'EMPTY' (fine for a local vLLM server that does not check keys).
+[nli] loading models/dev-deberta-b3546ea on cuda ...
+Traceback (most recent call last):
+  File "/home/ubuntu/nlp/step4_dev/evaluate_test_v2.py", line 291, in <module>
+    main()
+  File "/home/ubuntu/nlp/step4_dev/evaluate_test_v2.py", line 279, in main
+    latency(args, [], lock, smoke=True)
+  File "/home/ubuntu/nlp/step4_dev/evaluate_test_v2.py", line 216, in latency
+    scorer = pilot.HFNliScorer(str(args.nli_model), args.nli_device, max_length=512, batch_size=1)
+  File "/home/ubuntu/nlp/step4_dev/run_pilot.py", line 492, in __init__
+    self.model.to(device)
+  File "/home/ubuntu/nlp/.venv_step6a/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3698, in to
+    return super().to(*args, **kwargs)
+  File "/home/ubuntu/nlp/.venv_step6a/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1343, in to
+    return self._apply(convert)
+  File "/home/ubuntu/nlp/.venv_step6a/lib/python3.10/site-packages/torch/nn/modules/module.py", line 903, in _apply
+    module._apply(fn)
+  File "/home/ubuntu/nlp/.venv_step6a/lib/python3.10/site-packages/torch/nn/modules/module.py", line 903, in _apply
+    module._apply(fn)
+  File "/home/ubuntu/nlp/.venv_step6a/lib/python3.10/site-packages/torch/nn/modules/module.py", line 903, in _apply
+    module._apply(fn)
+  File "/home/ubuntu/nlp/.venv_step6a/lib/python3.10/site-packages/torch/nn/modules/module.py", line 930, in _apply
+    param_applied = fn(param)
+  File "/home/ubuntu/nlp/.venv_step6a/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1329, in convert
+    return t.to(
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 502.00 MiB. GPU 0 has a total capacity of 14.58 GiB of which 3.62 MiB is free. Process 51724 has 14.45 GiB memory in use. Including non-PyTorch memory, this process has 100.00 MiB memory in use. Of the allocated memory 0 bytes is allocated by PyTorch, and 0 bytes is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

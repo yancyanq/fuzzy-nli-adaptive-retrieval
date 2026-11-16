@@ -108,3 +108,21 @@ fuzzy-nli-adaptive-retrieval/
 - 交接快照便于核对最初的报告范围，工作区原始日志还包含 Step 6a 实测和后续 V2 决定。
 - Step 2 两份 `per_question.csv` 文件大小相同，但 SHA-256 不同，对应 m=1 与 m=2，两份都保留。两个 Step 3 mock 目录的文件名相同，但覆盖不同的功能路径，同样保留。
 - `mini_pilot.json` 的题目可与完整 pilot 匹配，但测试代码直接读取该路径，随包保留。PDF/DOCX 阶段报告在阅读与编辑上用途不同，两版均保留。方案 v2 同时保留归档 PDF 和后到 DOCX，便于阅读和编辑。方案 PDF 和阶段报告 PDF 属于不同文档。
+
+## 新增 V2 正式材料
+
+| 仓库位置 | 类型与用途 |
+| --- | --- |
+| [`exp/v2/README.md`](../exp/v2/README.md)、`README_*_v2.md` | 正式材料总入口、阶段说明和命令 |
+| `exp/v2/analyze_pilot_signals_v2.py`、`calibrate_gates_v2.py`、`generate_test_v2.py`、`evaluate_test_v2.py`、`analyze_step6_v2.py` | 补充信号对照、校准、正式生成、官方评分与回放、配对统计与图表 |
+| `exp/v2/test_*_v2.py` | 五个合成数据或 mock 测试套件 |
+| `exp/v2/run_answers_batched_v2.sh`、`run_step4_v2.sh`、`run_step5_v2.sh`、`step4_dev/.serve-step4.sh` | GPU 上的批生成、dev 和正式工作流及启动配置 |
+| `exp/v2/test.json`、`tune.json` | 正式测试与锁定 dev 数据，dev 文件供正式归档的相对路径校验 |
+| `exp/v2/{bm25_topk,compare_models,run_pilot,analyze_signals}.py` | 与早期模块逐字节一致的正式运行依赖，保持正式归档的平铺导入和哈希 |
+| [`pilot_signals_v2/`](../exp/v2/pilot_signals_v2/) | 比较摘要与逐题选题 CSV |
+| [`step4_dev/`](../exp/v2/step4_dev/) | Dev A/B 答案、NLI 评分、候选和锁定结果、工作日志与 SHA-256 清单 |
+| [`step5_v2/`](../exp/v2/step5_v2/) | 正式答案、句级证据、原始与修复后 NLI、质量及成本摘要、逐题 CSV、九组预测、固定评分器、真实路径计时、dev 冒烟检查与归档校验 |
+| [`step6_v2/`](../exp/v2/step6_v2/) | 正式报告、错误分析及案例样本、配对 CSV 与 JSON、图表、LaTeX 与 PDF、复现清单与哈希、两份 §11 Word 文档 |
+| [`case_review/`](../exp/v2/case_review/) | 人工复核空表与已填写副本，保留各自的单元格内容 |
+
+V2 保留正式归档原来的目录名，以便用原始校验清单逐项验证。阶段报告和两份交接 ZIP 继续提供当时的快照。

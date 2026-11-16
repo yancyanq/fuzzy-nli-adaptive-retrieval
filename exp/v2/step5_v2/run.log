@@ -1,0 +1,193 @@
+step5_v2/test.json: OK
+step4_dev/generate_test_v2.py: OK
+step4_dev/evaluate_test_v2.py: OK
+run_step5_v2.sh: OK
+step5_v2/hotpot_evaluate_v1.py: OK
+.serve-step4.sh: OK
+step4_dev/gates/locked_gates.json: OK
+config.json: OK
+added_tokens.json: OK
+special_tokens_map.json: OK
+spm.model: OK
+tokenizer.json: OK
+tokenizer_config.json: OK
+model.safetensors: OK
+Starting dev evidence and execution-path smoke at 2026-11-15T20:17:29+08:00
+Starting held-out generation at 2026-11-15T20:19:26+08:00; real-path NLI device cpu
+[warn] VLLM_API_KEY is unset; using a placeholder key 'EMPTY' (fine for a local vLLM server that does not check keys).
+Formal generation starting with 0/3000 complete
+Completed 25/3000 answer/evidence pairs
+Completed 50/3000 answer/evidence pairs
+Completed 75/3000 answer/evidence pairs
+Completed 100/3000 answer/evidence pairs
+Completed 125/3000 answer/evidence pairs
+Completed 150/3000 answer/evidence pairs
+Completed 175/3000 answer/evidence pairs
+Completed 200/3000 answer/evidence pairs
+Completed 225/3000 answer/evidence pairs
+Completed 250/3000 answer/evidence pairs
+Completed 275/3000 answer/evidence pairs
+Completed 300/3000 answer/evidence pairs
+Completed 325/3000 answer/evidence pairs
+Completed 350/3000 answer/evidence pairs
+Completed 375/3000 answer/evidence pairs
+Completed 400/3000 answer/evidence pairs
+Completed 425/3000 answer/evidence pairs
+Completed 450/3000 answer/evidence pairs
+Completed 475/3000 answer/evidence pairs
+Completed 500/3000 answer/evidence pairs
+Completed 525/3000 answer/evidence pairs
+Completed 550/3000 answer/evidence pairs
+Completed 575/3000 answer/evidence pairs
+Completed 600/3000 answer/evidence pairs
+Completed 625/3000 answer/evidence pairs
+Completed 650/3000 answer/evidence pairs
+Completed 675/3000 answer/evidence pairs
+Completed 700/3000 answer/evidence pairs
+Completed 725/3000 answer/evidence pairs
+Completed 750/3000 answer/evidence pairs
+Completed 775/3000 answer/evidence pairs
+Completed 800/3000 answer/evidence pairs
+Completed 825/3000 answer/evidence pairs
+Completed 850/3000 answer/evidence pairs
+Completed 875/3000 answer/evidence pairs
+Completed 900/3000 answer/evidence pairs
+Completed 925/3000 answer/evidence pairs
+Completed 950/3000 answer/evidence pairs
+Completed 975/3000 answer/evidence pairs
+Completed 1000/3000 answer/evidence pairs
+Completed 1025/3000 answer/evidence pairs
+Completed 1050/3000 answer/evidence pairs
+Completed 1075/3000 answer/evidence pairs
+Completed 1100/3000 answer/evidence pairs
+Completed 1125/3000 answer/evidence pairs
+Completed 1150/3000 answer/evidence pairs
+Completed 1175/3000 answer/evidence pairs
+Completed 1200/3000 answer/evidence pairs
+Completed 1225/3000 answer/evidence pairs
+Completed 1250/3000 answer/evidence pairs
+Completed 1275/3000 answer/evidence pairs
+Completed 1300/3000 answer/evidence pairs
+Completed 1325/3000 answer/evidence pairs
+Completed 1350/3000 answer/evidence pairs
+Completed 1375/3000 answer/evidence pairs
+Completed 1400/3000 answer/evidence pairs
+Completed 1425/3000 answer/evidence pairs
+Completed 1450/3000 answer/evidence pairs
+Completed 1475/3000 answer/evidence pairs
+Completed 1500/3000 answer/evidence pairs
+Completed 1525/3000 answer/evidence pairs
+Completed 1550/3000 answer/evidence pairs
+Completed 1575/3000 answer/evidence pairs
+Completed 1600/3000 answer/evidence pairs
+Completed 1625/3000 answer/evidence pairs
+Completed 1650/3000 answer/evidence pairs
+Completed 1675/3000 answer/evidence pairs
+Completed 1700/3000 answer/evidence pairs
+Completed 1725/3000 answer/evidence pairs
+Completed 1750/3000 answer/evidence pairs
+Completed 1775/3000 answer/evidence pairs
+Completed 1800/3000 answer/evidence pairs
+Completed 1825/3000 answer/evidence pairs
+Completed 1850/3000 answer/evidence pairs
+Completed 1875/3000 answer/evidence pairs
+Completed 1900/3000 answer/evidence pairs
+Completed 1925/3000 answer/evidence pairs
+Completed 1950/3000 answer/evidence pairs
+Completed 1975/3000 answer/evidence pairs
+Completed 2000/3000 answer/evidence pairs
+Completed 2025/3000 answer/evidence pairs
+Completed 2050/3000 answer/evidence pairs
+Completed 2075/3000 answer/evidence pairs
+Completed 2100/3000 answer/evidence pairs
+Completed 2125/3000 answer/evidence pairs
+Completed 2150/3000 answer/evidence pairs
+Completed 2175/3000 answer/evidence pairs
+Completed 2200/3000 answer/evidence pairs
+Completed 2225/3000 answer/evidence pairs
+Completed 2250/3000 answer/evidence pairs
+Completed 2275/3000 answer/evidence pairs
+Completed 2300/3000 answer/evidence pairs
+Completed 2325/3000 answer/evidence pairs
+Completed 2350/3000 answer/evidence pairs
+Completed 2375/3000 answer/evidence pairs
+Completed 2400/3000 answer/evidence pairs
+Completed 2425/3000 answer/evidence pairs
+Completed 2450/3000 answer/evidence pairs
+Completed 2475/3000 answer/evidence pairs
+Completed 2500/3000 answer/evidence pairs
+Completed 2525/3000 answer/evidence pairs
+Completed 2550/3000 answer/evidence pairs
+Completed 2575/3000 answer/evidence pairs
+Completed 2600/3000 answer/evidence pairs
+Completed 2625/3000 answer/evidence pairs
+Completed 2650/3000 answer/evidence pairs
+Completed 2675/3000 answer/evidence pairs
+Completed 2700/3000 answer/evidence pairs
+Completed 2725/3000 answer/evidence pairs
+Completed 2750/3000 answer/evidence pairs
+Completed 2775/3000 answer/evidence pairs
+Completed 2800/3000 answer/evidence pairs
+Completed 2825/3000 answer/evidence pairs
+Completed 2850/3000 answer/evidence pairs
+Completed 2875/3000 answer/evidence pairs
+Completed 2900/3000 answer/evidence pairs
+Completed 2925/3000 answer/evidence pairs
+Completed 2950/3000 answer/evidence pairs
+Completed 2975/3000 answer/evidence pairs
+Completed 3000/3000 answer/evidence pairs
+Generation complete at 2026-11-15T22:35:33+08:00
+can't find pane: =nlp6a-vllm
+Step 5 worker exited with status 1 at 2026-11-15T22:35:34+08:00
+step5_v2/test.json: OK
+step4_dev/generate_test_v2.py: OK
+step4_dev/evaluate_test_v2.py: OK
+run_step5_v2.sh: OK
+step5_v2/hotpot_evaluate_v1.py: OK
+.serve-step4.sh: OK
+step4_dev/gates/locked_gates.json: OK
+config.json: OK
+added_tokens.json: OK
+special_tokens_map.json: OK
+spm.model: OK
+tokenizer.json: OK
+tokenizer_config.json: OK
+model.safetensors: OK
+Starting held-out generation at 2026-11-16T07:50:34+08:00; real-path NLI device cpu
+[warn] VLLM_API_KEY is unset; using a placeholder key 'EMPTY' (fine for a local vLLM server that does not check keys).
+Formal generation starting with 3000/3000 complete
+Generation complete at 2026-11-16T07:50:40+08:00
+Starting cached-answer CUDA NLI at 2026-11-16T07:50:46+08:00
+Traceback (most recent call last):
+  File "/home/ubuntu/nlp/step4_dev/evaluate_test_v2.py", line 291, in <module>
+    main()
+  File "/home/ubuntu/nlp/step4_dev/evaluate_test_v2.py", line 285, in main
+    replay(args, questions, lock, gen.load_official(args.scorer))
+  File "/home/ubuntu/nlp/step4_dev/evaluate_test_v2.py", line 80, in replay
+    nli, expected_nli = branch_cache(args, questions, ("A", "B"), "nli_test_v2.jsonl")
+  File "/home/ubuntu/nlp/step4_dev/evaluate_test_v2.py", line 27, in branch_cache
+    records = gen.read_cache(args.out / cache_name, fields, expected)
+  File "/home/ubuntu/nlp/step4_dev/generate_test_v2.py", line 66, in read_cache
+    raise ValueError(f"Unexpected or duplicate cache key {key}")
+ValueError: Unexpected or duplicate cache key ('models/dev-deberta-b3546ea', '5abcf2b4554299700f9d7937', 'A')
+Step 5 worker exited with status 1 at 2026-11-16T07:53:53+08:00
+step5_v2/test.json: OK
+step4_dev/generate_test_v2.py: OK
+step4_dev/evaluate_test_v2.py: OK
+run_step5_v2.sh: OK
+step5_v2/hotpot_evaluate_v1.py: OK
+.serve-step4.sh: OK
+step4_dev/gates/locked_gates.json: OK
+config.json: OK
+added_tokens.json: OK
+special_tokens_map.json: OK
+spm.model: OK
+tokenizer.json: OK
+tokenizer_config.json: OK
+model.safetensors: OK
+Starting held-out generation at 2026-11-16T07:55:12+08:00; real-path NLI device cpu
+[warn] VLLM_API_KEY is unset; using a placeholder key 'EMPTY' (fine for a local vLLM server that does not check keys).
+Formal generation starting with 3000/3000 complete
+Generation complete at 2026-11-16T07:55:18+08:00
+Official scoring and replay complete for 1000 questions
+Step 5 worker exited with status 0 at 2026-11-16T08:07:31+08:00

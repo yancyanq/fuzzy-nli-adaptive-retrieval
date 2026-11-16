@@ -1,0 +1,80 @@
+{
+  "n": 500,
+  "target_count": 100,
+  "target_rate": 0.2,
+  "grid_size": 27,
+  "bridge_counts": {
+    "present": 175,
+    "absent": 325,
+    "unavailable": 0
+  },
+  "policies": {
+    "fuzzy": {
+      "f1": 0.536217748917749,
+      "em": 0.398,
+      "n_retrieved": 100,
+      "retrieval_rate": 0.2,
+      "selected_labels": {
+        "improved": 25,
+        "tie": 69,
+        "degraded": 6
+      }
+    },
+    "crisp": {
+      "f1": 0.5352082251082251,
+      "em": 0.396,
+      "n_retrieved": 100,
+      "retrieval_rate": 0.2,
+      "selected_labels": {
+        "improved": 26,
+        "tie": 69,
+        "degraded": 5
+      }
+    },
+    "nli_only": {
+      "f1": 0.5320844155844157,
+      "em": 0.396,
+      "n_retrieved": 100,
+      "retrieval_rate": 0.2,
+      "selected_labels": {
+        "improved": 22,
+        "tie": 72,
+        "degraded": 6
+      }
+    },
+    "never": {
+      "f1": 0.5001637806637806,
+      "em": 0.368,
+      "n_retrieved": 0,
+      "retrieval_rate": 0.0,
+      "selected_labels": {
+        "improved": 0,
+        "tie": 0,
+        "degraded": 0
+      }
+    },
+    "always": {
+      "f1": 0.5726035353535354,
+      "em": 0.43,
+      "n_retrieved": 500,
+      "retrieval_rate": 1.0,
+      "selected_labels": {
+        "improved": 68,
+        "tie": 404,
+        "degraded": 28
+      }
+    },
+    "oracle": {
+      "f1": 0.6076225108225107,
+      "em": 0.464,
+      "n_retrieved": 68,
+      "retrieval_rate": 0.136,
+      "selected_labels": {
+        "improved": 68,
+        "tie": 0,
+        "degraded": 0
+      }
+    }
+  },
+  "fuzzy_crisp_overlap": 85
+}

@@ -1,0 +1,2274 @@
+{
+  "missed_improved": {
+    "eligible": 67,
+    "cases": [
+      {
+        "_id": "5aba89365542994dbf019932",
+        "question": "Who is the television producer who created a 2011 American film based on a novel by Hunter S Thompson?",
+        "gold": "Colin Vaines",
+        "gold_sentences": [
+          {
+            "title": "Colin Vaines",
+            "index": 0,
+            "text": "Colin Vaines is a film and Emmy-winning television producer whose credits include \"Film Stars Don't Die In Liverpool\" , \"Gangs of New York\", \"Coriolanus\", \"The Young Victoria\", and \"The Rum Diary\"."
+          },
+          {
+            "title": "The Rum Diary (film)",
+            "index": 0,
+            "text": "The Rum Diary is a 2011 American film based on the novel of the same name by Hunter S. Thompson."
+          }
+        ],
+        "delta": 1.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Bruce Robinson",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.9442313223740213,
+          "retrieved_titles": [
+            "The Rum Diary (film)",
+            "Tyshane"
+          ],
+          "cited_titles": [
+            "The Rum Diary (film)"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "The Rum Diary (film)",
+              [
+                "The Rum Diary is a 2011 American film based on the novel of the same name by Hunter S. Thompson.",
+                " The film was written and directed by Bruce Robinson and stars Johnny Depp.",
+                " Filming began in Puerto Rico in March 2009.",
+                " It was released on October 28, 2011."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "The Rum Diary (film)",
+              0
+            ],
+            [
+              "The Rum Diary (film)",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Colin Vaines",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.5051258447323614,
+          "retrieved_titles": [
+            "The Rum Diary (film)",
+            "Tyshane",
+            "Colin Vaines"
+          ],
+          "cited_titles": [
+            "Colin Vaines"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Colin Vaines",
+              [
+                "Colin Vaines is a film and Emmy-winning television producer whose credits include \"Film Stars Don't Die In Liverpool\" , \"Gangs of New York\", \"Coriolanus\", \"The Young Victoria\", and \"The Rum Diary\"."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Colin Vaines",
+              0
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5a7cb5f0554299452d57b9b5",
+        "question": "What year was the essay which Henry Louis Gates and Cornel West criticized in their book, \"The Future of the Race\" first published?",
+        "gold": "1903",
+        "gold_sentences": [
+          {
+            "title": "The Future of the Race",
+            "index": 0,
+            "text": "The Future of the Race is a 1996 book by prominent African-American scholars Henry Louis Gates and Cornel West."
+          },
+          {
+            "title": "The Future of the Race",
+            "index": 1,
+            "text": " It is both commentary and criticism on W. E. B. Du Bois' essay \"The Talented Tenth\" ."
+          },
+          {
+            "title": "The Talented Tenth",
+            "index": 1,
+            "text": " The term was created by Northern philanthropists, then publicized by W. E. B. Du Bois in an influential essay of the same name, which he published in September 1903."
+          }
+        ],
+        "delta": 1.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "1899",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.9648333944522314,
+          "retrieved_titles": [
+            "The Future of the Race",
+            "Race Matters"
+          ],
+          "cited_titles": [
+            "The Future of the Race"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "The Future of the Race",
+              [
+                "The Future of the Race is a 1996 book by prominent African-American scholars Henry Louis Gates and Cornel West.",
+                " It is both commentary and criticism on W. E. B. Du Bois' essay \"The Talented Tenth\" .",
+                " The Vintage Books edition includes the original text by Du Bois."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "The Future of the Race",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "1903",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9878358500971977,
+          "retrieved_titles": [
+            "The Future of the Race",
+            "Race Matters",
+            "God's Trombones"
+          ],
+          "cited_titles": [
+            "The Future of the Race"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "The Future of the Race",
+              [
+                "The Future of the Race is a 1996 book by prominent African-American scholars Henry Louis Gates and Cornel West.",
+                " It is both commentary and criticism on W. E. B. Du Bois' essay \"The Talented Tenth\" .",
+                " The Vintage Books edition includes the original text by Du Bois."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "The Future of the Race",
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5a7e6df35542997cc2c47544",
+        "question": "What was the other name of the textile mill on which The Mill was based on?",
+        "gold": "Styal Mill",
+        "gold_sentences": [
+          {
+            "title": "The Mill (TV series)",
+            "index": 0,
+            "text": "The Mill was a 2013 period television drama broadcast on Britain's Channel 4."
+          },
+          {
+            "title": "The Mill (TV series)",
+            "index": 1,
+            "text": " It was is based on real-life stories and people of the textile mill workers at Quarry Bank Mill in Cheshire, England, combined with fictional characters and events."
+          },
+          {
+            "title": "Quarry Bank Mill",
+            "index": 0,
+            "text": "Quarry Bank Mill (also known as Styal Mill) in Styal, Cheshire, England, is one of the best preserved textile mills of the Industrial Revolution and is now a museum of the cotton industry."
+          }
+        ],
+        "delta": 0.6,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Quarry Bank Mill",
+          "answer_f1": 0.4,
+          "em": 0.0,
+          "entailment": 0.9973262641425434,
+          "retrieved_titles": [
+            "The Mill (TV series)",
+            "Erwin Mill"
+          ],
+          "cited_titles": [
+            "The Mill (TV series)"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "The Mill (TV series)",
+              [
+                "The Mill was a 2013 period television drama broadcast on Britain's Channel 4.",
+                " It was is based on real-life stories and people of the textile mill workers at Quarry Bank Mill in Cheshire, England, combined with fictional characters and events.",
+                " The program is also filmed in Cheshire."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "The Mill (TV series)",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Styal Mill",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.04993173205017357,
+          "retrieved_titles": [
+            "The Mill (TV series)",
+            "Erwin Mill",
+            "Quarry Bank Mill"
+          ],
+          "cited_titles": [
+            "The Mill (TV series)"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "The Mill (TV series)",
+              [
+                "The Mill was a 2013 period television drama broadcast on Britain's Channel 4.",
+                " It was is based on real-life stories and people of the textile mill workers at Quarry Bank Mill in Cheshire, England, combined with fictional characters and events.",
+                " The program is also filmed in Cheshire."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "The Mill (TV series)",
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5ac007cc5542996f0d89cb0b",
+        "question": "Who was attempting to regain the British throne until the Raids on Lachaber and Shiramore shut down his operations?",
+        "gold": "Charles Edward Stuart",
+        "gold_sentences": [
+          {
+            "title": "Raids on Lochaber and Shiramore",
+            "index": 0,
+            "text": "The Raids on Lochaber and Shiramore took place in the Scottish Highlands between 22 May and 31 August 1746 and were part of the closing operations of the British-Hanoverian Government to bring to an end the Jacobite rising of 1745."
+          },
+          {
+            "title": "Jacobite rising of 1745",
+            "index": 0,
+            "text": "The Jacobite rising of 1745 (Scottish Gaelic: \"Bliadhna Theàrlaich\" ] , \"The Year of Charles\") was the attempt by Charles Edward Stuart to regain the British throne for the exiled House of Stuart."
+          }
+        ],
+        "delta": 0.2500000000000001,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Bonnie Prince Charles Edward Stuart",
+          "answer_f1": 0.7499999999999999,
+          "em": 0.0,
+          "entailment": 0.9975689348464035,
+          "retrieved_titles": [
+            "Raids on Lochaber and Shiramore",
+            "Reprisal operations"
+          ],
+          "cited_titles": [
+            "Raids on Lochaber and Shiramore"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Raids on Lochaber and Shiramore",
+              [
+                "The Raids on Lochaber and Shiramore took place in the Scottish Highlands between 22 May and 31 August 1746 and were part of the closing operations of the British-Hanoverian Government to bring to an end the Jacobite rising of 1745.",
+                " Sometimes referred to as the \"mopping up\" operations many rebels surrendered themselves and their arms, while others were captured and punished.",
+                " It also included the hunt for the Jacobite leader \"Bonnie Prince\" Charles Edward Stuart otherwise known as the \"Young Pretender\".",
+                " Most of the work was done on behalf of the Government by the Independent Highland Companies of militia and also the Campbell of Argyll Militia."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Raids on Lochaber and Shiramore",
+              0
+            ],
+            [
+              "Raids on Lochaber and Shiramore",
+              2
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Charles Edward Stuart",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9989776379927496,
+          "retrieved_titles": [
+            "Raids on Lochaber and Shiramore",
+            "Reprisal operations",
+            "Jacobite rising of 1745"
+          ],
+          "cited_titles": [
+            "Raids on Lochaber and Shiramore",
+            "Jacobite rising of 1745"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 2,
+          "nli_premise_paragraphs": [
+            [
+              "Raids on Lochaber and Shiramore",
+              [
+                "The Raids on Lochaber and Shiramore took place in the Scottish Highlands between 22 May and 31 August 1746 and were part of the closing operations of the British-Hanoverian Government to bring to an end the Jacobite rising of 1745.",
+                " Sometimes referred to as the \"mopping up\" operations many rebels surrendered themselves and their arms, while others were captured and punished.",
+                " It also included the hunt for the Jacobite leader \"Bonnie Prince\" Charles Edward Stuart otherwise known as the \"Young Pretender\".",
+                " Most of the work was done on behalf of the Government by the Independent Highland Companies of militia and also the Campbell of Argyll Militia."
+              ]
+            ],
+            [
+              "Jacobite rising of 1745",
+              [
+                "The Jacobite rising of 1745 (Scottish Gaelic: \"Bliadhna Theàrlaich\" ] , \"The Year of Charles\") was the attempt by Charles Edward Stuart to regain the British throne for the exiled House of Stuart.",
+                " The rising occurred during the War of the Austrian Succession, when most of the British Army was on the European continent.",
+                " Charles Edward Stuart, commonly known as \"Bonnie Prince Charlie\" or \"the Young Pretender\", sailed to Scotland and raised the Jacobite standard at Glenfinnan in the Scottish Highlands, where he was supported by a gathering of Highland clansmen.",
+                " The march south began with an initial victory at Prestonpans near Edinburgh.",
+                " The Jacobite army, now in bold spirits, marched onwards to Carlisle, over the border in England.",
+                " When it reached Derby, some British divisions were recalled from the Continent and the Jacobite army retreated north to Inverness where the last battle on Scottish soil took place on a nearby moor at Culloden.",
+                " The Battle of Culloden ended with the final defeat of the Jacobite cause.",
+                " Charles Edward Stuart fled with a price on his head before finally sailing to France."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Raids on Lochaber and Shiramore",
+              0
+            ],
+            [
+              "Raids on Lochaber and Shiramore",
+              2
+            ],
+            [
+              "Jacobite rising of 1745",
+              0
+            ],
+            [
+              "Jacobite rising of 1745",
+              2
+            ],
+            [
+              "Jacobite rising of 1745",
+              7
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5add16b65542990d50227dd2",
+        "question": "What is the age range of the league for which the Bobby Smith Trophy is awarded?",
+        "gold": "16–21",
+        "gold_sentences": [
+          {
+            "title": "Bobby Smith Trophy",
+            "index": 0,
+            "text": "The Bobby Smith Trophy is awarded annually to the Ontario Hockey League (OHL) Scholastic Player of the Year who best combines high standards of play and academic excellence."
+          },
+          {
+            "title": "Ontario Hockey League",
+            "index": 1,
+            "text": " The league is for players aged 16–21."
+          }
+        ],
+        "delta": 1.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "False",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "high school",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.9619398265446718,
+          "retrieved_titles": [
+            "Bobby Smith Trophy",
+            "Chris Clifford"
+          ],
+          "cited_titles": [
+            "Bobby Smith Trophy"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Bobby Smith Trophy",
+              [
+                "The Bobby Smith Trophy is awarded annually to the Ontario Hockey League (OHL) Scholastic Player of the Year who best combines high standards of play and academic excellence."
+              ]
+            ]
+          ],
+          "selected_support": []
+        },
+        "B": {
+          "answer": "16–21",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9382606740536115,
+          "retrieved_titles": [
+            "Bobby Smith Trophy",
+            "Chris Clifford",
+            "Ontario Hockey League"
+          ],
+          "cited_titles": [
+            "Ontario Hockey League"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Ontario Hockey League",
+              [
+                "The Ontario Hockey League (OHL) is one of the three major junior ice hockey leagues which constitute the Canadian Hockey League.",
+                " The league is for players aged 16–21."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Ontario Hockey League",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "triggered_degraded": {
+    "eligible": 17,
+    "cases": [
+      {
+        "_id": "5a7fb17c5542994857a767bb",
+        "question": "Which two teams did the the head coach of The 2007 San Diego State Aztecs play for professionally?",
+        "gold": "Detroit Lions and the Los Angeles Rams",
+        "gold_sentences": [
+          {
+            "title": "2007 San Diego State Aztecs football team",
+            "index": 0,
+            "text": "The 2007 San Diego State Aztecs football team represented San Diego State University in the 2007 NCAA Division I FBS college football season."
+          },
+          {
+            "title": "2007 San Diego State Aztecs football team",
+            "index": 1,
+            "text": " The Aztecs, led by head coach Chuck Long, played their home games at the Qualcomm Stadium."
+          },
+          {
+            "title": "Chuck Long",
+            "index": 1,
+            "text": " He played quarterback in college at Iowa for Hayden Fry and professionally with the Detroit Lions and the Los Angeles Rams."
+          }
+        ],
+        "delta": -0.16666666666666666,
+        "fuzzy_branch": "B",
+        "crisp_branch": "B",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": true,
+        "A": {
+          "answer": "Tampa Bay Buccaneers and Denver Broncos",
+          "answer_f1": 0.16666666666666666,
+          "em": 0.0,
+          "entailment": 0.8186306144357803,
+          "retrieved_titles": [
+            "2007 San Diego State Aztecs football team",
+            "1970 San Diego State Aztecs football team"
+          ],
+          "cited_titles": [],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "2007 San Diego State Aztecs football team",
+              [
+                "The 2007 San Diego State Aztecs football team represented San Diego State University in the 2007 NCAA Division I FBS college football season.",
+                " The Aztecs, led by head coach Chuck Long, played their home games at the Qualcomm Stadium.",
+                " They finished with a record of 4–8 (3–5 MWC)."
+              ]
+            ],
+            [
+              "1970 San Diego State Aztecs football team",
+              [
+                "The 1970 San Diego State Aztecs football team represented San Diego State College during the 1970 NCAA University Division football season as a member of the Pacific Coast Athletic Association.",
+                " The team was led by head coach Don Coryell, in his tenth year, and they played their home games at San Diego Stadium in San Diego, California.",
+                " They finished the season as co-champions of the conference, with a record of nine wins and two losses (9–2, 5–1 PCAA)."
+              ]
+            ]
+          ],
+          "selected_support": []
+        },
+        "B": {
+          "answer": "Denver Broncos, Houston Oilers",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.866054133835031,
+          "retrieved_titles": [
+            "2007 San Diego State Aztecs football team",
+            "1970 San Diego State Aztecs football team",
+            "2012 San Diego State Aztecs football team"
+          ],
+          "cited_titles": [],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "2007 San Diego State Aztecs football team",
+              [
+                "The 2007 San Diego State Aztecs football team represented San Diego State University in the 2007 NCAA Division I FBS college football season.",
+                " The Aztecs, led by head coach Chuck Long, played their home games at the Qualcomm Stadium.",
+                " They finished with a record of 4–8 (3–5 MWC)."
+              ]
+            ],
+            [
+              "1970 San Diego State Aztecs football team",
+              [
+                "The 1970 San Diego State Aztecs football team represented San Diego State College during the 1970 NCAA University Division football season as a member of the Pacific Coast Athletic Association.",
+                " The team was led by head coach Don Coryell, in his tenth year, and they played their home games at San Diego Stadium in San Diego, California.",
+                " They finished the season as co-champions of the conference, with a record of nine wins and two losses (9–2, 5–1 PCAA)."
+              ]
+            ],
+            [
+              "2012 San Diego State Aztecs football team",
+              [
+                "The 2012 San Diego State Aztecs football team represented San Diego State University in the 2012 NCAA Division I FBS football season.",
+                " The Aztecs were led by second-year head coach Rocky Long and played their home games at Qualcomm Stadium.",
+                " This was San Diego State's 14th season in the Mountain West Conference."
+              ]
+            ]
+          ],
+          "selected_support": []
+        }
+      },
+      {
+        "_id": "5a8ce88c55429941ae14df3b",
+        "question": "What soldier and statesman was also a brother to James FitzJames mother?",
+        "gold": "John Churchill, 1st Duke of Marlborough",
+        "gold_sentences": [
+          {
+            "title": "James FitzJames, 1st Duke of Berwick",
+            "index": 0,
+            "text": "James FitzJames, 1st Duke of Berwick, 1st Duke of Fitz-James, 1st Duke of Liria and Jérica (21 August 1670 – 12 June 1734) was an Anglo-French military leader, illegitimate son of King James II of England by Arabella Churchill, sister of the 1st Duke of Marlborough."
+          },
+          {
+            "title": "John Churchill, 1st Duke of Marlborough",
+            "index": 0,
+            "text": "General John Churchill, 1st Duke of Marlborough, 1st Prince of Mindelheim, 1st Count of Nellenburg, Prince of the Holy Roman Empire, ( , often ; 26 May 1650 – 16 June 1722 O.S. ) was an English soldier and statesman whose career spanned the reigns of five monarchs."
+          }
+        ],
+        "delta": -0.3333333333333333,
+        "fuzzy_branch": "B",
+        "crisp_branch": "A",
+        "bridge_absent": "False",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "James Butler, 2nd Duke of Ormonde",
+          "answer_f1": 0.3333333333333333,
+          "em": 0.0,
+          "entailment": 0.463117858857831,
+          "retrieved_titles": [
+            "James Fitzjames",
+            "James Butler, 2nd Duke of Ormonde"
+          ],
+          "cited_titles": [
+            "James Fitzjames",
+            "James Butler, 2nd Duke of Ormonde"
+          ],
+          "retrieved_gold_count": 0,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "James Fitzjames",
+              [
+                "Captain James Fitzjames RN (27 July 1813–after 1848?)",
+                " was a British naval officer who participated in two major exploratory expeditions, the Euphrates Expedition and the Franklin Expedition to the Arctic, and a third up the Yellow River into China.",
+                " He was illegitimate, and during his life and after his friends and relatives took great pains to conceal his origins.",
+                " It has recently been revealed that his true father was Sir James Gambier, although the identity of his mother remains unknown."
+              ]
+            ],
+            [
+              "James Butler, 2nd Duke of Ormonde",
+              [
+                "James FitzJames Butler, 2nd Duke of Ormonde, 13th Earl of Ormond, 7th Earl of Ossory, 2nd Baron Butler, {'1': \", '2': \", '3': \", '4': \"} (29 April 1665 – 16 November 1745) was an Irish statesman and soldier.",
+                " He was the third of the Kilcash branch of the family to inherit the earldom of Ormond.",
+                " Like his grandfather the 1st Duke, he was raised as a Protestant, unlike his extended family who held to Roman Catholicism.",
+                " He served in the campaign to put down the Monmouth Rebellion, in the Williamite War in Ireland, in the Nine Years' War and in the War of the Spanish Succession but was accused of treason and went into exile after the Jacobite rising of 1715."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "James Butler, 2nd Duke of Ormonde",
+              0
+            ],
+            [
+              "James Fitzjames",
+              0
+            ],
+            [
+              "James Fitzjames",
+              3
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Sir James Gambier",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.05754703280168747,
+          "retrieved_titles": [
+            "James Fitzjames",
+            "James Butler, 2nd Duke of Ormonde",
+            "House of FitzJames"
+          ],
+          "cited_titles": [
+            "James Fitzjames"
+          ],
+          "retrieved_gold_count": 0,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "James Fitzjames",
+              [
+                "Captain James Fitzjames RN (27 July 1813–after 1848?)",
+                " was a British naval officer who participated in two major exploratory expeditions, the Euphrates Expedition and the Franklin Expedition to the Arctic, and a third up the Yellow River into China.",
+                " He was illegitimate, and during his life and after his friends and relatives took great pains to conceal his origins.",
+                " It has recently been revealed that his true father was Sir James Gambier, although the identity of his mother remains unknown."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "James Fitzjames",
+              3
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5a8e03375542995a26add458",
+        "question": "What year was the man, who is credited for developing a Crescograph, born?",
+        "gold": "1858",
+        "gold_sentences": [
+          {
+            "title": "Crescograph",
+            "index": 0,
+            "text": "A crescograph is a device for measuring growth in plants."
+          },
+          {
+            "title": "Crescograph",
+            "index": 1,
+            "text": " It was invented in the early 20th century by Sir Jagadish Chandra Bose."
+          },
+          {
+            "title": "Jagadish Chandra Bose",
+            "index": 0,
+            "text": "Sir Jagadish Chandra Bose, CSI, CIE, FRS ( ; ] ; 30 November 1858 – 23 November 1937), also spelled Jagdish and Jagadis, was a Bengali polymath, physicist, biologist, biophysicist, botanist and archaeologist, and an early writer of science fiction."
+          }
+        ],
+        "delta": -1.0,
+        "fuzzy_branch": "B",
+        "crisp_branch": "B",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "1858",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.0909347287834028,
+          "retrieved_titles": [
+            "Rosa Mundi (group)",
+            "Crescograph"
+          ],
+          "cited_titles": [
+            "Crescograph"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Crescograph",
+              [
+                "A crescograph is a device for measuring growth in plants.",
+                " It was invented in the early 20th century by Sir Jagadish Chandra Bose."
+              ]
+            ]
+          ],
+          "selected_support": []
+        },
+        "B": {
+          "answer": "early 20th century",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.9575763306053178,
+          "retrieved_titles": [
+            "Rosa Mundi (group)",
+            "Crescograph",
+            "George Groves (sound engineer)"
+          ],
+          "cited_titles": [
+            "Crescograph"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Crescograph",
+              [
+                "A crescograph is a device for measuring growth in plants.",
+                " It was invented in the early 20th century by Sir Jagadish Chandra Bose."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Crescograph",
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5abeb3525542993fe9a41d03",
+        "question": "Which community did Otto Gross join which includes the popular destination Monte Verita?",
+        "gold": "joined the utopian Ascona community",
+        "gold_sentences": [
+          {
+            "title": "Otto Gross",
+            "index": 0,
+            "text": "Otto Hans Adolf Gross (17 March 1877 – 13 February 1920) was an Austrian psychoanalyst."
+          },
+          {
+            "title": "Otto Gross",
+            "index": 1,
+            "text": " A maverick early disciple of Sigmund Freud, he later became an anarchist and joined the utopian Ascona community."
+          },
+          {
+            "title": "Monte Verità",
+            "index": 0,
+            "text": "Monte Verità (literally Hill of Truth) is a hill (350 m high) in Ascona (Swiss canton of Ticino), which has served as the site of many different Utopian and cultural events and communities since the beginning of the twentieth century, having started out as a popular destination for Wandervogel hikers during the Lebensreform period."
+          }
+        ],
+        "delta": -0.2666666666666666,
+        "fuzzy_branch": "B",
+        "crisp_branch": "B",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Ascona community",
+          "answer_f1": 0.6666666666666666,
+          "em": 0.0,
+          "entailment": 0.7205268811219591,
+          "retrieved_titles": [
+            "Otto Gross",
+            "Monte Verità"
+          ],
+          "cited_titles": [
+            "Otto Gross"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Otto Gross",
+              [
+                "Otto Hans Adolf Gross (17 March 1877 – 13 February 1920) was an Austrian psychoanalyst.",
+                " A maverick early disciple of Sigmund Freud, he later became an anarchist and joined the utopian Ascona community."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Otto Gross",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Ascona",
+          "answer_f1": 0.4,
+          "em": 0.0,
+          "entailment": 0.9991890267835438,
+          "retrieved_titles": [
+            "Otto Gross",
+            "Monte Verità",
+            "Hans Gross"
+          ],
+          "cited_titles": [
+            "Otto Gross",
+            "Monte Verità"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 2,
+          "nli_premise_paragraphs": [
+            [
+              "Otto Gross",
+              [
+                "Otto Hans Adolf Gross (17 March 1877 – 13 February 1920) was an Austrian psychoanalyst.",
+                " A maverick early disciple of Sigmund Freud, he later became an anarchist and joined the utopian Ascona community."
+              ]
+            ],
+            [
+              "Monte Verità",
+              [
+                "Monte Verità (literally Hill of Truth) is a hill (350 m high) in Ascona (Swiss canton of Ticino), which has served as the site of many different Utopian and cultural events and communities since the beginning of the twentieth century, having started out as a popular destination for Wandervogel hikers during the Lebensreform period."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Otto Gross",
+              1
+            ],
+            [
+              "Monte Verità",
+              0
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5a7b4073554299042af8f733",
+        "question": "Why did basketball player, \"The Process\" not play in the 77th season?",
+        "gold": "leg injury",
+        "gold_sentences": [
+          {
+            "title": "2015–16 Philadelphia 76ers season",
+            "index": 0,
+            "text": "The 2015–16 Philadelphia 76ers season was the 77th season of the franchise in the National Basketball Association (NBA)."
+          },
+          {
+            "title": "2015–16 Philadelphia 76ers season",
+            "index": 1,
+            "text": " It was also the second straight season that Joel Embiid, their third pick in the 2014 NBA draft, would not suit up for the 76ers due to a leg injury."
+          },
+          {
+            "title": "Joel Embiid",
+            "index": 2,
+            "text": " He has nicknamed himself \"The Process\" in response to a refrain from 76ers fans during the Sam Hinkie-era to \"trust the process\"."
+          }
+        ],
+        "delta": -0.33333333333333337,
+        "fuzzy_branch": "B",
+        "crisp_branch": "A",
+        "bridge_absent": "False",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "a leg injury",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.4938095539870583,
+          "retrieved_titles": [
+            "Joel Embiid",
+            "2015–16 Philadelphia 76ers season"
+          ],
+          "cited_titles": [
+            "2015–16 Philadelphia 76ers season"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "2015–16 Philadelphia 76ers season",
+              [
+                "The 2015–16 Philadelphia 76ers season was the 77th season of the franchise in the National Basketball Association (NBA).",
+                " It was also the second straight season that Joel Embiid, their third pick in the 2014 NBA draft, would not suit up for the 76ers due to a leg injury.",
+                " Philadelphia broke the record for the longest losing streak in American professional sports history with 27 straight losses over this season and last season with a 114–116 loss to the Houston Rockets.",
+                " The losing streak would reach to 28 games (with the 18 straight losses tying the record for longest opening season losing streak with the 2009–10 New Jersey Nets) before getting their first victory at home against the Los Angeles Lakers, which was also Kobe Bryant's last game against the 76ers in Philadelphia.",
+                " Philadelphia would also hire former Phoenix Suns owner, coach, general manager, and four-time NBA Executive of the Year winner Jerry Colangelo on December 7, 2015 as their Chairman of Basketball Operations.",
+                " Eleven days later, former Denver Nuggets, Phoenix Suns, New York Knicks, and Los Angeles Lakers head coach Mike D'Antoni would join the team as an associate head coach.",
+                " Near the end of the season, general manager Sam Hinkie would announce his resignation from his position, being replaced by Jerry's son Bryan Colangelo before the end of the season.",
+                " Jerry would also announce his personal demotion from his original position afterwards.",
+                " They finished just one game shy of tying the NBA record for most losses in a season set by themselves during their 1972–73 season when they went 9–73.",
+                " However, it would be the season where Sam Hinkie's goal of \"The Process\" came into full fruition since they'd later earn the #1 selection in the 2016 NBA draft."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "2015–16 Philadelphia 76ers season",
+              0
+            ],
+            [
+              "2015–16 Philadelphia 76ers season",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "due to a leg injury",
+          "answer_f1": 0.6666666666666666,
+          "em": 0.0,
+          "entailment": 0.19165525084982607,
+          "retrieved_titles": [
+            "Joel Embiid",
+            "2015–16 Philadelphia 76ers season",
+            "2017–18 Detroit Pistons season"
+          ],
+          "cited_titles": [
+            "2015–16 Philadelphia 76ers season"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "2015–16 Philadelphia 76ers season",
+              [
+                "The 2015–16 Philadelphia 76ers season was the 77th season of the franchise in the National Basketball Association (NBA).",
+                " It was also the second straight season that Joel Embiid, their third pick in the 2014 NBA draft, would not suit up for the 76ers due to a leg injury.",
+                " Philadelphia broke the record for the longest losing streak in American professional sports history with 27 straight losses over this season and last season with a 114–116 loss to the Houston Rockets.",
+                " The losing streak would reach to 28 games (with the 18 straight losses tying the record for longest opening season losing streak with the 2009–10 New Jersey Nets) before getting their first victory at home against the Los Angeles Lakers, which was also Kobe Bryant's last game against the 76ers in Philadelphia.",
+                " Philadelphia would also hire former Phoenix Suns owner, coach, general manager, and four-time NBA Executive of the Year winner Jerry Colangelo on December 7, 2015 as their Chairman of Basketball Operations.",
+                " Eleven days later, former Denver Nuggets, Phoenix Suns, New York Knicks, and Los Angeles Lakers head coach Mike D'Antoni would join the team as an associate head coach.",
+                " Near the end of the season, general manager Sam Hinkie would announce his resignation from his position, being replaced by Jerry's son Bryan Colangelo before the end of the season.",
+                " Jerry would also announce his personal demotion from his original position afterwards.",
+                " They finished just one game shy of tying the NBA record for most losses in a season set by themselves during their 1972–73 season when they went 9–73.",
+                " However, it would be the season where Sam Hinkie's goal of \"The Process\" came into full fruition since they'd later earn the #1 selection in the 2016 NBA draft."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "2015–16 Philadelphia 76ers season",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "missing_hop_candidate": {
+    "eligible": 727,
+    "cases": [
+      {
+        "_id": "5adf92f15542995534e8c7f3",
+        "question": "Though Nursultan Nazarbayev was elected through the democratic system of “rule of the majority”, citizens though what of his election?",
+        "gold": "Most observers viewed the election as blatantly unfair",
+        "gold_sentences": [
+          {
+            "title": "Kazakh presidential election, 1999",
+            "index": 1,
+            "text": " Incumbent president Nursultan Nazarbayev won the election with over 80% of the vote, and was sworn into office on 20 January 1999."
+          },
+          {
+            "title": "Kazakh presidential election, 1999",
+            "index": 2,
+            "text": " Most observers viewed the election as blatantly unfair, further confirming that Nazarbayev was not interested in promoting a democratic system of government."
+          },
+          {
+            "title": "Democracy",
+            "index": 1,
+            "text": " Democracy is sometimes referred to as \"rule of the majority\"."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "B",
+        "crisp_branch": "B",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "blatantly unfair",
+          "answer_f1": 0.4444444444444445,
+          "em": 0.0,
+          "entailment": 0.6429753978736267,
+          "retrieved_titles": [
+            "Democracy",
+            "Kazakh presidential election, 1999"
+          ],
+          "cited_titles": [
+            "Kazakh presidential election, 1999"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Kazakh presidential election, 1999",
+              [
+                "Presidential elections were held in Kazakhstan on 10 January 1999.",
+                " Incumbent president Nursultan Nazarbayev won the election with over 80% of the vote, and was sworn into office on 20 January 1999.",
+                " Most observers viewed the election as blatantly unfair, further confirming that Nazarbayev was not interested in promoting a democratic system of government.",
+                " Voter turnout was reported to be 87.0%."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Kazakh presidential election, 1999",
+              2
+            ]
+          ]
+        },
+        "B": {
+          "answer": "blatantly unfair",
+          "answer_f1": 0.4444444444444445,
+          "em": 0.0,
+          "entailment": 0.6429753978736267,
+          "retrieved_titles": [
+            "Democracy",
+            "Kazakh presidential election, 1999",
+            "Godfather-in-law"
+          ],
+          "cited_titles": [
+            "Kazakh presidential election, 1999"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Kazakh presidential election, 1999",
+              [
+                "Presidential elections were held in Kazakhstan on 10 January 1999.",
+                " Incumbent president Nursultan Nazarbayev won the election with over 80% of the vote, and was sworn into office on 20 January 1999.",
+                " Most observers viewed the election as blatantly unfair, further confirming that Nazarbayev was not interested in promoting a democratic system of government.",
+                " Voter turnout was reported to be 87.0%."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Kazakh presidential election, 1999",
+              2
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5ae82c3d55429952e35eaa75",
+        "question": "This high school located in the Bronzeville neighborhood was named after a settler who was arrested by who?",
+        "gold": "the British military",
+        "gold_sentences": [
+          {
+            "title": "DuSable High School",
+            "index": 0,
+            "text": "Jean Baptiste Point DuSable High School was a public 4–year high school located in the Bronzeville neighborhood on the South Side of Chicago, Illinois, United States."
+          },
+          {
+            "title": "DuSable High School",
+            "index": 2,
+            "text": " The school was named after Chicago's first permanent non-native settler, Jean Baptiste Point Du Sable."
+          },
+          {
+            "title": "Jean Baptiste Point du Sable",
+            "index": 0,
+            "text": "Jean Baptiste Point du Sable (or Point de Sable, Point au Sable, Point Sable, Pointe DuSable) (before 1750 – August 28, 1818) is regarded as the first permanent resident of what became Chicago, Illinois."
+          },
+          {
+            "title": "Jean Baptiste Point du Sable",
+            "index": 2,
+            "text": " In 1779, he was living on the site of present-day Michigan City, Indiana, when he was arrested by the British military on suspicion of being an American sympathizer in the American Revolutionary War."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "B",
+        "crisp_branch": "B",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Chicago Police",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.5422875103731314,
+          "retrieved_titles": [
+            "Jonathan Alder High School",
+            "DuSable High School"
+          ],
+          "cited_titles": [
+            "DuSable High School"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "DuSable High School",
+              [
+                "Jean Baptiste Point DuSable High School was a public 4–year high school located in the Bronzeville neighborhood on the South Side of Chicago, Illinois, United States.",
+                " DuSable was operated by the Chicago Public Schools district.",
+                " The school was named after Chicago's first permanent non-native settler, Jean Baptiste Point Du Sable.",
+                " Constructed between 1931–34, DuSable opened in February 1935.",
+                " Since 2005, The school building serves as home to two smaller schools; the Bronzeville Scholastic Institute and the Daniel Hale Williams Preparatory School of Medicine.",
+                " Both of the schools use the DuSable name in an athletics context.",
+                " The DuSable Leadership Academy was housed at the location until it closed after the 2015–16 school year.",
+                " The school building was designated a Chicago Landmark on May 1, 2013."
+              ]
+            ]
+          ],
+          "selected_support": []
+        },
+        "B": {
+          "answer": "Chicago Police",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.5422875103731314,
+          "retrieved_titles": [
+            "Jonathan Alder High School",
+            "DuSable High School",
+            "Merkel High School"
+          ],
+          "cited_titles": [
+            "DuSable High School"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "DuSable High School",
+              [
+                "Jean Baptiste Point DuSable High School was a public 4–year high school located in the Bronzeville neighborhood on the South Side of Chicago, Illinois, United States.",
+                " DuSable was operated by the Chicago Public Schools district.",
+                " The school was named after Chicago's first permanent non-native settler, Jean Baptiste Point Du Sable.",
+                " Constructed between 1931–34, DuSable opened in February 1935.",
+                " Since 2005, The school building serves as home to two smaller schools; the Bronzeville Scholastic Institute and the Daniel Hale Williams Preparatory School of Medicine.",
+                " Both of the schools use the DuSable name in an athletics context.",
+                " The DuSable Leadership Academy was housed at the location until it closed after the 2015–16 school year.",
+                " The school building was designated a Chicago Landmark on May 1, 2013."
+              ]
+            ]
+          ],
+          "selected_support": []
+        }
+      },
+      {
+        "_id": "5a807b44554299485f59860a",
+        "question": "Who conceived the rapid transit system that Klemzig Interchange is a part of?",
+        "gold": "Daimler-Benz",
+        "gold_sentences": [
+          {
+            "title": "Klemzig Interchange",
+            "index": 0,
+            "text": "Klemzig Interchange (previously known as Klemzig Station) is an interchange on the O-Bahn Busway in Adelaide, South Australia, located in the suburb of Klemzig."
+          },
+          {
+            "title": "O-Bahn Busway",
+            "index": 0,
+            "text": "The O-Bahn Busway is a guided busway that is part of the bus rapid transit system servicing the northeastern suburbs of Adelaide, South Australia."
+          },
+          {
+            "title": "O-Bahn Busway",
+            "index": 1,
+            "text": " The O-Bahn system was conceived by Daimler-Benz to enable buses to avoid traffic congestion by sharing tram tunnels in the German city of Essen."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "False",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Daimler-Benz",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9919978060201399,
+          "retrieved_titles": [
+            "Klemzig Interchange",
+            "O-Bahn Busway"
+          ],
+          "cited_titles": [
+            "O-Bahn Busway"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "O-Bahn Busway",
+              [
+                "The O-Bahn Busway is a guided busway that is part of the bus rapid transit system servicing the northeastern suburbs of Adelaide, South Australia.",
+                " The O-Bahn system was conceived by Daimler-Benz to enable buses to avoid traffic congestion by sharing tram tunnels in the German city of Essen."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "O-Bahn Busway",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Daimler-Benz",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9919978060201399,
+          "retrieved_titles": [
+            "Klemzig Interchange",
+            "O-Bahn Busway",
+            "Manila Light Rail Transit System Line 2"
+          ],
+          "cited_titles": [
+            "O-Bahn Busway"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "O-Bahn Busway",
+              [
+                "The O-Bahn Busway is a guided busway that is part of the bus rapid transit system servicing the northeastern suburbs of Adelaide, South Australia.",
+                " The O-Bahn system was conceived by Daimler-Benz to enable buses to avoid traffic congestion by sharing tram tunnels in the German city of Essen."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "O-Bahn Busway",
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5adf07f25542992d7e9f9279",
+        "question": "What apartment complex originally constructed in 1927 is included in Manhattan Community Board 6?",
+        "gold": "Tudor City",
+        "gold_sentences": [
+          {
+            "title": "Manhattan Community Board 6",
+            "index": 1,
+            "text": " This includes the neighborhoods of Gramercy Park, Stuyvesant Town, Peter Cooper Village, Waterside Plaza, Murray Hill, Kips Bay, Turtle Bay, Tudor City, and Sutton Place."
+          },
+          {
+            "title": "Tudor City",
+            "index": 1,
+            "text": " Construction commenced in 1927, making the building the first residential skyscraper complex in the world."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Tudor City",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9989689780063397,
+          "retrieved_titles": [
+            "Tudor City",
+            "Kips Bay, Manhattan"
+          ],
+          "cited_titles": [
+            "Tudor City",
+            "Kips Bay, Manhattan"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Tudor City",
+              [
+                "Tudor City is an apartment complex located on the southern edge of Turtle Bay on the East Side of Manhattan in New York City, near Turtle Bay's border with Kips Bay.",
+                " Construction commenced in 1927, making the building the first residential skyscraper complex in the world.",
+                " It is bordered by 40th Street to the south, First Avenue to the east, Second Avenue to the west, and 43rd Street to the north.",
+                " Tudor City takes its name from England's Tudor dynasty, which ruled from 1485 to 1603 and included King Henry VIII and Queen Elizabeth I."
+              ]
+            ],
+            [
+              "Kips Bay, Manhattan",
+              [
+                "Kips Bay is a neighborhood in the New York City borough of Manhattan.",
+                " A part of Manhattan Community Board 6, Kips Bay is bordered on the north by Murray Hill; on the west by Madison Square, NoMad, or Rose Hill; on the south by the Gramercy Park neighborhood and the Peter Cooper Village apartment complex; and on the east by the East River. \"",
+                "The New York Times\" defines the boundaries as the area between East 23rd Street to the south, East 34th Street to the north, Lexington Avenue to the west, and the East River to the east.",
+                " The American Institute of Architects' \"AIA Guide to New York City\" considers the western boundary to be Second Avenue."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Tudor City",
+              0
+            ],
+            [
+              "Tudor City",
+              1
+            ],
+            [
+              "Kips Bay, Manhattan",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Tudor City",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9995758580699821,
+          "retrieved_titles": [
+            "Tudor City",
+            "Kips Bay, Manhattan",
+            "Manhattan Community Board 6"
+          ],
+          "cited_titles": [
+            "Tudor City",
+            "Manhattan Community Board 6"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 2,
+          "nli_premise_paragraphs": [
+            [
+              "Tudor City",
+              [
+                "Tudor City is an apartment complex located on the southern edge of Turtle Bay on the East Side of Manhattan in New York City, near Turtle Bay's border with Kips Bay.",
+                " Construction commenced in 1927, making the building the first residential skyscraper complex in the world.",
+                " It is bordered by 40th Street to the south, First Avenue to the east, Second Avenue to the west, and 43rd Street to the north.",
+                " Tudor City takes its name from England's Tudor dynasty, which ruled from 1485 to 1603 and included King Henry VIII and Queen Elizabeth I."
+              ]
+            ],
+            [
+              "Manhattan Community Board 6",
+              [
+                "Manhattan Community Board 6 is a New York City community board, part of the local government apparatus of the city, with responsibility for the East Side of Manhattan from 14th Street to 59th Street.",
+                " This includes the neighborhoods of Gramercy Park, Stuyvesant Town, Peter Cooper Village, Waterside Plaza, Murray Hill, Kips Bay, Turtle Bay, Tudor City, and Sutton Place.",
+                " The eastern and western borders are the East River and Lexington Avenue, except between 34th Street and 40th Street, where the area extends west to Madison Avenue, and between 20th Street and 22nd Street where it extends west to Park Avenue South."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Tudor City",
+              1
+            ],
+            [
+              "Manhattan Community Board 6",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "wrong_citation_candidate": {
+    "eligible": 123,
+    "cases": [
+      {
+        "_id": "5abfcdb55542993fe9a41e7b",
+        "question": "when was american stunt performer which Stunt Cycle attempted to cash in with born ",
+        "gold": "October 17, 1938",
+        "gold_sentences": [
+          {
+            "title": "Stunt Cycle",
+            "index": 1,
+            "text": " It attempted to cash in on the Evel Knievel craze of the mid 1970s by allowing the player to perform their own simulated jumping stunts."
+          },
+          {
+            "title": "Evel Knievel",
+            "index": 0,
+            "text": "Robert Craig \"Bob\" Knievel Jr. ( ; October 17, 1938 – November 30, 2007) professionally Evel Knievel, was an American stunt performer, painter, entertainer, and international icon."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "B",
+        "crisp_branch": "B",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "July 29, 1956",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.7316322349312406,
+          "retrieved_titles": [
+            "Stunt Cycle",
+            "Jackson Burns"
+          ],
+          "cited_titles": [
+            "Jackson Burns"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "Jackson Burns",
+              [
+                "Jackson Burns (born July 29, 1956) was an American stunt performer, stunt coordinator, writer, and actor."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Jackson Burns",
+              0
+            ]
+          ]
+        },
+        "B": {
+          "answer": "July 29, 1956",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.7316322349312406,
+          "retrieved_titles": [
+            "Stunt Cycle",
+            "Jackson Burns",
+            "Evel Knievel"
+          ],
+          "cited_titles": [
+            "Jackson Burns"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "Jackson Burns",
+              [
+                "Jackson Burns (born July 29, 1956) was an American stunt performer, stunt coordinator, writer, and actor."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Jackson Burns",
+              0
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5a8af56855429950cd6afc2f",
+        "question": "What kind of film was the film who featured Auli'i Cravalho?",
+        "gold": "3D computer-animated musical fantasy-adventure film",
+        "gold_sentences": [
+          {
+            "title": "Moana (2016 film)",
+            "index": 0,
+            "text": "Moana ( ) is a 2016 American 3D computer-animated musical fantasy-adventure film produced by Walt Disney Animation Studios and released by Walt Disney Pictures."
+          },
+          {
+            "title": "Auli'i Cravalho",
+            "index": 1,
+            "text": " She made her acting debut as the title character in the 2016 film \"Moana\"."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "False",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "martial arts comedy horror",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.9946166162329297,
+          "retrieved_titles": [
+            "Encounters of the Spooky Kind",
+            "Encounters of the Spooky Kind II"
+          ],
+          "cited_titles": [
+            "Encounters of the Spooky Kind",
+            "Encounters of the Spooky Kind II"
+          ],
+          "retrieved_gold_count": 0,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "Encounters of the Spooky Kind",
+              [
+                "Encounters of the Spooky Kind () is a 1980 Hong Kong martial arts comedy horror film written and directed by Sammo Hung, who also starred in the lead role.",
+                " The film was produced by Hung's production company Bo Ho Film Company.",
+                " It was released as \"Spooky Encounters\" in the US.",
+                " It is sometimes listed as \"Close Encounters of the Spooky Kind\", more blatantly mimicking the title of the film \"Close Encounters of the Third Kind\" (1977).",
+                " The film was the progenitor of the jiangshi film genre and one of Hong Kong's first kung fu horror comedies."
+              ]
+            ],
+            [
+              "Encounters of the Spooky Kind II",
+              [
+                "Encounters of the Spooky Kind II is a 1990 Hong Kong martial arts comedy horror film produced, choreographed, starring Sammo Hung.",
+                " The film was produced by Hung's production company, Bojon Films Company Ltd.",
+                " It was released as \"Spooky Encounters 2\" in the US.",
+                " It is sometimes listed as \"aka Close Encounters of the Spooky Kind 2 \".",
+                " Despite the title, the film is not a sequel to \"Encounters of the Spooky Kind\".",
+                " The film's Chinese title literally translates as \"Ghost Bites Ghost\"."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Encounters of the Spooky Kind",
+              0
+            ]
+          ]
+        },
+        "B": {
+          "answer": "martial arts comedy horror",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.9946166162329297,
+          "retrieved_titles": [
+            "Encounters of the Spooky Kind",
+            "Encounters of the Spooky Kind II",
+            "Iso suomen kielioppi"
+          ],
+          "cited_titles": [
+            "Encounters of the Spooky Kind",
+            "Encounters of the Spooky Kind II"
+          ],
+          "retrieved_gold_count": 0,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "Encounters of the Spooky Kind",
+              [
+                "Encounters of the Spooky Kind () is a 1980 Hong Kong martial arts comedy horror film written and directed by Sammo Hung, who also starred in the lead role.",
+                " The film was produced by Hung's production company Bo Ho Film Company.",
+                " It was released as \"Spooky Encounters\" in the US.",
+                " It is sometimes listed as \"Close Encounters of the Spooky Kind\", more blatantly mimicking the title of the film \"Close Encounters of the Third Kind\" (1977).",
+                " The film was the progenitor of the jiangshi film genre and one of Hong Kong's first kung fu horror comedies."
+              ]
+            ],
+            [
+              "Encounters of the Spooky Kind II",
+              [
+                "Encounters of the Spooky Kind II is a 1990 Hong Kong martial arts comedy horror film produced, choreographed, starring Sammo Hung.",
+                " The film was produced by Hung's production company, Bojon Films Company Ltd.",
+                " It was released as \"Spooky Encounters 2\" in the US.",
+                " It is sometimes listed as \"aka Close Encounters of the Spooky Kind 2 \".",
+                " Despite the title, the film is not a sequel to \"Encounters of the Spooky Kind\".",
+                " The film's Chinese title literally translates as \"Ghost Bites Ghost\"."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Encounters of the Spooky Kind",
+              0
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5abb03325542992ccd8e7eae",
+        "question": "The magazine that nominated George Rainsford for their Best Actor award in 2017 comes out every week on what day of the week?",
+        "gold": "Tuesday",
+        "gold_sentences": [
+          {
+            "title": "George Rainsford (actor)",
+            "index": 0,
+            "text": "George Rainsford (born 31 July 1982) is an English actor, best known for his portrayal of Jimmy Wilson in the medical drama \"Call the Midwife\" and Ethan Hardy in \"Casualty\", for which he has been nominated for a Best Actor award in the 2017 TV Choice Awards."
+          },
+          {
+            "title": "TV Choice",
+            "index": 0,
+            "text": "TV Choice is a British weekly TV listings magazine published by H. Bauer Publishing, the UK subsidiary of family-run German company Bauer Media Group."
+          },
+          {
+            "title": "TV Choice",
+            "index": 1,
+            "text": " It features weekly TV broadcast programming listings, running from Saturday to Friday, and goes on sale every Tuesday."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "B",
+        "crisp_branch": "B",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Sunday",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.8168729123793623,
+          "retrieved_titles": [
+            "NFL regular season",
+            "George Rainsford (actor)"
+          ],
+          "cited_titles": [
+            "NFL regular season"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "NFL regular season",
+              [
+                "The National Football League (NFL) regular season begins the weekend after Labor Day in early September and ends in December or early January.",
+                " It consists of 256 games, where each team (32 total) plays 16 games during a 17-week period.",
+                " Since 2012, the NFL schedule generally has games in one of five time slots during the week.",
+                " A game played on Thursday night, kicking off at 8:25 PM (ET).",
+                " The majority of games are played on Sunday, most kicking off at 1:00 PM (ET), some late afternoon games starting at 4:05 or 4:25 PM (ET).",
+                " Additionally, one Sunday night game is played every week at 8:30 PM (ET).",
+                " One Monday night game then starts at 8:30 PM (ET) every week with the exception of the first week of the regular season, in which two Monday night games are played back-to-back (the second game always occurring on the West coast), as well as the last week of the season, in which no Monday night game is held.",
+                " In addition to these regularly scheduled games, there are occasionally games at other times, such as a Saturday afternoon or evening, or the annual Thanksgiving Day games in which three games are played.",
+                " During the final week of the regular season, all games are held on Sunday."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "NFL regular season",
+              4
+            ]
+          ]
+        },
+        "B": {
+          "answer": "no",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.8753108891775557,
+          "retrieved_titles": [
+            "NFL regular season",
+            "George Rainsford (actor)",
+            "List of awards and nominations received by Vikram"
+          ],
+          "cited_titles": [
+            "NFL regular season"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "NFL regular season",
+              [
+                "The National Football League (NFL) regular season begins the weekend after Labor Day in early September and ends in December or early January.",
+                " It consists of 256 games, where each team (32 total) plays 16 games during a 17-week period.",
+                " Since 2012, the NFL schedule generally has games in one of five time slots during the week.",
+                " A game played on Thursday night, kicking off at 8:25 PM (ET).",
+                " The majority of games are played on Sunday, most kicking off at 1:00 PM (ET), some late afternoon games starting at 4:05 or 4:25 PM (ET).",
+                " Additionally, one Sunday night game is played every week at 8:30 PM (ET).",
+                " One Monday night game then starts at 8:30 PM (ET) every week with the exception of the first week of the regular season, in which two Monday night games are played back-to-back (the second game always occurring on the West coast), as well as the last week of the season, in which no Monday night game is held.",
+                " In addition to these regularly scheduled games, there are occasionally games at other times, such as a Saturday afternoon or evening, or the annual Thanksgiving Day games in which three games are played.",
+                " During the final week of the regular season, all games are held on Sunday."
+              ]
+            ]
+          ],
+          "selected_support": []
+        }
+      },
+      {
+        "_id": "5ae5da8d55429929b08079d1",
+        "question": "What player was the first overall pick in the 2004 NFL draft and had the Manning Field named after him?",
+        "gold": "Eli Manning",
+        "gold_sentences": [
+          {
+            "title": "Manning Field at John L. Guidry Stadium",
+            "index": 3,
+            "text": " The playing surface is named Manning Field after the Manning family because Peyton Manning, Eli Manning and Archie Manning hold the Manning Passing Academy football camp at the facility."
+          },
+          {
+            "title": "Eli Manning",
+            "index": 0,
+            "text": "Elisha Nelson Manning (born January 3, 1981) is an American football quarterback for the New York Giants of the National Football League (NFL)."
+          },
+          {
+            "title": "Eli Manning",
+            "index": 2,
+            "text": " He was drafted as the first overall pick in the 2004 NFL Draft by the San Diego Chargers and was immediately traded to the Giants who in return gave up a package, highlighted by fourth overall selection Philip Rivers."
+          }
+        ],
+        "delta": 0.5,
+        "fuzzy_branch": "B",
+        "crisp_branch": "B",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Philip Rivers",
+          "answer_f1": 0.0,
+          "em": 0.0,
+          "entailment": 0.007270977580533998,
+          "retrieved_titles": [
+            "Philip Rivers",
+            "1997 Tennessee Volunteers football team"
+          ],
+          "cited_titles": [
+            "Philip Rivers"
+          ],
+          "retrieved_gold_count": 0,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "Philip Rivers",
+              [
+                "Philip Michael Rivers (born December 8, 1981) is an American football quarterback for the Los Angeles Chargers of the National Football League (NFL).",
+                " He played college football at North Carolina State University, and was drafted in the first round of the 2004 NFL Draft with the fourth overall pick by the New York Giants, who traded him to the Chargers for their first overall pick, quarterback Eli Manning.",
+                " Rivers' career passer rating of 95.7 is fifth-best all-time among NFL quarterbacks with at least 1,500 passing attempts.",
+                " Rivers is ranked 4th all-time in consecutive starts by a quarterback in NFL history."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Philip Rivers",
+              0
+            ],
+            [
+              "Philip Rivers",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Peyton Manning",
+          "answer_f1": 0.5,
+          "em": 0.0,
+          "entailment": 0.8310988754891637,
+          "retrieved_titles": [
+            "Philip Rivers",
+            "1997 Tennessee Volunteers football team",
+            "Eli Manning"
+          ],
+          "cited_titles": [
+            "1997 Tennessee Volunteers football team"
+          ],
+          "retrieved_gold_count": 1,
+          "cited_gold_count": 0,
+          "nli_premise_paragraphs": [
+            [
+              "1997 Tennessee Volunteers football team",
+              [
+                "The 1997 Tennessee Volunteers football team represented the University of Tennessee during the 1997 NCAA Division I-A football season.",
+                " Quarterback Peyton Manning had already completed his degree in three years, and had been projected to be the top overall pick in the 1997 NFL Draft, but returned to Tennessee for his senior year.",
+                " The Volunteers opened the season with victories against Texas Tech and UCLA, but for the third time in his career, Manning fell to Florida, 33–20.",
+                " The Vols won the rest of their regular season games, finishing 10–1, and advanced to the SEC Championship Game against Auburn.",
+                " Down 20–7, Manning led the Vols to a 30–29 victory.",
+                " Throwing for four touchdowns, he was named the game's MVP, but injured himself in the process.",
+                " The #3 Vols were matched up with #2 Nebraska in the Orange Bowl.",
+                " Had Tennessee won and top-ranked Michigan lost to Washington State in the Rose Bowl, the Vols would have been expected to win the national championship.",
+                " However, the Vols' defense could not stop Nebraska's rushing attack, giving up more than 400 yards on the ground in a 42–17 loss.",
+                " As a senior, Manning won numerous awards.",
+                " He was a consensus first-team All-American and won the Maxwell Award, the Davey O'Brien Award, the Johnny Unitas Award, and the Best College Football Player ESPY Award, among others.",
+                " However, he did not win the Heisman Trophy, finishing runner-up to Charles Woodson, a CB from Michigan, and the only defensive player ever to win the Heisman Trophy."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "1997 Tennessee Volunteers football team",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "joint_support_candidate": {
+    "eligible": 95,
+    "cases": [
+      {
+        "_id": "5ab9547755429970cfb8ea6c",
+        "question": "St Dionis Backchurch was rebuilt after a major conflagration that consumed how many parish churches?",
+        "gold": "87",
+        "gold_sentences": [
+          {
+            "title": "St Dionis Backchurch",
+            "index": 0,
+            "text": "St Dionis Backchurch was a parish church in the Langbourn ward of the City of London."
+          },
+          {
+            "title": "St Dionis Backchurch",
+            "index": 1,
+            "text": " Of medieval origin, it was rebuilt after the Great Fire of London to the designs of Christopher Wren and demolished in 1878."
+          },
+          {
+            "title": "Great Fire of London",
+            "index": 0,
+            "text": "The Great Fire of London was a major conflagration that swept through the central parts of the English city of London from Sunday, 2 September to Wednesday, 5 September 1666."
+          },
+          {
+            "title": "Great Fire of London",
+            "index": 3,
+            "text": " It consumed 13,200 houses, 87 parish churches, St Paul's Cathedral, and most of the buildings of the City authorities."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "False",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "87",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9992993783631792,
+          "retrieved_titles": [
+            "St Dionis Backchurch",
+            "Great Fire of London"
+          ],
+          "cited_titles": [
+            "St Dionis Backchurch",
+            "Great Fire of London"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 2,
+          "nli_premise_paragraphs": [
+            [
+              "St Dionis Backchurch",
+              [
+                "St Dionis Backchurch was a parish church in the Langbourn ward of the City of London.",
+                " Of medieval origin, it was rebuilt after the Great Fire of London to the designs of Christopher Wren and demolished in 1878."
+              ]
+            ],
+            [
+              "Great Fire of London",
+              [
+                "The Great Fire of London was a major conflagration that swept through the central parts of the English city of London from Sunday, 2 September to Wednesday, 5 September 1666.",
+                " The fire gutted the medieval City of London inside the old Roman city wall.",
+                " It threatened but did not reach the aristocratic district of Westminster, Charles II's Palace of Whitehall, and most of the suburban slums.",
+                " It consumed 13,200 houses, 87 parish churches, St Paul's Cathedral, and most of the buildings of the City authorities.",
+                " It is estimated to have destroyed the homes of 70,000 of the City's 80,000 inhabitants."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Great Fire of London",
+              3
+            ]
+          ]
+        },
+        "B": {
+          "answer": "87",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9986298119563215,
+          "retrieved_titles": [
+            "St Dionis Backchurch",
+            "Great Fire of London",
+            "St Dionis Mission Hall"
+          ],
+          "cited_titles": [
+            "Great Fire of London"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Great Fire of London",
+              [
+                "The Great Fire of London was a major conflagration that swept through the central parts of the English city of London from Sunday, 2 September to Wednesday, 5 September 1666.",
+                " The fire gutted the medieval City of London inside the old Roman city wall.",
+                " It threatened but did not reach the aristocratic district of Westminster, Charles II's Palace of Whitehall, and most of the suburban slums.",
+                " It consumed 13,200 houses, 87 parish churches, St Paul's Cathedral, and most of the buildings of the City authorities.",
+                " It is estimated to have destroyed the homes of 70,000 of the City's 80,000 inhabitants."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Great Fire of London",
+              3
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5a7349125542994cef4bc505",
+        "question": "Baadshah is an Indian action comedy film that was inspired by what Hong Kong action movie starring Jackie Chan and Richard Norton?",
+        "gold": "Mr. Nice Guy",
+        "gold_sentences": [
+          {
+            "title": "Baadshah (1999 film)",
+            "index": 0,
+            "text": "Baadshah (translation: \"King\") is a 1999 Indian action comedy film directed by Abbas-Mustan."
+          },
+          {
+            "title": "Baadshah (1999 film)",
+            "index": 4,
+            "text": " It is inspired from films such as \"Nick of Time\", \"Rush Hour\", \"If Looks Could Kill\", \"Mr Nice Guy\", \"The Mask\"."
+          },
+          {
+            "title": "Mr. Nice Guy (1997 film)",
+            "index": 0,
+            "text": "Mr. Nice Guy (一個好人, LSHK \"Jat1 go3 hou2 jan4\") is a 1997 Hong Kong action film directed by Sammo Hung, who makes a cameo as an unfortunate cyclist."
+          },
+          {
+            "title": "Mr. Nice Guy (1997 film)",
+            "index": 1,
+            "text": " The film stars Jackie Chan and Richard Norton."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Mr. Nice Guy",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9979130712746428,
+          "retrieved_titles": [
+            "Mr. Nice Guy (1997 film)",
+            "Baadshah (1999 film)"
+          ],
+          "cited_titles": [
+            "Mr. Nice Guy (1997 film)",
+            "Baadshah (1999 film)"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 2,
+          "nli_premise_paragraphs": [
+            [
+              "Mr. Nice Guy (1997 film)",
+              [
+                "Mr. Nice Guy (一個好人, LSHK \"Jat1 go3 hou2 jan4\") is a 1997 Hong Kong action film directed by Sammo Hung, who makes a cameo as an unfortunate cyclist.",
+                " The film stars Jackie Chan and Richard Norton.",
+                " The film was released in the Hong Kong on January 31, 1997."
+              ]
+            ],
+            [
+              "Baadshah (1999 film)",
+              [
+                "Baadshah (translation: \"King\") is a 1999 Indian action comedy film directed by Abbas-Mustan.",
+                " The film stars Shah Rukh Khan opposite Twinkle Khanna in lead roles.",
+                " It was released on 27 August 1999.",
+                " Shahrukh Khan earned a Filmfare Award nomination for Best Performance in a Comic Role.",
+                " It is inspired from films such as \"Nick of Time\", \"Rush Hour\", \"If Looks Could Kill\", \"Mr Nice Guy\", \"The Mask\"."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Mr. Nice Guy (1997 film)",
+              0
+            ],
+            [
+              "Mr. Nice Guy (1997 film)",
+              1
+            ],
+            [
+              "Baadshah (1999 film)",
+              4
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Mr Nice Guy",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.01029328771472541,
+          "retrieved_titles": [
+            "Mr. Nice Guy (1997 film)",
+            "Baadshah (1999 film)",
+            "Project A Part II"
+          ],
+          "cited_titles": [
+            "Baadshah (1999 film)"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Baadshah (1999 film)",
+              [
+                "Baadshah (translation: \"King\") is a 1999 Indian action comedy film directed by Abbas-Mustan.",
+                " The film stars Shah Rukh Khan opposite Twinkle Khanna in lead roles.",
+                " It was released on 27 August 1999.",
+                " Shahrukh Khan earned a Filmfare Award nomination for Best Performance in a Comic Role.",
+                " It is inspired from films such as \"Nick of Time\", \"Rush Hour\", \"If Looks Could Kill\", \"Mr Nice Guy\", \"The Mask\"."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Baadshah (1999 film)",
+              4
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5a809fe75542996402f6a5ba",
+        "question": "The Phillips Berlina is a neo-classic car that used stretched underpinings from a car that set a new sales record for what model year?",
+        "gold": "1979",
+        "gold_sentences": [
+          {
+            "title": "Phillips Berlina",
+            "index": 0,
+            "text": "The Phillips Berlina is a neo-classic car built in Pompano Beach, Florida in the early nineteen-eighties."
+          },
+          {
+            "title": "Phillips Berlina",
+            "index": 1,
+            "text": " Debuting in 1980, it was designed by Charles W. Phillips in the style of the 1936 Mercedes-Benz 540K Special Roadster."
+          },
+          {
+            "title": "Phillips Berlina",
+            "index": 2,
+            "text": " It used stretched C3 Chevrolet Corvette underpinnings, coupled to fibreglass bodywork."
+          },
+          {
+            "title": "Chevrolet Corvette (C3)",
+            "index": 0,
+            "text": "The Chevrolet Corvette (C3) was a sports car that was produced by Chevrolet for the 1968 through 1982 model years. Engines and chassis components were mostly carried over from the previous generation, but the body and interior were new."
+          },
+          {
+            "title": "Chevrolet Corvette (C3)",
+            "index": 1,
+            "text": " It set new sales records with 53,807 produced for the 1979 model year."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "True",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "1979",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9992589508324486,
+          "retrieved_titles": [
+            "Phillips Berlina",
+            "Chevrolet Corvette (C3)"
+          ],
+          "cited_titles": [
+            "Phillips Berlina",
+            "Chevrolet Corvette (C3)"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 2,
+          "nli_premise_paragraphs": [
+            [
+              "Phillips Berlina",
+              [
+                "The Phillips Berlina is a neo-classic car built in Pompano Beach, Florida in the early nineteen-eighties.",
+                " Debuting in 1980, it was designed by Charles W. Phillips in the style of the 1936 Mercedes-Benz 540K Special Roadster.",
+                " It used stretched C3 Chevrolet Corvette underpinnings, coupled to fibreglass bodywork.",
+                " As for the Corvette, power steering and brakes, powered tinted windows, and tilt steering were fitted.",
+                " The fuel injected 5.7 litre V8 engine in the 1982 Berlinas offers 200 hp at 4,200 rpm, for a top speed of around 180 km/h .",
+                " The earlier carburetted version (L81) had 190 hp on tap.",
+                " By 1982, a special \"Coupé SE\" version was also available."
+              ]
+            ],
+            [
+              "Chevrolet Corvette (C3)",
+              [
+                "The Chevrolet Corvette (C3) was a sports car that was produced by Chevrolet for the 1968 through 1982 model years. Engines and chassis components were mostly carried over from the previous generation, but the body and interior were new.",
+                " It set new sales records with 53,807 produced for the 1979 model year.",
+                " The C3 is the third generation of the Chevrolet Corvette, while the 1969 through 1976 models mark the second generation of the Corvette Stingray."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Chevrolet Corvette (C3)",
+              0
+            ],
+            [
+              "Chevrolet Corvette (C3)",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "1979",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9729347182882276,
+          "retrieved_titles": [
+            "Phillips Berlina",
+            "Chevrolet Corvette (C3)",
+            ".350 Remington Magnum"
+          ],
+          "cited_titles": [
+            "Chevrolet Corvette (C3)"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 1,
+          "nli_premise_paragraphs": [
+            [
+              "Chevrolet Corvette (C3)",
+              [
+                "The Chevrolet Corvette (C3) was a sports car that was produced by Chevrolet for the 1968 through 1982 model years. Engines and chassis components were mostly carried over from the previous generation, but the body and interior were new.",
+                " It set new sales records with 53,807 produced for the 1979 model year.",
+                " The C3 is the third generation of the Chevrolet Corvette, while the 1969 through 1976 models mark the second generation of the Corvette Stingray."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Chevrolet Corvette (C3)",
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "_id": "5abffafe5542997d64295988",
+        "question": "Nick Jr Too was launched on the same day as what rival channel that was created by Turner Broadcasting, and is the sister station of Cartoon Network?",
+        "gold": "Cartoon Network Too",
+        "gold_sentences": [
+          {
+            "title": "Nick Jr. Too",
+            "index": 2,
+            "text": " It launched 24 April 2006, the same day as rival channel Cartoon Network Too."
+          },
+          {
+            "title": "Cartoon Network Too",
+            "index": 0,
+            "text": "Cartoon Network Too was a British TV network created by Turner Broadcasting."
+          },
+          {
+            "title": "Cartoon Network Too",
+            "index": 1,
+            "text": " CN Too is the sister station of Cartoon Network, and it often aired programmes a while after they are shown on the main Cartoon Network."
+          }
+        ],
+        "delta": 0.0,
+        "fuzzy_branch": "A",
+        "crisp_branch": "A",
+        "bridge_absent": "False",
+        "A_nli_truncated": false,
+        "A_nli_fallback": false,
+        "A": {
+          "answer": "Cartoon Network Too",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9992234837078121,
+          "retrieved_titles": [
+            "Nick Jr. Too",
+            "Cartoon Network Too"
+          ],
+          "cited_titles": [
+            "Nick Jr. Too",
+            "Cartoon Network Too"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 2,
+          "nli_premise_paragraphs": [
+            [
+              "Nick Jr. Too",
+              [
+                "Nick Jr.",
+                " Too (formerly Nick Jr. 2) is the British second channel of Nick Jr. available in the United Kingdom and in the Republic of Ireland, generally presenting popular Nick Jr. programming at other times of the day.",
+                " It launched 24 April 2006, the same day as rival channel Cartoon Network Too.",
+                " Nick Jr.",
+                " Too carries a schedule separate from the main Nick Jr. channel.",
+                " The channel was renamed to Nick Jr.",
+                " Too in November 2014."
+              ]
+            ],
+            [
+              "Cartoon Network Too",
+              [
+                "Cartoon Network Too was a British TV network created by Turner Broadcasting.",
+                " CN Too is the sister station of Cartoon Network, and it often aired programmes a while after they are shown on the main Cartoon Network.",
+                " During the daytime, it usually aired some action-adventure programming such as \"\" and \"\".",
+                " During overnight hours, usually between midnight and 06:00, it also aired some shows which are no longer being produced, and are no longer in high demand (i.e. \"Skatoony\").",
+                " Cartoon Network Too was closed on 1 April 2014."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Nick Jr. Too",
+              2
+            ],
+            [
+              "Cartoon Network Too",
+              0
+            ],
+            [
+              "Cartoon Network Too",
+              1
+            ]
+          ]
+        },
+        "B": {
+          "answer": "Cartoon Network Too",
+          "answer_f1": 1.0,
+          "em": 1.0,
+          "entailment": 0.9992234837078121,
+          "retrieved_titles": [
+            "Nick Jr. Too",
+            "Cartoon Network Too",
+            "Cartoon Network (Central and Eastern Europe)"
+          ],
+          "cited_titles": [
+            "Nick Jr. Too",
+            "Cartoon Network Too"
+          ],
+          "retrieved_gold_count": 2,
+          "cited_gold_count": 2,
+          "nli_premise_paragraphs": [
+            [
+              "Nick Jr. Too",
+              [
+                "Nick Jr.",
+                " Too (formerly Nick Jr. 2) is the British second channel of Nick Jr. available in the United Kingdom and in the Republic of Ireland, generally presenting popular Nick Jr. programming at other times of the day.",
+                " It launched 24 April 2006, the same day as rival channel Cartoon Network Too.",
+                " Nick Jr.",
+                " Too carries a schedule separate from the main Nick Jr. channel.",
+                " The channel was renamed to Nick Jr.",
+                " Too in November 2014."
+              ]
+            ],
+            [
+              "Cartoon Network Too",
+              [
+                "Cartoon Network Too was a British TV network created by Turner Broadcasting.",
+                " CN Too is the sister station of Cartoon Network, and it often aired programmes a while after they are shown on the main Cartoon Network.",
+                " During the daytime, it usually aired some action-adventure programming such as \"\" and \"\".",
+                " During overnight hours, usually between midnight and 06:00, it also aired some shows which are no longer being produced, and are no longer in high demand (i.e. \"Skatoony\").",
+                " Cartoon Network Too was closed on 1 April 2014."
+              ]
+            ]
+          ],
+          "selected_support": [
+            [
+              "Nick Jr. Too",
+              2
+            ],
+            [
+              "Cartoon Network Too",
+              0
+            ],
+            [
+              "Cartoon Network Too",
+              1
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

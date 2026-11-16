@@ -1,0 +1,34 @@
+% Preview wrapper. Merge paper_sections.tex into the full paper after Section II.
+\documentclass[10pt,journal,letterpaper]{IEEEtran}
+\usepackage{amsmath,graphicx}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\ttdefault}{cmtt}
+\begin{document}
+\title{A Fuzzy-NLI-based QA Chatbot System with Adaptive Retrieval}
+\author{}
+\maketitle
+\setcounter{section}{2}
+\input{paper_sections}
+\begin{thebibliography}{6}
+\bibitem{bm25}
+S. Robertson and H. Zaragoza, \textquotedblleft The probabilistic relevance framework: BM25 and beyond,\textquotedblright{}
+\emph{Found. Trends Inf. Retr.}, vol. 3, no. 4, pp. 333--389, 2009.
+\href{https://doi.org/10.1561/1500000019}{doi: 10.1561/1500000019}.
+\bibitem{nlicheckpoint}
+M. Laurer, \textquotedblleft DeBERTa-v3-large-mnli-fever-anli-ling-wanli,\textquotedblright{} model checkpoint, revision b3546ea.
+\href{https://huggingface.co/MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli/tree/b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7}{Hugging Face model repository}.
+\bibitem{hotpotqa}
+Z. Yang, P. Qi, S. Zhang, Y. Bengio, W. W. Cohen, R. Salakhutdinov, and C. D. Manning,
+\textquotedblleft HotpotQA: A dataset for diverse, explainable multi-hop question answering,\textquotedblright{}
+in \emph{Proc. EMNLP}, 2018, pp. 2369--2380. \href{https://aclanthology.org/D18-1259/}{doi: 10.18653/v1/D18-1259}.
+\bibitem{qwen}
+A. Yang \emph{et al.}, \textquotedblleft Qwen2.5 technical report,\textquotedblright{} arXiv:2412.15115, 2024.
+\href{https://arxiv.org/abs/2412.15115}{arXiv:2412.15115}.
+\bibitem{vllm}
+W. Kwon \emph{et al.}, \textquotedblleft Efficient memory management for large language model serving with PagedAttention,\textquotedblright{} in \emph{Proc. SOSP}, 2023.
+\href{https://arxiv.org/abs/2309.06180}{arXiv:2309.06180}.
+\bibitem{hotpotscorer}
+HotpotQA, \textquotedblleft Official HotpotQA evaluation script,\textquotedblright{} commit fa3a363.
+\href{https://github.com/hotpotqa/hotpot/blob/fa3a36370899e1d85822de61e58c85ea19993154/hotpot_evaluate_v1.py}{Project repository}.
+\end{thebibliography}
+\end{document}
