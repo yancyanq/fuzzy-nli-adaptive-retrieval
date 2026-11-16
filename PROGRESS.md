@@ -4,6 +4,14 @@
 
 | 条目 | 日志位置 |
 | --- | --- |
+| Executed: V2 experiment parameter handbook | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L691) |
+| Prepared: V2 experiment parameter handbook | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L687) |
+| Executed: complete local V2 materials package | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L681) |
+| Prepared: complete local V2 materials package | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L677) |
+| Executed: V2 experiment process handbook | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L671) |
+| Prepared: V2 experiment process handbook | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L667) |
+| Executed: V2 experiment conclusions booklet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L662) |
+| Prepared: V2 experiment conclusions booklet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L658) |
 | Received and checked returned V2 case review | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L653) |
 | Executed: standalone V2 §11 results booklet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L648) |
 | Prepared: standalone V2 §11 results booklet | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L644) |

@@ -50,6 +50,7 @@
 
 ## 材料导航
 
+- [实验过程手册、完整结论与 Word／Markdown 对照](docs/DOCUMENTS.md)
 - [最新实验进度](PROGRESS.md)与[协作工作流](docs/WORKFLOW.md)
 - [文件清单、归档映射与待确认副本](docs/INVENTORY.md)
 - [结果汇总表](docs/RESULTS.md)

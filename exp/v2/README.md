@@ -13,6 +13,8 @@
 
 历史校验清单使用同目录脚本及相对路径。这里保留正式运行依赖的四份早期模块（`bm25_topk.py`、`compare_models.py`、`run_pilot.py`、`analyze_signals.py`）和 `tune.json` 的原样副本，便于逐字节验证锁文件。GPU 端输入清单保留当时的部署路径，离线回放使用[本地可复现性清单](step6_v2/Reproducibility_Checklist.md)中的命令。
 
+[实验过程手册](step6_v2/NLP_V2_Experiment_Process_Handbook.md)覆盖从准备到复算的各步骤。[完整结论](step6_v2/NLP_V2_Experiment_Conclusions.md)对应 RQ1–RQ3。[关键参数与选择依据](step6_v2/NLP_V2_Experiment_Parameters.md)列出实际设置及其取舍。Word 原件与 Markdown 对照见[实验文档](../../docs/DOCUMENTS.md)。
+
 ## 本地验证
 
 从仓库根目录进入 `exp/v2`。使用 Python 3.10 或以上及独立虚拟环境。测试使用合成数据或本地 HTTP mock，复用仓库中的 Step 3 mock。

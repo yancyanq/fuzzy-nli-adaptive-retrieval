@@ -654,3 +654,41 @@ No setting was approved and no signal comparison was performed in this entry. Th
 
 - Received `副本V2 代表案例人工复核表.xlsx`. The returned copy includes all 12 decision fields and all three rationale fields. The reviewer-name field is blank. Compared with the blank worksheet. The three question/answer blocks, 43 evidence sentences, retrieval positions, citation flags and reference flags match after ignoring leading whitespace removed from 34 sentence cells.
 - Returned answers for the three cases (A/B correct, then A/B evidence sufficient) were respectively no/yes and no/no for `5aba89365542994dbf019932`; yes/yes and no/no for `5ab9547755429970cfb8ea6c`; and yes/yes and no/no for `5a7b4073554299042af8f733`. The cited sentence locations in the rationales are consistent with the worksheet. The third case's official F1 stays 1 versus 2/3, while the returned review accepts both wordings semantically. These are three selected qualitative cases.
+
+## Prepared: V2 experiment conclusions booklet
+
+- Assemble a standalone booklet organized around the V2 research questions. Use archived formal comparisons, live cost measurements, the original pilot and supplemental checks, the returned qualitative review, and the §10.2 reproducibility record. Report only the previously defined formal contrasts, identify descriptive arithmetic, and qualify comparisons made at different realized rates. Use the same project conventions for F1, comparator ordering, and individual paired intervals. Include a concise English Conclusion for manuscript integration.
+
+## Executed: V2 experiment conclusions booklet
+
+- Delivered the six-page editable `step6_v2/NLP_V2_Experiment_Conclusions.docx`. It answers RQ1–RQ3, explains pilot and reproducibility scope, integrates the three returned qualitative reviews, and includes an English Conclusion for the manuscript. This is a synthesis of the archived results. No new statistical test, threshold fitting, model inference or human annotation was performed.
+- Checked main and ablation scores, five pre-registered paired intervals, timing inputs and token totals, pilot outcomes, and the review labels against the archives. Verified that Fuzzy and Always have exactly the same mean total LLM token consumption in the 32-question timing sample (841.03125), with NLI use counted separately. Used matched-question numerical results only for the paired contrasts. Verified all six rendered pages and the page guide.
+
+## Prepared: V2 experiment process handbook
+
+- Map the original V2 sections 0–15 and their named subsections to dated decisions, execution notes, archives and readouts. Document the original Step numbering alongside V2 §10.1, use only recorded decision rationale, and mark retrospective explanation or missing confirmations as such. Include an onboarding path from data and model setup through dev calibration, formal replay, cost measurement, post-result analysis and paper handoff. Keep historical outputs and experiment settings intact.
+
+## Executed: V2 experiment process handbook
+
+- Delivered the 24-page editable `step6_v2/NLP_V2_Experiment_Process_Handbook.docx` in the order of the original V2 §0–§15, including its named subsections, C01–C19 and an offline replay appendix. It uses dated choices and available records to reconstruct preparation, alternatives, rationale, pipeline steps, outputs and bounded conclusions. Distinguishes original Step labels from V2 §10.1, the original pre-registered GO from supplemental pilot analysis, and formal paired reporting from exploratory case review.
+- Verified the document section map, all formal quality and gate table values, five paired intervals, pilot counts and coverage, chart identity and clickable navigation. Rendered the full handbook and inspected its tables, code blocks, figure, navigation and page boundaries.
+- Ran the appendix replay in a fresh temporary directory on the Mac against archived inputs, with no remote inference. All 18 comparisons were byte-for-byte identical: three dev products, two official result tables, nine predictions, and four analysis artifacts. Rechecked the 23 local, 12 dev and 27 formal manifest entries. No threshold, model output, or scoring method was changed.
+
+## Prepared: complete local V2 materials package
+
+- Assemble one ZIP around the current workspace layout so relative replay paths and historical mock imports still resolve. Bundle the dated authoritative log, protocol, three splits, pilot and dev material, complete formal outputs, source and tests, review and manuscript assets, the three recent booklets, and prior snapshots for provenance. Use the existing share copy of the returned worksheet after verifying identical cell values, merges and validation rules; its editor identity metadata was removed earlier. Catalogue historical files only referenced in the log and keep raw secrets, unrelated workspace metadata and model environments outside the archive.
+
+## Executed: complete local V2 materials package
+
+- Prepared `NLP_Experiment_Materials_V2_Complete_2026-11-16.zip` with the current experiment artifacts, original protocol, dated log, three booklets, both qualitative review forms, paper files, scripts and tests, early materials and three earlier ZIP snapshots. Included README navigation, archival limits, data attribution, and an itemized SHA-256 manifest. The returned worksheet share copy keeps cell values, merges and validations and omits editor identity metadata.
+- Verified the extracted layout and hashes for 162 manifested files, plus the manifest itself. Checked reference links, the 1,600 disjoint bridge IDs, the formal raw cache and timing counts, and the three existing manifests (23 local, 12 dev and 27 formal entries). All 21 current synthetic tests passed from the extracted package. The appendix replay reproduced 18 saved calibration, prediction, scoring and analysis artifacts byte for byte. No new model inference or timing was performed.
+- Historical device-only artifacts missing from the local sources are enumerated in `ARCHIVE_SCOPE.md`. Package screening checked conventional credential patterns and nested archives. Synthetic test token strings were confirmed as fixtures.
+
+## Prepared: V2 experiment parameter handbook
+
+- Compile the experiment's scientific and operational settings in Markdown. Record the actual values, when each setting was fixed, its role and rationale, alternatives considered at the time, and retrospective design trade-offs where useful. Keep documented decisions, inherited implementation defaults, engineering settings and observed outputs distinct. Cross-check the final values against the lock file, versioned scripts, summaries and dated entries. No new analysis or threshold change is planned.
+
+## Executed: V2 experiment parameter handbook
+
+- Wrote `step6_v2/NLP_V2_Experiment_Parameters.md` with ten chapters and seventeen tables. Covers sample and retrieval choices, response and NLI settings, original pilot GO and later signal diagnostics, exact formal gate and ablation settings, sentence selection, live cost, bootstrap and case review, and reproducibility controls. Separates the recorded rationale and alternatives from explanations where an exact original rationale was not documented, including implementation defaults and design grid points.
+- Validated all 66 internal/source links and Markdown table structure. Cross-checked the documented full-precision primary and secondary boundary values with the gate lock, the three sample splits, original pilot labels, Step 6a thresholds, realized formal rates and ablations, the latency subset, and bootstrap and case-sampling settings. No inference, threshold fitting or new statistical analysis was performed.
