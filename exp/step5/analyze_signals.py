@@ -5,7 +5,7 @@ Reads an existing Step 5 per_question.csv. Does not call any API, does not
 run NLI, and does not choose a gate threshold. Pilot numbers are descriptive
 only; gate parameters stay reserved for the tune set.
 
-Usage (on YangQS, after Step 5):
+Usage (after Step 5):
     python analyze_signals.py --dir step5_pilot
 """
 from __future__ import annotations

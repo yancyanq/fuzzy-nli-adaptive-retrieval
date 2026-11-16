@@ -476,7 +476,7 @@ class HFNliScorer:
             die(
                 "Missing dependency for --nli-backend hf: "
                 "pip install transformers torch\n"
-                "On YangQS (CUDA), install a CUDA build of torch from https://pytorch.org "
+                "On a CUDA host, install a CUDA build of torch from https://pytorch.org "
                 "if `python -c \"import torch; print(torch.cuda.is_available())\"` is False."
             )
         self.torch = torch

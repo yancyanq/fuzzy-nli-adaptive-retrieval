@@ -9,7 +9,7 @@ python -m pip install openai==1.76.2 rank-bm25==0.2.2
 python -m pip check
 ```
 
-这是本次客户端测试采用的两个直接依赖版本，与 [Step 6a 客户端安装决策](../exp/EXPERIMENT_LOG.md?plain=1#L296)一致。Step 2–5b 在 YangQS 的完整环境锁记录中未给出。Step 2 只需 `rank-bm25`，其 pip 依赖包含 NumPy。没有项目级 requirements 或 lock 随包提供。
+这是本次客户端测试采用的两个直接依赖版本，与 [Step 6a 客户端安装决策](../exp/EXPERIMENT_LOG.md?plain=1#L296)一致。Step 2–5b 的完整环境锁记录未给出。Step 2 只需 `rank-bm25`，其 pip 依赖包含 NumPy。没有项目级 requirements 或 lock 随包提供。
 
 ## 各脚本与测试依赖
 
@@ -32,7 +32,7 @@ python -m pip check
 
 `--key-env` 接收变量名。真实凭据通过本地受控环境变量提供。包中凭据常见格式的扫描只发现测试代码原有的假值；测试进程未继承真实凭据。测试本身无需付费 API、GPU、PyTorch、Transformers 或 vLLM。
 
-运行 Step 5 的实际 NLI 时，安装与 YangQS 驱动匹配的 CUDA 版 `torch` 和 `transformers`，准备 `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` 模型与 tokenizer 快照。用 `python -c "import torch; print(torch.cuda.is_available())"` 检查设备，`--nli-device auto` 可在 CUDA 不可用时选 CPU。发生 tokenizer 依赖问题时应记录并冻结所需包及版本，实际版本以设备 lock 为准。日志记录正式 pilot 对引用段落按顺序拼接，无可用引用时回退并计数，假设采用固定模板 `The answer to the question "{question}" is: {answer}.`，NLI 标签映射取模型配置中的 `id2label`。标题级引用可算段落覆盖，官方 SP F1 需要句索引。 [Pilot 实现](../exp/EXPERIMENT_LOG.md?plain=1#L134) · [Pilot 实测](../exp/EXPERIMENT_LOG.md?plain=1#L146)
+运行 Step 5 的实际 NLI 时，安装与 GPU 驱动匹配的 CUDA 版 `torch` 和 `transformers`，准备 `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` 模型与 tokenizer 快照。用 `python -c "import torch; print(torch.cuda.is_available())"` 检查设备，`--nli-device auto` 可在 CUDA 不可用时选 CPU。发生 tokenizer 依赖问题时应记录并冻结所需包及版本，实际版本以环境 lock 为准。日志记录正式 pilot 对引用段落按顺序拼接，无可用引用时回退并计数，假设采用固定模板 `The answer to the question "{question}" is: {answer}.`，NLI 标签映射取模型配置中的 `id2label`。标题级引用可算段落覆盖，官方 SP F1 需要句索引。 [Pilot 实现](../exp/EXPERIMENT_LOG.md?plain=1#L134) · [Pilot 实测](../exp/EXPERIMENT_LOG.md?plain=1#L146)
 
 ## Step 6a 服务端的历史记录
 

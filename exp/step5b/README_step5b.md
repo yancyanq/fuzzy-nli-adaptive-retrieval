@@ -18,7 +18,7 @@
 
 ## 1. 需要哪些文件
 
-把 `rerun_toplogprobs.py` 复制到 `G:\NLP_project\`。同一文件夹里应该已经有：
+把 `rerun_toplogprobs.py` 复制到项目工作目录。同一文件夹里应该已经有：
 
 - `pilot.json`、`compare_models.py`、`bm25_topk.py`（提示词、检索、解析、打分都从 `compare_models.py` 导入，和第 3、5 步完全一致）；
 - `analyze_signals.py`（AUC 和 bootstrap 函数从这里导入）；
@@ -57,14 +57,14 @@ python -c "import os; print('DEEPSEEK_API_KEY=' + ('set' if os.environ.get('DEEP
 **cmd：**
 
 ```bat
-cd /d G:\NLP_project
+cd /d <项目目录>
 python rerun_toplogprobs.py --data pilot.json --step5-dir step5_pilot --out step5b_toplp
 ```
 
 **PowerShell：**
 
 ```powershell
-Set-Location G:\NLP_project
+Set-Location <项目目录>
 python rerun_toplogprobs.py --data pilot.json --step5-dir step5_pilot --out step5b_toplp
 ```
 
@@ -86,7 +86,7 @@ python rerun_toplogprobs.py --data pilot.json --step5-dir step5_pilot --out step
 
 ## 4. 输出文件
 
-都在 `G:\NLP_project\step5b_toplp\` 下：
+都在 `step5b_toplp\` 下：
 
 | 文件 | 内容 |
 |---|---|

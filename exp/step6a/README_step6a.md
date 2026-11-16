@@ -26,7 +26,7 @@
 
 ## 1. 需要哪些文件
 
-把 `check_logprobs.py` 复制到 `G:\NLP_project\`。同一文件夹里应该已经有：
+把 `check_logprobs.py` 复制到项目工作目录。同一文件夹里应该已经有：
 
 - `tune.json`（第 1 步切出的 500 题调参集，格式与 `pilot.json` 相同）；
 - `compare_models.py`、`bm25_topk.py`（提示词、检索、解析、打分从 `compare_models.py` 导入，和第 3、5 步完全一致）；
@@ -36,7 +36,7 @@
 如果盒子上或当前目录没有 `tune.json`，必须显式给出数据路径，并可用 `--n`、`--offset` 取切片，例如：
 
 ```bat
-python check_logprobs.py --data G:\NLP_project\tune.json --n 30 --offset 0 --out step6a_check
+python check_logprobs.py --data tune.json --n 30 --offset 0 --out step6a_check
 ```
 
 依赖和第 3 步相同，不需要在客户端安装 torch 或 vLLM（vLLM 装在租用的 GPU 机器上）：
@@ -68,11 +68,11 @@ vllm serve Qwen/Qwen2.5-7B-Instruct --host 127.0.0.1 --port 8000 --max-logprobs 
 curl http://127.0.0.1:8000/v1/models
 ```
 
-## 3. 如果在 YangQS 上跑客户端、模型在远程 GPU 上：用 SSH 隧道，不要把端口公开
+## 3. 如果在本地跑客户端、模型在远程 GPU 上：用 SSH 隧道，不要把端口公开
 
-不要把 GPU 机器的 8000 端口映射到公网。在 YangQS 上开一条到 GPU 本机端口的 SSH 隧道，然后客户端仍连接 `http://127.0.0.1:8000/v1`。
+不要把 GPU 机器的 8000 端口映射到公网。在本地开一条到 GPU 本机端口的 SSH 隧道，然后客户端仍连接 `http://127.0.0.1:8000/v1`。
 
-**YangQS（Windows，系统自带的 OpenSSH）**，把 `user` 和 `gpu-host` 换成实际的登录名和主机：
+**Windows（系统自带的 OpenSSH）**，把 `user` 和 `gpu-host` 换成实际的登录名和主机：
 
 ```bat
 ssh -N -L 8000:127.0.0.1:8000 user@gpu-host
@@ -111,14 +111,14 @@ python -c "import os; print('VLLM_API_KEY=' + ('set' if os.environ.get('VLLM_API
 **cmd：**
 
 ```bat
-cd /d G:\NLP_project
+cd /d <项目目录>
 python check_logprobs.py --data tune.json --out step6a_check
 ```
 
 **PowerShell：**
 
 ```powershell
-Set-Location G:\NLP_project
+Set-Location <项目目录>
 python check_logprobs.py --data tune.json --out step6a_check
 ```
 

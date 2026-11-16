@@ -8,7 +8,7 @@ and whether the top-5 alternatives carry non-zero values.
 
 The key is read only from an environment variable and never printed.
 
-Usage (YangQS):
+Usage:
     python probe_logprobs.py --preset deepseek
 Outputs: probe_logprobs.json (raw token logprobs, no key).
 """

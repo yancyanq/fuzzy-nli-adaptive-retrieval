@@ -10,7 +10,7 @@
 
 ## Step 2 BM25 召回
 
-在每题自带段落池做 BM25 第一轮 top-k，再用问题拼接首位段落的标题及首句，从未使用段落中补 top-m。**脚本** `exp/step2/bm25_topk.py`。**命令** `python exp/step2/bm25_topk.py --data exp/step1/pilot.json --ks 2 3 4 --m 1 --out runs/step2_m1`，将 `--m 1 --out runs/step2_m1` 换为 `--m 2 --out runs/step2_m2` 可复跑另一组。**输出** 各有 `summary.json`、`per_question.csv`；已收录于 `exp/step2/step2_results/`（m=1）与 `exp/step2/step2_m2/`（m=2）。**关键结果** 选 k=2、m=1；此设置下支持段落平均召回从 .635 到 .785，两个支持段落均召回的比例从 .310 到 .590，30% 的题在第二轮补到支持段落。**日志** [验证](exp/EXPERIMENT_LOG.md?plain=1#L25)、[YangQS 复核](exp/EXPERIMENT_LOG.md?plain=1#L38)、[参数决定](exp/EXPERIMENT_LOG.md?plain=1#L45)。
+在每题自带段落池做 BM25 第一轮 top-k，再用问题拼接首位段落的标题及首句，从未使用段落中补 top-m。**脚本** `exp/step2/bm25_topk.py`。**命令** `python exp/step2/bm25_topk.py --data exp/step1/pilot.json --ks 2 3 4 --m 1 --out runs/step2_m1`，将 `--m 1 --out runs/step2_m1` 换为 `--m 2 --out runs/step2_m2` 可复跑另一组。**输出** 各有 `summary.json`、`per_question.csv`；已收录于 `exp/step2/step2_results/`（m=1）与 `exp/step2/step2_m2/`（m=2）。**关键结果** 选 k=2、m=1；此设置下支持段落平均召回从 .635 到 .785，两个支持段落均召回的比例从 .310 到 .590，30% 的题在第二轮补到支持段落。**日志** [验证](exp/EXPERIMENT_LOG.md?plain=1#L25)、[正式复核](exp/EXPERIMENT_LOG.md?plain=1#L38)、[参数决定](exp/EXPERIMENT_LOG.md?plain=1#L45)。
 
 ## Step 3 作答模型试跑
 

@@ -5,52 +5,52 @@ Entries are listed in recording order.
 
 ## Step 1: Data source decided
 - Decision: use Hugging Face `hotpotqa/hotpot_qa`, config `distractor`, split `validation` (official dev set; test answers not public).
-- Reason (user choice): easy loading/splitting with `datasets`; will convert to official JSON format for `hotpot_evaluate_v1.py`.
+- Reason: easy loading/splitting with `datasets`; will convert to official JSON format for `hotpot_evaluate_v1.py`.
 - Planned processing: filter `type == "bridge"`, shuffle with fixed seed (42, proposed), split into disjoint pilot / tune / test; sizes 【待确认】(example: 100 / 500 / 1000).
 - Alternatives considered: official site JSON (`hotpot_dev_distractor_v1.json`); BEIR/KILT/FlashRAG versions rejected (no per-question 10-paragraph distractor pool).
-- Status: guidance given to user (load, filter, split, convert code). Not yet executed.
+- Status: procedure specified for the load, filter, split and convert code. Not yet executed.
 
-## Step 1 executed: Data split (run by user on device YangQS)
+## Step 1 executed: Data split
 - Source: HF `hotpotqa/hotpot_qa`, config `distractor`, split `validation`; Parquet downloaded via mirror, SHA-256 verified.
 - Validation total: 7,405 questions; bridge: 5,918.
 - Filter type == bridge, shuffle seed 42, sequential split:
-  - pilot.json — 100 (pre-experiment) — G:/NLP_project/pilot.json
-  - tune.json — 500 (tuning) — G:/NLP_project/tune.json
-  - test.json — 1,000 (formal test) — G:/NLP_project/test.json
+  - pilot.json — 100 (pre-experiment)
+  - tune.json — 500 (tuning)
+  - test.json — 1,000 (formal test)
 - Format: official HotpotQA JSON (UTF-8), for hotpot_evaluate_v1.py.
 - Checks: re-read all three files; all bridge; 1,600 `_id` unique (disjoint).
 - Note: some questions have fewer than 10 context paragraphs; kept as original (affects top-k / unused-paragraph pool in round 2 — handle in retrieval code and report in paper).
 - Sizes follow the example values; formal test size still subject to protocol 7.4 (budget / effect size).
 
-## Step 2 prepared: BM25 top-k recall script (verification run on my box)
+## Step 2 prepared: BM25 top-k recall script (verification run)
 - Script: /workspace/exp/step2/bm25_topk.py (rank_bm25 BM25Okapi; lowercase alnum tokens, small stopword list).
 - Round 1: query = question; rank the question's own context paragraphs (title + sentences); take top-k.
 - Round 2 rule rewrite: query = question + title + first sentence of round-1 top-1 paragraph; rank only unused paragraphs; add top-m.
 - Gold = titles in supporting_facts. Metrics: mean gold-paragraph recall, both-gold rate, % questions where round 2 adds a gold paragraph, % with no unused paragraphs.
-- Box verification run: rebuilt pilot (bridge, seed 42, first 100) from HF; same procedure as user's — expected identical to G:/NLP_project/pilot.json but NOT yet confirmed against user's file.
-- Box results (100 pilot questions), m=1:
+- Verification run: rebuilt pilot (bridge, seed 42, first 100) from HF; same procedure as the official run — expected identical to pilot.json but NOT yet confirmed against the official file.
+- Verification results (100 pilot questions), m=1:
   k=2: R1 recall .635, both .310 | R2 recall .785, both .590, gain 30%
   k=3: R1 recall .710, both .450 | R2 recall .830, both .670, gain 24%
   k=4: R1 recall .755, both .540 | R2 recall .885, both .770, gain 26%
   m=2: k=2 R2 .845/.700 gain 42%; k=3 R2 .880/.770 gain 33%; k=4 R2 .920/.840 gain 31%
-- Status: awaiting user's official run on YangQS to confirm; k and m not yet decided.
+- Status: awaiting the official run to confirm; k and m not yet decided.
 
-## Step 2 executed on YangQS (official run)
-- User ran original bm25_topk.py on G:/NLP_project/pilot.json, m=1 and m=2.
-- Results identical to box verification run (all metrics match) → box pilot == user pilot confirmed.
-- Outputs: G:/NLP_project/step2_m1/{summary.json,per_question.csv}, G:/NLP_project/step2_m2/{...}; each 300 rows (100 q × 3 k), checked.
+## Step 2 executed: official run
+- The original bm25_topk.py was run on pilot.json, m=1 and m=2.
+- Results identical to the verification run (all metrics match) → the rebuilt pilot matches the original pilot.
+- Outputs: step2_m1/{summary.json,per_question.csv}, step2_m2/{...}; each 300 rows (100 q × 3 k), checked.
 - No question lacked unused paragraphs at k≤4.
 - Decision on k, m: pending.
 
-## Decision: k=2, m=1 (user approved)
+## Decision: k=2, m=1
 - Round 1 top-k = 2; round 2 adds m = 1 paragraph from unused pool via rule rewrite.
 - Rationale: lowest R1 both-gold (31%) → most headroom; highest R2-gain share (30%); equal-budget check: k=2+m=1 (3 paras) both-gold 59% vs k=3 single-shot 45% → rewrite adds value beyond extra paragraph; m=1 keeps re-retrieval cost small so gating vs Always/Full-context comparison stays meaningful (m=2 approaches k=4/full-context).
 - Caveats: retrieval recall only, not answer F1; n=100 (1 q = 1 pt); optional re-check on tune.json.
 - Next: Step 3 — choose answer LLM and NLI model, estimate budget.
 
-## Decision: compute plan (user approved)
-- Hardware: YangQS = NVIDIA RTX 4060 Laptop (8GB) → suitable for NLI only.
-- Pilot (pre-experiment): answer model via API (candidates DeepSeek-V3 deepseek-chat, GPT-4o-mini); NLI local on 4060.
+## Decision: compute plan
+- Hardware: an 8GB GPU → suitable for NLI only.
+- Pilot (pre-experiment): answer model via API (candidates DeepSeek-V3 deepseek-chat, GPT-4o-mini); NLI local on the 8GB GPU.
 - Main experiment: rent GPU, deploy local answer model (e.g., Qwen2.5-7B-Instruct via vLLM, OpenAI-compatible endpoint) for reproducibility, logprobs (uncertainty), stable latency.
 - Scripts must support both API and OpenAI-compatible local endpoint.
 
@@ -60,19 +60,19 @@ Entries are listed in recording order.
 - Two branches per question: A = round-1 paras; B = round-1 + round-2 para. Output JSON {answer, citations}; official HotpotQA EM/F1 normalization.
 - Logs tokens, latency, logprobs (mean/min over answer tokens; fallback if unsupported); cache.jsonl by (model,_id,branch).
 - Summary: mean EM/F1 A and B, oracle F1, improved/tie/degraded counts, tokens, latency, optional cost extrapolation to 1600 q × 2.
-- Tested only against a mock server (mock numbers are NOT results). Real API runs pending on YangQS.
+- Tested only against a mock server (mock numbers are NOT results). Real API runs pending.
 - Selection criteria: branch-A F1 ≈ 0.4–0.7; B−A gain; logprobs support; cost.
 
-## Step 3 executed: deepseek-chat on pilot first 30 (YangQS)
+## Step 3 executed: deepseek-chat on pilot first 30
 - k=2, m=1; 60 calls all succeeded; logprobs returned for all; 0 parse failures.
 - EM: A 0.433, B 0.600. F1: A 0.565, B 0.733, Oracle 0.767. Mean ΔF1 (B−A) = +0.169.
 - Per-question: improved 7, tie 22, degraded 1 (n=30, tie eps 0).
 - Tokens: 26,713 total (in 25,639, out 1,074); mean latency 0.697 s/call. Cost not estimated (no price passed).
 - Interpretation: A-F1 in target 0.4–0.7; re-retrieval helps; Oracle − B = 0.034 and Oracle − A = 0.202 → headroom exists for gating; but Always (B) already near Oracle, so gate must mainly save cost on the 22 tie questions while keeping the 7 improved.
-- Outputs: G:/NLP_project/step3_deepseek/{summary.json, per_question.csv}.
+- Outputs: step3_deepseek/{summary.json, per_question.csv}.
 - OpenAI comparison not run yet.
 
-## Decision: Step 4 pre-registered parameters (user approved)
+## Decision: Step 4 pre-registered parameters
 
 These nine values are locked before the 100-question pilot (Step 5). Items 4, 5, 6, and 9 are subjective, pre-registered thresholds; the paper must state that they were set in advance and give the reasons below. No value was chosen after seeing the 100-question results.
 
@@ -96,7 +96,7 @@ These nine values are locked before the 100-question pilot (Step 5). Items 4, 5,
 ### 4. Go/no-go on headroom: Oracle − A point estimate ≥ 0.05 F1, and the 95% bootstrap CI lower bound > 0
 - Decision (revised from a point-threshold only): after the 100-question pilot, compute a paired bootstrap 95% confidence interval for mean(Oracle F1 − A F1). The pilot proceeds to gating work only if the lower bound is greater than 0 and the point estimate is at least 0.05.
 - Reason for the CI condition: a confidence-interval lower bound above 0 is direct evidence that headroom is not a sampling artefact. This is more convincing than a fixed point threshold alone.
-- Reason for the 0.05 point-estimate floor (subjective, pre-registered): 0.05 is our own "minimum effect worth pursuing", not a number taken from a paper. The reasoning is that the standard error of mean F1 on 100 questions is expected to be about 0.03–0.04 (an estimate; the 100-question bootstrap will give the exact figure). If headroom is smaller than roughly one standard error, later comparisons among gates will be dominated by noise. 0.05 is about 1.5 standard errors under that estimate.
+- Reason for the 0.05 point-estimate floor (subjective, pre-registered): 0.05 is a self-set "minimum effect worth pursuing", not a number taken from a paper. The reasoning is that the standard error of mean F1 on 100 questions is expected to be about 0.03–0.04 (an estimate; the 100-question bootstrap will give the exact figure). If headroom is smaller than roughly one standard error, later comparisons among gates will be dominated by noise. 0.05 is about 1.5 standard errors under that estimate.
 - Alternative considered and rejected: use only "point estimate ≥ 0.05". That ignores uncertainty. Use only "CI lower bound > 0": a statistically real but tiny gain (e.g. 0.01) would still pass, yet would leave little room for a gate to beat Always or Never in a way that is visible above noise.
 
 ### 5. Improved share ≥ 10% of questions (subjective, pre-registered)
@@ -117,8 +117,8 @@ These nine values are locked before the 100-question pilot (Step 5). Items 4, 5,
 - If the single revision still fails: report in the paper that, under the HotpotQA distractor setting, the gain from one extra retrieval is limited. That is itself a result, not a reason to keep tuning.
 
 ### 8. NLI model and input construction
-- Model: `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli`, run locally on the YangQS RTX 4060 Laptop (8GB).
-- Reason for this model: it is trained on MNLI, FEVER, ANLI, LingNLI, and WANLI, so it is better suited to long, complex premises than an MNLI-only model; our premise is two or three paragraphs concatenated. It is also a widely downloaded NLI model on Hugging Face, so reviewers are likely to recognise it. The large checkpoint has about 400 million parameters and fits 8GB for inference.
+- Model: `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli`, run locally on the 8GB GPU.
+- Reason for this model: it is trained on MNLI, FEVER, ANLI, LingNLI, and WANLI, so it is better suited to long, complex premises than an MNLI-only model; the premise is two or three paragraphs concatenated. It is also a widely downloaded NLI model on Hugging Face, so reviewers are likely to recognise it. The large checkpoint has about 400 million parameters and fits 8GB for inference.
 - Premise: the cited paragraphs, concatenated in citation order. Hypothesis: the question plus the model answer, rewritten as a declarative sentence.
 - Reason for concatenation (not sentence-level max or min): this follows the external reviewer's advice. Taking the max over sentences would treat a sentence that supports only one hop as full support; taking the min would treat an answer that is only supported by two paragraphs together as unsupported.
 - Truncation: DeBERTa's maximum input length is 512 tokens. With k=2 and m=1 the premise is at most three paragraphs, so most questions should fit. The script must count how many inputs are truncated. If the truncated share is high, a later option is to use only the cited sentences rather than whole paragraphs; that change would be logged before being used as the primary setting.
@@ -134,17 +134,17 @@ Next: Step 5 — 100-question pilot script (both cached branches, local DeBERTa 
 ## Step 5 prepared: 100-question pilot script
 - Script: /workspace/exp/step5/run_pilot.py (+ README_step5.md, test_step5.py). Imports retrieval / scoring / API / cache from compare_models.py (same BM25 as Steps 2–3).
 - Locked defaults: n=100, k=2, m=1, preset deepseek (deepseek-chat), temperature 0, max_tokens 128, tie ε=0, Oracle chooses A on a tie.
-- Reuses Step 3 answers via --answer-cache (e.g. G:/NLP_project/step3_deepseek/cache.jsonl); new calls are written to <out>/cache.jsonl. --skip-nli fills answers first; --nli-only runs or re-runs NLI from existing branches/cache with no new API calls.
+- Reuses Step 3 answers via --answer-cache (e.g. step3_deepseek/cache.jsonl); new calls are written to <out>/cache.jsonl. --skip-nli fills answers first; --nli-only runs or re-runs NLI from existing branches/cache with no new API calls.
 - NLI default: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli, max_length 512, device auto. Premise = cited paragraphs in citation order (fallback to retrieved paragraphs if no usable citations, flagged). Hypothesis template (not an LLM rewrite): The answer to the question "{question}" is: {answer}. Label probabilities use the checkpoint id2label (order is not assumed). Truncations are counted per branch and overall.
 - Go/no-go (pre-registered): paired bootstrap 95% CI (B=10000, seed=42) for mean(Oracle F1 − A F1) — GO only if CI lower bound > 0 AND point estimate ≥ 0.05; improved share ≥ 10%; degraded count ≤ half of improved. All three must pass. Also reports retrieval/citation coverage; official sentence-level SP F1 is null unless citations include sentence indices.
 - Outputs under --out (default step5_pilot): per_question.csv, branches.jsonl, nli_scores.jsonl, summary.json, audit_sample.csv (up to 20 stratified rows, types a/b/c, seed 42, human_label left blank), cache.jsonl.
-- Box tests: python /workspace/exp/step5/test_step5.py — 23 tests passed, including known-F1 classification/oracle/bootstrap/GO and NO-GO fixtures, and an end-to-end run against the Step 3 mock chat server with --nli-backend mock (4-question slice of pilot.json plus one synthetic long-paragraph item for the truncation path). Mock numbers are NOT results. The DeBERTa-v3-large checkpoint was not downloaded. Real API + 4060 NLI run pending on YangQS.
+- Tests: python /workspace/exp/step5/test_step5.py — 23 tests passed, including known-F1 classification/oracle/bootstrap/GO and NO-GO fixtures, and an end-to-end run against the Step 3 mock chat server with --nli-backend mock (4-question slice of pilot.json plus one synthetic long-paragraph item for the truncation path). Mock numbers are NOT results. The DeBERTa-v3-large checkpoint was not downloaded. Real API + GPU NLI run pending.
 - --nli-backend mock prints a warning that scores are fake; --nli-backend hf without transformers/torch exits with a pip install message.
 
-Next: user runs Step 5 on YangQS — (a) fill the remaining answers with DeepSeek, reusing the Step 3 cache; (b) run local NLI on the RTX 4060.
+Next: run Step 5 — (a) fill the remaining answers with DeepSeek, reusing the Step 3 cache; (b) run local NLI on the 8GB GPU.
 
-## Step 5 executed: 100-question pilot on YangQS (deepseek-chat + local DeBERTa NLI on RTX 4060) — verdict GO
-- Settings: pilot.json n=100, k=2, m=1, deepseek-chat, temperature 0, max_tokens 128, tie ε=0, Oracle chooses A on tie. Step 3 cache reused; NLI-only pass made no new API calls (as reported by user).
+## Step 5 executed: 100-question pilot (deepseek-chat + local DeBERTa NLI on the 8GB GPU) — verdict GO
+- Settings: pilot.json n=100, k=2, m=1, deepseek-chat, temperature 0, max_tokens 128, tie ε=0, Oracle chooses A on tie. Step 3 cache reused; NLI-only pass made no new API calls.
 - Answer quality: EM A 0.520, B 0.650; F1 A 0.628, B 0.752, Oracle 0.765. Mean ΔF1 (B−A) = +0.124.
 - Per-question: improved 16, tie 82, degraded 2. Degraded/improved = 0.125.
 - Headroom: mean(Oracle F1 − A F1) = 0.137; paired bootstrap 95% CI [0.077, 0.203] (B=10000, seed 42).
@@ -152,16 +152,16 @@ Next: user runs Step 5 on YangQS — (a) fill the remaining answers with DeepSee
 - Go/no-go vs pre-registered criteria (Step 4): headroom point 0.137 ≥ 0.05 PASS; CI lower bound 0.077 > 0 PASS; improved share 16% ≥ 10% PASS; degraded/improved 0.125 ≤ 0.5 PASS → OVERALL GO. Item 7 (one-time rule revision) not triggered.
 - Interpretation: Oracle − B = 0.013, so Always (B) is already close to Oracle; with 82% ties, the gate's value lies mainly in cutting re-retrieval cost on tie questions while retaining the 16 improved ones. Main claim should be "near-B F1 at a clearly lower re-retrieval rate", not "F1 above B". Consistent with the 30-question Step 3 result.
 - Caveat: round-1 entailment is already high on average (0.876); whether NLI separates improved from tie questions is not yet shown. Planned check: offline, descriptive comparison of round-1 entailment / logprob distributions for improved vs tie (e.g. AUC) on pilot — diagnostic only; no gate parameters are tuned on pilot (tuning on tune.json).
-- Outputs (YangQS): G:/NLP_project/step5_pilot/{summary.json, per_question.csv, branches.jsonl, nli_scores.jsonl, audit_sample.csv, cache.jsonl}.
+- Outputs: step5_pilot/{summary.json, per_question.csv, branches.jsonl, nli_scores.jsonl, audit_sample.csv, cache.jsonl}.
 - Pending: manual audit of 20 rows in audit_sample.csv (human_label).
 
 ## Step 5 audit helper prepared
 - Script: /workspace/exp/step5/audit_helper.py. Reads <dir>/audit_sample.csv + <dir>/nli_scores.jsonl (joined on _id, branch); writes <dir>/audit_review.csv (UTF-8 BOM for Excel) with full premise text and rule-based hints: yes/no question, answer vs gold (exact / substring / different, after HotpotQA-style normalization), answer string in premise, gold answer in premise, gold titles in premise (x/y), suggested checks.
 - Hints are aids only; human columns left blank: human_answer_correct, human_premise_supports, human_label (codes: nli_correct, nli_wrong_multihop, nli_wrong_lexical, nli_wrong_hypothesis, nli_wrong_other), note. Labels are assigned by a person, not by the script.
-- Box test on a 2-row synthetic fixture only (no real data on box).
+- Tested on a 2-row synthetic fixture only (no real data).
 
 ## Step 5 manual audit received (20 rows)
-- File from user: G:/NLP_project/step5_pilot/audit_review.csv (copy: /workspace/exp/step5/audit_review_yangqs.csv). All 20 rows have human_answer_correct, human_premise_supports, human_label, and note filled. human_answer_correct: yes 7, no 13. human_premise_supports: yes 2, no 18. human_label: nli_correct 11, nli_wrong_lexical 6, nli_wrong_multihop 2, nli_wrong_other 1, nli_wrong_hypothesis 0.
+- File: audit_review.csv. All 20 rows have human_answer_correct, human_premise_supports, human_label, and note filled. human_answer_correct: yes 7, no 13. human_premise_supports: yes 2, no 18. human_label: nli_correct 11, nli_wrong_lexical 6, nli_wrong_multihop 2, nli_wrong_other 1, nli_wrong_hypothesis 0.
 - 20 rows are (question, branch) pairs covering 15 unique questions (5 questions appear as both A and B).
 - Cross-tab of automatic error_type vs human_label:
   - false_entailment (7): 6 nli_wrong_lexical, 1 nli_wrong_other (NLI assigned entailment to the abstention "Unknown").
@@ -174,29 +174,29 @@ Next: user runs Step 5 on YangQS — (a) fill the remaining answers with DeepSee
 - Script: /workspace/exp/step5/analyze_signals.py (+ test_analyze_signals.py). Offline only: reads step5_pilot/per_question.csv, no API or NLI calls, no threshold selection.
 - Compares branch-A nli_entailment, mean_logprob, and min_logprob across improved / tie / degraded. Primary contrast is improved vs tie (the 16 vs 82 split). AUC uses the oriented score (−signal), so AUC>0.5 means a *lower* round-1 value tends to mark improved questions (the expected direction for a re-retrieval gate). Bootstrap 95% CI (default B=5000, seed 42) for AUC and for mean(improved)−mean(tie).
 - Also prints illustrative rules "re-retrieve if nli_entailment_A < t" at pre-set t ∈ {0.50, 0.80, 0.90, 0.95}. These are descriptive only and must not be reused as the gate; tuning remains on tune.json.
-- Outputs: signal_summary.json, signal_by_class.csv. Box unit tests (6) passed on synthetic data; real pilot numbers pending the user's run on YangQS.
+- Outputs: signal_summary.json, signal_by_class.csv. Verification unit tests (6) passed on synthetic data; real pilot numbers pending the official run.
 
-## Step 5 signal diagnostic executed on YangQS (pilot, descriptive only)
+## Step 5 signal diagnostic executed (pilot, descriptive only)
 - n=100: improved 16, tie 82, degraded 2.
 - Branch-A NLI entailment mean: improved 0.798, tie 0.888, degraded 0.989 (n=2, not interpretable). AUC improved vs tie (low entailment → improved) = 0.699, bootstrap 95% CI [0.579, 0.812] (B=5000, seed 42). Lower bound above 0.5 → NLI carries a moderate, directionally correct signal; not strong enough alone, which supports combining signals in the fuzzy gate rather than a single NLI threshold.
-- mean_logprob_A / min_logprob_A: all class means 0.000, AUC 0.500 [0.500, 0.500]. User checked the answer cache: every recorded token logprob in all 100 round-1 responses is 0.0.
+- mean_logprob_A / min_logprob_A: all class means 0.000, AUC 0.500 [0.500, 0.500]. The answer cache was checked: every recorded token logprob in all 100 round-1 responses is 0.0.
 - Code check (compare_models.py `_token_logprob_list`): per-token values are copied directly from `choice.logprobs.content[i].logprob` via float(); no default 0 is filled. So the zeros are what the deepseek-chat API returned with temperature 0, not a span-matching bug in summarize_logprobs (which only averages those values). Root cause on the vendor side is not confirmed.
 - Consequence: logprob signals from this API batch are INVALID (degenerate), not evidence that logprob lacks discriminative power. Must be reported as such. The main experiment's local vLLM model is expected to return real logprobs; verify on first run before relying on them.
-- Illustrative entailment thresholds written to signal_summary.json; none selected. Outputs: G:/NLP_project/step5_pilot/{signal_summary.json, signal_by_class.csv}.
+- Illustrative entailment thresholds written to signal_summary.json; none selected. Outputs: step5_pilot/{signal_summary.json, signal_by_class.csv}.
 
 ## Logprob probe script prepared
 - Script: /workspace/exp/step5/probe_logprobs.py. Purpose: check whether deepseek-chat returns non-zero token logprobs, and whether the all-zero values seen in Step 5 depend on temperature.
 - Design: 2 short prompts (one low-uncertainty factual, one open-ended) × temperatures {0, 1} = 4 calls, max_tokens 8, logprobs=True, top_logprobs=5. Reports per call: token count, count of logprob exactly 0.0, min/mean logprob, non-zero top-5 alternatives. Raw token logprobs saved to probe_logprobs.json (no key).
-- Box test against the Step 3 mock server only (mock values are not results). Real probe pending on YangQS.
+- Tested against the Step 3 mock server only (mock values are not results). Real probe pending.
 
-## Logprob probe executed on YangQS (deepseek-chat, 4 calls)
+## Logprob probe executed (deepseek-chat, 4 calls)
 - temperature 0: prompt 0 ("Paris", 1 token) and prompt 1 ("Kiwi", 2 tokens) — all output-token logprobs = 0; top-5 alternatives non-zero 4/5 and 8/10.
 - temperature 1: prompt 0 min/mean −0.000001073 (1 token, non-zero); prompt 1 min −0.4549, mean −0.2275 (1 of 2 tokens = 0); top alternatives non-zero 5/5 and 9/10.
-- Conclusion: the all-zero output-token logprobs in Step 5 are tied to how deepseek-chat scores the chosen token under temperature 0, not to our extraction code. Alternatives (top_logprobs) remain informative at temperature 0.
-- Options recorded: (1) use top-1 vs top-2 alternative margin from top_logprobs at temperature 0 (requires re-running 200 pilot calls with top_logprobs; API-driven workaround, must be disclosed); (2) temperature 1 (real logprobs but breaks locked temperature 0 / reproducibility — not recommended); (3) pilot evaluates NLI only; logprob signals evaluated on the main-experiment local vLLM model, verified non-degenerate on first run. Recommended: (3). Decision pending user.
-- Raw: G:/NLP_project/probe_logprobs.json.
+- Conclusion: the all-zero output-token logprobs in Step 5 are tied to how deepseek-chat scores the chosen token under temperature 0, not to the extraction code. Alternatives (top_logprobs) remain informative at temperature 0.
+- Options recorded: (1) use top-1 vs top-2 alternative margin from top_logprobs at temperature 0 (requires re-running 200 pilot calls with top_logprobs; API-driven workaround, must be disclosed); (2) temperature 1 (real logprobs but breaks locked temperature 0 / reproducibility — not recommended); (3) pilot evaluates NLI only; logprob signals evaluated on the main-experiment local vLLM model, verified non-degenerate on first run. Recommended: (3). Decision pending.
+- Raw: probe_logprobs.json.
 
-## Decision: logprob handling = Option 1 (user choice)
+## Decision: logprob handling = Option 1
 - Re-run all 200 pilot calls (100 q × branches A/B) with deepseek-chat, temperature 0, max_tokens 128, same prompts and retrieval (k=2, m=1), adding logprobs=True and top_logprobs=5. New calls go to a separate cache; the Step 5 cache and results are not overwritten.
 - Uncertainty measure (defined before seeing results): for each output token, margin = logprob(top-1 alternative) − logprob(top-2 alternative) from top_logprobs. Primary signal = mean margin over answer-span tokens of branch A (fallback to all output tokens if the answer span cannot be located; count fallbacks). Secondary (descriptive): min margin over the answer span, margin of the first answer token, mean top-5 entropy (renormalised over the returned alternatives). Lower margin / higher entropy = more uncertain = expected to mark improved questions.
 - Consistency check: compare each re-run answer with the Step 5 cached answer (HotpotQA-normalised string equality; also F1 vs gold). Report the number of changed answers per branch. Labels (improved/tie/degraded) stay those from Step 5 per_question.csv. Primary AUC is computed on questions whose A and B answers are both unchanged; an all-questions AUC is reported as sensitivity. The Step 5 GO verdict is not re-decided on re-run answers.
@@ -211,15 +211,15 @@ Next: user runs Step 5 on YangQS — (a) fill the remaining answers with DeepSee
 - Analysis: improved vs tie AUC, bootstrap 95% CI (B=5000, seed 42) via analyze_signals.auc_score/bootstrap_ci. PRIMARY subset = A and B both unchanged; sensitivity = all. Every subset also requires a margin value and an NLI value, so NLI entailment_A AUC is computed on exactly the same questions. No gate threshold is selected.
 - Implementation choices not fixed by the pre-registration: entropy also needs ≥2 alternatives (same rule as margin); the margin/entropy definitions are kept even when the top-1 alternative is reported as 0.0, and such tokens are counted for disclosure; if the endpoint rejects logprobs the script stops rather than falling back.
 - Mock server step3/test_mock_server.py gained an opt-in --top-logprobs-mode deepseek_t0 (FAKE alternatives; chosen token 0.0 at T=0). Default behaviour is unchanged; Step 5 tests still pass (23/23).
-- Box tests: python3 /workspace/exp/step5b/test_step5b.py — 17 passed (margin/entropy on known numbers, span rule matches compare_models, AUC orientation, same-subset NLI, consistency, cache isolation/resume, analyze-only, mock end-to-end on mini_pilot.json with a SYNTHETIC per_question.csv, key not printed). All mock numbers are FAKE, not results.
+- Tests: python3 /workspace/exp/step5b/test_step5b.py — 17 passed (margin/entropy on known numbers, span rule matches compare_models, AUC orientation, same-subset NLI, consistency, cache isolation/resume, analyze-only, mock end-to-end on mini_pilot.json with a SYNTHETIC per_question.csv, key not printed). All mock numbers are FAKE, not results.
 
-Next: user runs on YangQS: python rerun_toplogprobs.py --data pilot.json --step5-dir step5_pilot --out step5b_toplp
+Next: python rerun_toplogprobs.py --data pilot.json --step5-dir step5_pilot --out step5b_toplp
 
 ## Step 5b executed (re-run with top_logprobs=5)
 
-**Run (by user on YangQS):** `python rerun_toplogprobs.py --data pilot.json --step5-dir step5_pilot --out step5b_toplp`; all 200 calls succeeded. Output: G:/NLP_project/step5b_toplp/toplp_summary.json.
+**Run:** `python rerun_toplogprobs.py --data pilot.json --step5-dir step5_pilot --out step5b_toplp`; all 200 calls succeeded. Output: step5b_toplp/toplp_summary.json.
 
-**Results reported by the user:**
+**Results:**
 
 | Analysis | n | mean_margin_A AUC (95% CI) | NLI AUC, same questions (95% CI) |
 |---|---:|---:|---:|
@@ -241,7 +241,7 @@ Next: user runs on YangQS: python rerun_toplogprobs.py --data pilot.json --step5
 ## Step 6a prepared: local vLLM logprob degeneracy check (not yet run)
 
 - Script: /workspace/exp/step6a/check_logprobs.py (+ README_step6a.md, test_step6a.py). Purpose: on the first 30 questions of the tune split, check whether a local model served by vLLM returns non-degenerate token logprobs. This gates whether logprob-based signals may enter the fuzzy gate in the main experiment. Prompt, BM25 retrieval (k=2), answer parsing and the OpenAI-compatible client are imported from compare_models.py; margin, entropy, answer-span location and the top_logprobs call helper are imported from rerun_toplogprobs.py (not copied). Branch A only, temperature 0, max_tokens 128, logprobs=True, top_logprobs=5. 30 calls.
-- Default endpoint: model Qwen/Qwen2.5-7B-Instruct, base_url http://localhost:8000/v1, key from env var VLLM_API_KEY (optional; unset → placeholder EMPTY, never printed). If tune.json is not in the current directory, pass --data and optionally --n 30 --offset 0. There is no tune.json on this box; the official file is G:/NLP_project/tune.json (500 questions, seed-42 split).
+- Default endpoint: model Qwen/Qwen2.5-7B-Instruct, base_url http://localhost:8000/v1, key from env var VLLM_API_KEY (optional; unset → placeholder EMPTY, never printed). If tune.json is not in the current directory, pass --data and optionally --n 30 --offset 0. The official file is tune.json (500 questions, seed-42 split).
 - Separate resume-safe cache <out>/cache_logprob_check.jsonl, keyed (model, _id, branch, top_logprobs) and checked on k/temperature/max_tokens; errored calls are retried on resume. The script refuses any cache file named cache.jsonl, so Step 3/5 caches cannot be written.
 - Outputs: logprob_check.json (summary, per-criterion observations, verdict) and logprob_check_tokens.csv (one row per output token). Also reported, but not used in the verdict: fraction of chosen tokens whose logprob equals the top-1 alternative; min/median/max, n_distinct and variance of the two per-question means; EM/F1 vs gold (informational only).
 - This step tests degeneracy only, not predictive power. No AUC is computed, and no gate threshold is selected.
@@ -278,10 +278,10 @@ Procedural rule (not a subjective threshold): all scheduled questions must have 
 - Default per-request timeout is 120 s (local 7B models can be slower than the API; overridable).
 - Criterion 2 uses a strict inequality (fraction < 0.05); criterion 1 uses "at most" (fraction ≤ 0.50), matching the wording of each rule.
 - Distinct values are counted after rounding to 6 decimal places (same precision as the Step 5b token cache). Variance is the population variance; with 10 distinct values it is necessarily > 0, but both conditions are checked as written.
-- vLLM CLI: the official flag on current docs (https://docs.vllm.ai/en/stable/cli/serve/ and Engine Arguments) is `--max-logprobs` (default 20, which already allows top_logprobs=5). README tells the user to start with `vllm serve Qwen/Qwen2.5-7B-Instruct --host 127.0.0.1 --port 8000 --max-logprobs 5`, and to reach a remote GPU from YangQS via an SSH tunnel (`ssh -N -L 8000:127.0.0.1:8000 user@gpu-host`) rather than publishing the port.
+- vLLM CLI: the official flag on current docs (https://docs.vllm.ai/en/stable/cli/serve/ and Engine Arguments) is `--max-logprobs` (default 20, which already allows top_logprobs=5). README describes starting with `vllm serve Qwen/Qwen2.5-7B-Instruct --host 127.0.0.1 --port 8000 --max-logprobs 5`, and reaching a remote GPU via an SSH tunnel (`ssh -N -L 8000:127.0.0.1:8000 gpu-host`) rather than publishing the port.
 - Mock server step3/test_mock_server.py gained an opt-in `--top-logprobs-mode vllm_healthy` (FAKE ordinary negative chosen logprobs, never exactly 0.0, no placeholder alternatives; chosen equals top-1). Default remains `empty`; `deepseek_t0` is unchanged (chosen=0.0 at T=0, non-placeholder alternatives) so existing Step 5b tests keep their fixture. Step 6a uses `vllm_healthy` → PASS and `deepseek_t0` → FAIL (zero_chosen_frac and mean_chosen_logprob_spread; the current deepseek_t0 fixture does not emit -9999, so placeholder_alt_frac is not the failing item in that mock).
 
-- Box tests: python3 /workspace/exp/step6a/test_step6a.py — 16 passed (criteria on known numbers, including the four default thresholds, strict "under 5%", inclusive "at most 50%", incomplete runs, CLI overrides, cache isolation, key not printed, offset slice, analyze-only, and mock end-to-end on 30 SYNTHETIC questions). Existing tests still pass: step5 23/23, analyze_signals 6/6, step5b 17/17. All mock numbers are FAKE, not results. No real vLLM run has been made.
+- Tests: python3 /workspace/exp/step6a/test_step6a.py — 16 passed (criteria on known numbers, including the four default thresholds, strict "under 5%", inclusive "at most 50%", incomplete runs, CLI overrides, cache isolation, key not printed, offset slice, analyze-only, and mock end-to-end on 30 SYNTHETIC questions). Existing tests still pass: step5 23/23, analyze_signals 6/6, step5b 17/17. All mock numbers are FAKE, not results. No real vLLM run has been made.
 
-Next: user starts vLLM on the rented GPU (or tunnels to it from YangQS) and runs:
+Next: start vLLM on the rented GPU (or tunnel to it) and run:
   python check_logprobs.py --data tune.json --out step6a_check

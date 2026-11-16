@@ -9,7 +9,7 @@
 
   `The answer to the question "{question}" is: {answer}.`
 
-把 `run_pilot.py` 放到 `G:\NLP_project\`，和 `pilot.json`、`compare_models.py`、`bm25_topk.py` 放在同一文件夹（`compare_models.py` 会调用 `bm25_topk.py` 的分词，保证和第 2、3 步一致）。第 3 步的缓存可以直接复用，不必重跑前 30 题。
+把 `run_pilot.py` 放到项目工作目录，和 `pilot.json`、`compare_models.py`、`bm25_topk.py` 放在同一文件夹（`compare_models.py` 会调用 `bm25_topk.py` 的分词，保证和第 2、3 步一致）。第 3 步的缓存可以直接复用，不必重跑前 30 题。
 
 > 本目录里的 `testdata/mini_pilot.json` 只是 `pilot.json` 的前 4 题切片，供本机 mock 测试用。下面第 8 节的 mock 数字**不是**实验结果。
 
@@ -21,7 +21,7 @@
 pip install openai rank_bm25
 ```
 
-NLI 阶段还需要 PyTorch 和 Transformers。在 YangQS 的 4060 上，请安装带 CUDA 的 torch（到 https://pytorch.org 按提示选择），然后：
+NLI 阶段还需要 PyTorch 和 Transformers。在带 CUDA 的 GPU 上，请安装带 CUDA 的 torch（到 https://pytorch.org 按提示选择），然后：
 
 ```bat
 pip install transformers
@@ -71,20 +71,20 @@ if ($env:DEEPSEEK_API_KEY) { "DEEPSEEK_API_KEY=set" } else { "DEEPSEEK_API_KEY=M
 **cmd：**
 
 ```bat
-cd /d G:\NLP_project
+cd /d <项目目录>
 ```
 
 **PowerShell：**
 
 ```powershell
-Set-Location G:\NLP_project
+Set-Location <项目目录>
 ```
 
 建议分成两段跑：先补全 100 题的作答（复用第 3 步缓存），再在 4060 上跑 NLI。这样 API 和本地推理可以分开，中途失败也不必重计费。
 
 ### （a）补全作答：复用第 3 步前 30 题的 60 次调用
 
-第 3 步的缓存默认在 `G:\NLP_project\step3_deepseek\cache.jsonl`。用 `--answer-cache` 读它，新的调用写到 `step5_pilot\cache.jsonl`。前 30 题命中缓存，只会对剩下 70 题 × 2 个分支发新请求。
+第 3 步的缓存默认在 `step3_deepseek\cache.jsonl`。用 `--answer-cache` 读它，新的调用写到 `step5_pilot\cache.jsonl`。前 30 题命中缓存，只会对剩下 70 题 × 2 个分支发新请求。
 
 **cmd：**
 
@@ -126,7 +126,7 @@ python run_pilot.py --data pilot.json --preset deepseek --n 100 --out step5_pilo
 
 ## 4. 输出文件在哪里
 
-默认写到 `--out` 指定的文件夹（例如 `G:\NLP_project\step5_pilot\`）：
+默认写到 `--out` 指定的文件夹（例如 `step5_pilot\`）：
 
 | 文件 | 内容 |
 |---|---|

@@ -50,9 +50,9 @@
 | Prepared: V2 §7.4 sample-size and compute planning | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L430) |
 | Executed: V2 §7.3 supplemental pilot signal comparison | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L415) |
 | Prepared: V2 §7.3 offline comparator and synthetic tests | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L409) |
-| Decision: user approved settings for the V2 §7.3 supplemental pilot comparison | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L401) |
+| Decision: settings for the V2 §7.3 supplemental pilot comparison | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L401) |
 | Prepared: comparative rationale for the proposed V2 pilot settings | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L371) |
-| Prepared: candidate settings for the V2 pilot signal check, awaiting confirmation | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L362) |
+| Prepared: candidate settings for the V2 pilot signal check | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L362) |
 | Prepared: received Step 5 pilot signal check exports | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L356) |
 | Prepared: V2 §7.3 pilot signal check input audit | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L350) |
 | Decision: follow Protocol V2 as written for the remaining experiment | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L343) |
@@ -67,23 +67,23 @@
 | Step 6a prepared: local vLLM logprob degeneracy check (not yet run) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L241) |
 | Step 5b executed (re-run with top_logprobs=5) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L218) |
 | Step 5b prepared: top_logprobs re-run + margin-signal analysis (not yet run) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L206) |
-| Decision: logprob handling = Option 1 (user choice) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L199) |
-| Logprob probe executed on YangQS (deepseek-chat, 4 calls) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L192) |
+| Decision: logprob handling = Option 1 | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L199) |
+| Logprob probe executed (deepseek-chat, 4 calls) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L192) |
 | Logprob probe script prepared | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L187) |
-| Step 5 signal diagnostic executed on YangQS (pilot, descriptive only) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L179) |
+| Step 5 signal diagnostic executed (pilot, descriptive only) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L179) |
 | Step 5 signal diagnostic script prepared | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L173) |
 | Step 5 manual audit received (20 rows) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L163) |
 | Step 5 audit helper prepared | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L158) |
-| Step 5 executed: 100-question pilot on YangQS (deepseek-chat + local DeBERTa NLI on RTX 4060) — verdict GO | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L146) |
+| Step 5 executed: 100-question pilot (deepseek-chat + local DeBERTa NLI on the 8GB GPU) — verdict GO | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L146) |
 | Step 5 prepared: 100-question pilot script | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L134) |
-| Decision: Step 4 pre-registered parameters (user approved) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L75) |
-| Step 3 executed: deepseek-chat on pilot first 30 (YangQS) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L66) |
+| Decision: Step 4 pre-registered parameters | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L75) |
+| Step 3 executed: deepseek-chat on pilot first 30 | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L66) |
 | Step 3 prepared: answer-model comparison script | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L57) |
-| Decision: compute plan (user approved) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L51) |
-| Decision: k=2, m=1 (user approved) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L45) |
-| Step 2 executed on YangQS (official run) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L38) |
-| Step 2 prepared: BM25 top-k recall script (verification run on my box) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L25) |
-| Step 1 executed: Data split (run by user on device YangQS) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L13) |
+| Decision: compute plan | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L51) |
+| Decision: k=2, m=1 | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L45) |
+| Step 2 executed: official run | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L38) |
+| Step 2 prepared: BM25 top-k recall script (verification run) | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L25) |
+| Step 1 executed: Data split | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L13) |
 | Step 1: Data source decided | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L6) |
 
 [返回项目 README](README.md) · [查看实验日志](exp/EXPERIMENT_LOG.md)

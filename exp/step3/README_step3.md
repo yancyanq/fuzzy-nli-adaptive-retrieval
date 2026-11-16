@@ -7,7 +7,7 @@
 
 脚本会输出答案 F1 / EM、token 数、延迟，以及是否支持 logprobs，用来挑选主实验模型。
 
-把 `compare_models.py` 放到 `G:\NLP_project\`，和 `pilot.json`、`bm25_topk.py` 放在同一文件夹（有 `bm25_topk.py` 时会直接调用它的分词函数，保证和第 2 步完全一致）。
+把 `compare_models.py` 放到项目工作目录，和 `pilot.json`、`bm25_topk.py` 放在同一文件夹（有 `bm25_topk.py` 时会直接调用它的分词函数，保证和第 2 步完全一致）。
 
 ## 1. 安装依赖
 
@@ -62,13 +62,13 @@ if ($env:DEEPSEEK_API_KEY) { "DEEPSEEK_API_KEY=set" } else { "DEEPSEEK_API_KEY=M
 **cmd：**
 
 ```bat
-cd /d G:\NLP_project
+cd /d <项目目录>
 ```
 
 **PowerShell：**
 
 ```powershell
-Set-Location G:\NLP_project
+Set-Location <项目目录>
 ```
 
 ### DeepSeek（`deepseek-chat`）
@@ -113,7 +113,7 @@ python compare_models.py --data pilot.json --preset custom --base-url http://127
 
 ## 4. 输出文件在哪里
 
-默认写到 `--out` 指定的文件夹（例如 `G:\NLP_project\step3_deepseek\`）：
+默认写到 `--out` 指定的文件夹（例如 `<项目目录>\step3_deepseek\`）：
 
 | 文件 | 内容 |
 |---|---|

@@ -10,7 +10,7 @@ python3 analyze_step6_v2.py --test test.json --results step5_v2 --out ../../runs
 ```
 
 - `step6_summary.json` 和 `paired_bootstrap.csv` 保存五组预登记对比、估计值和区间端点。CSV 的 F1 单位为 0–1，乘 100 即得到百分点。
-- `error_audit_cases.json` 保存固定哈希抽得的 22 题和两支证据。与 `Error_Analysis.md` 一起使用。正式集案例是主结果可见后的探索性审读，预实验的 YangQS 人工标签记录在实验日志。
+- `error_audit_cases.json` 保存固定哈希抽得的 22 题和两支证据。与 `Error_Analysis.md` 一起使用。正式集案例是主结果可见后的探索性审读，预实验的人工标签记录在实验日志。
 - `quality_cost.pdf` 是 §11.5 三面板图。 `Experiment_Report.md` 汇总 V2 §11–§12、原始预实验、结论及局限。
 - `Methodology_and_Experimental_Results.pdf` 是 10 pt IEEEtran 双栏预览。合并时将 `paper_sections.tex` 接在论文第 II 节之后，并带上 `paper_tables.tex` 和 `quality_cost.pdf`。将预览入口的参考文献条目按全稿的引用顺序合并。
 

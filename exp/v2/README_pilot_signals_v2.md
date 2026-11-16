@@ -20,10 +20,10 @@ python -m pip install rank-bm25==0.2.2
 python3 analyze_pilot_signals_v2.py --pilot ../step1/pilot.json --branches ../step5/step5_pilot/branches.jsonl --per-question ../step5/step5_pilot/per_question.csv --out ../../runs/v2_pilot_signals
 ```
 
-YangQS 工作区根目录（PowerShell）
+工作目录（PowerShell）
 
 ```powershell
-Set-Location G:\NLP_project
+Set-Location <项目目录>
 python analyze_pilot_signals_v2.py --pilot pilot.json --branches step5_pilot/branches.jsonl --per-question step5_pilot/per_question.csv --out pilot_signals_v2
 ```
 

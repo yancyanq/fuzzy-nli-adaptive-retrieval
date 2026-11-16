@@ -16,7 +16,7 @@
 
 本报告汇总截至 2026 年 11 月 15 日（Asia/Shanghai，UTC+8）已经完成的预实验工作。研究问题是多跳问答中的自适应再检索：在 HotpotQA distractor 设定下，系统先完成第一轮带引用作答，再依据第一轮即可获得的信号（优先为 NLI 证据支持分数）决定是否至多追加一次检索，从而在答案质量与检索成本之间取平衡。进入主实验之前，须先核实两件更基础的事情：（1）再检索本身能带来多少可争取增益；（2）第一轮信号能否预测这一增益。
 
-数据来自 Hugging Face 数据集 hotpotqa/hotpot\_qa，配置 distractor，划分 validation（官方开发集；测试集答案未公开）。validation 共 7,405 题，其中 type == bridge 的有 5,918 题；过滤后以随机种子 42 打乱，再顺序切分为互不重叠的 pilot 100 题、tune 500 题与 test 1,000 题。检索为 BM25：分支 A 用原问题取 top-k（锁定 k=2）；分支 B 按规则改写查询，仅在未用段落中追加 top-m（锁定 m=1）。预实验作答模型为 deepseek-chat，温度 0，max\_tokens 128。NLI 模型为 MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli，在设备 YangQS 的 NVIDIA RTX 4060 Laptop（8GB）上本地运行。
+数据来自 Hugging Face 数据集 hotpotqa/hotpot\_qa，配置 distractor，划分 validation（官方开发集；测试集答案未公开）。validation 共 7,405 题，其中 type == bridge 的有 5,918 题；过滤后以随机种子 42 打乱，再顺序切分为互不重叠的 pilot 100 题、tune 500 题与 test 1,000 题。检索为 BM25：分支 A 用原问题取 top-k（锁定 k=2）；分支 B 按规则改写查询，仅在未用段落中追加 top-m（锁定 m=1）。预实验作答模型为 deepseek-chat，温度 0，max\_tokens 128。NLI 模型为 MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli，在本地推理。
 
 在 100 题 pilot 上，分支 A、B 与 Oracle 的 F1 分别为 0.628、0.752 与 0.765；改善、持平、变差题数分别为 16、82、2。Oracle 相对 A 的 F1 余量为 0.137，配对 bootstrap 95% 置信区间为 \[0.077, 0.203\]（B=10000，seed 42）。第 4 步预先登记的四项 go/no-go 准则全部通过，结论为 GO。第一轮 NLI entailment 区分改善题与持平题的 AUC 为 0.699，bootstrap 95% 置信区间为 \[0.579, 0.812\]（B=5000，seed 42），属中等强度、方向正确的信号。DeepSeek API 在温度 0 下给出的 token 级 logprob 不可用：选中 token 一律报 0.0，候选中大量出现占位值 -9999.0；按预注册定义计算的 margin 在 88 道两分支答案均未改变的题目上完全没有区分力（AUC = 0.500）。第 6a 步（在租用 GPU 上检查本地 vLLM 模型的 logprob 是否退化），以及随后在 tune、test 上的门控设计与正式评测，均尚未运行。
 
@@ -54,9 +54,9 @@
 
 ### 2.1&#32;&#32;数据
 
-数据源在 2026 年 11 月 14 日确定：Hugging Face hotpotqa/hotpot\_qa，配置 distractor，划分 validation。选择该来源是为了便于用 datasets 加载与切分，并转换为官方 JSON 格式，以便使用 hotpot\_evaluate\_v1.py。曾考虑官方站点的 hotpot\_dev\_distractor\_v1.json，以及 BEIR、KILT、FlashRAG 等版本；后两者因不具备「每题约 10 个段落的 distractor 池」而被否决。
+数据源为 Hugging Face hotpotqa/hotpot\_qa，配置 distractor，划分 validation。选择该来源是为了便于用 datasets 加载与切分，并转换为官方 JSON 格式，以便使用 hotpot\_evaluate\_v1.py。曾考虑官方站点的 hotpot\_dev\_distractor\_v1.json，以及 BEIR、KILT、FlashRAG 等版本；后两者因不具备「每题约 10 个段落的 distractor 池」而被否决。
 
-用户于设备 YangQS 上执行切分：Parquet 经镜像下载，并做了 SHA-256 校验（记录未给出具体哈希值）。validation 共 7,405 题，bridge 5,918 题。过滤 type == bridge 后，以随机种子 42 打乱，再顺序切分：
+切分时，Parquet 经镜像下载，并做了 SHA-256 校验（记录未给出具体哈希值）。validation 共 7,405 题，bridge 5,918 题。过滤 type == bridge 后，以随机种子 42 打乱，再顺序切分：
 
 <strong>表 1&#32;&#32;数据划分（seed = 42，三份文件的 \_id 互不重叠）</strong>
 
@@ -66,7 +66,6 @@
 <th><p>子集</p></th>
 <th><p>题数</p></th>
 <th><p>用途</p></th>
-<th><p>YangQS 路径</p></th>
 </tr>
 </thead>
 <tbody>
@@ -74,19 +73,16 @@
 <td><p>pilot.json</p></td>
 <td><p>100</p></td>
 <td><p>预实验（本阶段主要评测集）</p></td>
-<td><p>G:/NLP_project/pilot.json</p></td>
 </tr>
 <tr>
 <td><p>tune.json</p></td>
 <td><p>500</p></td>
 <td><p>门控设计与调参（尚未运行）</p></td>
-<td><p>G:/NLP_project/tune.json</p></td>
 </tr>
 <tr>
 <td><p>test.json</p></td>
 <td><p>1,000</p></td>
 <td><p>正式测试（尚未运行）</p></td>
-<td><p>G:/NLP_project/test.json</p></td>
 </tr>
 </tbody>
 </table>
@@ -97,56 +93,31 @@
 
 检索实现为 rank\_bm25 的 BM25Okapi，分词为小写字母数字记号，并使用一个较小的停用词表。第一轮查询等于原问题，在该题自带的上下文段落（标题 + 句子）中排序，取 top-k。第二轮规则改写：查询 = 问题 + 第一轮 top-1 段落的标题 + 该段首句；只在尚未使用的段落中排序，追加 top-m。金标为 supporting\_facts 中的标题。主要检索指标为：金标段落的平均召回（mean gold-paragraph recall）、两段金标均被取到的比例（both-gold rate）、第二轮补入至少一段金标段落的题目占比，以及没有剩余未用段落的题目占比。
 
-2026 年 11 月 14 日 21:43，在查看 pilot 上的召回结果后，用户批准锁定 k=2、m=1。理由是：该设置下第一轮双金标覆盖最低（31%），可争取空间最大；第二轮补入金标段落的题目占比最高（30%）；在相同预算（共 3 段）下，k=2+m=1 的双金标覆盖为 59%，高于单轮 k=3 的 45%，说明规则改写的收益不只是多取一段；m=1 使再检索成本保持较小，以便日后与 Always / 全上下文等对照仍然有意义（记录指出 m=2 会更接近 k=4 或全上下文）。当时的限制也被记下：上述比较只基于检索召回，不是答案 F1；n=100，一题对应一个百分点；记录建议必要时可在 tune.json 上复核，但该项复核尚未作为已执行步骤出现。
+在查看 pilot 上的召回结果后确定 k=2、m=1，理由是：该设置下第一轮双金标覆盖最低（31%），可争取空间最大；第二轮补入金标段落的题目占比最高（30%）；在相同预算（共 3 段）下，k=2+m=1 的双金标覆盖为 59%，高于单轮 k=3 的 45%，说明规则改写的收益不只是多取一段；m=1 使再检索成本保持较小，以便日后与 Always / 全上下文等对照仍然有意义（记录指出 m=2 会更接近 k=4 或全上下文）。当时的限制也被记下：上述比较只基于检索召回，不是答案 F1；n=100，一题对应一个百分点；记录建议必要时可在 tune.json 上复核，但该项复核尚未作为已执行步骤出现。
 
 ### 2.3&#32;&#32;作答模型与解码
 
-计算方案于 2026 年 11 月 14 日 21:50 由用户批准：预实验作答走 API（候选包括 DeepSeek-V3 的 deepseek-chat 与 GPT-4o-mini）；主实验计划租用 GPU，部署本地作答模型（记录中的示例为经 vLLM 提供的 Qwen2.5-7B-Instruct，OpenAI 兼容接口），以便可复现、获取 logprobs，并稳定延迟。脚本须同时支持 API 与 OpenAI 兼容的本地端点。
+计算方案：预实验作答走 API（候选包括 DeepSeek-V3 的 deepseek-chat 与 GPT-4o-mini）；主实验计划租用 GPU，部署本地作答模型（记录中的示例为经 vLLM 提供的 Qwen2.5-7B-Instruct，OpenAI 兼容接口），以便可复现、获取 logprobs，并稳定延迟。脚本须同时支持 API 与 OpenAI 兼容的本地端点。
 
 本阶段实际完成的作答实验全部使用 deepseek-chat：温度 0，max\_tokens 128，输出 JSON \{answer, citations\}，并按官方 HotpotQA 规则做 EM/F1 规范化。gpt-4o-mini 对照尚未运行。主实验的本地模型尚未在真实 vLLM 上跑过任何评测。
 
+API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），不出现在命令行参数、聊天记录或脚本打印中。
+
 ### 2.4&#32;&#32;NLI 模型与输入构造
 
-NLI 使用 MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli，在 YangQS 的 RTX 4060 Laptop（8GB）上本地推理。选择该检查点的预先登记理由是：它在 MNLI、FEVER、ANLI、LingNLI 与 WANLI 上训练，相对仅在 MNLI 上训练的模型更适合较长、较复杂的前提；本设定的前提是两到三段拼接；该模型在 Hugging Face 上下载量较大，便于审稿人识别；large 检查点约 4 亿参数，可在 8GB 显存上做推理。
+NLI 使用 MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli 在本地推理。选择该检查点的预先登记理由是：它在 MNLI、FEVER、ANLI、LingNLI 与 WANLI 上训练，相对仅在 MNLI 上训练的模型更适合较长、较复杂的前提；本设定的前提是两到三段拼接；该模型在 Hugging Face 上下载量较大，便于审稿人识别；large 检查点约 4 亿参数，可在 8GB 显存上做推理。
 
 前提（premise）为被引用段落按引用顺序拼接（若没有可用引用，则回退到检索段落，并做标记）。假设（hypothesis）不经大模型改写，而使用固定模板：The answer to the question "\{question\}" is: \{answer\}。最大输入长度 512，须统计截断次数。标签概率依据检查点的 id2label，不假设类别顺序。
 
-### 2.5&#32;&#32;标签、Oracle 与设备
+### 2.5&#32;&#32;标签与 Oracle
 
 标签规则在看到 100 题结果之前锁定：ε = 0，即以 F1\_B = F1\_A 为持平，不以带宽吸收细小差异；门控正类为 F1\_B &gt; F1\_A；Oracle 在持平时选择 A。详细理由见第 3 节。
 
-<strong>表 2&#32;&#32;设备与本阶段用途</strong>
-
-<table>
-<thead>
-<tr>
-<th><p>设备</p></th>
-<th><p>角色（截至本报告）</p></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p>YangQS（Windows 笔记本，NVIDIA RTX 4060 Laptop 8GB）</p></td>
-<td><p>已完成步骤的执行机：数据切分、BM25 召回、deepseek-chat 作答、本地 NLI、人工审核与 logprob 探测 / 第 5b 步重跑。项目目录为 G:/NLP_project/。显存适合 NLI，不作为主实验作答模型的计划平台。</p></td>
-</tr>
-<tr>
-<td><p>用户的 Mac</p></td>
-<td><p>计划用于 SSH / scp 连接租用 GPU 服务器（第 6a 步及之后）。本阶段尚无在该机器上完成的评测结果。</p></td>
-</tr>
-<tr>
-<td><p>租用 GPU 服务器</p></td>
-<td><p>计划运行 vLLM（默认检查模型为 Qwen/Qwen2.5-7B-Instruct，绑定 127.0.0.1:8000，不对公网开放）。第 6a 步已准备脚本，真实运行尚未开始。</p></td>
-</tr>
-</tbody>
-</table>
-
-API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），不出现在命令行参数、聊天记录或脚本打印中。
-
 ## 3&#32;&#32;预注册参数与理由
 
-下列九项参数于 2026 年 11 月 15 日 09:40 在用户批准后锁定，且锁定发生在 100 题 pilot（第 5 步）跑出结果之前。其中第 4 项的 0.05 点估计门槛，以及第 5、6、9 项，属于主观的预注册阈值；论文须写明它们是事先设定的，并给出当时的理由。记录写明：没有任何一项是在看到 100 题结果之后才选定的。
+下列九项参数在 100 题 pilot（第 5 步）跑出结果之前锁定。其中第 4 项的 0.05 点估计门槛，以及第 5、6、9 项，属于主观的预注册阈值；论文须写明它们是事先设定的，并给出当时的理由。记录写明：没有任何一项是在看到 100 题结果之后才选定的。
 
-<strong>表 3&#32;&#32;第 4 步预先登记的九项参数</strong>
+<strong>表 2&#32;&#32;第 4 步预先登记的九项参数</strong>
 
 <table>
 <thead>
@@ -229,13 +200,13 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 ## 4&#32;&#32;结果
 
-除另行说明外，下列结果均由用户在 YangQS 上实际运行得到，并写入实验记录。隔离环境中的脚本自测只用于交付前的正确性检查，其中的模拟数字不是结果。
+除另行说明外，下列结果均已写入实验记录。脚本自测只用于交付前的正确性检查，其中的模拟数字不是结果。
 
 ### 4.1&#32;&#32;第 2 步：BM25 召回（pilot，100 题）
 
-脚本 bm25\_topk.py 先在隔离环境用同一流程重建了 pilot（bridge，seed 42，前 100 题）做核验，随后用户在 YangQS 上对 G:/NLP\_project/pilot.json 做了官方运行（m=1 与 m=2）。两组结果完全一致，从而确认隔离环境中的 pilot 与用户文件一致。输出位于 G:/NLP\_project/step2\_m1/ 与 G:/NLP\_project/step2\_m2/（各有 summary.json 与 per\_question.csv；每个目录 300 行，即 100 题 × 3 个 k 值）。在 k≤4 时，没有题目出现「没有剩余未用段落」的情况。
+脚本 bm25\_topk.py 先在隔离环境用同一流程重建了 pilot（bridge，seed 42，前 100 题）做核验，随后对 pilot.json 做了正式运行（m=1 与 m=2），两组结果完全一致，确认核验用 pilot 与正式数据一致。输出位于 step2\_m1/ 与 step2\_m2/（各有 summary.json 与 per\_question.csv；每个目录 300 行，即 100 题 × 3 个 k 值）。在 k≤4 时，没有题目出现「没有剩余未用段落」的情况。
 
-<strong>表 4&#32;&#32;第 2 步检索召回（pilot，n=100，m=1）</strong>
+<strong>表 3&#32;&#32;第 2 步检索召回（pilot，n=100，m=1）</strong>
 
 <table>
 <thead>
@@ -276,7 +247,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>表 5&#32;&#32;第 2 步第二轮指标（pilot，n=100，m=2）</strong>
+<strong>表 4&#32;&#32;第 2 步第二轮指标（pilot，n=100，m=2）</strong>
 
 <table>
 <thead>
@@ -309,13 +280,13 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>注：</strong>记录在 m=2 条目中只给出了第二轮指标（第一轮指标由 k 决定，不随 m 变化，见表 4）。锁定选择为 k=2、m=1，理由见第 2.2 节。
+<strong>注：</strong>记录在 m=2 条目中只给出了第二轮指标（第一轮指标由 k 决定，不随 m 变化，见表 3）。锁定选择为 k=2、m=1，理由见第 2.2 节。
 
 ### 4.2&#32;&#32;第 3 步：作答模型试跑（deepseek-chat，pilot 前 30 题）
 
-脚本 compare\_models.py 使用与第 2 步相同的检索（记录写明：在 100 道 pilot 题上核对，0 处不匹配）。设置：k=2，m=1，温度 0，max\_tokens 128，n=30。每题两个分支，评测为官方 EM/F1。用户于 2026 年 11 月 14 日 22:07 在 YangQS 上跑完。60 次调用全部成功，全部返回了 logprobs，解析失败 0 次。
+脚本 compare\_models.py 使用与第 2 步相同的检索（记录写明：在 100 道 pilot 题上核对，0 处不匹配）。设置：k=2，m=1，温度 0，max\_tokens 128，n=30。每题两个分支，评测为官方 EM/F1。
 
-<strong>表 6&#32;&#32;第 3 步答案质量（deepseek-chat，n=30，ε=0）</strong>
+<strong>表 5&#32;&#32;第 3 步答案质量（deepseek-chat，n=30，ε=0）</strong>
 
 <table>
 <thead>
@@ -344,7 +315,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 <strong>注：</strong>记录未给出 30 题 Oracle 的 EM。平均 ΔF1（B−A）= +0.169。Oracle − B = 0.034，Oracle − A = 0.202。
 
-<strong>表 7&#32;&#32;第 3 步逐题类别与调用开销（n=30）</strong>
+<strong>表 6&#32;&#32;第 3 步逐题类别与调用开销（n=30）</strong>
 
 <table>
 <thead>
@@ -381,13 +352,13 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>注：</strong>解读（记录原文口径）：分支 A 的 F1 落在预先希望的约 0.4–0.7 区间内；再检索有帮助；余量存在，可供门控争取。但 Always（B）已经接近 Oracle，因此门控的主要任务是在 22 道持平题上节约成本，同时留住 7 道改善题。gpt-4o-mini 对照尚未运行。输出位于 G:/NLP\_project/step3\_deepseek/\{summary.json, per\_question.csv\}。
+<strong>注：</strong>解读（记录原文口径）：分支 A 的 F1 落在预先希望的约 0.4–0.7 区间内；再检索有帮助；余量存在，可供门控争取。但 Always（B）已经接近 Oracle，因此门控的主要任务是在 22 道持平题上节约成本，同时留住 7 道改善题。gpt-4o-mini 对照尚未运行。
 
 ### 4.3&#32;&#32;第 5 步：100 题 pilot（deepseek-chat + 本地 NLI）——结论 GO
 
-用户于 2026 年 11 月 15 日 10:33 在 YangQS 上完成 100 题试点：设置与锁定参数一致（pilot.json，n=100，k=2，m=1，deepseek-chat，温度 0，max\_tokens 128，ε=0，Oracle 持平选 A）。第 3 步缓存被复用；NLI-only 通道未产生新的 API 调用（按用户当时的报告）。NLI 在 RTX 4060 上本地运行。
+100 题试点按锁定参数完成：设置与锁定参数一致（pilot.json，n=100，k=2，m=1，deepseek-chat，温度 0，max\_tokens 128，ε=0，Oracle 持平选 A）。第 3 步缓存被复用；NLI-only 通道未产生新的 API 调用。NLI 在本地运行。
 
-<strong>表 8&#32;&#32;第 5 步答案质量（n=100，ε=0）</strong>
+<strong>表 7&#32;&#32;第 5 步答案质量（n=100，ε=0）</strong>
 
 <table>
 <thead>
@@ -416,7 +387,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 <strong>注：</strong>记录未给出 100 题 Oracle 的 EM。平均 ΔF1（B−A）= +0.124。Oracle − A = 0.137，Oracle − B = 0.013。
 
-<strong>表 9&#32;&#32;第 5 步逐题类别（n=100，ε=0）</strong>
+<strong>表 8&#32;&#32;第 5 步逐题类别（n=100，ε=0）</strong>
 
 <table>
 <thead>
@@ -450,7 +421,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>表 10&#32;&#32;第 5 步余量与配对 bootstrap（seed 42）</strong>
+<strong>表 9&#32;&#32;第 5 步余量与配对 bootstrap（seed 42）</strong>
 
 <table>
 <thead>
@@ -479,7 +450,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>表 11&#32;&#32;第 5 步 NLI 统计（200 条输入）</strong>
+<strong>表 10&#32;&#32;第 5 步 NLI 统计（200 条输入）</strong>
 
 <table>
 <thead>
@@ -512,7 +483,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>表 12&#32;&#32;第 5 步 go/no-go 对照预先登记准则</strong>
+<strong>表 11&#32;&#32;第 5 步 go/no-go 对照预先登记准则</strong>
 
 <table>
 <thead>
@@ -557,11 +528,11 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>注：</strong>第 7 项（规则只许修改一次）未被触发。记录中的解读：Oracle − B 只有 0.013，Always（B）已经接近 Oracle；在 82% 的持平题上，门控的价值主要在于削减再检索成本，同时留住 16 道改善题。论文主主张应是「以明显更低的再检索率达到接近 B 的 F1」，而不是「F1 超过 B」。这一解读与第 3 步 30 题结果相一致。记录同时提醒：第一轮平均 entailment 已经较高（0.876），NLI 能否区分改善与持平当时尚未检验；该项检验见第 4.5 节，且只作描述，不在 pilot 上调门控。输出位于 G:/NLP\_project/step5\_pilot/。
+<strong>注：</strong>第 7 项（规则只许修改一次）未被触发。记录中的解读：Oracle − B 只有 0.013，Always（B）已经接近 Oracle；在 82% 的持平题上，门控的价值主要在于削减再检索成本，同时留住 16 道改善题。论文主主张应是「以明显更低的再检索率达到接近 B 的 F1」，而不是「F1 超过 B」。这一解读与第 3 步 30 题结果相一致。记录同时提醒：第一轮平均 entailment 已经较高（0.876），NLI 能否区分改善与持平当时尚未检验；该项检验见第 4.5 节，且只作描述，不在 pilot 上调门控。
 
 ### 4.4&#32;&#32;人工审核（20 条，定性分析）
 
-抽查样本由第 5 步脚本按预先登记的三类自动错误类型分层抽取（目标约每类 6–7 条，seed 42），人工列 human\_label 留空。用户填写后，于 2026 年 11 月 15 日 10:48 收回。20 行均为（题目，分支）配对，覆盖 15 道不同的题（其中 5 道题同时出现 A、B 两个分支）。所有 20 行的 human\_answer\_correct、human\_premise\_supports、human\_label 与 note 均已填写。
+抽查样本由第 5 步脚本按预先登记的三类自动错误类型分层抽取（目标约每类 6–7 条，seed 42），人工列 human\_label 留空。人工填写完成后收回。20 行均为（题目，分支）配对，覆盖 15 道不同的题（其中 5 道题同时出现 A、B 两个分支）。所有 20 行的 human\_answer\_correct、human\_premise\_supports、human\_label 与 note 均已填写。
 
 审核编码预先约定如下。须强调：NLI 判断的是前提是否支持答案，不是答案相对金标是否正确；因此，「答案错误但被前提所支持」应标为 nli\_correct。
 
@@ -575,7 +546,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 - nli\_wrong\_other：其他，须在 note 中说明。
 
-<strong>表 13&#32;&#32;人工审核标签计数（n=20 条，不是 20 道互异题）</strong>
+<strong>表 12&#32;&#32;人工审核标签计数（n=20 条，不是 20 道互异题）</strong>
 
 <table>
 <thead>
@@ -634,7 +605,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>表 14&#32;&#32;自动错误类型与人工标签的交叉表（n=20）</strong>
+<strong>表 13&#32;&#32;自动错误类型与人工标签的交叉表（n=20）</strong>
 
 <table>
 <thead>
@@ -673,9 +644,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 脚本 analyze\_signals.py 只离线读取第 5 步的 per\_question.csv，不发起 API 或 NLI 调用，也不选择阈值。主要对比是改善题与持平题（16 对 82）。AUC 使用定向分数（−signal），因此 AUC &gt; 0.5 表示第一轮取值更低更倾向于标记改善题——这正是再检索门控所期望的方向。AUC 与 mean(改善)−mean(持平) 均给出 bootstrap 95% 置信区间（默认 B=5000，seed 42）。脚本还打印了若干说明性规则「若 nli\_entailment\_A &lt; t 则再检索」，预置 t ∈ \{0.50, 0.80, 0.90, 0.95\}；这些规则只作描述，不得当作门控；调参仍须在 tune.json 上进行。记录写明这些说明性阈值已写入 signal\_summary.json，但均未被选用。本报告不引用该文件中记录正文未列出的数字。
 
-用户于 2026 年 11 月 15 日 11:04 在 YangQS 上执行。
-
-<strong>表 15&#32;&#32;分支 A 上各类别的信号均值与定向 AUC（改善 vs 持平）</strong>
+<strong>表 14&#32;&#32;分支 A 上各类别的信号均值与定向 AUC（改善 vs 持平）</strong>
 
 <table>
 <thead>
@@ -716,7 +685,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>注：</strong>变差类 n=2，记录写明「不可解释」，表中列出仅为完整转录，不对其均值做解读。NLI 的置信区间下界高于 0.5，说明它带有中等强度、方向正确的信号，但单独使用还不够强；这支持在模糊门控中组合信号，而不是只用单一 NLI 阈值。两类 logprob 的各类均值均为 0.000，AUC 为 0.500。用户检查作答缓存后确认：全部 100 道第一轮回答中，每一个被记录的 token logprob 都是 0.0。代码检查表明，compare\_models.py 只是把接口返回的 choice.logprobs.content\[i\].logprob 转为 float，不会填默认 0。因此这些 0 是 deepseek-chat 在温度 0 下返回的值，不是 span 匹配程序的缺陷。厂商侧的根本原因尚未确认。记录给出的结论是：本批 API logprob 信号无效（退化），不能据此断言「logprob 没有判别力」。输出位于 G:/NLP\_project/step5\_pilot/\{signal\_summary.json, signal\_by\_class.csv\}。
+<strong>注：</strong>变差类 n=2，记录写明「不可解释」，表中列出仅为完整转录，不对其均值做解读。NLI 的置信区间下界高于 0.5，说明它带有中等强度、方向正确的信号，但单独使用还不够强；这支持在模糊门控中组合信号，而不是只用单一 NLI 阈值。两类 logprob 的各类均值均为 0.000，AUC 为 0.500。检查作答缓存后确认：全部 100 道第一轮回答中，每一个被记录的 token logprob 都是 0.0。代码检查表明，compare\_models.py 只是把接口返回的 choice.logprobs.content\[i\].logprob 转为 float，不会填默认 0。因此这些 0 是 deepseek-chat 在温度 0 下返回的值，不是 span 匹配程序的缺陷。厂商侧的根本原因尚未确认。记录给出的结论是：本批 API logprob 信号无效（退化），不能据此断言「logprob 没有判别力」。
 
 ### 4.6&#32;&#32;logprob 调查：探测、做法选择、第 5b 步重跑与占位值问题
 
@@ -726,9 +695,9 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 #### 4.6.2&#32;&#32;探测（4 次调用）
 
-脚本 probe\_logprobs.py 使用 2 个短提示（一个低不确定性的事实性提示，一个开放式提示）与温度 \{0, 1\} 交叉，共 4 次调用；max\_tokens 8，logprobs=True，top\_logprobs=5。用户于 2026 年 11 月 15 日 11:48 在 YangQS 上执行，模型仍为 deepseek-chat。
+脚本 probe\_logprobs.py 使用 2 个短提示（一个低不确定性的事实性提示，一个开放式提示）与温度 \{0, 1\} 交叉，共 4 次调用；max\_tokens 8，logprobs=True，top\_logprobs=5。模型为 deepseek-chat。
 
-<strong>表 16&#32;&#32;logprob 探测中与选中 token 有关的结果</strong>
+<strong>表 15&#32;&#32;logprob 探测中与选中 token 有关的结果</strong>
 
 <table>
 <thead>
@@ -767,13 +736,13 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>注：</strong>记录当时还写有「top-5 候选非零」计数：温度 0 下为 4/5 与 8/10，温度 1 下为 5/5 与 9/10，并据此认为「温度 0 下候选（top\_logprobs）仍然有信息」。这一计数在第 5b 步之后被更正：探测把 -9999.0 也算成了非零，应当检查占位值。该疏漏已记入 12:08 条目。因此，上表只转录与选中 token 有关、且随后未被更正的数字；「候选非零」计数不得作为「候选可用」的证据，也不应在论文中引用。关于选中 token 的结论仍然成立：第 5 步中的全零输出 token logprob，与 deepseek-chat 在温度 0 下为选中 token 计分的方式有关，而不是抽取代码的错误。原始文件：G:/NLP\_project/probe\_logprobs.json。
+<strong>注：</strong>记录当时还写有「top-5 候选非零」计数：温度 0 下为 4/5 与 8/10，温度 1 下为 5/5 与 9/10，并据此认为「温度 0 下候选（top\_logprobs）仍然有信息」。这一计数在第 5b 步之后被更正：探测把 -9999.0 也算成了非零，应当检查占位值。该疏漏已记入记录。因此，上表只转录与选中 token 有关、且随后未被更正的数字；「候选非零」计数不得作为「候选可用」的证据，也不应在论文中引用。关于选中 token 的结论仍然成立：第 5 步中的全零输出 token logprob，与 deepseek-chat 在温度 0 下为选中 token 计分的方式有关，而不是抽取代码的错误。
 
-#### 4.6.3&#32;&#32;三种做法与用户选择
+#### 4.6.3&#32;&#32;三种做法与选定方案
 
-探测之后，记录中写下三种做法，并建议采用做法 3；用户于 11:51 选择做法 1。三种做法的要点如下。
+探测之后记录写下三种做法，并建议采用做法 3；最终采用做法 1。三种做法的要点如下。
 
-<strong>表 17&#32;&#32;针对 API 全零 logprob 的三种做法（决定于看到第 5b 步结果之前）</strong>
+<strong>表 16&#32;&#32;针对 API 全零 logprob 的三种做法（决定于看到第 5b 步结果之前）</strong>
 
 <table>
 <thead>
@@ -785,7 +754,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </thead>
 <tbody>
 <tr>
-<td><p>1（用户选择）</p></td>
+<td><p>1（最终采用）</p></td>
 <td><p>保持温度 0，重跑全部 200 次调用并加 top_logprobs；用 top-1 与 top-2 候选的 margin 作为不确定性度量。</p></td>
 <td><p>优点是不改已经锁定的温度 0，从而尽量保持与第 5 步同一解码设定。缺点是这是针对该 API 行为的变通，必须在论文中披露；且该 margin 并不等于主实验本地模型上计划使用的选中 token logprob，分布也不能直接迁移。</p></td>
 </tr>
@@ -806,9 +775,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 #### 4.6.4&#32;&#32;第 5b 步结果
 
-用户在 YangQS 上运行 rerun\_toplogprobs.py，200 次调用全部成功。输出为 G:/NLP\_project/step5b\_toplp/toplp\_summary.json。
-
-<strong>表 18&#32;&#32;第 5b 步主信号 mean\_margin\_A 与同一批题目上的 NLI AUC</strong>
+<strong>表 17&#32;&#32;第 5b 步主信号 mean\_margin\_A 与同一批题目上的 NLI AUC</strong>
 
 <table>
 <thead>
@@ -835,7 +802,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>表 19&#32;&#32;第 5b 步一致性与 logprob 退化观察</strong>
+<strong>表 18&#32;&#32;第 5b 步一致性与 logprob 退化观察</strong>
 
 <table>
 <thead>
@@ -880,7 +847,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 - −9999.0 是表示「概率小到可以忽略 / 不予报告」的占位值，不是真实的对数概率。因此，在温度 0 下，deepseek-chat 对选中 token 报 0，对几乎全部其他候选报占位值。预注册的 margin 信号是退化的；AUC = 0.500 的含义是「没有信息」，而不是「信号很弱」。
 
-- 对 11:48 探测条目的更正：「候选非零」把 -9999.0 算成了非零。探测本应检查占位值。这是探测检查上的疏漏，已写入记录，以免报告把该计数当作「候选可用」的证据。
+- 对探测条目的更正：「候选非零」把 -9999.0 算成了非零。探测本应检查占位值。这是探测检查上的疏漏，已写入记录，以免报告把该计数当作「候选可用」的证据。
 
 - 没有做事后补救：由同一批候选计算的次要指标（最小 margin、首 token margin、熵）依赖同样的占位值，故不用它们替代主指标。改成温度 1 重跑，或把 -9999 当作普通数字参与计算，都属于预注册之外的新分析，因而没有做。
 
@@ -890,11 +857,11 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 ### 4.7&#32;&#32;第 6a 步：已准备、尚未运行
 
-第 6a 步脚本 check\_logprobs.py 已于 2026 年 11 月 15 日 12:13 准备完毕，目的是：在 tune 划分的前 30 题上，检查经 vLLM 提供的本地模型是否返回非退化的 token logprob，从而决定 logprob 类信号能否进入主实验的模糊门控。该步只跑分支 A，温度 0，max\_tokens 128，logprobs=True，top\_logprobs=5，计划 30 次调用。默认模型为 Qwen/Qwen2.5-7B-Instruct，接口为 http&#58;//localhost:8000/v1。这一步只检验是否退化，不计算 AUC，也不选择门控阈值。截至本报告撰写时，尚未进行任何真实的 vLLM 运行；隔离环境中的模拟测试数字是假数据，不在此列出。
+第 6a 步脚本 check\_logprobs.py 已准备完毕，目的是：在 tune 划分的前 30 题上，检查经 vLLM 提供的本地模型是否返回非退化的 token logprob，从而决定 logprob 类信号能否进入主实验的模糊门控。该步只跑分支 A，温度 0，max\_tokens 128，logprobs=True，top\_logprobs=5，计划 30 次调用。默认模型为 Qwen/Qwen2.5-7B-Instruct，接口为 http&#58;//localhost:8000/v1。这一步只检验是否退化，不计算 AUC，也不选择门控阈值。截至本报告撰写时，尚未进行任何真实的 vLLM 运行；隔离环境中的模拟测试数字是假数据，不在此列出。
 
 下列四条通过标准在真实本地模型运行之前已经锁定。默认阈值可用命令行覆盖，但主判定以预注册默认值为准。仅当四条全部成立时判定为 PASS，否则为 FAIL，并列出未通过的条目。第 1–4 条使用主观阈值，论文须写明它们是事先设定的，并给出下面这些理由。另有一条程序性规则（不是主观阈值）：所有预定题目都必须具有可用的 logprobs；若任何一次调用失败或没有返回 token，判定为 FAIL，失败项记为 incomplete，因为无法在不完整的运行上证明非退化。
 
-<strong>表 20&#32;&#32;第 6a 步预先登记的四条通过标准（真实运行尚未开始）</strong>
+<strong>表 19&#32;&#32;第 6a 步预先登记的四条通过标准（真实运行尚未开始）</strong>
 
 <table>
 <thead>
@@ -933,7 +900,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>注：</strong>第 6a 步尚未运行，上表不是结果。计划命令为：在 GPU 服务器上启动 vLLM 后，执行 python check\_logprobs.py --data tune.json --out step6a\_check。官方 tune.json 位于 G:/NLP\_project/tune.json。
+<strong>注：</strong>第 6a 步尚未运行，上表不是结果。计划命令为：在 GPU 服务器上启动 vLLM 后，执行 python check\_logprobs.py --data tune.json --out step6a\_check。
 
 ## 5&#32;&#32;讨论
 
@@ -955,7 +922,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 - API logprob 变通失败。做法 1 的 margin 是针对该 API 在温度 0 下把选中 token 报为 0 的变通，本就不能迁移到主实验模型；第 5b 步进一步表明，候选侧还存在占位值，使该变通在这批数据上没有区分力。
 
-- 探测检查上的疏漏。11:48 的探测把 -9999.0 计为非零，一度误以为温度 0 下的候选「仍有信息」。该疏漏已在 12:08 更正。这提醒我们：对第三方接口返回的极端数值应先检查是否为哨兵，再做统计。
+- 探测检查上的疏漏。先前的探测把 -9999.0 计为非零，一度误以为温度 0 下的候选「仍有信息」。该疏漏已在记录中更正。这提醒我们：对第三方接口返回的极端数值应先检查是否为哨兵，再做统计。
 
 - 主观阈值。改善率 10%、变差不超过改善的一半、余量点估计 0.05，以及第 6a 步的 50%、5%、-9000 与「至少 10 个不同值」，都是事先登记的判断，不是文献常数。它们影响 go/no-go 或后续是否采纳 logprob 信号，须在论文中原样披露。本阶段没有在看到结果之后改这些阈值。
 
@@ -969,7 +936,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 以下步骤均须先预注册分析口径与通过标准，再查看结果；不得根据结果改换主指标或事后挑选阈值。
 
-- 第 6a 步真实运行（待完成）。在租用 GPU 上启动 vLLM（计划示例：vllm serve Qwen/Qwen2.5-7B-Instruct --host 127.0.0.1 --port 8000 --max-logprobs 5），用 tune.json 的前 30 题跑 check\_logprobs.py，依据表 20 的四条标准判定 PASS 或 FAIL。PASS 则 logprob 信号可以进入后续门控设计；FAIL 则门控只用 NLI 等非 logprob 信号，并在论文中说明本地接口的检查结果。
+- 第 6a 步真实运行（待完成）。在租用 GPU 上启动 vLLM（计划示例：vllm serve Qwen/Qwen2.5-7B-Instruct --host 127.0.0.1 --port 8000 --max-logprobs 5），用 tune.json 的前 30 题跑 check\_logprobs.py，依据表 19 的四条标准判定 PASS 或 FAIL。PASS 则 logprob 信号可以进入后续门控设计；FAIL 则门控只用 NLI 等非 logprob 信号，并在论文中说明本地接口的检查结果。
 
 - 在 tune（500 题）上生成本地模型的 A/B 两个分支与 NLI 分数，并设计、调参模糊门控（输入可包括 NLI entailment，以及第 6a 步通过后才加入的 logprob 置信度等；输出为是否再检索）。须比较的基线至少包括：Never（只用 A）、Always（总用 B）、Oracle（持平选 A），以及单阈值 NLI 门控。实验方案中还计划在输入完全相同、再检索率目标对齐的条件下比较模糊推理与硬规则，并视需要纳入全上下文对照；这些对照应在调参方案预先登记时一并写明。
 
@@ -979,9 +946,9 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 
 ## 附录&#32;&#32;脚本、文件与输出路径
 
-下列路径分别位于隔离工作目录（/workspace）与用户设备 YangQS（G:/NLP\_project/）。脚本测试次数只说明交付前的自检，不是实验结果。
+下列路径位于隔离工作目录（/workspace）。脚本测试次数只说明交付前的自检，不是实验结果。
 
-<strong>表 21&#32;&#32;脚本与记录中的测试情况</strong>
+<strong>表 20&#32;&#32;脚本与记录中的测试情况</strong>
 
 <table>
 <thead>
@@ -995,7 +962,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 <tr>
 <td><p>2</p></td>
 <td><p>/workspace/exp/step2/bm25_topk.py</p></td>
-<td><p>BM25 召回；官方运行在 YangQS 上确认与核验运行一致。</p></td>
+<td><p>BM25 召回；正式运行确认与核验运行一致。</p></td>
 </tr>
 <tr>
 <td><p>3</p></td>
@@ -1040,56 +1007,7 @@ API 密钥只放入环境变量（如 DEEPSEEK\_API\_KEY、VLLM\_API\_KEY），�
 </tbody>
 </table>
 
-<strong>表 22&#32;&#32;YangQS 上已产生或计划产生的输出路径</strong>
-
-<table>
-<thead>
-<tr>
-<th><p>步骤</p></th>
-<th><p>路径</p></th>
-<th><p>状态</p></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><p>数据</p></td>
-<td><p>G:/NLP_project/{pilot,tune,test}.json</p></td>
-<td><p>已生成</p></td>
-</tr>
-<tr>
-<td><p>2</p></td>
-<td><p>G:/NLP_project/step2_m1/{summary.json, per_question.csv}</p><p>G:/NLP_project/step2_m2/{…}</p></td>
-<td><p>已生成</p></td>
-</tr>
-<tr>
-<td><p>3</p></td>
-<td><p>G:/NLP_project/step3_deepseek/{summary.json, per_question.csv, cache.jsonl}</p></td>
-<td><p>已生成</p></td>
-</tr>
-<tr>
-<td><p>5</p></td>
-<td><p>G:/NLP_project/step5_pilot/{summary.json, per_question.csv, branches.jsonl, nli_scores.jsonl, audit_sample.csv, cache.jsonl, audit_review.csv, signal_summary.json, signal_by_class.csv}</p></td>
-<td><p>已生成</p></td>
-</tr>
-<tr>
-<td><p>探测</p></td>
-<td><p>G:/NLP_project/probe_logprobs.json</p></td>
-<td><p>已生成</p></td>
-</tr>
-<tr>
-<td><p>5b</p></td>
-<td><p>G:/NLP_project/step5b_toplp/toplp_summary.json（以及该目录下的单独缓存等）</p></td>
-<td><p>已生成</p></td>
-</tr>
-<tr>
-<td><p>6a</p></td>
-<td><p>计划：step6a_check/logprob_check.json（及 token 表）</p></td>
-<td><p>待运行</p></td>
-</tr>
-</tbody>
-</table>
-
-<strong>注：</strong>第 5 步审核文件在隔离目录另有副本 /workspace/exp/step5/audit\_review\_yangqs.csv。
+<strong>注：</strong>第 5 步审核文件在隔离目录另有副本 /workspace/exp/step5/audit\_review.csv。
 
 报告全文依据实验记录撰写。记录中未出现、因而本文也未给出的数量包括但不限于：上下文段落少于 10 个的题目精确计数、SHA-256 哈希值、第 5 步 100 题的 token / 延迟 / 费用、引用覆盖率与句子级 supporting-fact F1、Oracle 的 EM、说明性阈值 t ∈ \{0.50, 0.80, 0.90, 0.95\} 的具体性能数字、第 5b 步答案跨度定位失败而回退到全部 token 的次数，以及第 6a 步、tune 门控与 test 正式评测的任何结果。
 

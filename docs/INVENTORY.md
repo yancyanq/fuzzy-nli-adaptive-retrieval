@@ -64,7 +64,7 @@ fuzzy-nli-adaptive-retrieval/
 | 5 | `exp/step5/audit_helper.py` | 脚本 | ZIP 同路径，工作区同名副本；合并抽样与 NLI 前提，生成人工填表 |
 | 5 | `exp/step5/step5_pilot/per_question.csv` | 输出 | 工作区同名文件，真实逐题得分、增益类别、NLI 与证据字段，见[导出确认](../exp/EXPERIMENT_LOG.md?plain=1#L356) |
 | 5 | `exp/step5/step5_pilot/branches.jsonl` | 输出 | 工作区同名文件，真实 A/B 分支记录，见[导出确认](../exp/EXPERIMENT_LOG.md?plain=1#L356) |
-| 5 | `exp/step5/audit_review_yangqs.csv` | 输出 | ZIP 同路径；YangQS 的真实人工审核副本，保留标签和备注 |
+| 5 | `exp/step5/audit_review.csv` | 输出 | ZIP 同路径；真实人工审核副本，保留标签和备注 |
 | 5 | `exp/step5/analyze_signals.py` | 脚本 | ZIP 同路径，工作区同名副本；离线比较首轮信号、计算 AUC 和 bootstrap CI |
 | 5 | `exp/step5/test_analyze_signals.py` | 测试 | ZIP 同路径；合成数据检查 AUC 方向和读写 |
 | 5 | `exp/step5/testdata/mini_pilot.json` | mock 测试数据 | ZIP 同路径；取自真实 pilot 的输入子集，提供给 mock 测试。测试生成的答案、NLI 分数与指标均是测试值。Step 5 测试代码另临时构造一条长段落题 |
@@ -85,12 +85,12 @@ fuzzy-nli-adaptive-retrieval/
 | --- | --- | --- |
 | `exp/EXPERIMENT_LOG.md` | 文档 | 工作区原始日志的展示版本，保留实验内容和条目顺序 |
 | `sources/EXPERIMENT_LOG.handoff.md` | 文档 | 原 ZIP 交接日志的展示版本，保留至 Step 6a 检查准备条目 |
-| `sources/nlp_exp_handoff.zip` | 源归档 | 工作区原 ZIP 原样保留，供核对原路径与来源 |
+| `sources/nlp_exp_handoff.zip` | 源归档 | 按当前工作区内容重整的交接包，供核对原路径与来源 |
 | `docs/Experiment_Protocol_v2.pdf` | 文档 | ZIP 根目录的方案 v2；研究问题、计划、正式结果留白 |
 | `docs/Experiment_Protocol_v2.docx` | 文档 | 整理期间出现在工作区的同名可编辑方案文件，保留原件 |
 | `reports/Interim_Experiment_Report_2026-11-15.docx` | 文档 | 工作区同名文件；可编辑阶段报告 |
 | `reports/Interim_Experiment_Report_2026-11-15.pdf` | 文档 | 工作区同名文件；便于阅读和分享的阶段报告；两版均记录到 Step 6a 实测前，最新结论见权威日志 |
-| `sources/NLP_Experiment_Materials_2026-11-15.zip` | 源归档 | 前次交付快照，保留当时状态以便重现交付包 |
+| `sources/NLP_Experiment_Materials_2026-11-15.zip` | 源归档 | 前次交付包的重整版本，目录结构保留，文本随当前材料更新 |
 | `README.md` | 文档 | 仓库入口，介绍实验设计、阶段状态、导航和本地验证 |
 | `PROGRESS.md` | 文档 | 从实验日志生成，按记录倒序定位实际条目 |
 | `tools/sync_progress.py` | 脚本 | 生成除去时间戳的日志和进度页，保留条目顺序 |

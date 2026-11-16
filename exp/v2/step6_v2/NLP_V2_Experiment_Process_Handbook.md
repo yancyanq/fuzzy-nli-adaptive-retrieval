@@ -63,7 +63,7 @@ BNBU NLP 课程小组实验　｜　2026 年 11 月 16 日
 
 <strong>方案与实际执行&#32;</strong>《Experiment\_Protocol\_v2.docx》决定章节顺序。项目的 exp/EXPERIMENT\_LOG.md 追加保存逐日记录、当时的候选方案以及之后的更正。以日期对应的锁文件、缓存和汇总核查结果。手册中的教学例子均标明用途。
 
-<strong>先看结果还是复现&#32;</strong>读结论可从第 17 页进入。查执行与数据来源可从第 14 页进入，离线回放命令见第 24 页。正文文件路径从项目根目录计算，Windows 与服务器目录另行说明。
+<strong>先看结果还是复现&#32;</strong>读结论可从第 17 页进入。查执行与数据来源可从第 14 页进入，离线回放命令见第 24 页。正文文件路径从项目根目录计算，本地与服务器目录另行说明。
 
 配套成册文件位于 step6\_v2/。第 11 节结果册为 NLP\_V2\_Section11\_Results\_Booklet.docx，结论册为 NLP\_V2\_Experiment\_Conclusions.docx。
 
@@ -181,7 +181,7 @@ V2 §1、§12。实验日志 11 月 15 日 16:26、20:16。step6\_v2/Experiment\
 
 <strong>操作&#32;</strong>保存官方题干、答案、context 段落及原句顺序和 supporting\_facts。金标句以「原段落标题、从 0 开始的句号索引」配对。检索对标题和正文另做分词，评测时沿用原文位置。正式集 998 题有十段，各有一题为四段、两段。两段题用完首轮后无新段落可加，仍保留原题和分支定义。
 
-<strong>验收&#32;</strong>对照清单与哈希，检查三份 ID 互斥、所有题型为 bridge、正式金标索引能回到原句。Windows 的正式 manifest 经用户提供后，在 Mac 和 GPU 上核对为同一文件。原始 dump 日期在模板中无独立确认，数据身份依据来源、清单和哈希。
+<strong>验收&#32;</strong>对照清单与哈希，检查三份 ID 互斥、所有题型为 bridge、正式金标索引能回到原句。正式 manifest 在本地与 GPU 上核对为同一文件。原始 dump 日期在模板中无独立确认，数据身份依据来源、清单和哈希。
 
 pilot 副本 NLP\_Experiment\_Materials\_2026-11-15/exp/step1/pilot.json。根目录 tune.json、test.json。实验日志 11 月 14 日 21:30、11 月 15 日 20:16。
 
@@ -388,9 +388,9 @@ V2 §5。实验日志 11 月 15 日 16:26、20:16、11 月 16 日 08:08。
 
 ### 7.1 最小设置与运行过程
 
-<strong>准备&#32;</strong>pilot 100 道 bridge 题、两轮 BM25、DeepSeek API 与 YangQS 上的 RTX 4060。11 月 14 日先跑前 30 题确认真实 API 能回传结构化答案、检索流程一致、分支可评分。11 月 15 日正式补全 100 题前，登记标签、Oracle、四项通过条件、NLI 构造、必要时一次返工上限和人工审核范围。
+<strong>准备&#32;</strong>pilot 100 道 bridge 题、两轮 BM25 与 DeepSeek API。先跑前 30 题确认真实 API 能回传结构化答案、检索流程一致、分支可评分；正式补全 100 题前，登记标签、Oracle、四项通过条件、NLI 构造、必要时一次返工上限和人工审核范围。
 
-<strong>执行&#32;</strong>复用前 30 题的已成功 A/B 答案，补齐 100 对缓存，再用本地 DeBERTa 评分 200 支。预实验原输出是段落级引用，选择「两段金标均被检索到的比例」登记覆盖读数。Windows 使用 README\_step5.md 的两阶段命令。API key 通过环境变量提供。
+<strong>执行&#32;</strong>复用前 30 题的已成功 A/B 答案，补齐 100 对缓存，再用本地 DeBERTa 评分 200 支。预实验原输出是段落级引用，选择「两段金标均被检索到的比例」登记覆盖读数。本地使用 README\_step5.md 的两阶段命令。API key 通过环境变量提供。
 
 ### 7.2 三项读出
 
@@ -469,13 +469,13 @@ NLI 200 支均完成，截断 0。A/B 平均 entailment .876/.923。两个均值
 
 ### 先查 NLI 和历史 API
 
-<strong>准备与读出&#32;</strong>单用首轮低 entailment 区分改善与持平，AUC 为 .699，95% 区间 \[.579, .812\]。YangQS 人工抽查 20 条分支记录，涉及 15 道题。标记为 NLI 判断正确 11、词面重合误判 6、多跳误判 2、其他误判 1、hypothesis 误判 0。抽样用于定位机制，比例不外推到全体。
+<strong>准备与读出&#32;</strong>单用首轮低 entailment 区分改善与持平，AUC 为 .699，95% 区间 \[.579, .812\]。人工抽查 20 条分支记录，涉及 15 道题。标记为 NLI 判断正确 11、词面重合误判 6、多跳误判 2、其他误判 1、hypothesis 误判 0。抽样用于定位机制，比例不外推到全体。
 
 <strong>更正历史记录&#32;</strong>初次探测把 −9999 占位算作“非零”，一度认为候选分数可用。后来按事先登记的答案 span 方案重跑 200 次，88 道 A/B 均未改变的主分析子集上 margin AUC=.500，绝大多数候选为占位。12:08 条目更正了 11:48 的解释。改到温度 1 会改变已锁定的比较。因此保留原 pilot，改查本地服务是否能给有变化的数。
 
 ### Step 6a 本地 vLLM 非退化验证
 
-<strong>准备与执行&#32;</strong>Mac 通过授权 SSH 操作租用 Tesla T4。在独立环境部署 vLLM 0.8.5、原始 Qwen FP16，核验权重分片和依赖，服务绑定 127.0.0.1。用 tune 前 30 题，仅跑 A，温度 0，top\_logprobs=5。在看到结果前登记四项阈值。
+<strong>准备与执行&#32;</strong>通过 SSH 操作租用的 Tesla T4。在独立环境部署 vLLM 0.8.5、原始 Qwen FP16，核验权重分片和依赖，服务绑定 127.0.0.1。用 tune 前 30 题，仅跑 A，温度 0，top\_logprobs=5。在看到结果前登记四项阈值。
 
 Step 6a 阈值与真实接口读数
 
@@ -563,9 +563,9 @@ Step 6a 阈值与真实接口读数
 
 <strong>这些数怎样估&#32;</strong>用 pilot Oracle−A 的样本标准差 .328185 作精度参考，均值差半宽近似为 1.96×标准差/√n。1,000 题的参考半宽约窄 29%。时间参考使用 Step 6a 的 30 个 A 请求平均约 7.65 秒，按所有请求串行且等长估算。选择器、NLI、计时测量和恢复另计。字面上的 8.50 小时是资源场景估算，实际正式作业的时间见 §13。
 
-<strong>决策与备选影响&#32;</strong>500 题可把正式作答数减半，但可改善正例预期更少、区间参考更宽。用户 11 月 15 日确认本轮 GPU 时间没有固定上限，于 16:21 采用 1,000 题。这个推算沿用 DeepSeek 预实验方差，不能当作 Qwen 正式效应或 Fuzzy 对 Crisp 的功效估计。
+<strong>决策与备选影响&#32;</strong>500 题可把正式作答数减半，但可改善正例预期更少、区间参考更宽。本轮 GPU 时间没有固定上限，因此采用 1,000 题。这个推算沿用 DeepSeek 预实验方差，不能当作 Qwen 正式效应或 Fuzzy 对 Crisp 的功效估计。
 
-<strong>交接与验收&#32;</strong>方案决定后才进入 dev 校准。用户后来提供 test.json，20:16 核验正式清单哈希、1,000 个独立 ID、三批互斥性，之后才启动正式作业。早期只在 Windows 验证的状态与之后三端校验分开记录。
+<strong>交接与验收&#32;</strong>方案决定后才进入 dev 校准。test.json 提供后，核验正式清单哈希、1,000 个独立 ID、三批互斥性，之后才启动正式作业。早期单端验证的状态与之后三端校验分开记录。
 
 实验日志 11 月 15 日 16:10–16:21、20:16。step6a\_check/logprob\_check.json。
 
@@ -740,7 +740,7 @@ V2 步骤与对应的原始记录
 
 ### 步骤 5 先做运行预检
 
-<strong>准备&#32;</strong>Mac 核对数据与锁文件后传到 GPU 的 \~/nlp。按 README\_step5\_v2.md 放置正式入口、原脚本、模型和打分器。先核对服务端清单，再把作业放到 tmux。SSH 用于管理和传输，vLLM 服务限本机 loopback。
+<strong>准备&#32;</strong>数据与锁文件核对后传到 GPU 的 \~/nlp。按 README\_step5\_v2.md 放置正式入口、原脚本、模型和打分器。先核对服务端清单，再把作业放到 tmux。SSH 用于管理和传输，vLLM 服务限本机 loopback。
 
 <strong>执行&#32;</strong>预检选句通过，Qwen 和 CUDA NLI 同时驻留 T4 因显存不足失败，预登记的 CPU NLI 回退通过。于是正式离线 NLI 仍在 CUDA 批处理，实时计时采用 Qwen GPU 加 CPU NLI。见 §8、§9。
 
@@ -836,7 +836,7 @@ tmux new-session -d -s nlp-v2-test 'cd "$HOME/nlp" && bash run_step5_v2.sh >> st
 
 ### 新成员如何回放
 
-<strong>先核验身份&#32;</strong>在 Mac 的项目根目录检查下面的清单。接着在临时目录按《Reproducibility\_Checklist.md》的完整命令依序重跑 dev 校准、正式质量回放和步骤 6。回放只需要已有缓存和 README 列出的 Python 依赖。
+<strong>先核验身份&#32;</strong>在项目根目录检查下面的清单。接着在临时目录按《Reproducibility\_Checklist.md》的完整命令依序重跑 dev 校准、正式质量回放和步骤 6。回放只需要已有缓存和 README 列出的 Python 依赖。
 
 ~~~
 shasum -a 256 -c step6_v2/reproducibility.sha256
@@ -1291,7 +1291,7 @@ V2 §15 原模板。实验日志 11 月 15 日 17:15、20:16、11 月 16 日 08:
 
 ## 附录&#32;&#32;从归档回放结果
 
-<strong>在 Mac 项目根目录操作&#32;</strong>先运行 §10.2 的三个校验命令。准备 Python 3.10 或以上，以及 README\_step6\_v2.md 指定的 rank-bm25、numpy 和 reportlab。以下从已有模型输出生成结果，临时目录用于核对旧结果。GPU 的真实推理入口和放置方式见 §10.1 的步骤 4、5 README。
+<strong>在项目根目录操作&#32;</strong>先运行 §10.2 的三个校验命令。准备 Python 3.10 或以上，以及 README\_step6\_v2.md 指定的 rank-bm25、numpy 和 reportlab。以下从已有模型输出生成结果，临时目录用于核对旧结果。GPU 的真实推理入口和放置方式见 §10.1 的步骤 4、5 README。
 
 ~~~
 set -e
@@ -1315,7 +1315,7 @@ python3 analyze_step6_v2.py --test test.json --results "$repro_dir/replay" \
 
 <strong>追一条题目&#32;</strong>在 test.json 找 \_id，在 answers 与 evidence 文件选对应分支。于 NLI 缓存查看 A 的判定，在正式 per\_question.csv 看各门控选支与 F1。若将此题作为论文例证，再检查证据句能否连接题干和答案。
 
-<strong>历史阶段的入口&#32;</strong>Windows pilot 按 README\_step5.md 分开跑答题和本地 NLI。Step 6a 的真实输入与归档见 README\_step6a.md。补做的 §7.3 选择比较见 README\_pilot\_signals\_v2.md，采用根目录的原 pilot 分支和逐题导出。
+<strong>历史阶段的入口&#32;</strong>早期 pilot 按 README\_step5.md 分开跑答题和本地 NLI。Step 6a 的真实输入与归档见 README\_step6a.md。补做的 §7.3 选择比较见 README\_pilot\_signals\_v2.md，采用根目录的原 pilot 分支和逐题导出。
 
 step6\_v2/Reproducibility\_Checklist.md。README\_step4\_v2.md。README\_step5\_v2.md。README\_step6\_v2.md。
 
