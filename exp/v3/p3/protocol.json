@@ -1,0 +1,25 @@
+{
+  "stage": "P3 fallback smoke",
+  "pool_size": 30,
+  "n_by_split": {"train": 100, "validation": 50},
+  "cohort_policy": "Use the P1 split fixed order. Fill each smoke cohort with the first eligible IDs in its own partition, after applying P1's bridge, ten-original-paragraph and near-duplicate rules using text only; log each rejection and every substitute before scoring.",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "context": 8192,
+  "cpu_offload_gib": 4,
+  "temperature": 0,
+  "max_output_tokens": 128,
+  "client_workers": 8,
+  "scheduler_seed": 42,
+  "qa_scorer_sha256": "d35fc91a6db21d791dbdda11daf3856e9359f5701d54e3eefba20d88fecc02c0",
+  "routes": {"2plus4": {"prompt_path": "2plus4", "first_answer": true}},
+  "features": ["old_nli_risk", "bridge_absent"],
+  "nli": {
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "model_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+    "input_tokens_max": 512,
+    "threads": 4
+  },
+  "label": "Official HotpotQA answer F1(B) - F1(A). Offline only.",
+  "scope": "V2 query and whole-answer NLI + bridge fallback, smoke train/validation cache only. Relationship-directed query, gate training and held-out final evaluation are outside this run."
+}

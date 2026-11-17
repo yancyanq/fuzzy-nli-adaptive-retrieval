@@ -1,0 +1,2 @@
+timestamp, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%]
+2026/11/17 11:06:23.068, Tesla T4, 2 MiB, 15360 MiB, 0 %

@@ -1,0 +1,20 @@
+cohorts.json: OK
+input_manifest.json: OK
+protocol.json: OK
+v2-gate-lock.json: OK
+features.py: OK
+first_round.py: OK
+p15_runner.py: OK
+run_smoke.py: OK
+run_remote.sh: OK
+serve.sh: OK
+pools.jsonl: OK
+lengths.csv: OK
+v2/analyze_pilot_signals_v2.py: OK
+v2/analyze_signals.py: OK
+v2/bm25_topk.py: OK
+v2/calibrate_gates_v2.py: OK
+v2/compare_models.py: OK
+v2/run_pilot.py: OK
+P3 start 2026-11-17T10:39:33+08:00
+P3 end 2026-11-17T10:51:27+08:00 status=0

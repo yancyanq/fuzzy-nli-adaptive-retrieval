@@ -1,0 +1,465 @@
+{
+  "scope": "exploratory, first 50 prior pilot questions, 10 paragraph candidate pool; reference paragraph title coverage only; no LLM inference",
+  "n": 50,
+  "data_sha256": "673a370110adf24bd54956467010c5723a6facb7ef708997d088b9c2c627f790",
+  "coverage": {
+    "top2": 0.32,
+    "top4": 0.58,
+    "top6": 0.7,
+    "2plus1": 0.66,
+    "2plus2": 0.78,
+    "2plus4": 0.92
+  },
+  "rows": [
+    {
+      "id": "5ac47d7355429919431739b3",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ab7f27e5542991d322237d6",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a72160e55429971e9dc9253",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 1
+    },
+    {
+      "id": "5aba89d555429901930fa816",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ab78a445542992aa3b8c826",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5abcf9d155429959677d6b90",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 0
+    },
+    {
+      "id": "5a7ddc5a5542995f4f4022da",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae14b5c55429920d52343aa",
+      "top2": 0,
+      "top4": 0,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5adfb78f5542995ec70e9081",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 0,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a722fae55429971e9dc9343",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5abf1e825542997ec76fd3cb",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ade0fb95542997545bbbe39",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5adf1c3f5542993a75d263ec",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5abcf5ec55429959677d6b76",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 1
+    },
+    {
+      "id": "5addc79d5542995b365fab7b",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5add596f5542990dbb2f7e4d",
+      "top2": 0,
+      "top4": 0,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae491155542995ad6573da3",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a7fd1515542992e7d278db1",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae3eeb25542995dadf2425e",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a8db916554299441c6ba057",
+      "top2": 0,
+      "top4": 0,
+      "top6": 1,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 1
+    },
+    {
+      "id": "5a7e6f295542991319bc94b1",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a7326cb5542994cef4bc47f",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 1
+    },
+    {
+      "id": "5ade25ed5542997c77aded70",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 0
+    },
+    {
+      "id": "5ab6644655429954757d327d",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a7dff595542997cc2c474eb",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5aba5e2555429955dce3edf1",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a7130365542994082a3e645",
+      "top2": 0,
+      "top4": 0,
+      "top6": 1,
+      "2plus1": 0,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a77e62b5542992a6e59dfea",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a8351fd55429954d2e2ec98",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 0,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ab278745542997061209617",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 0,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae5a63c5542992663a4f203",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ab56e085542992aa134a315",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a8e08d35542995085b37395",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5adcaa7f5542990d50227cdb",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae16ea85542990adbacf790",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a8bc29a5542995d1e6f1446",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 0
+    },
+    {
+      "id": "5ae15d70554299422ee9966f",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 1
+    },
+    {
+      "id": "5a81a84e5542990a1d231e4e",
+      "top2": 0,
+      "top4": 0,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae15ae25542990adbacf767",
+      "top2": 0,
+      "top4": 0,
+      "top6": 1,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae55d1e55429960a22e02cb",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 0
+    },
+    {
+      "id": "5a8ee2855542995a26add550",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae494575542995dadf2434d",
+      "top2": 0,
+      "top4": 0,
+      "top6": 0,
+      "2plus1": 0,
+      "2plus2": 0,
+      "2plus4": 1
+    },
+    {
+      "id": "5ae07db855429945ae95937a",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a7a93115542995eb53be86f",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a7cdf89554299683c1c63b0",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a8313a755429954d2e2ec06",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5a871a5e5542996432c5721e",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ab8688b55429934fafe6daa",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5ab5cdb85542997d4ad1f1e0",
+      "top2": 0,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    },
+    {
+      "id": "5abd93115542996e802b47e0",
+      "top2": 1,
+      "top4": 1,
+      "top6": 1,
+      "2plus1": 1,
+      "2plus2": 1,
+      "2plus4": 1
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "variant": "consequents_only",
+  "alpha": 0.001,
+  "seed": 42,
+  "last_epoch": 50,
+  "best_epoch": 20,
+  "val_mse": 0.15572385489940643,
+  "train_mse_at_checkpoint": 0.12235608696937561,
+  "raw_initial": {
+    "center_logits": [
+      0.0,
+      0.0
+    ],
+    "width_logits": [
+      -1.2527629137039185,
+      -1.2527629137039185
+    ],
+    "consequent_logits": [
+      0.1018826812505722,
+      0.09978266805410385,
+      0.10084986686706543,
+      0.10080815106630325
+    ]
+  },
+  "raw_checkpoint": {
+    "center_logits": [
+      0.0,
+      0.0
+    ],
+    "width_logits": [
+      -1.2527629137039185,
+      -1.2527629137039185
+    ],
+    "consequent_logits": [
+      -0.12009129673242569,
+      0.09553471207618713,
+      -0.02024068310856819,
+      0.43036532402038574
+    ]
+  },
+  "changed_parameter_counts": {
+    "center_logits": 0,
+    "width_logits": 0,
+    "consequent_logits": 4
+  },
+  "finite_gradients": true,
+  "max_rule_sum_error": 1.1920928955078125e-07,
+  "checkpoint_replay_exact": true,
+  "effective_parameters": {
+    "center_r": 0.5,
+    "center_bridge": 0.5,
+    "width_r": 0.15000000596046448,
+    "width_bridge": 0.15000000596046448,
+    "LL": -0.11951728910207748,
+    "LH": 0.0952451229095459,
+    "HL": -0.020237918943166733,
+    "HH": 0.4056265652179718
+  },
+  "weights_path": "fits/consequents_only/alpha_0.001_seed_42/weights.pt",
+  "weights_sha256": "80810cfb73f17b2b722a7aa01d17d50e85ad6372041f26bbb8420905194bbf9a"
+}

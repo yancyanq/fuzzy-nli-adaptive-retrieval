@@ -1,0 +1,152 @@
+case_id	qid	unit	item	faithful	support	coverage	reviewer	notes
+P2-01	5ae55d1e55429960a22e02cb	whole	whole		neutral		AI-assisted (Codex)	首答是主持人姓名，不是出生时间；r2 未解析出生日期。
+P2-01	5ae55d1e55429960a22e02cb	question	coverage			incomplete	AI-assisted (Codex)	首答是主持人姓名，不是出生时间；r2 未解析出生日期。
+P2-01	5ae55d1e55429960a22e02cb	relation	r1	yes	entailment		AI-assisted (Codex)	c01:s1 支持主持关系。
+P2-01	5ae55d1e55429960a22e02cb	relation	r2	no	unknown		AI-assisted (Codex)	出生日期未解析；没有可核验证据。
+P2-02	5a7a93115542995eb53be86f	whole	whole		neutral		AI-assisted (Codex)	缺少 The Waltz King 与 Johann Strauss II 的身份对应。
+P2-02	5a7a93115542995eb53be86f	question	coverage			incomplete	AI-assisted (Codex)	缺少 The Waltz King 与 Johann Strauss II 的身份对应。
+P2-02	5a7a93115542995eb53be86f	relation	r1	yes	entailment		AI-assisted (Codex)	c01:s1 支持。
+P2-02	5a7a93115542995eb53be86f	relation	r2	yes	entailment		AI-assisted (Codex)	c01:s1 支持。
+P2-02	5a7a93115542995eb53be86f	relation	r3	yes	entailment		AI-assisted (Codex)	c01:s0 与 s1 连读支持圆舞曲类型。
+P2-03	5ae5a63c5542992663a4f203	whole	whole		neutral		AI-assisted (Codex)	首答是人名，缺少以该答案为纽卡斯尔方言名称的正确关系；Geordie 未获所给原文支持。
+P2-03	5ae5a63c5542992663a4f203	question	coverage			incomplete	AI-assisted (Codex)	首答是人名，缺少以该答案为纽卡斯尔方言名称的正确关系；Geordie 未获所给原文支持。
+P2-03	5ae5a63c5542992663a4f203	relation	r1	yes	entailment		AI-assisted (Codex)	c01:s0–s1。
+P2-03	5ae5a63c5542992663a4f203	relation	r2	unknown	neutral		AI-assisted (Codex)	题目需要城市与方言关系，但 Geordie 与首答 Tomi 不一致，材料不足以确认此中间实体。
+P2-03	5ae5a63c5542992663a4f203	relation	r3	no	unknown		AI-assisted (Codex)	把 Geordie 作为主体连接 Tomi；没有引用证据。
+P2-04	5ab56e085542992aa134a315	whole	whole		neutral		AI-assisted (Codex)	关系清单没有表达歌曲被认为写给 Nicole Kidman；出生年份未获证实。
+P2-04	5ab56e085542992aa134a315	question	coverage			incomplete	AI-assisted (Codex)	关系清单没有表达歌曲被认为写给 Nicole Kidman；出生年份未获证实。
+P2-04	5ab56e085542992aa134a315	relation	r1	yes	neutral		AI-assisted (Codex)	c01:s2 指歌曲的对象，不提供出生年份。
+P2-04	5ab56e085542992aa134a315	relation	r2	no	unknown		AI-assisted (Codex)	未解析出生年份，且无可核验证据。
+P2-05	5ab5cdb85542997d4ad1f1e0	whole	whole		entailment		AI-assisted (Codex)	关系列出录唱及影响力，未明确表达题目限定的美国歌手、演员和制作人。
+P2-05	5ab5cdb85542997d4ad1f1e0	question	coverage			incomplete	AI-assisted (Codex)	关系列出录唱及影响力，未明确表达题目限定的美国歌手、演员和制作人。
+P2-05	5ab5cdb85542997d4ad1f1e0	relation	r1	yes	entailment		AI-assisted (Codex)	c01:s0。
+P2-05	5ab5cdb85542997d4ad1f1e0	relation	r2	yes	entailment		AI-assisted (Codex)	c02:s0；职业和国籍限制另需覆盖。
+P2-06	5ade25ed5542997c77aded70	whole	whole		contradiction		AI-assisted (Codex)	c01:s3 称二战中为盟友；清单未明确退位后的时间限制，且混入其他战争。
+P2-06	5ade25ed5542997c77aded70	question	coverage			incomplete	AI-assisted (Codex)	c01:s3 称二战中为盟友；清单未明确退位后的时间限制，且混入其他战争。
+P2-06	5ade25ed5542997c77aded70	relation	r1	yes	contradiction		AI-assisted (Codex)	c01:s3 明确二战时为盟友。
+P2-06	5ade25ed5542997c77aded70	relation	r2	no	entailment		AI-assisted (Codex)	克里米亚战争不是首答；c01:s2 称双方为敌。
+P2-06	5ade25ed5542997c77aded70	relation	r3	no	entailment		AI-assisted (Codex)	冷战不是首答；c01:s4 支持对峙。
+P2-06	5ade25ed5542997c77aded70	relation	r4	no	neutral		AI-assisted (Codex)	未表达首答二战；c01:s3 说关系紧张，不足以推出所述笼统命题。
+P2-07	5a81a84e5542990a1d231e4e	whole	whole		neutral		AI-assisted (Codex)	没有表达 Ortega 既导演又出演及身份限制；给出的片段没有出生年份。
+P2-07	5a81a84e5542990a1d231e4e	question	coverage			incomplete	AI-assisted (Codex)	没有表达 Ortega 既导演又出演及身份限制；给出的片段没有出生年份。
+P2-07	5a81a84e5542990a1d231e4e	relation	r1	yes	neutral		AI-assisted (Codex)	c02:s0–s1 为导演与演员，未提出生年。
+P2-07	5a81a84e5542990a1d231e4e	relation	r2	no	unknown		AI-assisted (Codex)	Carlos Balá 只被列为演员，并非题中确定的导演；无局部证据。
+P2-08	5ade0fb95542997545bbbe39	whole	whole		neutral		AI-assisted (Codex)	4.4 英里属于另一条 Frenchmans Creek，未给出 Darling River 长度；存在同名实体歧义。
+P2-08	5ade0fb95542997545bbbe39	question	coverage			incomplete	AI-assisted (Codex)	4.4 英里属于另一条 Frenchmans Creek，未给出 Darling River 长度；存在同名实体歧义。
+P2-08	5ade0fb95542997545bbbe39	relation	r1	yes	entailment		AI-assisted (Codex)	c01:s0 指新南威尔士州同名溪流是 Darling River 支流。
+P2-08	5ade0fb95542997545bbbe39	relation	r2	no	unknown		AI-assisted (Codex)	没有陈述；关系主体也不是需要测长的河流。
+P2-09	5a8f51185542992414482a3d	whole	whole		neutral		AI-assisted (Codex)	整题核验仅含 McCoy 段，未连接 Binocular 的主要骑师；局部关系覆盖两个必要步骤。
+P2-09	5a8f51185542992414482a3d	question	coverage			complete	AI-assisted (Codex)	整题核验仅含 McCoy 段，未连接 Binocular 的主要骑师；局部关系覆盖两个必要步骤。
+P2-09	5a8f51185542992414482a3d	relation	r1	yes	entailment		AI-assisted (Codex)	c01:s1–s2。
+P2-09	5a8f51185542992414482a3d	relation	r2	yes	entailment		AI-assisted (Codex)	c02:s0–s1。
+P2-09	5a8f51185542992414482a3d	relation	r3	yes	entailment		AI-assisted (Codex)	c02:s1 支持连续 20 次。
+P2-09	5a8f51185542992414482a3d	relation	r4	yes	entailment		AI-assisted (Codex)	与 r1 重复；c01:s2。
+P2-10	5ab278745542997061209617	whole	whole		neutral		AI-assisted (Codex)	缺少同一答案人物同时与 Device 及 Filter 演出的关系；其他人物不是首答。
+P2-10	5ab278745542997061209617	question	coverage			incomplete	AI-assisted (Codex)	缺少同一答案人物同时与 Device 及 Filter 演出的关系；其他人物不是首答。
+P2-10	5ab278745542997061209617	relation	r1	no	neutral		AI-assisted (Codex)	主体 Trent Reznor 并非首答，局部证据未提 Device。
+P2-10	5ab278745542997061209617	relation	r2	yes	neutral		AI-assisted (Codex)	片段提 Nine Inch Nails，不能证明其与 Filter 演出。
+P2-10	5ab278745542997061209617	relation	r3	no	entailment		AI-assisted (Codex)	c02:s1 支持参与 The Black Crowes，但主体和乐队与题目及首答不对应。
+P2-10	5ab278745542997061209617	relation	r4	yes	entailment		AI-assisted (Codex)	c01:s0 支持 Filter 的首张专辑。
+P2-11	5ae491155542995ad6573da3	whole	whole		neutral		AI-assisted (Codex)	缺少七次世界与奥运奖牌得主这一限定的明确关系；整题输入本身未证明电影根据此人事迹改编。
+P2-11	5ae491155542995ad6573da3	question	coverage			incomplete	AI-assisted (Codex)	缺少七次世界与奥运奖牌得主这一限定的明确关系；整题输入本身未证明电影根据此人事迹改编。
+P2-11	5ae491155542995ad6573da3	relation	r1	no	entailment		AI-assisted (Codex)	陈述被支持，但主体字段写成 QASystem，未准确表示 Dave Schultz。
+P2-11	5ae491155542995ad6573da3	relation	r2	yes	entailment		AI-assisted (Codex)	c02:s2 支持影片情节大致根据有关 Schultz 的事件改编。
+P2-12	5a8bc29a5542995d1e6f1446	whole	whole		neutral		AI-assisted (Codex)	首答为未注明，不能由未提日期证明不存在录制日期；必需关系均未解析。
+P2-12	5a8bc29a5542995d1e6f1446	question	coverage			incomplete	AI-assisted (Codex)	首答为未注明，不能由未提日期证明不存在录制日期；必需关系均未解析。
+P2-12	5a8bc29a5542995d1e6f1446	relation	r1	no	unknown		AI-assisted (Codex)	缺少具体录制日期与可核验陈述。
+P2-12	5a8bc29a5542995d1e6f1446	relation	r2	no	unknown		AI-assisted (Codex)	没有可核验的关系陈述。
+P2-12	5a8bc29a5542995d1e6f1446	relation	r3	no	unknown		AI-assisted (Codex)	人物不是题目请求的录制时间；无陈述。
+P2-12	5a8bc29a5542995d1e6f1446	relation	r4	no	unknown		AI-assisted (Codex)	没有可核验的关系陈述。
+P2-13	5adcaa7f5542990d50227cdb	whole	whole		neutral		AI-assisted (Codex)	24 指单行本册数，不是原文明示的章节数；两个关系列表均未解析。
+P2-13	5adcaa7f5542990d50227cdb	question	coverage			incomplete	AI-assisted (Codex)	24 指单行本册数，不是原文明示的章节数；两个关系列表均未解析。
+P2-13	5adcaa7f5542990d50227cdb	relation	r1	no	unknown		AI-assisted (Codex)	没有主体、对象或陈述。
+P2-13	5adcaa7f5542990d50227cdb	relation	r2	no	unknown		AI-assisted (Codex)	章节数未解析，且无局部证据。
+P2-14	5ab78a445542992aa3b8c826	whole	whole		neutral		AI-assisted (Codex)	原文说另一张专辑销量不好，无法给出指定歌手的全球销量，关系多为不可核验的片段。
+P2-14	5ab78a445542992aa3b8c826	question	coverage			incomplete	AI-assisted (Codex)	原文说另一张专辑销量不好，无法给出指定歌手的全球销量，关系多为不可核验的片段。
+P2-14	5ab78a445542992aa3b8c826	relation	r1	no	unknown		AI-assisted (Codex)	“did not sell well” 未构成明确的歌手全球销量陈述。
+P2-14	5ab78a445542992aa3b8c826	relation	r2	no	unknown		AI-assisted (Codex)	仅有 recorded 一词，缺少完整可核验陈述。
+P2-14	5ab78a445542992aa3b8c826	relation	r3	no	unknown		AI-assisted (Codex)	仅有 recorded 一词，且涉及不同歌曲。
+P2-14	5ab78a445542992aa3b8c826	relation	r4	no	unknown		AI-assisted (Codex)	仅有 recorded 一词，且涉及不同歌曲。
+P2-15	5a77e62b5542992a6e59dfea	whole	whole		neutral		AI-assisted (Codex)	Portland 的来源地表述不等于出生地；三条关系覆盖作品、别名和出生地。
+P2-15	5a77e62b5542992a6e59dfea	question	coverage			complete	AI-assisted (Codex)	Portland 的来源地表述不等于出生地；三条关系覆盖作品、别名和出生地。
+P2-15	5a77e62b5542992a6e59dfea	relation	r1	yes	neutral		AI-assisted (Codex)	来自 Portland 的音乐人不能充分证明出生在 Portland。
+P2-15	5a77e62b5542992a6e59dfea	relation	r2	yes	entailment		AI-assisted (Codex)	c01:s0 表示该 EP 出自 Cooper 的 Eluvium 名义。
+P2-15	5a77e62b5542992a6e59dfea	relation	r3	yes	entailment		AI-assisted (Codex)	c01:s0 表明 Eluvium 是 Cooper 的艺名。
+P2-16	5a8ee2855542995a26add550	whole	whole		neutral		AI-assisted (Codex)	材料显示研究相同现象，未明确 Valli 与 Galvani 一同研究；具体解读需人工复核。
+P2-16	5a8ee2855542995a26add550	question	coverage			complete	AI-assisted (Codex)	材料显示研究相同现象，未明确 Valli 与 Galvani 一同研究；具体解读需人工复核。
+P2-16	5a8ee2855542995a26add550	relation	r1	yes	neutral		AI-assisted (Codex)	in the shadows of ... also studied 不等于明确一起研究。
+P2-16	5a8ee2855542995a26add550	relation	r2	yes	entailment		AI-assisted (Codex)	c02:s0–s1。
+P2-17	5ade66dd55429975fa854ebe	whole	whole		neutral		AI-assisted (Codex)	缺少 Iron Cross 出自哪个王国；德国船只不能证明该王国。
+P2-17	5ade66dd55429975fa854ebe	question	coverage			incomplete	AI-assisted (Codex)	缺少 Iron Cross 出自哪个王国；德国船只不能证明该王国。
+P2-17	5ade66dd55429975fa854ebe	relation	r1	no	entailment		AI-assisted (Codex)	船的国籍不等于标志的王国来源。
+P2-17	5ade66dd55429975fa854ebe	relation	r2	yes	entailment		AI-assisted (Codex)	c01:s3。
+P2-17	5ade66dd55429975fa854ebe	relation	r3	no	entailment		AI-assisted (Codex)	c01:s3 支持但并非核验王国来源的必要步骤。
+P2-17	5ade66dd55429975fa854ebe	relation	r4	no	entailment		AI-assisted (Codex)	c01:s2 支持，但战役不是题目所需的王国来源。
+P2-18	5a771d6155429966f1a36c6d	whole	whole		neutral		AI-assisted (Codex)	原文只说 General，不明确 lieutenant general；关系清单漏掉具体军衔。
+P2-18	5a771d6155429966f1a36c6d	question	coverage			incomplete	AI-assisted (Codex)	原文只说 General，不明确 lieutenant general；关系清单漏掉具体军衔。
+P2-18	5a771d6155429966f1a36c6d	relation	r1	yes	neutral		AI-assisted (Codex)	原文是战争结束时，不明确 after the Civil War。
+P2-18	5a771d6155429966f1a36c6d	relation	r2	no	entailment		AI-assisted (Codex)	与核验人物及其军衔无关。
+P2-18	5a771d6155429966f1a36c6d	relation	r3	no	entailment		AI-assisted (Codex)	建造年份不是题目所需关系。
+P2-18	5a771d6155429966f1a36c6d	relation	r4	no	entailment		AI-assisted (Codex)	房屋地点不是题目所需关系。
+P2-19	5ae15d70554299422ee9966f	whole	whole		neutral		AI-assisted (Codex)	首答是谁与配偶是谁的关系未被正确连为共同主演关系；没有配偶的局部证据。
+P2-19	5ae15d70554299422ee9966f	question	coverage			incomplete	AI-assisted (Codex)	首答是谁与配偶是谁的关系未被正确连为共同主演关系；没有配偶的局部证据。
+P2-19	5ae15d70554299422ee9966f	relation	r1	no	entailment		AI-assisted (Codex)	March 非首答；仅出演关系不能完成所问共同主演。
+P2-19	5ae15d70554299422ee9966f	relation	r2	unknown	unknown		AI-assisted (Codex)	配偶主体未明确，且没有局部证据。
+P2-19	5ae15d70554299422ee9966f	relation	r3	yes	entailment		AI-assisted (Codex)	c01:s0 列出 Laughton 与 March 共同主演。
+P2-19	5ae15d70554299422ee9966f	relation	r4	unknown	unknown		AI-assisted (Codex)	材料未显示配偶关系，无法仅据盲审材料确定其与首答的角色。
+P2-20	5a88644455429938390d3f3f	whole	whole		neutral		AI-assisted (Codex)	c01:s0 支持战役属于该战争，但未给出战争 1675–1679 的起止年份。
+P2-20	5a88644455429938390d3f3f	question	coverage			incomplete	AI-assisted (Codex)	c01:s0 支持战役属于该战争，但未给出战争 1675–1679 的起止年份。
+P2-20	5a88644455429938390d3f3f	relation	r1	no	neutral		AI-assisted (Codex)	战役属于战争，不等于战役是战争的一个实例，关系表述不严谨。
+P2-20	5a88644455429938390d3f3f	relation	r2	no	neutral		AI-assisted (Codex)	题目是战争时间范围；“战争属于 1675–1679 wars”未清楚表达起止日期。
+P2-21	5a8351fd55429954d2e2ec98	whole	whole					
+P2-21	5a8351fd55429954d2e2ec98	question	coverage					
+P2-21	5a8351fd55429954d2e2ec98	relation	r1					
+P2-21	5a8351fd55429954d2e2ec98	relation	r2					
+P2-21	5a8351fd55429954d2e2ec98	relation	r3					
+P2-21	5a8351fd55429954d2e2ec98	relation	r4					
+P2-22	5ae14b5c55429920d52343aa	whole	whole					
+P2-22	5ae14b5c55429920d52343aa	question	coverage					
+P2-22	5ae14b5c55429920d52343aa	relation	r1					
+P2-22	5ae14b5c55429920d52343aa	relation	r2					
+P2-22	5ae14b5c55429920d52343aa	relation	r3					
+P2-23	5abcf9d155429959677d6b90	whole	whole					
+P2-23	5abcf9d155429959677d6b90	question	coverage					
+P2-23	5abcf9d155429959677d6b90	relation	r1					
+P2-23	5abcf9d155429959677d6b90	relation	r2					
+P2-23	5abcf9d155429959677d6b90	relation	r3					
+P2-24	5add596f5542990dbb2f7e4d	whole	whole					
+P2-24	5add596f5542990dbb2f7e4d	question	coverage					
+P2-24	5add596f5542990dbb2f7e4d	relation	r1					
+P2-24	5add596f5542990dbb2f7e4d	relation	r2					
+P2-24	5add596f5542990dbb2f7e4d	relation	r3					
+P2-24	5add596f5542990dbb2f7e4d	relation	r4					
+P2-25	5ae610e55542995703ce8ae1	whole	whole					
+P2-25	5ae610e55542995703ce8ae1	question	coverage					
+P2-25	5ae610e55542995703ce8ae1	relation	r1					
+P2-25	5ae610e55542995703ce8ae1	relation	r2					
+P2-25	5ae610e55542995703ce8ae1	relation	r3					
+P2-25	5ae610e55542995703ce8ae1	relation	r4					
+P2-26	5ae07db855429945ae95937a	whole	whole					
+P2-26	5ae07db855429945ae95937a	question	coverage					
+P2-26	5ae07db855429945ae95937a	relation	r1					
+P2-26	5ae07db855429945ae95937a	relation	r2					
+P2-27	5a7326cb5542994cef4bc47f	whole	whole					
+P2-27	5a7326cb5542994cef4bc47f	question	coverage					
+P2-27	5a7326cb5542994cef4bc47f	relation	r1					
+P2-27	5a7326cb5542994cef4bc47f	relation	r2					
+P2-27	5a7326cb5542994cef4bc47f	relation	r3					
+P2-27	5a7326cb5542994cef4bc47f	relation	r4					
+P2-28	5a7fd1515542992e7d278db1	whole	whole					
+P2-28	5a7fd1515542992e7d278db1	question	coverage					
+P2-28	5a7fd1515542992e7d278db1	relation	r1					
+P2-28	5a7fd1515542992e7d278db1	relation	r2					
+P2-28	5a7fd1515542992e7d278db1	relation	r3					
+P2-28	5a7fd1515542992e7d278db1	relation	r4					
+P2-29	5aba5e2555429955dce3edf1	whole	whole					
+P2-29	5aba5e2555429955dce3edf1	question	coverage					
+P2-29	5aba5e2555429955dce3edf1	relation	r1					
+P2-29	5aba5e2555429955dce3edf1	relation	r2					
+P2-30	5a7cdf89554299683c1c63b0	whole	whole					
+P2-30	5a7cdf89554299683c1c63b0	question	coverage					
+P2-30	5a7cdf89554299683c1c63b0	relation	r1					
+P2-30	5a7cdf89554299683c1c63b0	relation	r2					

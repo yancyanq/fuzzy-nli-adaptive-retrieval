@@ -1,0 +1,112 @@
+{
+  "runs": [
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.0,
+      "seed": 17,
+      "seconds": 0.2927780270038056
+    },
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.0,
+      "seed": 42,
+      "seconds": 0.2842134100064868
+    },
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.0,
+      "seed": 73,
+      "seconds": 0.5167375309974886
+    },
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.0001,
+      "seed": 17,
+      "seconds": 0.27263156400294974
+    },
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.0001,
+      "seed": 42,
+      "seconds": 0.28338082999835024
+    },
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.0001,
+      "seed": 73,
+      "seconds": 0.5124233110036585
+    },
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.001,
+      "seed": 17,
+      "seconds": 0.27131119800469605
+    },
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.001,
+      "seed": 42,
+      "seconds": 0.2847524440003326
+    },
+    {
+      "variant": "full_sugeno",
+      "alpha": 0.001,
+      "seed": 73,
+      "seconds": 0.5128396110012545
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.0,
+      "seed": 17,
+      "seconds": 0.18756117100565461
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.0,
+      "seed": 42,
+      "seconds": 0.19629676600015955
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.0,
+      "seed": 73,
+      "seconds": 0.35438748100568773
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.0001,
+      "seed": 17,
+      "seconds": 0.18760984800610458
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.0001,
+      "seed": 42,
+      "seconds": 0.19561288600380067
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.0001,
+      "seed": 73,
+      "seconds": 0.3530505040034768
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.001,
+      "seed": 17,
+      "seconds": 0.1885608750017127
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.001,
+      "seed": 42,
+      "seconds": 0.19676894699659897
+    },
+    {
+      "variant": "consequents_only",
+      "alpha": 0.001,
+      "seed": 73,
+      "seconds": 0.3532375300055719
+    }
+  ]
+}

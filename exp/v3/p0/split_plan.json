@@ -1,0 +1,35 @@
+{
+  "status": "p0_plan_only_no_new_split_frozen",
+  "dataset": "hotpotqa/hotpot_qa distractor validation, bridge",
+  "historical_id_source": "manifest.json#historical_ids_by_split",
+  "group_key": "qid",
+  "grouping": "Keep every context size, order and generation variant for a given qid in the same split.",
+  "engineering_preflight": {
+    "source": "archived V2 pilot",
+    "target_n": 50,
+    "scope": "engineering only"
+  },
+  "training_validation": {
+    "condition": "P1.5 and P2 establish sufficient branch headroom and useful signals.",
+    "source": "archived V2 tune",
+    "method": "Deterministic hash ordering by qid. Freeze the namespace and ordered lists when constructing the splits.",
+    "train_target": 400,
+    "validation_target": 100,
+    "smoke_train_target": 100,
+    "smoke_validation_target": 50,
+    "gold_reference_anomalies": "See data_audit.md. Record the evaluation treatment before generating caches."
+  },
+  "final": {
+    "source": "Upstream bridge qids with all documented and team-confirmed historical exposure excluded.",
+    "candidate_count_outside_scanned_history": 4318,
+    "planning_n": 300,
+    "lock_rule": "Decide size using resource and development precision estimates before viewing scores. Verify further unarchived team exposure first.",
+    "qid_manifest": null
+  },
+  "candidate_pools": {
+    "targets": [10, 30, 60],
+    "official_training_material_preferred_for_donors": true,
+    "historical_kaggle_pool_usage": "P0 length audit only",
+    "online_allowlist": ["question", "contexts", "chunk_ids", "sentence_ids"]
+  }
+}

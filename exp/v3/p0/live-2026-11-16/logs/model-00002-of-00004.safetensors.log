@@ -1,0 +1,5 @@
+2026-11-16T20:38:00+08:00 starting model-00002-of-00004.safetensors
+curl: (92) HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+curl: (92) HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+model-00002-of-00004.safetensors.part: OK
+2026-11-16T20:55:57+08:00 finished model-00002-of-00004.safetensors

@@ -1,6 +1,8 @@
-# NLP 课程项目实验索引
+# V2 实验索引
 
 项目为 *A Fuzzy-NLI-based QA Chatbot System with Adaptive Retrieval*。在 HotpotQA distractor 的 bridge 题上，分支 A 使用 BM25 第一轮证据，分支 B 在相同基础上加入规则改写后检出的证据。作答模型输出答案和引用，NLI 检查引用证据对答案的支撑，V2 已完成补充 pilot、dev 校准、独立测试和配对统计。早期 Step 4–6a 与 Protocol V2 的步骤 4–6 使用不同的编号。
+
+V3.1 的阶段结果和材料单独归档。 [V3.1 实验入口](exp/v3/README.md)
 
 本索引的数字来自[实验日志](exp/EXPERIMENT_LOG.md)。以下命令按整理后的目录给出，从包根目录运行，`runs/` 用于新运行。日志与 README 保留历史路径。云 API、真实 NLI 和 vLLM 命令用于复现相应环节，执行条件见[运行环境](docs/ENVIRONMENT.md)。
 

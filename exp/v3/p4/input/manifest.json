@@ -1,0 +1,29 @@
+{
+  "n_by_split": {
+    "train": 100,
+    "validation": 50
+  },
+  "features": [
+    "old_nli_risk",
+    "bridge_absent"
+  ],
+  "branch": "P3 frozen 30-paragraph fallback: BM25 top-2 A and original V2 query 2+4 B",
+  "upstream_sha256": {
+    "labels": "7fe7cd535379f9593abe7882b11987276baa9f5fd4a94467f7be779c50f0d546",
+    "features": "b502230c8a84d5e0a5559e545230c7070f20c4bf10dbc97010f1b0b35331fc17",
+    "cost": "fce62e813ec064600beca5ffb1b1603ab03da7adb618d2f4d281dcd4beceb33e",
+    "cohorts": "b6d84f81cb9da3de951759dd743234d31857cdcc95090c0a6b6d712126310103",
+    "p3_protocol": "a159360ec1f3fd486a049be5d35c74136c288685c73e22fc32dd02bf45b74b94",
+    "p3_run_identity": "f653c009cfc9ef6380f95faa59e07ddc74d8f5d89dfb721eab1a976c29cb752d",
+    "p3_evidence": "fce5d0049754d26a3567a09f39a24d09eba4c9bae02737a1e5517dc61cd39eae",
+    "v2_calibrator": "b2b3a80eaa7b2f3e135dd239dc36d378e5b6ffa06ae18e74c9cf853a74be50ad",
+    "v2_gate": "ad4a0390042c40d934d445e9127b109e69031c112b1c1ecf08fed265a40a58ed",
+    "p4_protocol": "9b4a29a01fda5c3c9fd24fee51f0742d449cd6b67f4b8c6172bd5958089cf6ba",
+    "p4_preparer": "68654b4ae9cf6bd1ed1dbf7ed8ce14095b42f15dd5b0dd9cc01444bcb0ed3996"
+  },
+  "inputs_sha256": {
+    "features.jsonl": "27054b8453e9c8babe9a5857284cd324a1b81484bb1260961554acb16ef5b95d",
+    "targets.jsonl": "c4032323e4a980dd918465fe186ef8f716cd981ffc5d39d94bee4a2e66236c21",
+    "cost.jsonl": "5d67bd8c2b06a285ae9366a709be45ebb9822685c08d37dc9849f720f24e8691"
+  }
+}
