@@ -1,0 +1,91 @@
+{
+  "review_provenance": {
+    "method": "AI-assisted, reviewed by team members",
+    "confirmation_source": "user confirmation in the project chat on 2026-11-17",
+    "confirmation": "组员逐题复核过，表里是最终标签",
+    "reviewer_values_as_submitted": {
+      "AI-assisted (Codex)": 99
+    }
+  },
+  "inputs_sha256": {
+    "review-guided/human_ratings.tsv": "15e8dfed9e143770cf96be77023b50de8dfe0f594f33c0420510a888f93ccf50",
+    "review-guided/human_ratings_AI_assisted.tsv": "94b405d5105c9d1690fcd8381d13124cdf4ef3fd7a2a1a44f2343e1aa83c6f6a",
+    "guided-evidence/live-nli/nli.jsonl": "d93cd52f3c0810356a566073722886d998e94e95e608e45daad5e757849db8a2",
+    "protocol.json": "65a4041de84c3b72fe3de2cbfdef1477428dd790a5621017695e8e0e64f56850",
+    "check_human.py": "e2a5c150ed38f85382ec49bc40e5c2609cd8da02a22e207adfc51d53137cf338"
+  },
+  "completed_case_ids": [
+    "P2-01",
+    "P2-02",
+    "P2-03",
+    "P2-04",
+    "P2-05",
+    "P2-06",
+    "P2-07",
+    "P2-08",
+    "P2-09",
+    "P2-10",
+    "P2-11",
+    "P2-12",
+    "P2-13",
+    "P2-14",
+    "P2-15",
+    "P2-16",
+    "P2-17",
+    "P2-18",
+    "P2-19",
+    "P2-20"
+  ],
+  "assessment": {
+    "completed_cases": 20,
+    "sample_cases": 30,
+    "fidelity_counts": {
+      "yes": 26,
+      "no": 30,
+      "unknown": 3
+    },
+    "coverage_counts": {
+      "incomplete": 17,
+      "complete": 3
+    },
+    "fidelity_on_determinate_relationships": 0.4642857142857143,
+    "human_fidelity_gate": "fail",
+    "agreement_on_observed_units": {
+      "whole": {
+        "eligible": 20,
+        "matched": 1
+      },
+      "local": {
+        "eligible": 42,
+        "matched": 39
+      }
+    }
+  },
+  "agreement_counts_review_label_then_nli_argmax": {
+    "whole": {
+      "neutral": {
+        "entailment": 16,
+        "contradiction": 2
+      },
+      "entailment": {
+        "entailment": 1
+      },
+      "contradiction": {
+        "entailment": 1
+      }
+    },
+    "local": {
+      "entailment": {
+        "entailment": 29,
+        "neutral": 1
+      },
+      "neutral": {
+        "neutral": 9,
+        "entailment": 2
+      },
+      "contradiction": {
+        "contradiction": 1
+      }
+    }
+  }
+}

@@ -22,7 +22,7 @@
 
 ## Step 5 Pilot、人工审核与信号诊断
 
-先生成或复用 A/B 答案，再用本地 DeBERTa 做 NLI，用引用段落组成前提、固定模板组成假设；随后整理人工审核并离线分析首轮信号。**脚本** `exp/step5/run_pilot.py`、`audit_helper.py`、`analyze_signals.py`。**命令** `python exp/step5/run_pilot.py --data exp/step1/pilot.json --preset deepseek --n 100 --answer-cache runs/step3_deepseek/cache.jsonl --out runs/step5_pilot --skip-nli`；再执行 `python exp/step5/run_pilot.py --data exp/step1/pilot.json --preset deepseek --n 100 --out runs/step5_pilot --nli-only --nli-backend hf --nli-device auto`；审核和诊断分别用 `python exp/step5/audit_helper.py --dir runs/step5_pilot`、`python exp/step5/analyze_signals.py --dir runs/step5_pilot`。**输出** `summary.json`、`per_question.csv`、`branches.jsonl`、`nli_scores.jsonl`、`audit_sample.csv`、`cache.jsonl`、`audit_review.csv`、`signal_summary.json`、`signal_by_class.csv`。已收录真实 `exp/step5/step5_pilot/per_question.csv`、`exp/step5/step5_pilot/branches.jsonl` 和人工审核表 `exp/step5/audit_review_yangqs.csv`，其余需补。**关键结果** 100 题 pilot **GO**；F1 A/B/Oracle 为 0.628/0.752/0.765，改善/持平/退化为 16/82/2；Oracle−A 为 0.137，95% CI [0.077, 0.203]。审核覆盖 20 个题目–分支对、15 道题，属定性抽样；NLI 对改善与持平的诊断 AUC 为 0.699，95% CI [0.579, 0.812]，首轮 token logprob 为全零。**日志** [Pilot 结果](exp/EXPERIMENT_LOG.md?plain=1#L146)、[人工审核](exp/EXPERIMENT_LOG.md?plain=1#L163)、[诊断](exp/EXPERIMENT_LOG.md?plain=1#L179)、[逐题导出](exp/EXPERIMENT_LOG.md?plain=1#L356)、[V2 §7.3 候选设置](exp/EXPERIMENT_LOG.md?plain=1#L362)。
+先生成或复用 A/B 答案，再用本地 DeBERTa 做 NLI，用引用段落组成前提、固定模板组成假设；随后整理人工审核并离线分析首轮信号。**脚本** `exp/step5/run_pilot.py`、`audit_helper.py`、`analyze_signals.py`。**命令** `python exp/step5/run_pilot.py --data exp/step1/pilot.json --preset deepseek --n 100 --answer-cache runs/step3_deepseek/cache.jsonl --out runs/step5_pilot --skip-nli`；再执行 `python exp/step5/run_pilot.py --data exp/step1/pilot.json --preset deepseek --n 100 --out runs/step5_pilot --nli-only --nli-backend hf --nli-device auto`；审核和诊断分别用 `python exp/step5/audit_helper.py --dir runs/step5_pilot`、`python exp/step5/analyze_signals.py --dir runs/step5_pilot`。**输出** `summary.json`、`per_question.csv`、`branches.jsonl`、`nli_scores.jsonl`、`audit_sample.csv`、`cache.jsonl`、`audit_review.csv`、`signal_summary.json`、`signal_by_class.csv`。已收录真实 `exp/step5/step5_pilot/per_question.csv`、`exp/step5/step5_pilot/branches.jsonl` 和人工审核表 `exp/step5/audit_review.csv`，其余需补。**关键结果** 100 题 pilot **GO**；F1 A/B/Oracle 为 0.628/0.752/0.765，改善/持平/退化为 16/82/2；Oracle−A 为 0.137，95% CI [0.077, 0.203]。审核覆盖 20 个题目–分支对、15 道题，属定性抽样；NLI 对改善与持平的诊断 AUC 为 0.699，95% CI [0.579, 0.812]，首轮 token logprob 为全零。**日志** [Pilot 结果](exp/EXPERIMENT_LOG.md?plain=1#L146)、[人工审核](exp/EXPERIMENT_LOG.md?plain=1#L163)、[诊断](exp/EXPERIMENT_LOG.md?plain=1#L179)、[逐题导出](exp/EXPERIMENT_LOG.md?plain=1#L356)、[V2 §7.3 候选设置](exp/EXPERIMENT_LOG.md?plain=1#L362)。
 
 ## Step 5b DeepSeek logprob 排查
 
@@ -47,6 +47,10 @@
 ## V2 步骤 6 配对统计、案例与论文
 
 在 `exp/v2` 运行 `python analyze_step6_v2.py --test test.json --results step5_v2 --out ../../runs/v2_analysis`，由缓存生成配对区间、案例证据和质量–成本图。Fuzzy − Crisp 为 +0.064 个 F1 百分点，95% 区间 [−0.365, +0.517]。正式报告、论文预览、填入 §11 的方案副本和独立结果册均已归档。 [分析产物](exp/v2/step6_v2/) · [人工复核表](exp/v2/case_review/) · [统计日志](exp/EXPERIMENT_LOG.md?plain=1#L611) · [结果册日志](exp/EXPERIMENT_LOG.md?plain=1#L648)
+
+## V3.1 长上下文扩展
+
+V3.1 把候选池从 10 段扩到 10／30／60 段，分六个阶段：P0 离线审计与 GPU 容量试验，P1 候选池与长度审计，P1.5 质量–成本对照，P2 关系核验，P3 原查询回退试跑，P4 Sugeno 试训，P5 300 题封存评估。**材料** 见 [V3.1 归档](exp/v3/README.md)、[P0](exp/v3/p0/)、[P1](exp/v3/p1/)、[P1.5](exp/v3/p1_5/)、[P2](exp/v3/p2/)、[P3](exp/v3/p3/)、[P4](exp/v3/p4/)、[P5](exp/v3/p5/)。**关键结果** 30 段 300 题、20% 补查预算下，完整 Sugeno 的答案 F1 为 44.64%，固定 Fuzzy 43.64%，线性收益回归 44.64%；Sugeno 对固定 Fuzzy 为 +1.00 个百分点，95% 配对区间 [−1.33, +3.33]，对线性回归逐题动作相同。P1.5 中 30 段两阶段 2+4 相对 Full 的 F1 点估计高 3.19 个百分点、输入 token 少 69.7%，区间跨零。P2 关系忠实率 46.43% 未达 90% 门槛，正式路线沿用 V2 整题 NLI 与桥接；60 题盲审尚未回收。**日志** [P0 审计](exp/EXPERIMENT_LOG.md?plain=1#L696)、[P1.5 验收](exp/EXPERIMENT_LOG.md?plain=1#L771)、[P2 验收](exp/EXPERIMENT_LOG.md?plain=1#L817)、[P5 正式结果](exp/EXPERIMENT_LOG.md?plain=1#L840)。
 
 ## 材料导航
 

@@ -1,0 +1,85 @@
+{
+  "load_seconds": 3.181590578002215,
+  "smoke_expected_classes": [
+    "entailment",
+    "contradiction",
+    "neutral"
+  ],
+  "records": [
+    {
+      "probs": {
+        "entailment": 0.9977099029950315,
+        "neutral": 0.0018524288837320066,
+        "contradiction": 0.0004376681212363907
+      },
+      "argmax": "entailment",
+      "logits": [
+        4.647698402404785,
+        -1.6412664651870728,
+        -3.0840585231781006
+      ],
+      "n_tokens": 22,
+      "truncated": false,
+      "id2label": {
+        "0": "entailment",
+        "1": "neutral",
+        "2": "contradiction"
+      },
+      "unknown_labels": [],
+      "backend": "hf",
+      "model": "models/deberta-b3546ea",
+      "actual_input_tokens": 22,
+      "seconds": 0.4241493689987692
+    },
+    {
+      "probs": {
+        "entailment": 0.0013546033078010871,
+        "neutral": 0.0009297076051677435,
+        "contradiction": 0.9977156890870312
+      },
+      "argmax": "contradiction",
+      "logits": [
+        -2.0699634552001953,
+        -2.446357250213623,
+        4.531996250152588
+      ],
+      "n_tokens": 23,
+      "truncated": false,
+      "id2label": {
+        "0": "entailment",
+        "1": "neutral",
+        "2": "contradiction"
+      },
+      "unknown_labels": [],
+      "backend": "hf",
+      "model": "models/deberta-b3546ea",
+      "actual_input_tokens": 23,
+      "seconds": 0.3226247029961087
+    },
+    {
+      "probs": {
+        "entailment": 0.0007254560261186646,
+        "neutral": 0.9815273013345258,
+        "contradiction": 0.01774724263935537
+      },
+      "argmax": "neutral",
+      "logits": [
+        -3.764381170272827,
+        3.445683479309082,
+        -0.5671961903572083
+      ],
+      "n_tokens": 20,
+      "truncated": false,
+      "id2label": {
+        "0": "entailment",
+        "1": "neutral",
+        "2": "contradiction"
+      },
+      "unknown_labels": [],
+      "backend": "hf",
+      "model": "models/deberta-b3546ea",
+      "actual_input_tokens": 20,
+      "seconds": 0.3091538120061159
+    }
+  ]
+}

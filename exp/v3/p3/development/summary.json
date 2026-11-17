@@ -1,0 +1,22 @@
+{
+  "status": "development_replay",
+  "features_from_p2": true,
+  "timing": "no inference or timing remeasurement",
+  "n": 50,
+  "a_f1": 0.42814652014652016,
+  "b_f1": 0.5992063492063492,
+  "oracle_f1": 0.6212576312576312,
+  "a_em": 0.34,
+  "b_em": 0.5,
+  "mean_delta": 0.17105982905982905,
+  "counts": {
+    "tied": 35,
+    "improved": 13,
+    "degraded": 2
+  },
+  "fixed_v2": {
+    "triggered": 15,
+    "triggered_improved": 9,
+    "f1": 0.5352576312576313
+  }
+}

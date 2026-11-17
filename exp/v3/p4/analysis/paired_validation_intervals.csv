@@ -1,0 +1,9 @@
+model,reference,budget_percent,point_f1_pp,ci95_low_f1_pp,ci95_high_f1_pp
+full_sugeno_seed42,fixed_fuzzy,10,2.0,0.0,6.0
+full_sugeno_seed42,ridge,10,0.0,0.0,0.0
+full_sugeno_seed42,fixed_fuzzy,20,3.3333333333333335,-1.3333333333333335,10.0
+full_sugeno_seed42,ridge,20,0.0,0.0,0.0
+full_sugeno_seed42,fixed_fuzzy,30,0.0,0.0,0.0
+full_sugeno_seed42,ridge,30,0.0,0.0,0.0
+full_sugeno_seed42,fixed_fuzzy,50,1.6,0.0,4.8
+full_sugeno_seed42,ridge,50,0.0,0.0,0.0

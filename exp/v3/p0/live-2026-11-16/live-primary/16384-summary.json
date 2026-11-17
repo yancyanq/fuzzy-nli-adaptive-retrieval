@@ -1,0 +1,58 @@
+{
+  "cap": 16384,
+  "gpu_before_start": {
+    "index": 0,
+    "name": "Tesla T4",
+    "total_mib": 15360,
+    "used_mib": 2,
+    "driver": "535.216.01"
+  },
+  "args": [
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "/home/ubuntu/group13-v3-p0/models/Qwen2.5-7B-Instruct",
+    "--served-model-name",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18080",
+    "--max-logprobs",
+    "5",
+    "--load-format",
+    "safetensors",
+    "--dtype",
+    "half",
+    "--max-model-len",
+    "16384",
+    "--max-num-seqs",
+    "8",
+    "--cpu-offload-gb",
+    "4",
+    "--enforce-eager"
+  ],
+  "utc_start": "2026-11-16T13:08:21.435+00:00",
+  "startup": {
+    "wall_seconds": 95.129,
+    "peak": {
+      "used_mib": 14205,
+      "num_requests_running": null,
+      "num_requests_waiting": null,
+      "gpu_cache_usage_perc": null
+    },
+    "sample_count": 225,
+    "telemetry": "16384-startup.jsonl",
+    "result": {
+      "ok": false,
+      "error": "Server exited 1, see service log"
+    }
+  },
+  "utc_finish": "2026-11-16T13:09:56.565+00:00",
+  "gpu_after_stop": {
+    "index": 0,
+    "name": "Tesla T4",
+    "total_mib": 15360,
+    "used_mib": 2,
+    "driver": "535.216.01"
+  }
+}

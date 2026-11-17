@@ -1,0 +1,75 @@
+input_manifest.json: OK
+policy_lock.json: OK
+protocol.json: OK
+first_round.py: OK
+guided.py: OK
+p15_runner.py: OK
+policy.py: OK
+routes.py: OK
+run_final.py: OK
+runtime.py: OK
+verify.py: OK
+run_remote.sh: OK
+serve.sh: OK
+input/lengths.jsonl: OK
+input/pools.jsonl: OK
+input/split.json: OK
+v2/analyze_pilot_signals_v2.py: OK
+v2/analyze_signals.py: OK
+v2/bm25_topk.py: OK
+v2/compare_models.py: OK
+v2/generate_test_v2.py: OK
+v2/run_pilot.py: OK
+P5 start 2026-11-17T11:32:01+08:00
+P5 end 2026-11-17T11:32:01+08:00 status=1
+input_manifest.json: OK
+policy_lock.json: OK
+protocol.json: OK
+first_round.py: OK
+guided.py: OK
+p15_runner.py: OK
+policy.py: OK
+routes.py: OK
+run_final.py: OK
+runtime.py: OK
+verify.py: OK
+run_remote.sh: OK
+serve.sh: OK
+input/lengths.jsonl: OK
+input/pools.jsonl: OK
+input/split.json: OK
+v2/analyze_pilot_signals_v2.py: OK
+v2/analyze_signals.py: OK
+v2/bm25_topk.py: OK
+v2/compare_models.py: OK
+v2/generate_test_v2.py: OK
+v2/run_pilot.py: OK
+v2/calibrate_gates_v2.py: OK
+P5 start 2026-11-17T11:33:24+08:00
+duplicate session: group13-p5-final-serve
+P5 end 2026-11-17T14:10:34+08:00 status=1
+input_manifest.json: OK
+policy_lock.json: OK
+protocol.json: OK
+first_round.py: OK
+guided.py: OK
+p15_runner.py: OK
+policy.py: OK
+routes.py: OK
+run_final.py: OK
+runtime.py: OK
+verify.py: OK
+run_remote.sh: OK
+serve.sh: OK
+input/lengths.jsonl: OK
+input/pools.jsonl: OK
+input/split.json: OK
+v2/analyze_pilot_signals_v2.py: OK
+v2/analyze_signals.py: OK
+v2/bm25_topk.py: OK
+v2/compare_models.py: OK
+v2/generate_test_v2.py: OK
+v2/run_pilot.py: OK
+v2/calibrate_gates_v2.py: OK
+P5 start 2026-11-17T15:58:05+08:00
+P5 end 2026-11-17T16:38:52+08:00 status=0

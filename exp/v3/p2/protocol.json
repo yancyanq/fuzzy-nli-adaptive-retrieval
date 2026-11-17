@@ -1,0 +1,39 @@
+{
+  "stage": "P2",
+  "pool_size": 30,
+  "count": 50,
+  "human_sample_n": 30,
+  "sample_and_rank_seed": 42,
+  "selection_budget": 10,
+  "quality_target": "P1.5 official F1(B=two-stage 2+4) minus F1(A=standalone top2), with a secondary 2+2 sensitivity",
+  "qwen": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "context": 8192,
+    "cpu_offload_gib": 4,
+    "temperature": 0,
+    "client_workers": 8,
+    "relation_output_tokens": 512,
+    "selfcheck_output_tokens": 128,
+    "direct_answer_output_tokens": 128
+  },
+  "nli": {
+    "model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+    "revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+    "model_sha256": "c03cd208bf920b4fbbb182a0535859a566e8acc3477d2b536bf87b769978524b",
+    "device": "cpu",
+    "threads": 4,
+    "batch_size": 1,
+    "input_tokens_max": 512,
+    "local_calls_max_per_qid": 4,
+    "diagnostic_entailment_min": 0.5
+  },
+  "fallback": "Retain raw error. If the relationship record fails validation or no claim can be scored, diagnostic selection falls back to V2 whole-question NLI plus its locked bridge proxy gate. Local r and g are unmodified nullable observations.",
+  "human_gate": {
+    "strict_structure_success_min": 0.95,
+    "accepted_reference_resolution_min": 1.0,
+    "human_relationship_fidelity_min": 0.9,
+    "human_label_units": ["relationship_fidelity", "local_evidence_support", "coverage_of_requirements", "whole_draft_support"]
+  },
+  "scope": "Development-only diagnostic. Keep fixed P1.5 A/B and all upstream prompts unchanged. Test V2-style direct 2+2 and 2+4 once each as independent cost/quality baselines. No new B query, no training, no final labels, no threshold optimization."
+}

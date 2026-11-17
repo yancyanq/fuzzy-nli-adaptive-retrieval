@@ -1,0 +1,77 @@
+{
+  "n": 150,
+  "cohorts": {
+    "train": {
+      "n": 100,
+      "a_f1": 0.4056356421356421,
+      "b_f1": 0.5038003663003663,
+      "oracle_f1": 0.5468003663003663,
+      "a_em": 0.29,
+      "b_em": 0.34,
+      "mean_delta": 0.09816472416472416,
+      "counts": {
+        "improved": 22,
+        "tied": 72,
+        "degraded": 6
+      },
+      "fixed_v2": {
+        "triggered": 28,
+        "triggered_improved": 10,
+        "f1": 0.47849278499278497
+      }
+    },
+    "validation": {
+      "n": 50,
+      "a_f1": 0.4406507936507936,
+      "b_f1": 0.6046507936507937,
+      "oracle_f1": 0.6366507936507937,
+      "a_em": 0.3,
+      "b_em": 0.52,
+      "mean_delta": 0.164,
+      "counts": {
+        "tied": 34,
+        "degraded": 3,
+        "improved": 13
+      },
+      "fixed_v2": {
+        "triggered": 14,
+        "triggered_improved": 7,
+        "f1": 0.539984126984127
+      }
+    }
+  },
+  "successful_pairs": 150,
+  "failure_records": 0,
+  "qwen_requests": 300,
+  "qwen_parsing_failures": 0,
+  "qwen_invalid_citations": 0,
+  "qwen_output_limits": 0,
+  "qwen_input_tokens": 197460,
+  "qwen_output_tokens": 5269,
+  "qwen_batches_wall_seconds": 519.1848730169804,
+  "pair_wall_seconds": {
+    "mean": 23.936823946586713,
+    "p50": 23.692296662498848,
+    "p95": 28.442462714799696
+  },
+  "a_http_wall_seconds": {
+    "mean": 11.858834667987006,
+    "p50": 11.304056280499935,
+    "p95": 17.269324629646142
+  },
+  "b_http_wall_seconds": {
+    "mean": 12.069015456693014,
+    "p50": 12.309872661498957,
+    "p95": 14.749463990899676
+  },
+  "nli_wall_seconds": {
+    "mean": 0.5110600806998749,
+    "p50": 0.4756211499989149,
+    "p95": 0.7431671958951483
+  },
+  "nli_input_tokens": 23545,
+  "nli_truncated_n": 0,
+  "nli_premise_fallbacks": 7,
+  "bridge_unavailable_n": 0,
+  "warmup_calls": 2
+}

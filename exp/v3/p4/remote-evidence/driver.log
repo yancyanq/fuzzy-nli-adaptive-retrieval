@@ -1,0 +1,10 @@
+prepare.py: OK
+train.py: OK
+protocol.json: OK
+run_remote.sh: OK
+input/manifest.json: OK
+input/cost.jsonl: OK
+input/features.jsonl: OK
+input/targets.jsonl: OK
+P4 CPU start 2026-11-17T11:06:06+08:00
+P4 end 2026-11-17T11:06:23+08:00 status=0

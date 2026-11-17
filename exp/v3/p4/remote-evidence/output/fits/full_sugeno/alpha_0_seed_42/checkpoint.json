@@ -1,0 +1,61 @@
+{
+  "variant": "full_sugeno",
+  "alpha": 0.0,
+  "seed": 42,
+  "last_epoch": 50,
+  "best_epoch": 20,
+  "val_mse": 0.15454335510730743,
+  "train_mse_at_checkpoint": 0.12229399383068085,
+  "raw_initial": {
+    "center_logits": [
+      0.0,
+      0.0
+    ],
+    "width_logits": [
+      -1.2527629137039185,
+      -1.2527629137039185
+    ],
+    "consequent_logits": [
+      0.1018826812505722,
+      0.09978266805410385,
+      0.10084986686706543,
+      0.10080815106630325
+    ]
+  },
+  "raw_checkpoint": {
+    "center_logits": [
+      -0.2880975902080536,
+      -0.07920456677675247
+    ],
+    "width_logits": [
+      -1.477091670036316,
+      -1.5051647424697876
+    ],
+    "consequent_logits": [
+      -0.11721985042095184,
+      0.08757001161575317,
+      -0.05979049578309059,
+      0.4234877824783325
+    ]
+  },
+  "changed_parameter_counts": {
+    "center_logits": 2,
+    "width_logits": 2,
+    "consequent_logits": 4
+  },
+  "finite_gradients": true,
+  "max_rule_sum_error": 1.1920928955078125e-07,
+  "checkpoint_replay_exact": true,
+  "effective_parameters": {
+    "center_r": 0.4284696578979492,
+    "center_bridge": 0.48020923137664795,
+    "width_r": 0.13364019989967346,
+    "width_bridge": 0.13174541294574738,
+    "LL": -0.1166858971118927,
+    "LH": 0.08734685182571411,
+    "HL": -0.059719350188970566,
+    "HH": 0.3998646140098572
+  },
+  "weights_path": "fits/full_sugeno/alpha_0_seed_42/weights.pt",
+  "weights_sha256": "c2779a9bae458ed356781dac344a8b14ca9ec4daa25b2a98857fce7100732ac0"
+}

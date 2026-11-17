@@ -1,0 +1,34 @@
+{
+  "stage": "P1",
+  "dataset": "hotpotqa/hotpot_qa",
+  "configuration": "distractor",
+  "dataset_revision": "14f0ace3c3fac7bd86149c616b5b05d8282e5c6a",
+  "train_sha256": {
+    "0000.parquet": "76d3bb3048a7cc73c1958107c0c5872a00d7e7d00c105b81e92f6769e7822e68",
+    "0001.parquet": "713661628434fbb19fff7392e2e321e4ed107e3c7c7784d0690946e5f722763f"
+  },
+  "validation_sha256": "c20b638ca82b21d04fe12e14ff417ad05153d4d215a65de54497fca4e972f7c6",
+  "dev_n": 50,
+  "pilot_rule": "Archive order, first eligible bridge qids with ten original paragraphs and no duplicate base paragraph under the registered checks.",
+  "sizes": [10, 30, 60],
+  "donor_sample_rows": 4096,
+  "donor_sample_seed": 42,
+  "random_donor_seed": 42,
+  "presentation_seed": 73,
+  "split_seed": 42,
+  "per_expansion_hard_fraction": 0.5,
+  "reject_normalized_original_sentence_copies_in_supplements": true,
+  "near_duplicate": {
+    "word_shingles": 5,
+    "jaccard": 0.8,
+    "containment": 0.9,
+    "minimum_containment_shingles": 20,
+    "minimum_shared_sentence_words": 12
+  },
+  "qwen_model": "Qwen/Qwen2.5-7B-Instruct",
+  "qwen_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "answer_reservation_tokens": 128,
+  "audited_context_limits": [4096, 8192, 16384],
+  "primary_preflight_paths": ["top2", "top4", "top6", "2plus1", "full"],
+  "optional_preflight_paths": ["2plus2", "2plus4"]
+}

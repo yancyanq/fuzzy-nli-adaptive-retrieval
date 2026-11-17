@@ -20,7 +20,7 @@ MONTH_AND_DAY = (
     r" \d{1,2}(?:, \d{4})?"
 )
 TIMESTAMP = re.compile(
-    rf"(?<![\w.:])(?:{STAMP}|(?:{MONTH_AND_DAY} )?{CLOCK}|{MONTH_AND_DAY})"
+    rf"(?<![\w.:/-])(?:{STAMP}|(?:{MONTH_AND_DAY} )?{CLOCK}|{MONTH_AND_DAY})"
     rf"(?: \({ZONE}\)| {ZONE})?(?: on {MONTH_AND_DAY})?(?![\w:]|\.\d)"
 )
 ENTRY_REFERENCE = re.compile(

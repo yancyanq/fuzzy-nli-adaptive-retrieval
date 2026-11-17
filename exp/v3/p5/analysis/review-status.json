@@ -1,0 +1,20 @@
+{
+  "primary_completed_cases": 0,
+  "primary_sample_cases": 60,
+  "double_completed_cases": 0,
+  "double_sample_cases": 20,
+  "primary_rater_labels": {},
+  "second_rater_labels_on_complete_pairs": {},
+  "double_review_exact_agreement": {
+    "answer_supported": {
+      "n": 0,
+      "same": 0,
+      "both_determinate": 0
+    },
+    "chain_complete": {
+      "n": 0,
+      "same": 0,
+      "both_determinate": 0
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{"part": "quality", "n": 40, "target": 420, "last_batch_seconds": 27.746742814000754, "utc": "2026-11-17T05:34:40.119+00:00"}
+{"part": "quality", "n": 80, "target": 420, "last_batch_seconds": 26.273253642000782, "utc": "2026-11-17T05:36:36.755+00:00"}
+{"part": "quality", "n": 120, "target": 420, "last_batch_seconds": 23.62303039299877, "utc": "2026-11-17T05:38:22.397+00:00"}
+{"part": "quality", "n": 160, "target": 420, "last_batch_seconds": 6.014221643003111, "utc": "2026-11-17T05:40:11.713+00:00"}
+{"part": "quality", "n": 200, "target": 420, "last_batch_seconds": 22.517405032995157, "utc": "2026-11-17T05:42:02.219+00:00"}
+{"part": "quality", "n": 240, "target": 420, "last_batch_seconds": 18.37453670999821, "utc": "2026-11-17T05:43:37.521+00:00"}
+{"part": "quality", "n": 280, "target": 420, "last_batch_seconds": 22.6576203730001, "utc": "2026-11-17T05:45:06.882+00:00"}
+{"part": "quality", "n": 320, "target": 420, "last_batch_seconds": 24.17028875899996, "utc": "2026-11-17T05:46:46.394+00:00"}
+{"part": "quality", "n": 360, "target": 420, "last_batch_seconds": 16.3255433719969, "utc": "2026-11-17T05:48:23.391+00:00"}
+{"part": "quality", "n": 400, "target": 420, "last_batch_seconds": 18.00332464800158, "utc": "2026-11-17T05:50:03.913+00:00"}
+{"part": "quality", "n": 420, "target": 420, "last_batch_seconds": 18.07272555200325, "utc": "2026-11-17T05:51:06.058+00:00"}
+{"part": "qwen_selfcheck", "n": 40, "target": 60, "last_batch_seconds": 23.150548814002832, "utc": "2026-11-17T05:52:53.678+00:00"}
+{"part": "qwen_selfcheck", "n": 60, "target": 60, "last_batch_seconds": 16.398515861001215, "utc": "2026-11-17T05:53:59.080+00:00"}
+{"stage": "quality", "sizes": [10], "completed_utc": "2026-11-17T05:53:59.081+00:00"}

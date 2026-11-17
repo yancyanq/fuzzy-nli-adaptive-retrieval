@@ -1,0 +1,51 @@
+{
+  "seal": "pre-score, IDs and length filter frozen",
+  "config_sha256": "2a07de8f5037d9f3e31507e081ceb71e78f62c310522940baa32b44e5aea398f",
+  "history_sha256": "c2f66729fbeec1bc187f11c5c14d20ab55cdbca681a45c6348253651e2044511",
+  "source_sha256": {
+    "0000.parquet": "76d3bb3048a7cc73c1958107c0c5872a00d7e7d00c105b81e92f6769e7822e68",
+    "0001.parquet": "713661628434fbb19fff7392e2e321e4ed107e3c7c7784d0690946e5f722763f",
+    "hotpot-validation.parquet": "c20b638ca82b21d04fe12e14ff417ad05153d4d215a65de54497fca4e972f7c6",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+  },
+  "donor_index": {
+    "train_question_count": 90447,
+    "upstream_validation_qid_overlap": 0,
+    "sampled_source_qids": 4096,
+    "sampled_source_qids_sha256": "08d2800fd625595c413954f20f1bb8270095521f9d9f18c7a623b79a49df0782",
+    "donor_count_after_exact_title_body_pair_dedup": 38229,
+    "donor_index_sha256": "db786140f874a9668c5ab8d0b84c698a256f04a942a24b7df794a9da700c705f"
+  },
+  "eligible_bridge_before_content_filter": 4318,
+  "historical_excluded_ids": 1600,
+  "history_attestation": "2026-11-17: user confirmed no additional HotpotQA questions used in unarchived team work",
+  "counts_by_size": {
+    "30": 300,
+    "10": 60,
+    "60": 60
+  },
+  "max_total_by_size": {
+    "10": 2985,
+    "30": 6042,
+    "60": 10960
+  },
+  "excluded_before_quota": {
+    "original_near_duplicate": 23,
+    "original_paragraph_count": 1
+  },
+  "frozen_code_sha256": {
+    "exp/v3/p5/prepare.py": "7ad93f56e6a921320168b7416fa597a372e3e14492d68cec56f3dea113e42942",
+    "exp/v3/p5/routes.py": "3e8c1e8d83243c01a70ed9a65a6f6644f0ad53a3f7b0c545129266d92b6658bd",
+    "exp/v3/p1/build_pools.py": "1e7f45503168d45258b943f641d0ab634f8b5a61ee4e5f8d4bef63df409f87d1",
+    "exp/v2/compare_models.py": "0a8e8dfafc59f22accf87890585b9b80c806b29e3b3ef48317a6ef62388a96d6",
+    "exp/v2/bm25_topk.py": "3ada3ea47beb75e68a14b967a31655d379f417879ef8b2315e70ba816fe83099"
+  },
+  "files_sha256": {
+    "evaluation_only/gold.jsonl": "4f94f0a8676601d6f54a9b5a1c87766ecc5be73f373b14af1f98f2e2b4c044f8",
+    "lengths.jsonl": "59611aebb780cdbe5b49bac7897b2d7eda44495ef3ff63af9b58bf402426a11e",
+    "pools.jsonl": "05d4bbe2d93c1079a52fdaa36c1883952650855109c23b13db4ea660f7f37fe0",
+    "provenance.jsonl": "fe7b10f1d5301efc1bf8818ce56339a4d43ba48da750320f1c6f446d89ded6e0",
+    "split.json": "d1e2d3f960b7142bdf9ec1c1a57db01c3b6b95c352d03f2c1c2b12c914e806a9"
+  }
+}

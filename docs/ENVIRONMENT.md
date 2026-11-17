@@ -34,6 +34,10 @@ python -m pip check
 
 运行 Step 5 的实际 NLI 时，安装与 GPU 驱动匹配的 CUDA 版 `torch` 和 `transformers`，准备 `MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli` 模型与 tokenizer 快照。用 `python -c "import torch; print(torch.cuda.is_available())"` 检查设备，`--nli-device auto` 可在 CUDA 不可用时选 CPU。发生 tokenizer 依赖问题时应记录并冻结所需包及版本，实际版本以环境 lock 为准。日志记录正式 pilot 对引用段落按顺序拼接，无可用引用时回退并计数，假设采用固定模板 `The answer to the question "{question}" is: {answer}.`，NLI 标签映射取模型配置中的 `id2label`。标题级引用可算段落覆盖，官方 SP F1 需要句索引。 [Pilot 实现](../exp/EXPERIMENT_LOG.md?plain=1#L134) · [Pilot 实测](../exp/EXPERIMENT_LOG.md?plain=1#L146)
 
+## V3.1 运行环境
+
+V3.1 的离线审计与数据构建使用 Python 3.13 独立环境，固定 `transformers==4.51.3`、`tokenizers==0.21.4`、`pyarrow==21.0.0`、`rank_bm25==0.2.2`、`numpy==2.5.5`、`Jinja2==3.1.6`。问答服务沿用固定 Qwen2.5-7B-Instruct（revision `a09a35458c702b33eeacc393d103063234e8bc28`）与 vLLM 0.8.5、PyTorch 2.6.0+cu124、Transformers 4.51.3；30 段使用 8192 上下文／4 GiB CPU offload，60 段使用 16384／6 GiB，其余为 FP16、V0/XFormers、`max-num-seqs=8`。P0 的容量试验验证了 4096、8192、16384 三档。复算命令见[V3.1 归档](../exp/v3/README.md)与各阶段报告。
+
 ## Step 6a 服务端的历史记录
 
 日志记载远端准备环境为 Python 3.10.12、Tesla T4（计算能力 7.5），vLLM 0.8.5、PyTorch 2.6.0+cu124、CUDA 12.4、xFormers 0.0.29.post2、Transformers 4.51.3。启动时为 Triton 补装 setuptools 80.9.0 后重新生成 lock 并重启。采用 vLLM V0 和 xFormers、原始未量化 Qwen/Qwen2.5-7B-Instruct 权重，记录的 HF revision 为 `a09a35458c702b33eeacc393d103063234e8bc28`。日志确认配套文件与权重校验符合该 revision。实测条目记录了客户端命令、服务器启动封装和 lock 的路径；远端启动封装、lock 与服务原始日志待归档。 [服务端准备](../exp/EXPERIMENT_LOG.md?plain=1#L296) · [启动记录](../exp/EXPERIMENT_LOG.md?plain=1#L321) · [实测](../exp/EXPERIMENT_LOG.md?plain=1#L326)

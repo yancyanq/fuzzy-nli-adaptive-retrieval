@@ -1,0 +1,97 @@
+{
+  "feature_order": [
+    "old_nli_risk",
+    "bridge_absent"
+  ],
+  "rule_order": [
+    "LL",
+    "LH",
+    "HL",
+    "HH"
+  ],
+  "width_range": [
+    0.05,
+    0.5
+  ],
+  "consequent_range": [
+    -1.0,
+    1.0
+  ],
+  "variants": {
+    "full_sugeno": {
+      "alpha": 0.0,
+      "mean_validation_mse_by_alpha": {
+        "0.0": 0.15457533796628317,
+        "0.0001": 0.15460969507694244,
+        "0.001": 0.15494591991106668
+      },
+      "primary_seed": 42
+    },
+    "consequents_only": {
+      "alpha": 0.0,
+      "mean_validation_mse_by_alpha": {
+        "0.0": 0.15563582380612692,
+        "0.0001": 0.15563810368378958,
+        "0.001": 0.15565853317578635
+      },
+      "primary_seed": 42
+    }
+  },
+  "baseline_parameters": {
+    "fixed_fuzzy_train_only_budget_percent": 20,
+    "fixed_fuzzy_parameters": {
+      "lo": 0.000648812720328995,
+      "hi": 0.08080058674668902,
+      "bridge_weight": 0.125
+    },
+    "locked_v2_fuzzy": {
+      "kind": "fuzzy",
+      "parameters": {
+        "lo": 0.0005892496127476443,
+        "hi": 0.381526725198905,
+        "bridge_weight": 0.375
+      },
+      "boundary_sort_key": [
+        -0.55488645921343,
+        -0.11023003947658172,
+        "49092efc9ed133b8eb4d735a729d16f1c73ae32e8ea14855b0a1a9fe6d23964c",
+        "5ac3e80b554299076e296ccd"
+      ]
+    },
+    "ridge_alpha": 0.0,
+    "ridge_parameters_intercept_then_features": [
+      -0.11505625395119173,
+      0.255528288962311,
+      0.21105650039978074
+    ],
+    "ridge_selected_val_mse": 0.15886953309758323,
+    "ridge_grid": [
+      {
+        "val_mse": 0.15886953309758323,
+        "alpha": 0.0
+      },
+      {
+        "val_mse": 0.1588765103451449,
+        "alpha": 0.0001
+      },
+      {
+        "val_mse": 0.15893920612152393,
+        "alpha": 0.001
+      },
+      {
+        "val_mse": 0.1595552791612431,
+        "alpha": 0.01
+      },
+      {
+        "val_mse": 0.16447155482071527,
+        "alpha": 0.1
+      },
+      {
+        "val_mse": 0.17623747636999615,
+        "alpha": 1.0
+      }
+    ],
+    "constant_train_mean": 0.09816472232341766
+  },
+  "primary_seed": 42
+}

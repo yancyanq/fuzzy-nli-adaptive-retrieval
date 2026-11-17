@@ -1,0 +1,71 @@
+Traceback (most recent call last):
+  File "/home/ubuntu/group13-v3-p5/final-bundle/run_final.py", line 12, in <module>
+    from runtime import Ledger, NLI, Runtime, read_index, run_jobs, timed
+  File "/home/ubuntu/group13-v3-p5/final-bundle/runtime.py", line 18, in <module>
+    import generate_test_v2 as selector
+  File "/home/ubuntu/group13-v3-p5/final-bundle/v2/generate_test_v2.py", line 16, in <module>
+    import calibrate_gates_v2 as gates
+ModuleNotFoundError: No module named 'calibrate_gates_v2'
+Running known validation warmup
+{"part": "quality", "n": 40, "target": 2100, "last_batch_seconds": 47.414161412001704, "utc": "2026-11-17T03:37:20.768+00:00"}
+{"part": "quality", "n": 80, "target": 2100, "last_batch_seconds": 20.475038188000326, "utc": "2026-11-17T03:38:56.805+00:00"}
+{"part": "quality", "n": 120, "target": 2100, "last_batch_seconds": 21.40960929299763, "utc": "2026-11-17T03:40:47.668+00:00"}
+{"part": "quality", "n": 160, "target": 2100, "last_batch_seconds": 5.143330416998651, "utc": "2026-11-17T03:42:46.792+00:00"}
+{"part": "quality", "n": 200, "target": 2100, "last_batch_seconds": 26.503168823001033, "utc": "2026-11-17T03:45:13.512+00:00"}
+{"part": "quality", "n": 240, "target": 2100, "last_batch_seconds": 21.32787842000107, "utc": "2026-11-17T03:47:15.468+00:00"}
+{"part": "quality", "n": 280, "target": 2100, "last_batch_seconds": 27.389288734993897, "utc": "2026-11-17T03:48:54.400+00:00"}
+{"part": "quality", "n": 320, "target": 2100, "last_batch_seconds": 18.872605067001132, "utc": "2026-11-17T03:50:21.694+00:00"}
+{"part": "quality", "n": 360, "target": 2100, "last_batch_seconds": 18.963508171000285, "utc": "2026-11-17T03:52:15.915+00:00"}
+{"part": "quality", "n": 400, "target": 2100, "last_batch_seconds": 5.574030309995578, "utc": "2026-11-17T03:54:14.707+00:00"}
+{"part": "quality", "n": 440, "target": 2100, "last_batch_seconds": 21.278171423997264, "utc": "2026-11-17T03:56:29.772+00:00"}
+{"part": "quality", "n": 480, "target": 2100, "last_batch_seconds": 55.42687770900375, "utc": "2026-11-17T03:58:53.130+00:00"}
+{"part": "quality", "n": 520, "target": 2100, "last_batch_seconds": 27.578062418004265, "utc": "2026-11-17T04:00:38.954+00:00"}
+{"part": "quality", "n": 560, "target": 2100, "last_batch_seconds": 23.154225091006083, "utc": "2026-11-17T04:02:53.678+00:00"}
+{"part": "quality", "n": 600, "target": 2100, "last_batch_seconds": 6.078222427000583, "utc": "2026-11-17T04:05:01.501+00:00"}
+{"part": "quality", "n": 640, "target": 2100, "last_batch_seconds": 23.798863855998206, "utc": "2026-11-17T04:07:10.172+00:00"}
+{"part": "quality", "n": 680, "target": 2100, "last_batch_seconds": 17.544804225995904, "utc": "2026-11-17T04:08:39.688+00:00"}
+{"part": "quality", "n": 720, "target": 2100, "last_batch_seconds": 18.918508609000128, "utc": "2026-11-17T04:10:01.041+00:00"}
+{"part": "quality", "n": 760, "target": 2100, "last_batch_seconds": 19.65111299000273, "utc": "2026-11-17T04:11:56.154+00:00"}
+{"part": "quality", "n": 800, "target": 2100, "last_batch_seconds": 19.670303662998776, "utc": "2026-11-17T04:13:50.322+00:00"}
+{"part": "quality", "n": 840, "target": 2100, "last_batch_seconds": 21.034804609000275, "utc": "2026-11-17T04:16:03.326+00:00"}
+{"part": "quality", "n": 880, "target": 2100, "last_batch_seconds": 24.701585648996115, "utc": "2026-11-17T04:18:23.208+00:00"}
+{"part": "quality", "n": 920, "target": 2100, "last_batch_seconds": 49.90492304699728, "utc": "2026-11-17T04:20:27.066+00:00"}
+{"part": "quality", "n": 960, "target": 2100, "last_batch_seconds": 24.69579171800433, "utc": "2026-11-17T04:22:01.245+00:00"}
+{"part": "quality", "n": 1000, "target": 2100, "last_batch_seconds": 21.013387948994932, "utc": "2026-11-17T04:24:03.169+00:00"}
+{"part": "quality", "n": 1040, "target": 2100, "last_batch_seconds": 6.002105122999637, "utc": "2026-11-17T04:26:05.851+00:00"}
+{"part": "quality", "n": 1080, "target": 2100, "last_batch_seconds": 21.13454354499845, "utc": "2026-11-17T04:27:53.171+00:00"}
+{"part": "quality", "n": 1120, "target": 2100, "last_batch_seconds": 49.992721314003575, "utc": "2026-11-17T04:29:49.815+00:00"}
+{"part": "quality", "n": 1160, "target": 2100, "last_batch_seconds": 22.287218066994683, "utc": "2026-11-17T04:31:32.405+00:00"}
+{"part": "quality", "n": 1200, "target": 2100, "last_batch_seconds": 18.97092151200195, "utc": "2026-11-17T04:33:24.628+00:00"}
+{"part": "quality", "n": 1240, "target": 2100, "last_batch_seconds": 18.770597494003596, "utc": "2026-11-17T04:35:33.160+00:00"}
+{"part": "quality", "n": 1280, "target": 2100, "last_batch_seconds": 22.073209356996813, "utc": "2026-11-17T04:37:43.497+00:00"}
+{"part": "quality", "n": 1320, "target": 2100, "last_batch_seconds": 16.964933609997388, "utc": "2026-11-17T04:39:38.957+00:00"}
+{"part": "quality", "n": 1360, "target": 2100, "last_batch_seconds": 49.250613412994426, "utc": "2026-11-17T04:41:39.941+00:00"}
+{"part": "quality", "n": 1400, "target": 2100, "last_batch_seconds": 21.793549319001613, "utc": "2026-11-17T04:43:20.026+00:00"}
+{"part": "quality", "n": 1440, "target": 2100, "last_batch_seconds": 22.610762201002217, "utc": "2026-11-17T04:45:25.646+00:00"}
+{"part": "quality", "n": 1480, "target": 2100, "last_batch_seconds": 6.853736365999794, "utc": "2026-11-17T04:47:02.902+00:00"}
+{"part": "quality", "n": 1520, "target": 2100, "last_batch_seconds": 23.927824513004452, "utc": "2026-11-17T04:49:19.481+00:00"}
+{"part": "quality", "n": 1560, "target": 2100, "last_batch_seconds": 44.65726158100006, "utc": "2026-11-17T04:51:20.326+00:00"}
+{"part": "quality", "n": 1600, "target": 2100, "last_batch_seconds": 26.434333334997064, "utc": "2026-11-17T04:53:04.027+00:00"}
+{"part": "quality", "n": 1640, "target": 2100, "last_batch_seconds": 22.334317622997332, "utc": "2026-11-17T04:55:26.786+00:00"}
+{"part": "quality", "n": 1680, "target": 2100, "last_batch_seconds": 5.57405278999795, "utc": "2026-11-17T04:57:38.335+00:00"}
+{"part": "quality", "n": 1720, "target": 2100, "last_batch_seconds": 23.345979904996057, "utc": "2026-11-17T04:59:56.116+00:00"}
+{"part": "quality", "n": 1760, "target": 2100, "last_batch_seconds": 21.854650280001806, "utc": "2026-11-17T05:01:49.601+00:00"}
+{"part": "quality", "n": 1800, "target": 2100, "last_batch_seconds": 58.768239501994685, "utc": "2026-11-17T05:04:00.231+00:00"}
+{"part": "quality", "n": 1840, "target": 2100, "last_batch_seconds": 22.35395923499891, "utc": "2026-11-17T05:05:30.906+00:00"}
+{"part": "quality", "n": 1880, "target": 2100, "last_batch_seconds": 18.30275958400307, "utc": "2026-11-17T05:06:57.464+00:00"}
+{"part": "quality", "n": 1920, "target": 2100, "last_batch_seconds": 4.290422689002298, "utc": "2026-11-17T05:08:58.825+00:00"}
+{"part": "quality", "n": 1960, "target": 2100, "last_batch_seconds": 22.54638527300267, "utc": "2026-11-17T05:11:13.005+00:00"}
+{"part": "quality", "n": 2000, "target": 2100, "last_batch_seconds": 51.212943083002756, "utc": "2026-11-17T05:13:12.255+00:00"}
+{"part": "quality", "n": 2040, "target": 2100, "last_batch_seconds": 24.15805997300049, "utc": "2026-11-17T05:15:04.371+00:00"}
+{"part": "quality", "n": 2080, "target": 2100, "last_batch_seconds": 22.715573999004846, "utc": "2026-11-17T05:17:08.655+00:00"}
+{"part": "quality", "n": 2100, "target": 2100, "last_batch_seconds": 18.55967292800051, "utc": "2026-11-17T05:18:22.490+00:00"}
+{"part": "qwen_selfcheck", "n": 40, "target": 300, "last_batch_seconds": 21.024079535003693, "utc": "2026-11-17T05:20:26.086+00:00"}
+{"part": "qwen_selfcheck", "n": 80, "target": 300, "last_batch_seconds": 23.16292008300661, "utc": "2026-11-17T05:22:14.683+00:00"}
+{"part": "qwen_selfcheck", "n": 120, "target": 300, "last_batch_seconds": 22.83847488700121, "utc": "2026-11-17T05:24:18.201+00:00"}
+{"part": "qwen_selfcheck", "n": 160, "target": 300, "last_batch_seconds": 22.513137698995706, "utc": "2026-11-17T05:26:22.061+00:00"}
+{"part": "qwen_selfcheck", "n": 200, "target": 300, "last_batch_seconds": 22.11375900600251, "utc": "2026-11-17T05:28:14.940+00:00"}
+{"part": "qwen_selfcheck", "n": 240, "target": 300, "last_batch_seconds": 23.514120269996056, "utc": "2026-11-17T05:30:13.501+00:00"}
+{"part": "qwen_selfcheck", "n": 280, "target": 300, "last_batch_seconds": 23.317717332996835, "utc": "2026-11-17T05:32:00.896+00:00"}
+{"part": "qwen_selfcheck", "n": 300, "target": 300, "last_batch_seconds": 16.242632674999186, "utc": "2026-11-17T05:33:00.770+00:00"}
+{"stage": "quality", "sizes": [30], "completed_utc": "2026-11-17T05:33:00.771+00:00"}

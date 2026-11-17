@@ -1,0 +1,61 @@
+{
+  "status": "p1_development_data_only",
+  "config_sha256": "a722100e417214b7a61276616f025d4876e8cf2e7ee89cb5b8b2ba2ad0e2c4bd",
+  "builder_sha256": "1e7f45503168d45258b943f641d0ab634f8b5a61ee4e5f8d4bef63df409f87d1",
+  "v2_bm25_source_sha256": "3ada3ea47beb75e68a14b967a31655d379f417879ef8b2315e70ba816fe83099",
+  "historical_manifest_sha256": "c2f66729fbeec1bc187f11c5c14d20ab55cdbca681a45c6348253651e2044511",
+  "inputs_sha256": {
+    "train/0000.parquet": "76d3bb3048a7cc73c1958107c0c5872a00d7e7d00c105b81e92f6769e7822e68",
+    "train/0001.parquet": "713661628434fbb19fff7392e2e321e4ed107e3c7c7784d0690946e5f722763f",
+    "validation/0000.parquet": "c20b638ca82b21d04fe12e14ff417ad05153d4d215a65de54497fca4e972f7c6",
+    "exp/step1/pilot.json": "673a370110adf24bd54956467010c5723a6facb7ef708997d088b9c2c627f790"
+  },
+  "dataset": {
+    "train_question_count": 90447,
+    "upstream_validation_qid_overlap": 0,
+    "sampled_source_qids": 4096,
+    "sampled_source_qids_sha256": "08d2800fd625595c413954f20f1bb8270095521f9d9f18c7a623b79a49df0782",
+    "donor_count_after_exact_title_body_pair_dedup": 38229,
+    "donor_index_sha256": "db786140f874a9668c5ab8d0b84c698a256f04a942a24b7df794a9da700c705f"
+  },
+  "n_questions": 50,
+  "n_ordered_pools": 150,
+  "skipped_archived_pilot_rows": [
+    {
+      "qid": "5ac47d7355429919431739b3",
+      "original_paragraphs": 10,
+      "reason": "base_duplicate"
+    },
+    {
+      "qid": "5ab7f27e5542991d322237d6",
+      "original_paragraphs": 10,
+      "reason": "base_duplicate"
+    },
+    {
+      "qid": "5a8db916554299441c6ba057",
+      "original_paragraphs": 10,
+      "reason": "base_duplicate"
+    },
+    {
+      "qid": "5a8e08d35542995085b37395",
+      "original_paragraphs": 6,
+      "reason": "not_bridge_with_ten_original_paragraphs"
+    },
+    {
+      "qid": "5abd93115542996e802b47e0",
+      "original_paragraphs": 10,
+      "reason": "base_duplicate"
+    }
+  ],
+  "gold_sentence_count": 123,
+  "evidence_position_rows": 300,
+  "additional_phrase_or_quote_review_rows": 15,
+  "files_sha256": {
+    "pools.jsonl": "f4f632671717ec7bb0915f839f77253ab460068bc74348fa074ce4bedfecc713",
+    "provenance.jsonl": "be8cc55ac2f7ec0b75e27cbf57171a616fff503c61a7ff89f7bbf49b27eaa802",
+    "evaluation_only/gold.jsonl": "b181a8104d937630438b4529f6766938084ef4dc39092cef0de4eae7b641e1d8",
+    "evaluation_only/phrase_review.jsonl": "60488c55c04ab682bd846c3a7bf3a47a909d2d384321e935061740599b31a412",
+    "evaluation_only/evidence_positions.jsonl": "0d10e20362ae733eb9d91eb3044c02a4cce3e1cb66f3887411b5fc98c9ee8d5d",
+    "split_plan.json": "f0acdf76f9de10e82584ddce3341eec420a5be49dd873cca2d8e24bbd5a06cd0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "stage": "P1.5",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "temperature": 0,
+  "max_output_tokens": 128,
+  "client_workers": 8,
+  "scheduler_seed": 42,
+  "qa_scorer_sha256": "d35fc91a6db21d791dbdda11daf3856e9359f5701d54e3eefba20d88fecc02c0",
+  "services": {
+    "8192": {"pool_sizes": [10, 30], "cpu_offload_gib": 4, "comparison": "primary"},
+    "16384": {"pool_sizes": [60], "cpu_offload_gib": 6, "comparison": "separate_service_diagnostic"}
+  },
+  "routes": {
+    "top2": {"prompt_path": "top2", "first_answer": false},
+    "top4": {"prompt_path": "top4", "first_answer": false},
+    "top6": {"prompt_path": "top6", "first_answer": false},
+    "full": {"prompt_path": "full", "first_answer": false},
+    "v2_direct_2plus1": {"prompt_path": "2plus1", "first_answer": false},
+    "2plus1": {"prompt_path": "2plus1", "first_answer": true},
+    "2plus2": {"prompt_path": "2plus2", "first_answer": true},
+    "2plus4": {"prompt_path": "2plus4", "first_answer": true}
+  },
+  "reason_for_multi_paragraph_paths": "Before any model score, 2+1 found both support titles on only 31, 21 and 22 of 50 questions at 10, 30 and 60 paragraphs. 2+2 and 2+4 both improved this retrieval-only diagnostic. They use one additional retrieval round each.",
+  "timing": "All 50 per size and route are independently measured from retrieval through answer parsing, with a fresh first call for each cascade. No cached answer is presented as live timing. Warmup is separate. Fixed-seed question blocks are at most eight; route and size order rotates between blocks.",
+  "quality": "Offline official HotpotQA EM/F1, retrieved gold-title recall and both-title coverage, and cited gold-title recall. Paragraph citations are retained; sentence-level verification and NLI belong to the next phases.",
+  "oracle": "For each fixed pair of first and expanded outputs, choose greater official F1, using the shared standalone top2 as A and choosing A on ties. Expand each path's own observed first output separately as a sensitivity check.",
+  "predeclared_sensitivity_qid": "5ae610e55542995703ce8ae1",
+  "interpretation": "Exploratory development results. Compare routes within each tested service. No gate or formal heldout evaluation."
+}

@@ -1,0 +1,149 @@
+{
+  "base_answer_planned_prompt_tokens": 3332722,
+  "phases": {
+    "quality": {
+      "10": {
+        "answer_parse_failures": 60,
+        "charged_prompt_tokens": 413367,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 779,
+        "invalid_answer_citation_ids": 12,
+        "invalid_selector_ids": 0,
+        "length_stop_calls": 0,
+        "logical_calls": 779,
+        "records": 420,
+        "reported_input_tokens": 413367,
+        "reported_output_tokens": 10227,
+        "unavailable_answers": 0
+      },
+      "30": {
+        "answer_parse_failures": 300,
+        "charged_prompt_tokens": 2848465,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 3874,
+        "invalid_answer_citation_ids": 61,
+        "invalid_selector_ids": 2,
+        "length_stop_calls": 0,
+        "logical_calls": 3874,
+        "records": 2100,
+        "reported_input_tokens": 2848465,
+        "reported_output_tokens": 51282,
+        "unavailable_answers": 7
+      },
+      "60": {
+        "answer_parse_failures": 60,
+        "charged_prompt_tokens": 814125,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 773,
+        "invalid_answer_citation_ids": 13,
+        "invalid_selector_ids": 0,
+        "length_stop_calls": 0,
+        "logical_calls": 773,
+        "records": 420,
+        "reported_input_tokens": 814125,
+        "reported_output_tokens": 10112,
+        "unavailable_answers": 3
+      }
+    },
+    "selfcheck": {
+      "10": {
+        "charged_prompt_tokens": 30509,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 60,
+        "invalid_selector_ids": 0,
+        "length_stop_calls": 0,
+        "logical_calls": 60,
+        "records": 60,
+        "reported_input_tokens": 30509,
+        "reported_output_tokens": 1626,
+        "unavailable_answers": 0,
+        "unavailable_scores": 0
+      },
+      "30": {
+        "charged_prompt_tokens": 145875,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 298,
+        "invalid_selector_ids": 0,
+        "length_stop_calls": 0,
+        "logical_calls": 298,
+        "records": 300,
+        "reported_input_tokens": 145875,
+        "reported_output_tokens": 7881,
+        "unavailable_answers": 0,
+        "unavailable_scores": 2
+      },
+      "60": {
+        "charged_prompt_tokens": 28325,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 59,
+        "invalid_selector_ids": 0,
+        "length_stop_calls": 0,
+        "logical_calls": 59,
+        "records": 60,
+        "reported_input_tokens": 28325,
+        "reported_output_tokens": 1598,
+        "unavailable_answers": 0,
+        "unavailable_scores": 1
+      }
+    },
+    "timing": {
+      "30": {
+        "charged_prompt_tokens": 230755,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 597,
+        "invalid_selector_ids": 0,
+        "length_stop_calls": 0,
+        "logical_calls": 597,
+        "records": 250,
+        "reported_input_tokens": 230755,
+        "reported_output_tokens": 8700,
+        "unavailable_answers": 0
+      }
+    },
+    "warmup_16384": {
+      "30": {
+        "charged_prompt_tokens": 10067,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 7,
+        "invalid_selector_ids": 0,
+        "length_stop_calls": 0,
+        "logical_calls": 7,
+        "records": 4,
+        "reported_input_tokens": 10067,
+        "reported_output_tokens": 89,
+        "unavailable_answers": 0
+      }
+    },
+    "warmup_8192": {
+      "30": {
+        "charged_prompt_tokens": 10067,
+        "extra_attempts": 0,
+        "failed_calls": 0,
+        "http_attempts": 7,
+        "invalid_selector_ids": 0,
+        "length_stop_calls": 0,
+        "logical_calls": 7,
+        "records": 4,
+        "reported_input_tokens": 10067,
+        "reported_output_tokens": 89,
+        "unavailable_answers": 0
+      }
+    }
+  },
+  "pre_resumption": {
+    "manifests": 1,
+    "verified_prefix_rows_each": {
+      "quality.jsonl": 2520,
+      "selfcheck.jsonl": 360,
+      "timing.jsonl": 250
+    }
+  }
+}

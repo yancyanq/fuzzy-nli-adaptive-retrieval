@@ -1,0 +1,17 @@
+{
+  "python": "3.10.12",
+  "torch": "2.6.0+cu124",
+  "dtype": "torch.float32",
+  "device": "cpu",
+  "threads": 1,
+  "cuda_available": false,
+  "deterministic_algorithms": true,
+  "protocol_sha256": "9b4a29a01fda5c3c9fd24fee51f0742d449cd6b67f4b8c6172bd5958089cf6ba",
+  "input_manifest_sha256": "5668e76f442dfd7e477833c1c45aa4167080c42609eb53d5d1f31dd7fc1f4247",
+  "train_source_sha256": "b7a4ad18f66c482a5662726b375149972c990dfefa70a06a0b2f1dbf500cfcee",
+  "runs": 18,
+  "n_by_split": {
+    "train": 100,
+    "validation": 50
+  }
+}

@@ -1,0 +1,15 @@
+Running known validation warmup
+{"part": "quality", "n": 40, "target": 420, "last_batch_seconds": 92.62494152100408, "utc": "2026-11-17T08:04:34.581+00:00"}
+{"part": "quality", "n": 80, "target": 420, "last_batch_seconds": 27.69866682299471, "utc": "2026-11-17T08:06:52.902+00:00"}
+{"part": "quality", "n": 120, "target": 420, "last_batch_seconds": 28.034826770992368, "utc": "2026-11-17T08:09:51.682+00:00"}
+{"part": "quality", "n": 160, "target": 420, "last_batch_seconds": 8.268539830009104, "utc": "2026-11-17T08:13:05.057+00:00"}
+{"part": "quality", "n": 200, "target": 420, "last_batch_seconds": 29.869283745007124, "utc": "2026-11-17T08:16:23.167+00:00"}
+{"part": "quality", "n": 240, "target": 420, "last_batch_seconds": 25.519837763000396, "utc": "2026-11-17T08:19:24.313+00:00"}
+{"part": "quality", "n": 280, "target": 420, "last_batch_seconds": 27.91368331600097, "utc": "2026-11-17T08:21:18.648+00:00"}
+{"part": "quality", "n": 320, "target": 420, "last_batch_seconds": 27.759146280994173, "utc": "2026-11-17T08:23:17.539+00:00"}
+{"part": "quality", "n": 360, "target": 420, "last_batch_seconds": 21.23670737700013, "utc": "2026-11-17T08:26:09.960+00:00"}
+{"part": "quality", "n": 400, "target": 420, "last_batch_seconds": 22.796791902001132, "utc": "2026-11-17T08:29:14.699+00:00"}
+{"part": "quality", "n": 420, "target": 420, "last_batch_seconds": 26.408823063000455, "utc": "2026-11-17T08:31:06.919+00:00"}
+{"part": "qwen_selfcheck", "n": 40, "target": 60, "last_batch_seconds": 28.874266699000145, "utc": "2026-11-17T08:33:42.621+00:00"}
+{"part": "qwen_selfcheck", "n": 60, "target": 60, "last_batch_seconds": 21.82145875399874, "utc": "2026-11-17T08:35:04.951+00:00"}
+{"stage": "quality", "sizes": [60], "completed_utc": "2026-11-17T08:35:04.952+00:00"}

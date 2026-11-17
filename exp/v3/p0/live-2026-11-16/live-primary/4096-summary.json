@@ -1,0 +1,220 @@
+{
+  "cap": 4096,
+  "gpu_before_start": {
+    "index": 0,
+    "name": "Tesla T4",
+    "total_mib": 15360,
+    "used_mib": 2,
+    "driver": "535.216.01"
+  },
+  "args": [
+    "vllm.entrypoints.openai.api_server",
+    "--model",
+    "/home/ubuntu/group13-v3-p0/models/Qwen2.5-7B-Instruct",
+    "--served-model-name",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18080",
+    "--max-logprobs",
+    "5",
+    "--load-format",
+    "safetensors",
+    "--dtype",
+    "half",
+    "--max-model-len",
+    "4096",
+    "--max-num-seqs",
+    "8",
+    "--cpu-offload-gb",
+    "4",
+    "--enforce-eager"
+  ],
+  "utc_start": "2026-11-16T13:01:39.429+00:00",
+  "startup": {
+    "wall_seconds": 76.106,
+    "peak": {
+      "used_mib": 12607,
+      "num_requests_running": null,
+      "num_requests_waiting": null,
+      "gpu_cache_usage_perc": null
+    },
+    "sample_count": 181,
+    "telemetry": "4096-startup.jsonl",
+    "result": {
+      "ok": true,
+      "reported_max_model_len": 4096
+    }
+  },
+  "gpu_ready": {
+    "index": 0,
+    "name": "Tesla T4",
+    "total_mib": 15360,
+    "used_mib": 12607,
+    "driver": "535.216.01"
+  },
+  "real_single": {
+    "wall_seconds": 10.903,
+    "peak": {
+      "used_mib": 14081,
+      "num_requests_running": 1.0,
+      "num_requests_waiting": 0.0,
+      "gpu_cache_usage_perc": 0.06519933554817281
+    },
+    "sample_count": 26,
+    "telemetry": "4096-real-single.jsonl",
+    "result": [
+      {
+        "qid": "5ab5cdb85542997d4ad1f1e0",
+        "pool_size": 10,
+        "pool_sha256": "b1ab38f00784cc8280e04b2f98363612efe24c17cdca42c511073f7b99158a98",
+        "prompt_sha256": "52ef662dc53a44cacf7f1a315e0f21fa2c98e4177f6f16311200edbc73a78569",
+        "input_tokens": 2488,
+        "prompt_tokens": 2488,
+        "completion_tokens": 21,
+        "finish_reason": "stop",
+        "ok": true,
+        "seconds": 10.886
+      }
+    ]
+  },
+  "boundary_single": {
+    "wall_seconds": 56.555,
+    "peak": {
+      "used_mib": 14513,
+      "num_requests_running": 1.0,
+      "num_requests_waiting": 0.0,
+      "gpu_cache_usage_perc": 0.10631229235880402
+    },
+    "sample_count": 134,
+    "telemetry": "4096-boundary.jsonl",
+    "result": {
+      "request": 1,
+      "requested_input": 3968,
+      "prompt_tokens": 3968,
+      "completion_tokens": 128,
+      "ok": true,
+      "seconds": 56.543
+    }
+  },
+  "real_concurrent": [
+    {
+      "wall_seconds": 20.772,
+      "peak": {
+        "used_mib": 14807,
+        "num_requests_running": 8.0,
+        "num_requests_waiting": 6.0,
+        "gpu_cache_usage_perc": 0.4476744186046512
+      },
+      "sample_count": 49,
+      "telemetry": "4096-real-concurrent-1.jsonl",
+      "result": [
+        {
+          "qid": "5ab5cdb85542997d4ad1f1e0",
+          "pool_size": 10,
+          "pool_sha256": "b1ab38f00784cc8280e04b2f98363612efe24c17cdca42c511073f7b99158a98",
+          "prompt_sha256": "52ef662dc53a44cacf7f1a315e0f21fa2c98e4177f6f16311200edbc73a78569",
+          "input_tokens": 2488,
+          "prompt_tokens": 2488,
+          "completion_tokens": 21,
+          "finish_reason": "stop",
+          "ok": true,
+          "seconds": 20.771
+        },
+        {
+          "qid": "5a7dff595542997cc2c474eb",
+          "pool_size": 10,
+          "pool_sha256": "6412c7a7d3f6f65698c44b6fd7dc93eaf48d20eb6640f088f351aefe7b6686d2",
+          "prompt_sha256": "1c019f8d2b3ec805058fe9124e3644109dc2fa9675ba42950a19d4497091b1b6",
+          "input_tokens": 2430,
+          "prompt_tokens": 2430,
+          "completion_tokens": 17,
+          "finish_reason": "stop",
+          "ok": true,
+          "seconds": 19.04
+        },
+        {
+          "qid": "5ae610e55542995703ce8ae1",
+          "pool_size": 10,
+          "pool_sha256": "d415fbd6f2de04be2aa1fd26893d3e4d78abd22bd7776371d99b89f0f79e1770",
+          "prompt_sha256": "828c04195fbe7a40c87ad23d3db9398a0fb276532ebebff5f3dbdc61f388d338",
+          "input_tokens": 2407,
+          "prompt_tokens": 2407,
+          "completion_tokens": 20,
+          "finish_reason": "stop",
+          "ok": true,
+          "seconds": 20.343
+        },
+        {
+          "qid": "5a8351fd55429954d2e2ec98",
+          "pool_size": 10,
+          "pool_sha256": "2fc1ebc4c28b8eedfb7ee1d51169c958f6331e949cc5a225bdf6b6e939008b20",
+          "prompt_sha256": "620d33253a256ee3ba825f05d3376b7b0470e003f2e0bfee6a3935f07f22fa8a",
+          "input_tokens": 2030,
+          "prompt_tokens": 2030,
+          "completion_tokens": 17,
+          "finish_reason": "stop",
+          "ok": true,
+          "seconds": 19.04
+        },
+        {
+          "qid": "5a871a5e5542996432c5721e",
+          "pool_size": 10,
+          "pool_sha256": "0f76d85842b8cca45dc01e15352aca3e77d9bd0def6ad538459d0ddd012d1bb4",
+          "prompt_sha256": "dfec50f9daa11b1778d435602580528854d32f263f72dca3125a02807d74e128",
+          "input_tokens": 1995,
+          "prompt_tokens": 1995,
+          "completion_tokens": 17,
+          "finish_reason": "stop",
+          "ok": true,
+          "seconds": 19.04
+        },
+        {
+          "qid": "5a8bc29a5542995d1e6f1446",
+          "pool_size": 10,
+          "pool_sha256": "693daa836ae5a4f2ebeaf9402f7c710c475de302decc7e67fa938016df52f5e0",
+          "prompt_sha256": "b70c15018fc09009144ceb64d11ae80e34cb2414193cb409dc234fdade4a9665",
+          "input_tokens": 1936,
+          "prompt_tokens": 1936,
+          "completion_tokens": 17,
+          "finish_reason": "stop",
+          "ok": true,
+          "seconds": 19.04
+        },
+        {
+          "qid": "5a88644455429938390d3f3f",
+          "pool_size": 10,
+          "pool_sha256": "9afae8f2e71c4e1c8f13bf871a406d2046c44b734b0ef3839048dcb037d39e20",
+          "prompt_sha256": "98b8b67d67771c876d2135bba925a3eb040cdb9a73c9442d98c6e21c55fd54af",
+          "input_tokens": 1908,
+          "prompt_tokens": 1908,
+          "completion_tokens": 19,
+          "finish_reason": "stop",
+          "ok": true,
+          "seconds": 19.91
+        },
+        {
+          "qid": "5aba89d555429901930fa816",
+          "pool_size": 10,
+          "pool_sha256": "3da6f864b3b40c8cc56849210af058c3bd9dcaf7a77538fcaa28f20daf4d08fe",
+          "prompt_sha256": "096d8f66e5994dbeae2d7a61a627c2bf955d442098753a608b1705d32307e731",
+          "input_tokens": 1885,
+          "prompt_tokens": 1885,
+          "completion_tokens": 19,
+          "finish_reason": "stop",
+          "ok": true,
+          "seconds": 19.91
+        }
+      ]
+    }
+  ],
+  "utc_finish": "2026-11-16T13:04:28.310+00:00",
+  "gpu_after_stop": {
+    "index": 0,
+    "name": "Tesla T4",
+    "total_mib": 15360,
+    "used_mib": 2,
+    "driver": "535.216.01"
+  }
+}

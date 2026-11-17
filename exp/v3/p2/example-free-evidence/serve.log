@@ -1,0 +1,201 @@
+INFO 11-17 09:01:17 [__init__.py:239] Automatically detected platform cuda.
+INFO 11-17 09:01:19 [api_server.py:1043] vLLM API server version 0.8.5
+INFO 11-17 09:01:19 [api_server.py:1044] args: Namespace(host='127.0.0.1', port=18082, uvicorn_log_level='info', disable_uvicorn_access_log=False, allow_credentials=False, allowed_origins=['*'], allowed_methods=['*'], allowed_headers=['*'], api_key=None, lora_modules=None, prompt_adapters=None, chat_template=None, chat_template_content_format='auto', response_role='assistant', ssl_keyfile=None, ssl_certfile=None, ssl_ca_certs=None, enable_ssl_refresh=False, ssl_cert_reqs=0, root_path=None, middleware=[], return_tokens_as_token_ids=False, disable_frontend_multiprocessing=False, enable_request_id_headers=False, enable_auto_tool_choice=False, tool_call_parser=None, tool_parser_plugin='', model='/home/ubuntu/group13-v3-p0/models/Qwen2.5-7B-Instruct', task='auto', tokenizer=None, hf_config_path=None, skip_tokenizer_init=False, revision=None, code_revision=None, tokenizer_revision=None, tokenizer_mode='auto', trust_remote_code=False, allowed_local_media_path=None, load_format='safetensors', download_dir=None, model_loader_extra_config={}, use_tqdm_on_load=True, config_format=<ConfigFormat.AUTO: 'auto'>, dtype='half', max_model_len=8192, guided_decoding_backend='xgrammar', reasoning_parser=None, logits_processor_pattern=None, model_impl='auto', distributed_executor_backend=None, pipeline_parallel_size=1, tensor_parallel_size=1, data_parallel_size=1, enable_expert_parallel=False, max_parallel_loading_workers=None, ray_workers_use_nsight=False, disable_custom_all_reduce=False, block_size=None, gpu_memory_utilization=0.9, swap_space=4, kv_cache_dtype='auto', num_gpu_blocks_override=None, enable_prefix_caching=None, prefix_caching_hash_algo='builtin', cpu_offload_gb=4.0, calculate_kv_scales=False, disable_sliding_window=False, use_v2_block_manager=True, seed=None, max_logprobs=5, disable_log_stats=False, quantization=None, rope_scaling=None, rope_theta=None, hf_token=None, hf_overrides=None, enforce_eager=True, max_seq_len_to_capture=8192, tokenizer_pool_size=0, tokenizer_pool_type='ray', tokenizer_pool_extra_config={}, limit_mm_per_prompt={}, mm_processor_kwargs=None, disable_mm_preprocessor_cache=False, enable_lora=None, enable_lora_bias=False, max_loras=1, max_lora_rank=16, lora_extra_vocab_size=256, lora_dtype='auto', long_lora_scaling_factors=None, max_cpu_loras=None, fully_sharded_loras=False, enable_prompt_adapter=None, max_prompt_adapters=1, max_prompt_adapter_token=0, device='auto', speculative_config=None, ignore_patterns=[], served_model_name=['Qwen/Qwen2.5-7B-Instruct'], qlora_adapter_name_or_path=None, show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, disable_async_output_proc=False, max_num_batched_tokens=None, max_num_seqs=8, max_num_partial_prefills=1, max_long_partial_prefills=1, long_prefill_token_threshold=0, num_lookahead_slots=0, scheduler_delay_factor=0.0, preemption_mode=None, num_scheduler_steps=1, multi_step_stream_outputs=True, scheduling_policy='fcfs', enable_chunked_prefill=None, disable_chunked_mm_input=False, scheduler_cls='vllm.core.scheduler.Scheduler', override_neuron_config=None, override_pooler_config=None, compilation_config=None, kv_transfer_config=None, worker_cls='auto', worker_extension_cls='', generation_config='auto', override_generation_config=None, enable_sleep_mode=False, additional_config=None, enable_reasoning=False, disable_cascade_attn=False, disable_log_requests=True, max_log_len=None, disable_fastapi_docs=False, enable_prompt_tokens_details=False, enable_server_load_tracking=False)
+WARNING 11-17 09:01:19 [config.py:2972] Casting torch.bfloat16 to torch.float16.
+INFO 11-17 09:01:27 [config.py:717] This model supports multiple tasks: {'generate', 'embed', 'classify', 'score', 'reward'}. Defaulting to 'generate'.
+WARNING 11-17 09:01:27 [cuda.py:93] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+INFO 11-17 09:01:27 [api_server.py:246] Started engine process with PID 196070
+INFO 11-17 09:01:30 [__init__.py:239] Automatically detected platform cuda.
+INFO 11-17 09:01:32 [llm_engine.py:240] Initializing a V0 LLM engine (v0.8.5) with config: model='/home/ubuntu/group13-v3-p0/models/Qwen2.5-7B-Instruct', speculative_config=None, tokenizer='/home/ubuntu/group13-v3-p0/models/Qwen2.5-7B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=8192, download_dir=None, load_format=safetensors, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=Qwen/Qwen2.5-7B-Instruct, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=False, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[],"max_capture_size":0}, use_cached_outputs=True, 
+INFO 11-17 09:01:33 [cuda.py:228] Using XFormers backend.
+INFO 11-17 09:01:34 [parallel_state.py:1004] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 11-17 09:01:34 [model_runner.py:1108] Starting to load model /home/ubuntu/group13-v3-p0/models/Qwen2.5-7B-Instruct...
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:20<01:01, 20.49s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:30<00:28, 14.26s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:44<00:13, 13.99s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:53<00:00, 12.33s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:53<00:00, 13.46s/it]
+
+INFO 11-17 09:02:33 [loader.py:458] Loading weights took 53.93 seconds
+INFO 11-17 09:02:33 [model_runner.py:1140] Model loading took 10.0152 GiB and 58.783630 seconds
+INFO 11-17 09:02:39 [worker.py:287] Memory profiling takes 5.42 seconds
+INFO 11-17 09:02:39 [worker.py:287] the current vLLM instance can use total_gpu_memory (14.58GiB) x gpu_memory_utilization (0.90) = 13.12GiB
+INFO 11-17 09:02:39 [worker.py:287] model weights take 10.02GiB; non_torch_memory takes 0.06GiB; PyTorch activation peak memory takes 1.53GiB; the rest of the memory reserved for KV Cache is 1.51GiB.
+INFO 11-17 09:02:39 [executor_base.py:112] # cuda blocks: 1772, # CPU blocks: 4681
+INFO 11-17 09:02:39 [executor_base.py:117] Maximum concurrency for 8192 tokens per request: 3.46x
+INFO 11-17 09:02:44 [llm_engine.py:437] init engine (profile, create kv cache, warmup model) took 10.21 seconds
+WARNING 11-17 09:02:44 [config.py:1239] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+INFO 11-17 09:02:44 [serving_chat.py:118] Using default chat sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+INFO 11-17 09:02:44 [serving_completion.py:61] Using default completion sampling params from model: {'repetition_penalty': 1.05, 'temperature': 0.7, 'top_k': 20, 'top_p': 0.8}
+INFO 11-17 09:02:44 [api_server.py:1090] Starting vLLM API server on http://127.0.0.1:18082
+INFO 11-17 09:02:44 [launcher.py:28] Available routes are:
+INFO 11-17 09:02:44 [launcher.py:36] Route: /openapi.json, Methods: GET, HEAD
+INFO 11-17 09:02:44 [launcher.py:36] Route: /docs, Methods: GET, HEAD
+INFO 11-17 09:02:44 [launcher.py:36] Route: /docs/oauth2-redirect, Methods: GET, HEAD
+INFO 11-17 09:02:44 [launcher.py:36] Route: /redoc, Methods: GET, HEAD
+INFO 11-17 09:02:44 [launcher.py:36] Route: /metrics, Methods: GET
+INFO:     Started server process [195992]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:40852 - "GET /v1/models HTTP/1.1" 200 OK
+INFO 11-17 09:02:47 [chat_utils.py:397] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+WARNING 11-17 09:02:47 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:02:51 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:02:51 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:02:51 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:02:51 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:02:51 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:02:51 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:02:51 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+INFO 11-17 09:03:04 [metrics.py:486] Avg prompt throughput: 379.8 tokens/s, Avg generation throughput: 0.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.5%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:03:09 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 15.9 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.9%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:40888 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40910 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:03:14 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 13.9 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 10.1%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:40858 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40896 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40908 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40866 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40874 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:03:19 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 6.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.1%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:40922 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+WARNING 11-17 09:03:21 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:21 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:21 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:21 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:21 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:21 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:21 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:21 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+INFO 11-17 09:03:26 [metrics.py:486] Avg prompt throughput: 631.5 tokens/s, Avg generation throughput: 1.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.1%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:03:32 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.0 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.5%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:44584 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44528 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:03:37 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 13.7 tokens/s, Running: 6 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 12.4%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:44576 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44538 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44518 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44560 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44546 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44524 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+WARNING 11-17 09:03:41 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:41 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:41 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:41 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:42 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:42 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:42 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:03:42 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+INFO 11-17 09:03:43 [metrics.py:486] Avg prompt throughput: 57.6 tokens/s, Avg generation throughput: 4.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.4%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:03:48 [metrics.py:486] Avg prompt throughput: 640.5 tokens/s, Avg generation throughput: 7.8 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.0%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:03:54 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 14.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.3%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:42020 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41962 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42006 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:03:59 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 12.5 tokens/s, Running: 5 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 8.1%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:41992 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41978 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41998 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:04:04 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 5.4 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.3%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:41954 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41948 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+WARNING 11-17 09:04:06 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:06 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:06 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:06 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:06 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:06 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:06 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:06 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+INFO 11-17 09:04:11 [metrics.py:486] Avg prompt throughput: 538.6 tokens/s, Avg generation throughput: 2.0 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.4%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:04:17 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.0 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.7%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:58088 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:04:22 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 14.2 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 6.9%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:58046 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58072 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58060 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58032 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58076 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58052 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58098 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+WARNING 11-17 09:04:26 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:26 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:26 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:26 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:26 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:27 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:27 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:27 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+INFO 11-17 09:04:29 [metrics.py:486] Avg prompt throughput: 78.8 tokens/s, Avg generation throughput: 3.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.9%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:04:34 [metrics.py:486] Avg prompt throughput: 686.9 tokens/s, Avg generation throughput: 8.9 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.1%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:04:39 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 14.3 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.3%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:37476 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37482 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37528 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37464 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:04:44 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 11.9 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 7.8%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:37504 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37510 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37516 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:04:49 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 3.8 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:37490 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+WARNING 11-17 09:04:49 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:49 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:49 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:49 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:49 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:50 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:50 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:04:50 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+INFO 11-17 09:04:54 [metrics.py:486] Avg prompt throughput: 827.4 tokens/s, Avg generation throughput: 1.6 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.0%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:05:00 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 16.0 tokens/s, Running: 8 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 15.3%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:59520 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:05:05 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 13.6 tokens/s, Running: 7 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 13.7%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:59478 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59498 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59456 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:05:10 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 10.3 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 8.5%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:59466 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59506 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59480 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59482 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+WARNING 11-17 09:05:13 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+WARNING 11-17 09:05:13 [__init__.py:33] xgrammar does not support advanced JSON schema features like string length, item limits, or property bounds. Falling back to use outlines instead.
+INFO 11-17 09:05:16 [metrics.py:486] Avg prompt throughput: 144.6 tokens/s, Avg generation throughput: 3.7 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 2.9%, CPU KV cache usage: 0.0%.
+INFO 11-17 09:05:21 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 4.5 tokens/s, Running: 2 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 3.0%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:46562 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:05:26 [metrics.py:486] Avg prompt throughput: 0.0 tokens/s, Avg generation throughput: 3.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 1.5%, CPU KV cache usage: 0.0%.
+INFO:     127.0.0.1:46554 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO 11-17 09:05:30 [launcher.py:79] Shutting down FastAPI HTTP server.
+Exception ignored in atexit callback: <function shutdown at 0x7f3972eb3520>
+Traceback (most recent call last):
+  File "/home/ubuntu/group13-v3-p0/packages/ray/_private/client_mode_hook.py", line 134, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/group13-v3-p0/packages/ray/_private/worker.py", line 1178, in wrapper
+    return func(*args, **kwargs)
+  File "/home/ubuntu/group13-v3-p0/packages/ray/_private/worker.py", line 2123, in shutdown
+    from ray.dag.compiled_dag_node import _shutdown_all_compiled_dags
+  File "/home/ubuntu/group13-v3-p0/packages/ray/dag/__init__.py", line 1, in <module>
+    from ray.dag.dag_node import DAGNode
+  File "/home/ubuntu/group13-v3-p0/packages/ray/dag/dag_node.py", line 20, in <module>
+    from ray.dag.compiled_dag_node import build_compiled_dag_from_ray_dag
+  File "/home/ubuntu/group13-v3-p0/packages/ray/dag/compiled_dag_node.py", line 28, in <module>
+    from ray.dag.dag_node_operation import (
+  File "/home/ubuntu/group13-v3-p0/packages/ray/dag/dag_node_operation.py", line 854, in <module>
+    ) -> Dict["ray.actor.ActorHandle", List[_DAGNodeOperation]]:
+  File "/usr/lib/python3.10/typing.py", line 309, in inner
+    return cached(*args, **kwds)
+  File "/usr/lib/python3.10/typing.py", line 1145, in __getitem__
+    return self.copy_with(params)
+  File "/usr/lib/python3.10/typing.py", line 1148, in copy_with
+    return _GenericAlias(self.__origin__, params,
+  File "/usr/lib/python3.10/typing.py", line 1016, in __init__
+    def __init__(self, origin, params, *, inst=True, name=None,
+  File "/home/ubuntu/group13-v3-p0/packages/vllm/engine/multiprocessing/engine.py", line 426, in signal_handler
+    raise KeyboardInterrupt("MQLLMEngine terminated")
+KeyboardInterrupt: MQLLMEngine terminated
+[rank0]:[W1117 09:05:31.947720446 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

@@ -1,0 +1,109 @@
+Starting CPU NLI P2 at 2026-11-17T08:32:37+08:00
+[nli] loading models/deberta-b3546ea on cpu ...
+[nli] model id2label (raw)={'0': 'entailment', '1': 'neutral', '2': 'contradiction'}  normalized={0: 'entailment', 1: 'neutral', 2: 'contradiction'}
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 1, "total": 50, "utc": "2026-11-17T00:32:50.211+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 2, "total": 50, "utc": "2026-11-17T00:32:50.820+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 3, "total": 50, "utc": "2026-11-17T00:32:51.239+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 4, "total": 50, "utc": "2026-11-17T00:32:51.808+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 5, "total": 50, "utc": "2026-11-17T00:32:52.230+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 6, "total": 50, "utc": "2026-11-17T00:32:52.590+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 7, "total": 50, "utc": "2026-11-17T00:32:53.053+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 8, "total": 50, "utc": "2026-11-17T00:32:53.400+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 9, "total": 50, "utc": "2026-11-17T00:32:53.776+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 10, "total": 50, "utc": "2026-11-17T00:32:54.182+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 11, "total": 50, "utc": "2026-11-17T00:32:54.530+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 12, "total": 50, "utc": "2026-11-17T00:32:54.865+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 13, "total": 50, "utc": "2026-11-17T00:32:55.220+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 14, "total": 50, "utc": "2026-11-17T00:32:55.900+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 15, "total": 50, "utc": "2026-11-17T00:32:56.358+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 16, "total": 50, "utc": "2026-11-17T00:32:56.820+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 17, "total": 50, "utc": "2026-11-17T00:32:57.156+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 18, "total": 50, "utc": "2026-11-17T00:32:57.568+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 19, "total": 50, "utc": "2026-11-17T00:32:58.156+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 20, "total": 50, "utc": "2026-11-17T00:32:58.569+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 21, "total": 50, "utc": "2026-11-17T00:32:59.104+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 22, "total": 50, "utc": "2026-11-17T00:32:59.525+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 23, "total": 50, "utc": "2026-11-17T00:33:00.004+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 24, "total": 50, "utc": "2026-11-17T00:33:00.391+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 25, "total": 50, "utc": "2026-11-17T00:33:00.917+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 26, "total": 50, "utc": "2026-11-17T00:33:01.458+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 27, "total": 50, "utc": "2026-11-17T00:33:01.843+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 28, "total": 50, "utc": "2026-11-17T00:33:02.223+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 29, "total": 50, "utc": "2026-11-17T00:33:02.642+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 30, "total": 50, "utc": "2026-11-17T00:33:03.223+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 31, "total": 50, "utc": "2026-11-17T00:33:03.776+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 32, "total": 50, "utc": "2026-11-17T00:33:04.419+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 33, "total": 50, "utc": "2026-11-17T00:33:05.173+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 34, "total": 50, "utc": "2026-11-17T00:33:05.938+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 35, "total": 50, "utc": "2026-11-17T00:33:06.314+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 36, "total": 50, "utc": "2026-11-17T00:33:06.918+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 37, "total": 50, "utc": "2026-11-17T00:33:07.527+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 38, "total": 50, "utc": "2026-11-17T00:33:07.881+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 39, "total": 50, "utc": "2026-11-17T00:33:08.505+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 40, "total": 50, "utc": "2026-11-17T00:33:09.132+00:00"}
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 41, "total": 50, "utc": "2026-11-17T00:33:10.363+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 42, "total": 50, "utc": "2026-11-17T00:33:10.747+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 43, "total": 50, "utc": "2026-11-17T00:33:11.204+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 44, "total": 50, "utc": "2026-11-17T00:33:12.052+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 45, "total": 50, "utc": "2026-11-17T00:33:12.395+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 46, "total": 50, "utc": "2026-11-17T00:33:12.859+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 47, "total": 50, "utc": "2026-11-17T00:33:13.596+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 48, "total": 50, "utc": "2026-11-17T00:33:13.951+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 49, "total": 50, "utc": "2026-11-17T00:33:14.450+00:00"}
+[nli] scored 1/1
+{"task": "cpu_nli", "ok": 50, "total": 50, "utc": "2026-11-17T00:33:15.006+00:00"}
+Finished CPU NLI P2 at 2026-11-17T08:33:15+08:00

@@ -4,6 +4,31 @@
 
 | 条目 | 日志位置 |
 | --- | --- |
+| V3 P5: formal sealing and runs | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L840) |
+| V3 P4: original-query fallback small-scale training trial | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L834) |
+| V3 P3: original-query fallback route | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L823) |
+| V3 P2: annotation sheet recompute and P2 acceptance | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L817) |
+| V3 P2: example-free self-check recovery and compute wrap-up | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L812) |
+| V3 P2: relation retest results and manual package | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L804) |
+| V3 P2: self-check prompt fix and constrained backend check | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L795) |
+| V3 P2: first-round recovery and baseline controls | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L789) |
+| V3 P2: structural interface deviation and fix | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L783) |
+| V3 P2: relation and evidence verification | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L778) |
+| V3 P1.5: quality and cost acceptance complete | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L771) |
+| V3 P1.5: remote runs confirmed finished after reconnect | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L767) |
+| V3 P1.5: recovery connection lost | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L762) |
+| V3 P1.5: service switch command review | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L754) |
+| V3 P1.5: main trial start and first batch checks | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L749) |
+| V3 P1.5: execution registration | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L743) |
+| V3 P0: 16384 retest passes, P0 GPU acceptance done | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L737) |
+| V3 P0: 16384 tier retest started | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L733) |
+| V3 P0: 16384 tier first start fails | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L729) |
+| V3 P0: 8192 tier passes, long prompts queue | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L724) |
+| V3 P0: 4096 tier passes | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L719) |
+| V3 P0: capacity trial start | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L715) |
+| V3 P0: GPU access and deployment | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L708) |
+| V3 P1: data construction and length audit | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L702) |
+| V3 P0: offline audit | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L696) |
 | Executed: V2 experiment parameter handbook | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L691) |
 | Prepared: V2 experiment parameter handbook | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L687) |
 | Executed: complete local V2 materials package | [查看条目](exp/EXPERIMENT_LOG.md?plain=1#L681) |
