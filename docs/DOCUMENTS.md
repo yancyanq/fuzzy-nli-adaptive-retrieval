@@ -13,4 +13,4 @@
 
 Markdown 对照版逐段、逐格保留原文、表格、代码、插图和文内链接。页眉页脚的固定文字各保留一次。分页和自动页码以 Word 原件为准。手册保留原文中的日期和页码指引，文内链接跳转至对应段落。
 
-[完整实验材料 ZIP（公开版）](../sources/NLP_Experiment_Materials_V2_Complete_Public.zip)保留可解压回放的工作目录和历史快照，附文件索引和 SHA-256 清单。包内实验日志使用隐藏日期、时刻和时区的展示版本。
+[完整实验材料 ZIP（公开版）](../sources/NLP_Experiment_Materials_V2_Complete_Public.zip)保留可解压回放的工作目录和历史快照，附文件索引和 SHA-256 清单。V3.1 的正式材料另有[独立材料包](../sources/NLP_Experiment_Materials_V3_1_Public.zip)，覆盖 P0–P5、预检与协议。包内实验日志使用隐藏日期、时刻和时区的展示版本。

@@ -1,41 +1,20 @@
 # Fuzzy-NLI 自适应检索问答
 
-BNBU/UIC NLP 课程项目。在 HotpotQA distractor 的 bridge 题上，系统先用 BM25 检索两个段落并带引用作答，再用 NLI 和桥接实体信号决定是否追加检索一次。我们在 500 道开发题上锁定门控，在 1,000 道独立测试题上比较各策略。
+BNBU/UIC NLP 课程项目。两次实验都在 HotpotQA distractor 的 bridge 题上研究何时值得再检索一次。
 
-**[实验过程手册](exp/v2/step6_v2/NLP_V2_Experiment_Process_Handbook.md) · [完整实验结论](exp/v2/step6_v2/NLP_V2_Experiment_Conclusions.md) · [实验进度](PROGRESS.md)**
+| 实验 | 评估范围 | 实验入口 |
+| --- | --- | --- |
+| **V2 · 固定候选池** | 500 题校准，1,000 题独立正式评估。比较固定参数的 Fuzzy、同输入 Crisp 及其他基线。 | [实验索引](INDEX.md) · [结果总表](docs/RESULTS.md) · [文档与手册](docs/DOCUMENTS.md) |
+| **V3.1 · 扩展候选池** | 10／30／60 段候选池的策略预检、关系级 NLI 诊断、100／50 题试训与 300 题封存评估。 | [V3.1 首页](exp/v3/README.md) · [阶段结果](exp/v3/RESULTS.md) · [实验过程与复现](exp/v3/RUNBOOK.md) |
 
-## 正式实验结果
+## V2 正式评估
 
-| 策略 | 答案 F1 | 再检索率 |
-| --- | ---: | ---: |
-| Never（仅首轮） | 50.85% | 0% |
-| Crisp（同输入硬规则） | 54.36% | 20.9% |
-| Fuzzy（模糊门控） | 54.42% | 23.0% |
-| Always（每题追加） | 57.66% | 100% |
-| Full-context（直接提供全部候选段落） | 64.27% | 0% |
+Fuzzy 的答案 F1 为 **54.42%**，再检索率为 **23.0%**。相对 Never 提高 **3.576 个百分点**，95% 配对区间为 [2.265, 4.914]。相对同输入 Crisp 的差值为 **+0.064 个百分点**，95% 区间 [−0.365, +0.517] 跨零。Full-context 的答案 F1 最高，为 **64.27%**。 [V2 结果与成本口径](docs/RESULTS.md)
 
-- **选择性补检索提高了首轮基线的答案质量。** Fuzzy 相对 Never 提高 **3.576 个 F1 百分点**，95% 配对区间为 [2.265, 4.914]。
-- **模糊规则的独立优势尚未确立。** Fuzzy 相对同输入 Crisp 的差值是 **+0.064 个 F1 百分点**，95% 配对区间 [−0.365, +0.517] 跨零。两者在正式集上的实际再检索率分别为 23.0% 和 20.9%。
-- **再检索率和端到端成本需要分别衡量。** 在共用的 32 题计时样本上，Fuzzy 的平均延迟为 23.36 秒，Always 为 19.13 秒。Full-context 的答案 F1 最高，平均 LLM 输入为 1,916.75 tokens。 [结果总表与测量口径](docs/RESULTS.md)
+[实验过程手册](exp/v2/step6_v2/NLP_V2_Experiment_Process_Handbook.md) · [完整结论](exp/v2/step6_v2/NLP_V2_Experiment_Conclusions.md) · [V2 进度](PROGRESS.md) · [V2 日志](exp/EXPERIMENT_LOG.md) · [V2 完整材料 ZIP](sources/NLP_Experiment_Materials_V2_Complete_Public.zip)
 
-## V3.1 长上下文扩展
+## V3.1 扩展候选池
 
-V3.1 把候选池从 10 段扩到 10／30／60 段，新增容量试验、补查分支对照、关系核验、原查询回退路线与 Sugeno 门控训练，并在 300 道封存题上做正式比较：
+P2 的关系抽取结构通过率为 **48/50（96%）**，人工复核的关系忠实率为 **26/56（46.43%）**，低于 90% 的阶段门槛；P3 因此采用原查询与整题 NLI 路线。P4 的完整 Sugeno 与线性收益回归在四档补查预算下选中同一批题。P5 在 300 道封存题、30 段、20% 补查预算下完成正式比较：完整 Sugeno 的答案 F1 为 **44.64%**，固定 Fuzzy 为 **43.64%**，线性收益回归为 **44.64%**；Sugeno 相对固定 Fuzzy 为 **+1.00 个百分点**，95% 配对区间 [−1.33, +3.33]。60 题引用充分性盲审尚未回收。 [P2 核验](exp/v3/p2/REPORT.md) · [P4 验证报告](exp/v3/p4/validation_report.md) · [P5 正式报告](exp/v3/p5/REPORT.md)
 
-| 方法（300 题，30 段，20% 补查预算） | 答案 F1 | 实际补查 |
-| --- | ---: | ---: |
-| 完整 Sugeno | 44.64% | 16.33% |
-| 固定 Fuzzy | 43.64% | 15.67% |
-| 线性收益回归 | 44.64% | 16.33% |
-| 原 2+1 直读 | 46.50% | 0% |
-| Full（30 段） | 57.91% | 0% |
-
-- Sugeno 相对固定 Fuzzy 的差为 **+1.00 个 F1 百分点**，95% 配对区间 [−1.33, +3.33] 跨零；相对线性收益回归逐题动作相同（差值 0）。
-- 关系抽取模块的确定性忠实率为 46.43%，低于 90% 门槛，正式路线沿用 V2 整题 NLI 与桥接代理。
-- 60 道引用充分性盲审尚未回收；人工结论待补。 [V3.1 归档](exp/v3/README.md) · [结果总表](docs/RESULTS.md)
-
-## 实验材料
-
-- [实验方案、过程手册、结果册和结论册的 Word／Markdown 对照](docs/DOCUMENTS.md)
-- [正式实验脚本、逐题缓存和复现说明](exp/v2/README.md) · [实验日志](exp/EXPERIMENT_LOG.md)
-- [下载完整实验材料 ZIP（公开版）](sources/NLP_Experiment_Materials_V2_Complete_Public.zip)
+[实验方案](exp/v3/protocol/README.md) · [阶段参数](exp/v3/PARAMETERS.md) · [V3.1 日志](exp/EXPERIMENT_LOG.md) · [V3.1 完整材料 ZIP](sources/NLP_Experiment_Materials_V3_1_Public.zip)

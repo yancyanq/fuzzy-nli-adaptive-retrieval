@@ -4,7 +4,7 @@
 
 ## 复跑离线审计
 
-在仓库根运行。现存工作区中，V3 交接和旧导出副本与仓库平级。脚本只读取归档，复跑输出写到新临时目录。示例使用 Python 3.13。依赖固定版本见下方命令。
+在仓库根运行。Kaggle 预检输入位于 exp/v3/preflight。历史副本通过可选的 --other-history 参数指定。脚本只读取归档，复跑输出写到新临时目录。示例使用 Python 3.13。依赖固定版本见下方命令。
 
 ```bash
 set -e
@@ -30,14 +30,11 @@ CHECKSUMS
 
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 "$p0_tmp/venv/bin/python" -B exp/v3/p0/audit.py \
   --tokenizer "$p0_tmp" --validation "$p0_tmp/hotpot-validation.parquet" \
-  --preflight '../Group13_V3_方案与预检交接/experiments/v3-preflight-local' \
-  --other-history ../step4_dev --other-history ../step5_v2 --other-history ../step6a_check \
-  --other-history ../NLP_Experiment_Materials_2026-11-15/exp --out "$p0_tmp/output"
+  --preflight exp/v3/preflight --out "$p0_tmp/output"
 cmp exp/v3/p0/length_audit.csv "$p0_tmp/output/length_audit.csv"
-cmp exp/v3/p0/manifest.json "$p0_tmp/output/manifest.json"
 ```
 
-两份 Qwen tokenizer 文件按固定 Hub revision 下载。Parquet 的 Hub 转换分支可能更新，SHA-256 不一致时保留差异并核对快照后再复跑。历史副本不齐时去掉相应 `--other-history` 参数，清单中的扫描文件数会相应变化。V2 归档身份与评分回放命令见[原复现清单](../../v2/step6_v2/Reproducibility_Checklist.md)。若系统需要使用系统证书访问 PyPI，可按本次运行改用 `uv --native-tls pip install`。
+两份 Qwen tokenizer 文件按固定 Hub revision 下载。Parquet 的 Hub 转换分支可能更新，SHA-256 不一致时保留差异并核对快照后再复跑。复跑的清单包含实际扫描范围，可能因历史副本和目录结构而变化。V2 归档身份与评分回放命令见[原复现清单](../../v2/step6_v2/Reproducibility_Checklist.md)。若系统需要使用系统证书访问 PyPI，可按本次运行改用 `uv --native-tls pip install`。
 
 ## GPU 容量复跑
 

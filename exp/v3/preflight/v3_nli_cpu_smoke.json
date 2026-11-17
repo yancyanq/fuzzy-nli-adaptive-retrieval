@@ -1,0 +1,29 @@
+[
+  {
+    "premise": "Lin Zhou gave the letter to Lin Yue.",
+    "claim": "Lin Zhou gave the letter to Lin Yue.",
+    "scores": {
+      "entailment": 0.9985,
+      "neutral": 0.0013,
+      "contradiction": 0.0002
+    }
+  },
+  {
+    "premise": "Lin Zhou gave the letter to Lin Yue.",
+    "claim": "Lin Yue settled in Haicheng.",
+    "scores": {
+      "entailment": 0.0006,
+      "neutral": 0.9987,
+      "contradiction": 0.0006
+    }
+  },
+  {
+    "premise": "Lin Yue settled in Jiangcheng.",
+    "claim": "Lin Yue settled in Haicheng.",
+    "scores": {
+      "entailment": 0.0103,
+      "neutral": 0.0083,
+      "contradiction": 0.9815
+    }
+  }
+]

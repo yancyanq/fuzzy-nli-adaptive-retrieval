@@ -139,5 +139,6 @@ V2 保留正式归档原来的目录名，以便用原始校验清单逐项验�
 | [`exp/v3/p3/`](../exp/v3/p3/) | 原查询回退路线的 100／50 题试跑、A/B 缓存、首轮特征与实测成本 |
 | [`exp/v3/p4/`](../exp/v3/p4/) | Sugeno 与线性收益回归的小规模试训、18 组 checkpoint、验证报告与成本曲线 |
 | [`exp/v3/p5/`](../exp/v3/p5/) | 300 道封存题的正式评估、配对区间、质量–成本曲线、盲审模板、计时与运行验收 |
+| [`sources/NLP_Experiment_Materials_V3_1_Public.zip`](../sources/NLP_Experiment_Materials_V3_1_Public.zip) | V3.1 正式材料包：P0–P5 材料、Kaggle 预检、冻结协议与复跑所借用的 V2 文件，附 SHA-256 清单（416 项） |
 
 V3.1 的阶段报告只有 Markdown，没有对应的 Word 版本。各阶段保留原始日志、请求记录和 SHA-256 清单，便于逐字节核验；V3.1 的实验日志已并入[仓库实验日志](../exp/EXPERIMENT_LOG.md)。

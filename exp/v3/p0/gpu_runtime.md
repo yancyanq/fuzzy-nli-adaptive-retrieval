@@ -1,6 +1,6 @@
 # V3.1 · P0 GPU 实机验收
 
-日期为 2026-11-16（北京时间）。测试环境为单张 Tesla T4 15,360 MiB，Ubuntu 22.04、驱动 535.216.01、Python 3.10.12、PyTorch 2.6.0+cu124、vLLM 0.8.5 V0/XFormers、Transformers 4.51.3。服务运行 FP16 原版 Qwen2.5-7B-Instruct `a09a35458c702b33eeacc393d103063234e8bc28`，四个权重分片和两份 tokenizer 文件均通过 SHA-256 校验。
+测试环境为单张 Tesla T4 15,360 MiB，Ubuntu 22.04、驱动 535.216.01、Python 3.10.12、PyTorch 2.6.0+cu124、vLLM 0.8.5 V0/XFormers、Transformers 4.51.3。服务运行 FP16 原版 Qwen2.5-7B-Instruct `a09a35458c702b33eeacc393d103063234e8bc28`，四个权重分片和两份 tokenizer 文件均通过 SHA-256 校验。
 
 ## 测量口径
 

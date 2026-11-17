@@ -1,8 +1,6 @@
 {
   "review_provenance": {
     "method": "AI-assisted, reviewed by team members",
-    "confirmation_source": "user confirmation in the project chat on 2026-11-17",
-    "confirmation": "组员逐题复核过，表里是最终标签",
     "reviewer_values_as_submitted": {
       "AI-assisted (Codex)": 99
     }

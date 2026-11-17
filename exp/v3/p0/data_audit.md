@@ -1,6 +1,6 @@
 # V3.1 · P0 数据审计
 
-2026-11-16。以仓库保存的 V2 数据清单及 Kaggle 交接包为输入，核对 Hugging Face 公开 `hotpotqa/hotpot_qa` 的 `distractor/validation` Parquet。测量文件只列题号、分支、长度等信息。
+以仓库保存的 V2 数据清单及 Kaggle 交接包为输入，核对 Hugging Face 公开 `hotpotqa/hotpot_qa` 的 `distractor/validation` Parquet。测量文件只列题号、分支、长度等信息。
 
 | 历史用途 | 唯一 bridge 题 | 原始候选段数 | 支持句可定位 |
 |---|---:|---|---:|
