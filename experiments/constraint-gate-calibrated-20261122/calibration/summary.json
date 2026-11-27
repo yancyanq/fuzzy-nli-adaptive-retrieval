@@ -1,0 +1,199 @@
+{
+  "n": 40,
+  "max_triggers": 8,
+  "extra_input_cap": 5721,
+  "methods": {
+    "old": {
+      "f1": 0.4442857142857143,
+      "em": 0.325,
+      "qwen_input": 520.1,
+      "qwen_output": 19.775,
+      "qwen_total": 539.875,
+      "triggered": 6,
+      "improved_on_trigger": 4,
+      "worsened_on_trigger": 0
+    },
+    "repaired": {
+      "f1": 0.4317857142857143,
+      "em": 0.325,
+      "qwen_input": 499.775,
+      "qwen_output": 19.25,
+      "qwen_total": 519.025,
+      "triggered": 5,
+      "improved_on_trigger": 3,
+      "worsened_on_trigger": 0
+    }
+  },
+  "thresholds": {
+    "old": [
+      -0.16007701897497026,
+      "ecf7a492bfb226070fcd4b3ab0025939f99c3d26bc4621c0e3f0dd9d7d9d8aee",
+      "5ae048a255429924de1b708e"
+    ],
+    "repaired": [
+      -0.351291194649955,
+      "4aacbad88f9f42affb7ff3afe905e877bb54ca4ca07a7fb1af11720836df2697",
+      "5ae7ae9a5542993210983ef2"
+    ]
+  },
+  "prefix_search": {
+    "old": [
+      {
+        "n": 0,
+        "extra_input": 0,
+        "f1_gain_sum": 0.0,
+        "included": []
+      },
+      {
+        "n": 1,
+        "extra_input": 745,
+        "f1_gain_sum": 0.0,
+        "included": [
+          "5a73354f5542991f9a20c687"
+        ]
+      },
+      {
+        "n": 2,
+        "extra_input": 1921,
+        "f1_gain_sum": 1.0,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90"
+        ]
+      },
+      {
+        "n": 3,
+        "extra_input": 2799,
+        "f1_gain_sum": 1.5,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708"
+        ]
+      },
+      {
+        "n": 4,
+        "extra_input": 3737,
+        "f1_gain_sum": 1.5,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708",
+          "5ae31ca155429928c4239608"
+        ]
+      },
+      {
+        "n": 5,
+        "extra_input": 4908,
+        "f1_gain_sum": 2.5,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708",
+          "5ae31ca155429928c4239608",
+          "5ae7ae9a5542993210983ef2"
+        ]
+      },
+      {
+        "n": 6,
+        "extra_input": 5721,
+        "f1_gain_sum": 3.0,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708",
+          "5ae31ca155429928c4239608",
+          "5ae7ae9a5542993210983ef2",
+          "5ae048a255429924de1b708e"
+        ]
+      },
+      {
+        "n": 7,
+        "extra_input": 6657,
+        "f1_gain_sum": 3.0,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708",
+          "5ae31ca155429928c4239608",
+          "5ae7ae9a5542993210983ef2",
+          "5ae048a255429924de1b708e",
+          "5ae0335655429925eb1afc28"
+        ]
+      },
+      {
+        "n": 8,
+        "extra_input": 7537,
+        "f1_gain_sum": 3.0,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708",
+          "5ae31ca155429928c4239608",
+          "5ae7ae9a5542993210983ef2",
+          "5ae048a255429924de1b708e",
+          "5ae0335655429925eb1afc28",
+          "5a733b835542991f9a20c6b2"
+        ]
+      }
+    ],
+    "repaired": [
+      {
+        "n": 0,
+        "extra_input": 0,
+        "f1_gain_sum": 0.0,
+        "included": []
+      },
+      {
+        "n": 1,
+        "extra_input": 745,
+        "f1_gain_sum": 0.0,
+        "included": [
+          "5a73354f5542991f9a20c687"
+        ]
+      },
+      {
+        "n": 2,
+        "extra_input": 1921,
+        "f1_gain_sum": 1.0,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90"
+        ]
+      },
+      {
+        "n": 3,
+        "extra_input": 2799,
+        "f1_gain_sum": 1.5,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708"
+        ]
+      },
+      {
+        "n": 4,
+        "extra_input": 3737,
+        "f1_gain_sum": 1.5,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708",
+          "5ae31ca155429928c4239608"
+        ]
+      },
+      {
+        "n": 5,
+        "extra_input": 4908,
+        "f1_gain_sum": 2.5,
+        "included": [
+          "5a73354f5542991f9a20c687",
+          "5a8f60175542992414482a90",
+          "5ab91ef3554299753720f708",
+          "5ae31ca155429928c4239608",
+          "5ae7ae9a5542993210983ef2"
+        ]
+      }
+    ]
+  }
+}

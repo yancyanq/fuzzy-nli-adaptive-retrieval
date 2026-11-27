@@ -1,0 +1,39 @@
+{
+  "n": 60,
+  "different_actions": 3,
+  "first_only_f1": 0.38602453102453105,
+  "constraint_gap_count": 4,
+  "methods": {
+    "old": {
+      "f1": 0.4226911976911977,
+      "em": 0.3,
+      "qwen_input": 514.4833333333333,
+      "qwen_output": 20.25,
+      "qwen_total": 534.7333333333333,
+      "triggered": 11,
+      "improved_on_trigger": 4,
+      "worsened_on_trigger": 1
+    },
+    "repaired": {
+      "f1": 0.4226911976911977,
+      "em": 0.3,
+      "qwen_input": 470.96666666666664,
+      "qwen_output": 19.183333333333334,
+      "qwen_total": 490.15,
+      "triggered": 8,
+      "improved_on_trigger": 4,
+      "worsened_on_trigger": 1
+    }
+  },
+  "delta_f1": 0.0,
+  "delta_input": -43.516666666666666,
+  "paired_f1_95": [
+    0.0,
+    0.0
+  ],
+  "paired_input_95": [
+    -100.4,
+    0
+  ],
+  "meets_predeclared_point_target": false
+}

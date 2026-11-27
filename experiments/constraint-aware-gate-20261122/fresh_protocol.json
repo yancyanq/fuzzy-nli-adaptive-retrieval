@@ -1,0 +1,13 @@
+{
+  "name": "Fresh 30-paragraph HotpotQA bridge smoke evaluation",
+  "n": 40,
+  "draw_namespace": "group13-constraint-gate-fresh-20261122-v1",
+  "exclude": "P0 historical IDs and all V3 P1/P3/P5 IDs",
+  "corpus": "Pinned P1 HotpotQA and exact same P1 donor index, pool size 30",
+  "routes": ["top2", "direct_2plus4", "v2_direct_2plus1"],
+  "rank_budget_percent": 20,
+  "primary": "Fixed equal-count comparison of P3-trained Sugeno with / without constraint gap, using HotpotQA answer F1",
+  "secondary": "P3-fit fixed score boundary, linear on same features, and fixed direct 2+1; report realized trigger rates",
+  "cost": "Measure Qwen answering calls and input tokens only, excluding sentence selection so all arms use same scope",
+  "label_separation": "Fresh gold remains local and is not loaded by serving or model code"
+}

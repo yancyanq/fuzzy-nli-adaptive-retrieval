@@ -1,0 +1,138 @@
+{
+  "development": {
+    "sugeno_constraints": {
+      "boundary": [
+        -0.13924182009997854,
+        "736c6bb764fc2b1cd2e598f417913601617d3c634e082162951a88ba769f2b88",
+        "5a8f503c5542992414482a34"
+      ],
+      "trigger_count": 6,
+      "f1": 0.6716666666666666,
+      "selected_improve": 5,
+      "avg_qwen_input_tokens": 674.65
+    },
+    "sugeno_old": {
+      "boundary": [
+        -0.17479544330462105,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 5,
+      "f1": 0.6716666666666666,
+      "selected_improve": 5,
+      "avg_qwen_input_tokens": 638.5
+    },
+    "linear_constraints": {
+      "boundary": [
+        -0.1781393197937261,
+        "736c6bb764fc2b1cd2e598f417913601617d3c634e082162951a88ba769f2b88",
+        "5a8f503c5542992414482a34"
+      ],
+      "trigger_count": 6,
+      "f1": 0.6716666666666666,
+      "selected_improve": 5,
+      "avg_qwen_input_tokens": 674.65
+    },
+    "linear_old": {
+      "boundary": [
+        -0.19805406389167307,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 5,
+      "f1": 0.6716666666666666,
+      "selected_improve": 5,
+      "avg_qwen_input_tokens": 638.5
+    },
+    "nli_only": {
+      "boundary": [
+        -0.4965902909518696,
+        "ad5e53f5d9e5c7fe8f84b9db97fc2d9289cd96b0151a61feb586a4342a25a504",
+        "5a8e4a7355429917b4a5bd80"
+      ],
+      "trigger_count": 4,
+      "f1": 0.6216666666666667,
+      "selected_improve": 4,
+      "avg_qwen_input_tokens": 593.15
+    },
+    "p4_sugeno_archived": {
+      "boundary": [
+        -0.22202951874085303,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 5,
+      "f1": 0.6716666666666666,
+      "selected_improve": 5,
+      "avg_qwen_input_tokens": 638.5
+    }
+  },
+  "p5_exploratory": {
+    "sugeno_constraints": {
+      "boundary": [
+        -0.13924182009997854,
+        "736c6bb764fc2b1cd2e598f417913601617d3c634e082162951a88ba769f2b88",
+        "5a8f503c5542992414482a34"
+      ],
+      "trigger_count": 59,
+      "f1": 0.45955940355940356,
+      "selected_improve": 24,
+      "avg_qwen_input_tokens": 833.96
+    },
+    "sugeno_old": {
+      "boundary": [
+        -0.17479544330462105,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 57,
+      "f1": 0.4492816257816258,
+      "selected_improve": 22,
+      "avg_qwen_input_tokens": 831.8266666666667
+    },
+    "linear_constraints": {
+      "boundary": [
+        -0.1781393197937261,
+        "736c6bb764fc2b1cd2e598f417913601617d3c634e082162951a88ba769f2b88",
+        "5a8f503c5542992414482a34"
+      ],
+      "trigger_count": 59,
+      "f1": 0.45955940355940356,
+      "selected_improve": 24,
+      "avg_qwen_input_tokens": 833.96
+    },
+    "linear_old": {
+      "boundary": [
+        -0.19805406389167307,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 57,
+      "f1": 0.4492816257816258,
+      "selected_improve": 22,
+      "avg_qwen_input_tokens": 831.8266666666667
+    },
+    "nli_only": {
+      "boundary": [
+        -0.4965902909518696,
+        "ad5e53f5d9e5c7fe8f84b9db97fc2d9289cd96b0151a61feb586a4342a25a504",
+        "5a8e4a7355429917b4a5bd80"
+      ],
+      "trigger_count": 52,
+      "f1": 0.43972607022607024,
+      "selected_improve": 19,
+      "avg_qwen_input_tokens": 811.7666666666667
+    },
+    "p4_sugeno_archived": {
+      "boundary": [
+        -0.22202951874085303,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 57,
+      "f1": 0.4492816257816258,
+      "selected_improve": 22,
+      "avg_qwen_input_tokens": 831.8266666666667
+    }
+  }
+}

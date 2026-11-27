@@ -1,0 +1,151 @@
+{
+  "equal_count": {
+    "n": 40,
+    "budget": 8,
+    "better_if_b": 7,
+    "first_only_f1": 0.5925,
+    "all_b_f1": 0.6316666666666667,
+    "signal_counts": {
+      "type": {
+        "date": 4
+      },
+      "type_mismatch": 1,
+      "missing": 4,
+      "gap": 5
+    },
+    "mean_constraint_feature_ms": 0.05401249945862219,
+    "methods": {
+      "sugeno_constraints": {
+        "f1": 0.68,
+        "selected_improve": 4,
+        "selected_tie": 3,
+        "selected_worsen": 1,
+        "avg_qwen_input_tokens": 550.925
+      },
+      "sugeno_old": {
+        "f1": 0.6716666666666666,
+        "selected_improve": 4,
+        "selected_tie": 2,
+        "selected_worsen": 2,
+        "avg_qwen_input_tokens": 557
+      },
+      "linear_constraints": {
+        "f1": 0.655,
+        "selected_improve": 3,
+        "selected_tie": 4,
+        "selected_worsen": 1,
+        "avg_qwen_input_tokens": 549.925
+      },
+      "linear_old": {
+        "f1": 0.6716666666666666,
+        "selected_improve": 4,
+        "selected_tie": 2,
+        "selected_worsen": 2,
+        "avg_qwen_input_tokens": 557
+      },
+      "nli_only": {
+        "f1": 0.6466666666666667,
+        "selected_improve": 3,
+        "selected_tie": 3,
+        "selected_worsen": 2,
+        "avg_qwen_input_tokens": 565.775
+      },
+      "p4_sugeno_archived": {
+        "f1": 0.6716666666666666,
+        "selected_improve": 4,
+        "selected_tie": 2,
+        "selected_worsen": 2,
+        "avg_qwen_input_tokens": 557
+      }
+    }
+  },
+  "fixed_training_boundary": {
+    "sugeno_constraints": {
+      "boundary": [
+        -0.13924182009997854,
+        "736c6bb764fc2b1cd2e598f417913601617d3c634e082162951a88ba769f2b88",
+        "5a8f503c5542992414482a34"
+      ],
+      "trigger_count": 5,
+      "f1": 0.63,
+      "selected_improve": 2,
+      "avg_qwen_input_tokens": 479.35
+    },
+    "sugeno_old": {
+      "boundary": [
+        -0.17479544330462105,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 7,
+      "f1": 0.6466666666666667,
+      "selected_improve": 3,
+      "avg_qwen_input_tokens": 535.375
+    },
+    "linear_constraints": {
+      "boundary": [
+        -0.1781393197937261,
+        "736c6bb764fc2b1cd2e598f417913601617d3c634e082162951a88ba769f2b88",
+        "5a8f503c5542992414482a34"
+      ],
+      "trigger_count": 5,
+      "f1": 0.63,
+      "selected_improve": 2,
+      "avg_qwen_input_tokens": 479.35
+    },
+    "linear_old": {
+      "boundary": [
+        -0.19805406389167307,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 7,
+      "f1": 0.6466666666666667,
+      "selected_improve": 3,
+      "avg_qwen_input_tokens": 535.375
+    },
+    "nli_only": {
+      "boundary": [
+        -0.4965902909518696,
+        "ad5e53f5d9e5c7fe8f84b9db97fc2d9289cd96b0151a61feb586a4342a25a504",
+        "5a8e4a7355429917b4a5bd80"
+      ],
+      "trigger_count": 8,
+      "f1": 0.6466666666666667,
+      "selected_improve": 3,
+      "avg_qwen_input_tokens": 565.775
+    },
+    "p4_sugeno_archived": {
+      "boundary": [
+        -0.22202951874085303,
+        "c8f911c31bd62e5653fd06c1b80a85789e4275eba71429641cbdb7d378385400",
+        "5ac29f58554299657fa28fe4"
+      ],
+      "trigger_count": 7,
+      "f1": 0.6466666666666667,
+      "selected_improve": 3,
+      "avg_qwen_input_tokens": 535.375
+    }
+  },
+  "fixed_direct_2plus1": {
+    "f1": 0.6466666666666666,
+    "avg_qwen_input_tokens": 503
+  },
+  "matched_sugeno_delta": {
+    "delta_f1": 0.008333333333333333,
+    "paired_percentile_95": [
+      -0.06666666666666667,
+      0.08333333333333333
+    ],
+    "different_actions": 4
+  },
+  "matched_sugeno_vs_linear_delta": {
+    "delta_f1": 0.025,
+    "paired_percentile_95": [
+      0.0,
+      0.075
+    ],
+    "different_actions": 2
+  },
+  "wall_scope": "Qwen answering inputs only; NLI scored independently"
+}

@@ -1,0 +1,81 @@
+{
+  "n": 60,
+  "selected_final_branches": 63,
+  "selector_calls": 60,
+  "parse_failures": 0,
+  "invalid_selector_sentence_ids": 0,
+  "different_actions": 3,
+  "methods": {
+    "old": {
+      "answer_f1": 0.4226911976911977,
+      "answer_em": 0.3,
+      "sp_f1": 0.493015873015873,
+      "sp_precision": 0.7,
+      "sp_recall": 0.3986111111111111,
+      "sp_em": 0.05,
+      "joint_f1": 0.26051533978004565,
+      "joint_em": 0.03333333333333333,
+      "gold_coverage_complete": 0.05,
+      "nonempty_citation": 0.9166666666666666,
+      "answer_input_tokens": 514.4833333333333,
+      "answer_output_tokens": 20.25,
+      "selector_input_tokens": 267.18333333333334,
+      "selector_output_tokens": 8.883333333333333,
+      "total_qwen_input_tokens": 781.6666666666666,
+      "total_qwen_output_tokens": 29.133333333333333,
+      "total_qwen_tokens": 810.8,
+      "qwen_calls": 2.15
+    },
+    "repaired": {
+      "answer_f1": 0.4226911976911977,
+      "answer_em": 0.3,
+      "sp_f1": 0.493015873015873,
+      "sp_precision": 0.7,
+      "sp_recall": 0.3986111111111111,
+      "sp_em": 0.05,
+      "joint_f1": 0.26051533978004565,
+      "joint_em": 0.03333333333333333,
+      "gold_coverage_complete": 0.05,
+      "nonempty_citation": 0.9166666666666666,
+      "answer_input_tokens": 470.96666666666664,
+      "answer_output_tokens": 19.183333333333334,
+      "selector_input_tokens": 253.1,
+      "selector_output_tokens": 8.766666666666667,
+      "total_qwen_input_tokens": 724.0666666666667,
+      "total_qwen_output_tokens": 27.95,
+      "total_qwen_tokens": 752.0166666666667,
+      "qwen_calls": 2.0833333333333335
+    }
+  },
+  "paired": {
+    "sp_f1": {
+      "delta": 0.0,
+      "paired_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "joint_f1": {
+      "delta": 0.0,
+      "paired_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "gold_coverage_complete": {
+      "delta": 0.0,
+      "paired_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "total_qwen_input_tokens": {
+      "delta": -57.6,
+      "paired_95": [
+        -132.93333333333334,
+        0
+      ]
+    }
+  },
+  "interpretation": "Automated comparison against annotated HotpotQA supporting sentences; no new manual citation labels."
+}

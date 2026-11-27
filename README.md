@@ -1,11 +1,16 @@
 # Fuzzy-NLI 自适应检索问答
 
-BNBU/UIC NLP 课程项目。两次实验都在 HotpotQA distractor 的 bridge 题上研究何时值得再检索一次。
+BNBU/UIC NLP 课程项目。项目在 HotpotQA distractor 的 bridge 题上研究何时值得再检索一次。
 
 | 实验 | 评估范围 | 实验入口 |
 | --- | --- | --- |
 | **V2 · 固定候选池** | 500 题校准，1,000 题独立正式评估。比较固定参数的 Fuzzy、同输入 Crisp 及其他基线。 | [实验索引](INDEX.md) · [结果总表](docs/RESULTS.md) · [文档与手册](docs/DOCUMENTS.md) |
 | **V3.1 · 扩展候选池** | 10／30／60 段候选池的策略预检、关系级 NLI 诊断、100／50 题试训与 300 题封存评估。 | [V3.1 首页](exp/v3/README.md) · [阶段结果](exp/v3/RESULTS.md) · [实验过程与复现](exp/v3/RUNBOOK.md) |
+
+## Chatbot 与后续实验
+
+- [Chatbot 演示](demo/README.md)支持回放 P5 的 300 道主实验题，也提供本地模型推理入口。直接运行 `python3 demo/app.py` 可查看检索、NLI 核验、门控决策和引用。
+- [后续实验与复算](experiments/README.md)收录逐条件核验、独立阈值校准、60 题验证、引用评测及定向补查诊断。
 
 ## V2 正式评估
 

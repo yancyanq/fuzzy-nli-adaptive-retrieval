@@ -1,0 +1,23 @@
+{
+  "name": "Fixed-threshold constraint-aware Sugeno, held-out calibration and test",
+  "date": "2026-11-22",
+  "conditions": "The previous constraint checks plus repair for numeric and written centuries and decades. No new LLM call for checks.",
+  "train": "Prior P3 100 training questions, same five-fold ridge selection, fixed Sugeno sigmoid memberships",
+  "sample": {
+    "calibration": 40,
+    "test": 60,
+    "namespace": "group13-constraint-fixed-threshold-calibration-test-20261122-v1",
+    "exclusions": "P0/P1/P3/P5 history and the earlier fresh 40",
+    "context": "30 passages per bridge question, exact prior P1 donor index and construction"
+  },
+  "models": ["old", "repaired"],
+  "threshold_calibration": {
+    "cap_rate": 0.20,
+    "old": "Among score-ordered prefixes of length 0 to 8, maximize calibration HotpotQA answer F1 gain, then minimize added Qwen answer input tokens",
+    "repaired": "Apply the same search, with an added-token cap of the selected old policy's calibration spend",
+    "tie_break": "Fewer triggers, then stable qid hash seed 42 for individual scores",
+    "fixed_threshold_test": "Rank boundary tuple from calibration; evaluate per question independently. No score normalization or top-k based on test data."
+  },
+  "success": "Test HotpotQA F1(repaired) > F1(old) and mean measured Qwen answer input tokens(repaired) <= mean(old)",
+  "notes": "Top-2 first response, original 2+4 if triggered, retain A if B unusable; only Qwen answering tokens counted. No new sentence selection or latency claim. Calibration and test are disjoint. Gold never goes to inference host."
+}

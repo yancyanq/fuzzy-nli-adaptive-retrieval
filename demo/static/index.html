@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FNLI QA · Group 13</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="bar">
+    <div class="frame bar-inner">
+      <div class="brand"><span class="mark" aria-hidden="true">≋</span> FNLI <b>QA</b></div>
+      <span id="mode" class="mode">正在连接</span>
+    </div>
+  </header>
+  <main class="frame">
+    <div class="intro">
+      <div class="eyebrow">GROUP 13 / NLP COURSE PROJECT</div>
+      <h1>证据驱动的多跳问答</h1>
+      <p>同一道题，对比直接作答与按需补查。展开推理记录，查看检索、NLI 核验、模糊门控与引用原文。</p>
+    </div>
+
+    <section class="composer" aria-label="问答输入">
+      <div class="controls">
+        <div class="tabs" aria-label="提问方式">
+          <button type="button" id="sample-tab" aria-pressed="true">P5 实验题</button>
+          <button type="button" id="custom-tab" aria-pressed="false" hidden>自定义题目</button>
+        </div>
+        <label class="strategy">策略
+          <select id="strategy">
+            <option value="compare">对比两种策略</option>
+            <option value="baseline">只运行直接作答</option>
+            <option value="fuzzy">只运行 NLI + Sugeno</option>
+          </select>
+        </label>
+      </div>
+      <form id="ask-form">
+        <div id="sample">
+          <label for="qid">选择题目</label>
+          <select id="qid" aria-label="选择实验题" required></select>
+          <p id="example-question" class="example-question"></p>
+        </div>
+        <div id="custom" hidden>
+          <label for="question">英文问题</label>
+          <input id="question" maxlength="300" placeholder="What city was the director born in?">
+          <label for="passages">英文候选资料</label>
+          <textarea id="passages" rows="5" placeholder="用空行分隔 2–30 段资料，每段不超过 1,000 字符"></textarea>
+        </div>
+        <div class="actions">
+          <p id="mode-note" class="hint"></p>
+          <button class="send" id="submit" type="submit" disabled>运行问答 <span aria-hidden="true">↗</span></button>
+        </div>
+      </form>
+    </section>
+    <div id="status" class="status" role="status" aria-live="polite"></div>
+    <section id="conversation" class="conversation" aria-label="问答记录"></section>
+  </main>
+  <footer class="frame">Fuzzy Logic with Natural Language Inference · AI3133</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "n": 60,
+  "using_annotated_HotpotQA_support": true,
+  "policies": {
+    "old": {
+      "all_gold_passages_in_final_context": 18,
+      "all_gold_passages_in_llm_paragraph_citations": 5,
+      "all_gold_sentences_in_final_citations": 3,
+      "lost_in_retrieval": 42,
+      "lost_in_paragraph_citation": 13,
+      "lost_in_sentence_selection": 2,
+      "with_complete": 3
+    },
+    "repaired": {
+      "all_gold_passages_in_final_context": 18,
+      "all_gold_passages_in_llm_paragraph_citations": 5,
+      "all_gold_sentences_in_final_citations": 3,
+      "lost_in_retrieval": 42,
+      "lost_in_paragraph_citation": 13,
+      "lost_in_sentence_selection": 2,
+      "with_complete": 3
+    }
+  }
+}

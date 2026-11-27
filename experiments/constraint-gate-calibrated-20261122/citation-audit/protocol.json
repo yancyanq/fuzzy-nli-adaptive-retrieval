@@ -1,0 +1,16 @@
+{
+  "study": "Gold supporting-fact extension of the fixed-threshold 60-question test",
+  "replay": "Use original Runtime.evidence on the union of old/repaired final branches only. No answer regeneration, no gate changes.",
+  "gold": "Official HotpotQA sentence-level supporting facts and joint answer/citation metrics; gold is read only locally.",
+  "token_scope": "Measured Qwen input and output tokens for first answer, follow-up if triggered, and final sentence selection.",
+  "online_sha256": {
+    "a.jsonl": "5c0492f29c3d6301f4d17213a81241694f775db47715030d24eccb8c51fc5cad",
+    "b.jsonl": "99e5ab9443c0889741bc6b4c6baefa210358de45a4034b8ef1582a859cddfcdc",
+    "nli.jsonl": "9fa221be705c5af767826a772d3cd7ee27a2a4c2a6d213453b68e97ed4956029",
+    "plan.json": "84f9eff294367a4e42c77f521ba961f499352e8fa2876b267604c0dcb6e18df0",
+    "pools.jsonl": "0210ebd266f536a931ffa4d8627fc833d1de6f7fb3770bd12d176259efad4d74",
+    "thresholds.json": "7e44c113173b33b54588bab40bc0b999a1b8025bff311cb07ae456112603c61b"
+  },
+  "original_answer_summary_sha256": "fe6df896ba94cdda8da83c8bd7035c3760f3186a07d0388db51f0842e164d650",
+  "gold_sha256": "dbd07449560161e92ad00a39b09b4d18d05bcc47842f78e1f7c23b0bbc16d2c8"
+}

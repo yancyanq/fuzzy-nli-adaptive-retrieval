@@ -1,0 +1,32 @@
+{
+  "scope": "Retrospective 60-question comparison. Same eight gate triggers and cached first rounds.",
+  "n": 60,
+  "new_followups": 8,
+  "methods": {
+    "original": {
+      "answer_f1": 0.4226911976911977,
+      "answer_em": 0.3,
+      "sp_f1": 0.493015873015873,
+      "gold_coverage_complete": 0.05,
+      "joint_f1": 0.26051533978004565,
+      "answer_input_tokens": 470.96666666666664,
+      "selector_input_tokens": 253.1,
+      "total_qwen_input_tokens": 724.0666666666667,
+      "total_qwen_tokens": 752.0166666666667
+    },
+    "bridge_titles": {
+      "answer_f1": 0.4226911976911977,
+      "answer_em": 0.3,
+      "sp_f1": 0.4957936507936508,
+      "gold_coverage_complete": 0.05,
+      "joint_f1": 0.26051533978004565,
+      "answer_input_tokens": 462.6666666666667,
+      "selector_input_tokens": 253.11666666666667,
+      "total_qwen_input_tokens": 715.7833333333333,
+      "total_qwen_tokens": 743.65
+    }
+  },
+  "answer_f1_cases_improved": 0,
+  "answer_f1_cases_worsened": 0,
+  "answer_text_change_count": 3
+}

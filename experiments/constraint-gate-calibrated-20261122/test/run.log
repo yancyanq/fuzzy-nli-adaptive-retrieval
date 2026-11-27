@@ -1,0 +1,70 @@
+Starting test first-round inference for 60 cases.
+{"part": "test_a", "n": 40, "target": 60, "last_batch_seconds": 11.266412197001046, "utc": "2026-11-22T06:20:20.165+00:00"}
+{"part": "test_a", "n": 60, "target": 60, "last_batch_seconds": 8.2458359059965, "utc": "2026-11-22T06:20:48.218+00:00"}
+[nli] loading /home/ubuntu/group13-v3-p2/models/deberta-b3546ea on cpu ...
+[nli] model id2label (raw)={'0': 'entailment', '1': 'neutral', '2': 'contradiction'}  normalized={0: 'entailment', 1: 'neutral', 2: 'contradiction'}
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+{"part": "test_nli", "n": 40, "target": 60, "last_batch_seconds": 0.8758607850031694, "utc": "2026-11-22T06:21:26.938+00:00"}
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+{"part": "test_nli", "n": 60, "target": 60, "last_batch_seconds": 0.9766621669987217, "utc": "2026-11-22T06:21:45.525+00:00"}
+Running 11 unique follow-up answers.
+{"part": "test_b", "n": 11, "target": 11, "last_batch_seconds": 9.81047569400107, "utc": "2026-11-22T06:22:12.112+00:00"}
+Completed test: 60 A, 60 NLI, 11 B.

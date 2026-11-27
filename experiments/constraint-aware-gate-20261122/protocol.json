@@ -1,0 +1,18 @@
+{
+  "scope": "Development-only gate comparison; same cached BM25 top-2 and 2+4 branches",
+  "train": "P3 training 100",
+  "calibration_already_public": "P3 validation was originally used for P4; 30 previous pilot questions excluded from the primary check",
+  "primary_check": "The other 20 P3 validation questions",
+  "exploratory_check": "Archived P5 primary 300, previously analyzed for problem formulation; no tuning",
+  "primary_comparison": ["sugeno_constraints", "sugeno_old"],
+  "secondary_comparisons": ["nli_only", "linear_old", "linear_constraints", "p4_sugeno_archived"],
+  "budget_percent": 20,
+  "fit_folds": 5,
+  "alphas": [0.0001, 0.001, 0.01, 0.1, 1.0],
+  "fit_criterion": "minimum P3-training five-fold out-of-fold mean squared error on answer F1(B)-F1(A); prefer stronger regularization on ties",
+  "fuzzy_membership_center": 0.5,
+  "fuzzy_membership_width": 0.15,
+  "tie_seed": 42,
+  "use_correctness_labels_for_features": false,
+  "use_new_inference_calls": false
+}

@@ -1,0 +1,76 @@
+{
+  "scope": "Retrieval-only retrospective on archived pools. No model generation, answer evaluation, or token inference.",
+  "n_previously_used_training_cases": 100,
+  "n_existing_test_cases": 60,
+  "training_all_follow_up": {
+    "first_two": {
+      "complete_cases": 24,
+      "mean_support_paragraph_recall": 0.55
+    },
+    "existing": {
+      "complete_cases": 57,
+      "mean_support_paragraph_recall": 0.77
+    },
+    "question_only": {
+      "complete_cases": 52,
+      "mean_support_paragraph_recall": 0.755
+    },
+    "rank_fusion": {
+      "complete_cases": 49,
+      "mean_support_paragraph_recall": 0.74
+    },
+    "bridge_titles": {
+      "complete_cases": 76,
+      "mean_support_paragraph_recall": 0.875
+    }
+  },
+  "chosen_variant_from_training": "bridge_titles",
+  "test_all_follow_up": {
+    "first_two": {
+      "complete_cases": 15,
+      "mean_support_paragraph_recall": 0.5833333333333334
+    },
+    "existing": {
+      "complete_cases": 37,
+      "mean_support_paragraph_recall": 0.7916666666666666
+    },
+    "question_only": {
+      "complete_cases": 26,
+      "mean_support_paragraph_recall": 0.7083333333333334
+    },
+    "rank_fusion": {
+      "complete_cases": 33,
+      "mean_support_paragraph_recall": 0.7583333333333333
+    },
+    "bridge_titles": {
+      "complete_cases": 48,
+      "mean_support_paragraph_recall": 0.8833333333333333
+    }
+  },
+  "test_fixed_prior_eight_triggers": {
+    "first_two": {
+      "complete_cases": 15,
+      "mean_support_paragraph_recall": 0.5833333333333334
+    },
+    "existing": {
+      "complete_cases": 18,
+      "mean_support_paragraph_recall": 0.6166666666666667
+    },
+    "question_only": {
+      "complete_cases": 17,
+      "mean_support_paragraph_recall": 0.6166666666666667
+    },
+    "rank_fusion": {
+      "complete_cases": 17,
+      "mean_support_paragraph_recall": 0.6083333333333333
+    },
+    "bridge_titles": {
+      "complete_cases": 19,
+      "mean_support_paragraph_recall": 0.625
+    }
+  },
+  "test_all_follow_up_chosen_vs_existing": {
+    "gains": 13,
+    "losses": 2
+  }
+}

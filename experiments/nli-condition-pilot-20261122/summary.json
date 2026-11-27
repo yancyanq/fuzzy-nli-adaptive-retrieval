@@ -1,0 +1,73 @@
+{
+  "n": 30,
+  "budget": 6,
+  "positive": 6,
+  "tied": 22,
+  "worsened": 2,
+  "all_a_f1": 0.4244179894179894,
+  "all_b_f1": 0.5321957671957672,
+  "archived_baseline_max_score_delta": 1.08569961676519e-06,
+  "condition_coverage": 29,
+  "methods": {
+    "old": {
+      "f1": 0.45775132275132274,
+      "auroc": 0.6319444444444444,
+      "improved_selected": 1,
+      "tied_selected": 5,
+      "worsened_selected": 0,
+      "chosen_ids": [
+        "5a7147fd5542994082a3e758",
+        "5a7cdc1b55429907fabef04d",
+        "5ab7ef0f5542991d322237ca",
+        "5ac1a6bf5542991316484b8d",
+        "5a8a57fe55429930ff3c0da0",
+        "5a77dadd5542997042120b59"
+      ],
+      "truncated_calls": 0,
+      "nli_calls": 30,
+      "mean_nli_seconds": 0.8933669523680389,
+      "median_nli_seconds": 0.8157016870027292,
+      "mean_nli_tokens": 149.56666666666666
+    },
+    "joint": {
+      "f1": 0.45775132275132274,
+      "auroc": 0.5694444444444444,
+      "improved_selected": 1,
+      "tied_selected": 5,
+      "worsened_selected": 0,
+      "chosen_ids": [
+        "5ab7ef0f5542991d322237ca",
+        "5a7cdc1b55429907fabef04d",
+        "5a7f22005542993067513657",
+        "5ac1a6bf5542991316484b8d",
+        "5adbfb3f55429947ff17388a",
+        "5a8a57fe55429930ff3c0da0"
+      ],
+      "truncated_calls": 0,
+      "nli_calls": 30,
+      "mean_nli_seconds": 0.8668481593995239,
+      "median_nli_seconds": 0.7983232995029539,
+      "mean_nli_tokens": 143.96666666666667
+    },
+    "conditions": {
+      "f1": 0.4644179894179894,
+      "auroc": 0.6458333333333334,
+      "improved_selected": 2,
+      "tied_selected": 4,
+      "worsened_selected": 0,
+      "chosen_ids": [
+        "5a7cdc1b55429907fabef04d",
+        "5a88016b5542997e5c09a58a",
+        "5adc760c5542994650320d11",
+        "5ab7ef0f5542991d322237ca",
+        "5a77dadd5542997042120b59",
+        "5a72f7df5542991f9a20c5d7"
+      ],
+      "truncated_calls": 0,
+      "nli_calls": 59,
+      "mean_nli_seconds": 1.6154872745357958,
+      "median_nli_seconds": 1.4809648699956597,
+      "mean_nli_tokens": 255.93333333333334
+    }
+  }
+}

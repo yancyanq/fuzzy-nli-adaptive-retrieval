@@ -1,0 +1,48 @@
+Starting calibration first-round inference for 40 cases.
+{"part": "calibration_a", "n": 40, "target": 40, "last_batch_seconds": 12.586784528000862, "utc": "2026-11-22T06:17:31.814+00:00"}
+[nli] loading /home/ubuntu/group13-v3-p2/models/deberta-b3546ea on cpu ...
+[nli] model id2label (raw)={'0': 'entailment', '1': 'neutral', '2': 'contradiction'}  normalized={0: 'entailment', 1: 'neutral', 2: 'contradiction'}
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+[nli] scored 1/1
+{"part": "calibration_nli", "n": 40, "target": 40, "last_batch_seconds": 0.8151319610042265, "utc": "2026-11-22T06:18:11.110+00:00"}
+Running 10 unique follow-up answers.
+{"part": "calibration_b", "n": 10, "target": 10, "last_batch_seconds": 10.122217537005781, "utc": "2026-11-22T06:18:35.042+00:00"}
+Completed calibration: 40 A, 40 NLI, 10 B.
